@@ -1,7 +1,7 @@
 "use client";
 export const dynamic = "force-dynamic";
 
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import Image from "next/image";
 import { signInWithGoogle } from "../../../lib/supabaseClient";
 import Link from "next/link";
@@ -309,5 +309,9 @@ function OnboardingContent() {
 }
 
 export default function OnboardingPage() {
-  return <OnboardingContent />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <OnboardingContent />
+    </Suspense>
+  );
 } 
