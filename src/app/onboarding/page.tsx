@@ -1,11 +1,10 @@
+"use client";
 export const dynamic = "force-dynamic";
 
-"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import { signInWithGoogle } from "../../../lib/supabaseClient";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import styled from "styled-components";
 
 const StyledWrapper = styled.div`
@@ -186,7 +185,8 @@ const abbrToTitle = {
   BSAgri: "R.Agriculturist",
 };
 
-export default function OnboardingPage() {
+function OnboardingContent() {
+  const { useSearchParams } = require("next/navigation");
   const [showGcashModal, setShowGcashModal] = useState(false);
   const searchParams = useSearchParams();
   const abbr = searchParams?.get("course") ?? undefined;
@@ -306,4 +306,8 @@ export default function OnboardingPage() {
       )}
     </div>
   );
+}
+
+export default function OnboardingPage() {
+  return <OnboardingContent />;
 } 
