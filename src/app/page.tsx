@@ -17,6 +17,10 @@ import Loader from '../components/Loader';
 import SpaceButton from '../components/SpaceButton';
 import { ThemeProvider, useTheme } from '../components/ThemeContext';
 import Switch from '../components/Switch';
+import { useSession } from "next-auth/react";
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 type QuizMode = 'quiz' | 'review';
 type AppView = 'home' | QuizMode | 'subjects' | 'dashboard' | 'overallDashboard';
@@ -78,7 +82,7 @@ const FIELDS = [
       { abbr: 'DMD', name: 'Doctor of Dental Medicine' },
       { abbr: 'BSM', name: 'Midwifery' },
       { abbr: 'BSRT', name: 'Radiologic Technology' },
-      { abbr: 'BSN-ND', name: 'Nutrition and Dietetics' },
+      { abbr: 'BSNND', name: 'Nutrition and Dietetics' },
       { abbr: 'BSSLP', name: 'Speech-Language Pathology' },
       { abbr: 'BSRespT', name: 'Respiratory Therapy' },
       { abbr: 'BSOA', name: 'Optometry' },
@@ -154,6 +158,7 @@ const FIELDS = [
 ];
 
 function HomePageInner(): JSX.Element {
+  const router = useRouter();
   // --- All useState hooks ---
   const [mounted, setMounted] = useState(false);
   const [questions, setQuestions] = useState<Question[] | null>(null);
@@ -192,11 +197,15 @@ function HomePageInner(): JSX.Element {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [isAuthenticating, setIsAuthenticating] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
+  const { data: session } = useSession();
+  const [loginTarget, setLoginTarget] = useState<'quiz' | 'dashboard' | 'overallDashboard' | null>(null);
+  const [quizSource, setQuizSource] = useState<'dashboard' | 'subjects' | null>(null);
 
   // --- All useRef hooks ---
   const logoRef = useRef<HTMLDivElement>(null);
   const longPressTimeout = useRef<NodeJS.Timeout | null>(null);
   const isLongPress = useRef(false);
+  const previousViewRef = useRef<AppView | null>(null);
 
   // --- All useContext hooks ---
   const { toast } = useToast();
@@ -216,8 +225,6 @@ function HomePageInner(): JSX.Element {
       const shuffledQuestions = shuffleArray([...loadedQuestions]);
       setQuestions(shuffledQuestions);
       if (mode === 'quiz') {
-        const currentSubjectQuestionIds = shuffledQuestions.map(q => q.id);
-        setUserAnswers(prev => prev.filter(ua => !currentSubjectQuestionIds.includes(ua.questionId)));
         setCurrentQuestionIndex(0);
       }
       setQuizMode('quiz');
@@ -307,10 +314,10 @@ function HomePageInner(): JSX.Element {
       if (savedCurrentView && (savedQuestions || savedCurrentView === 'home' || savedCurrentView === 'subjects' || (savedCurrentView === 'dashboard' && savedSelectedSubject))) {
         setCurrentView(savedCurrentView as AppView);
       } else if (savedQuestions && savedQuizMode) {
-        setCurrentView('quiz');
+         setCurrentView('quiz'); 
       } else {
         setCurrentView('home');
-        setQuizMode('quiz');
+        setQuizMode('quiz'); 
       }
     } catch (error) {
       console.error("Error loading from localStorage:", error);
@@ -318,6 +325,21 @@ function HomePageInner(): JSX.Element {
       setQuizMode('quiz');
     }
   }, []);
+
+  useEffect(() => {
+    if (session && !isLoggedIn) {
+      setIsLoggedIn(true);
+      setShowLoginModal(false);
+      if (loginTarget === 'quiz') {
+        setShowQuizSubjectModal(true);
+      } else if (loginTarget === 'dashboard') {
+        setCurrentView('dashboard');
+      } else if (loginTarget === 'overallDashboard') {
+        setCurrentView('overallDashboard');
+      }
+      setLoginTarget(null);
+    }
+  }, [session]);
 
   // Persist field, course, and CPA state
   useEffect(() => {
@@ -399,6 +421,7 @@ function HomePageInner(): JSX.Element {
   };
 
   const handleGoToSubjectsForQuiz = () => {
+    setQuizSource('subjects');
     setNextViewAfterSubjectSelection('quiz');
     setCurrentView('subjects');
   };
@@ -413,8 +436,12 @@ function HomePageInner(): JSX.Element {
   };
 
   const handleBackToSubjects = () => {
-    setNextViewAfterSubjectSelection(quizMode === 'review' ? 'quiz' : nextViewAfterSubjectSelection); 
-    setCurrentView('subjects');
+    if (quizSource === 'dashboard') {
+          setCurrentView('dashboard');
+        } else { 
+      setNextViewAfterSubjectSelection(quizMode === 'review' ? 'quiz' : nextViewAfterSubjectSelection);
+        setCurrentView('subjects'); 
+    }
   };
 
   const handleLogoClick = () => {
@@ -586,6 +613,18 @@ function HomePageInner(): JSX.Element {
     return `${profile.firstName} ${profile.middleName} ${profile.lastName}`.replace(/  +/g, ' ').trim();
   };
 
+  const handleProceedAfterCourseSelection = async () => {
+    if (typeof selectedFieldIdx !== 'number' || selectedCourseIdx === null) return;
+    setIsLoading(true);
+    // Add a delay to simulate loading
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    const selectedField = FIELDS[selectedFieldIdx];
+    const selectedCourse = selectedField.courses[selectedCourseIdx];
+    // Always redirect to onboarding with course abbreviation
+    router.push(`/onboarding?course=${encodeURIComponent(selectedCourse.abbr)}`);
+    setIsLoading(false);
+  };
+
   const renderContent = () => {
     switch (currentView) {
       case 'home':
@@ -618,11 +657,14 @@ function HomePageInner(): JSX.Element {
                 />
               </div>
               {/* User Name and CPA */}
-              <div className={`text-xl font-bold text-center mb-6 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>{getFullName()}, CPA</div>
+              {isLoggedIn && (
+                <div className={`text-xl font-bold text-center mb-6 ${theme === 'dark' ? 'text-white' : 'text-blue-900'}`}>{getFullName()}, CPA</div>
+              )}
               {/* Main Buttons */}
               <Button
                 onClick={() => {
                   if (!isLoggedIn) {
+                    setLoginTarget('quiz');
                     setShowLoginModal(true);
                   } else {
                     setShowQuizSubjectModal(true);
@@ -633,41 +675,48 @@ function HomePageInner(): JSX.Element {
                 Take Quiz
               </Button>
               <Button
-                onClick={() => { setCurrentView('dashboard'); }}
+                onClick={() => {
+                  if (!isLoggedIn) {
+                    setLoginTarget('dashboard');
+                    setShowLoginModal(true);
+                  } else {
+                    setCurrentView('dashboard');
+                  }
+                }}
                 className="w-full max-w-md h-14 mb-4 rounded-xl border-2 border-blue-400 text-blue-800 font-semibold text-lg bg-white shadow hover:bg-blue-50 hover:border-blue-600 transition"
                 variant="outline"
               >
                 Subject Dashboard
               </Button>
               <Button
-                onClick={() => { setCurrentView('overallDashboard'); }}
+                onClick={() => {
+                  if (!isLoggedIn) {
+                    setLoginTarget('overallDashboard');
+                    setShowLoginModal(true);
+                  } else {
+                    setCurrentView('overallDashboard');
+                  }
+                }}
                 className="w-full max-w-md h-14 mb-4 rounded-xl border-2 border-blue-400 text-blue-800 font-semibold text-lg bg-white shadow hover:bg-blue-50 hover:border-blue-600 transition"
                 variant="outline"
               >
                 Overall Dashboard
               </Button>
-              {/* About/Help Links and Footer inside container */}
+              {/* Footer container */}
               <div className="w-full max-w-xs flex flex-col items-center mt-8 border-t border-gray-200 pt-4 gap-2">
-                <div className="flex flex-row items-center justify-center gap-4 mb-2">
-                  <a href="#about" className={`text-sm font-medium ${theme === 'dark' ? 'text-blue-200' : 'text-blue-700'} hover:underline`}>About the App</a>
-                  <a href="#help" className={`text-sm font-medium ${theme === 'dark' ? 'text-blue-200' : 'text-blue-700'} hover:underline`}>Help</a>
-                  <a href="mailto:support@risoca.com" className={`text-sm font-medium ${theme === 'dark' ? 'text-blue-200' : 'text-blue-700'} hover:underline`}>Contact Support</a>
-                </div>
                 <button onClick={() => setShowGcashModal(true)} className="text-yellow-800 font-bold bg-yellow-100 border border-yellow-300 rounded-lg px-4 py-2 shadow hover:bg-yellow-200 hover:scale-105 transition-all duration-150 flex items-center gap-2">
                   <span className="text-2xl">☕</span> Buy Me a Coffee
                 </button>
-                <div className="flex justify-center gap-4 mb-2 mt-2">
-                  <a href="https://facebook.com/risoca" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-blue-700 hover:text-blue-900 text-xl">
-                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
-                  </a>
-                  <a href="https://instagram.com/risoca" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-pink-600 hover:text-pink-800 text-xl">
-                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.242 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.242 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.783 2.225 7.149 2.163 8.415 2.105 8.795 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.771.128 4.659.334 3.608 1.385 2.557 2.436 2.351 3.548 2.293 4.829 2.235 6.109 2.223 6.519 2.223 12c0 5.481.012 5.891.07 7.171.058 1.281.264 2.393 1.315 3.444 1.051 1.051 2.163 1.257 3.444 1.315C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.281-.058 2.393-.264 3.444-1.315 1.051-1.051 1.257-2.163 1.315-3.444.058-1.28.07-1.69.07-7.171 0-5.481-.012-5.891-.07-7.171-.058-1.281-.264-2.393-1.315-3.444C19.341.334 18.229.128 16.948.07 15.668.012 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-                  </a>
-                  <a href="https://x.com/risoca" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="text-black hover:text-gray-700 text-xl">
-                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.998 3h-3.447L12 9.248 6.45 3H3l7.19 8.188L3 21h3.448L12 14.742 17.55 21H21l-7.19-8.188L20.998 3z"/>
-                    </svg>
-                  </a>
+                <div className="flex flex-row items-center justify-center gap-4 mt-2">
+                  <Link href="/guides" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
+                    <span>📖</span> Guides
+                  </Link>
+                  <Link href="/privacy" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
+                    <span>🔒</span> Privacy Policy
+                  </Link>
+                  <Link href="/terms" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
+                    <span>📜</span> Terms of Use
+                  </Link>
                 </div>
                 <div className="w-full text-center text-xs text-gray-500 mt-2">
                   All rights reserved Risoca © {new Date().getFullYear()}
@@ -692,15 +741,15 @@ function HomePageInner(): JSX.Element {
               )}
               {/* Login Modal */}
               {showLoginModal && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
-                  <div className="bg-gradient-to-br from-blue-100 via-white to-blue-50 rounded-3xl shadow-2xl p-6 sm:p-8 w-full max-w-sm mx-auto flex flex-col items-center relative animate-fade-in border-4 border-blue-200">
-                    <button onClick={() => setShowLoginModal(false)} className="absolute top-4 right-4 text-gray-400 hover:text-blue-600 text-3xl font-bold transition-all">&times;</button>
-                    <SignUpForm onSuccess={() => handleAuthentication('', '')} />
+                <div className="fixed inset-0 z-50 flex items-center justify-center">
+                  <div className="rounded-2xl shadow-2xl p-4 w-full max-w-xs mx-auto flex flex-col items-center relative animate-fade-in">
+                    <button onClick={() => setShowLoginModal(false)} className="absolute top-3 right-5 text-red-500 hover:text-red-700 text-2xl font-bold p-0 m-0 bg-transparent border-none outline-none z-10">&times;</button>
+                    <SignUpForm />
                     {authError && (
-                      <div className="mt-4 text-red-600 text-sm">{authError}</div>
+                      <div className="mt-2 text-red-600 text-sm">{authError}</div>
                     )}
                     {isAuthenticating && (
-                      <div className="mt-4 flex justify-center">
+                      <div className="mt-2 flex justify-center">
                         <Loader />
                       </div>
                     )}
@@ -884,69 +933,24 @@ function HomePageInner(): JSX.Element {
               )}
               {/* Proceed Button */}
               <SpaceButton
-                onClick={async () => {
-                  if (typeof selectedFieldIdx !== 'number' || selectedCourseIdx === null) return;
-                  setIsLoading(true);
-                  // Add a delay to simulate loading
-                  await new Promise(resolve => setTimeout(resolve, 1500));
-                  const selectedField = FIELDS[selectedFieldIdx];
-                  const selectedCourse = selectedField.courses[selectedCourseIdx];
-                  // CPA integration for BSA
-                  if (selectedField.name === 'Business & Accountancy' && selectedCourse.abbr === 'BSA') {
-                    try {
-                      const CPA_SUBJECTS = ['FAR', 'AFAR', 'MS', 'AT', 'AP', 'TAX', 'RFBT'];
-                      const allQuestions: Question[] = [];
-                      for (const subj of CPA_SUBJECTS) {
-                        const res = await fetch(`/CPA/${subj}.json`);
-                        if (res.ok) {
-                          const data = await res.json();
-                          allQuestions.push(...parseJsonQuestions(JSON.stringify(data)));
-                        }
-                      }
-                      if (allQuestions.length > 0) {
-                        setQuestions(allQuestions);
-                        setCurrentQuestionIndex(0);
-                        setQuizMode('quiz');
-                        setCurrentView('home'); // Go to new CPA home view
-                        setSelectedSubject('CPA');
-                        setIsCPASelected(true);
-                      } else {
-                        toast({ title: 'No Questions Found', description: 'No CPA questions found.', variant: 'destructive' });
-                      }
-                    } catch (err) {
-                      toast({ title: 'Error', description: 'Failed to load CPA questions.', variant: 'destructive' });
-                    } finally {
-                      setIsLoading(false);
-                    }
-                  } else {
-                    toast({ title: 'Not Supported', description: 'Only BSA/CPA is supported for now.' });
-                    setIsLoading(false);
-                  }
-                }}
+                onClick={handleProceedAfterCourseSelection}
                 disabled={selectedCourseIdx === null}
               />
-              {/* About/Help Links and Footer inside container */}
+              {/* Footer container */}
               <div className="w-full max-w-xs flex flex-col items-center mt-8 border-t border-gray-200 pt-4 gap-2">
-                <div className="flex flex-row items-center justify-center gap-4 mb-2">
-                  <a href="#about" className="text-blue-700 hover:underline text-sm font-medium">About the App</a>
-                  <a href="#help" className="text-blue-700 hover:underline text-sm font-medium">Help</a>
-                  <a href="mailto:support@risoca.com" className="text-blue-700 hover:underline text-sm font-medium">Contact Support</a>
-                </div>
                 <button onClick={() => setShowGcashModal(true)} className="text-yellow-800 font-bold bg-yellow-100 border border-yellow-300 rounded-lg px-4 py-2 shadow hover:bg-yellow-200 hover:scale-105 transition-all duration-150 flex items-center gap-2">
                   <span className="text-2xl">☕</span> Buy Me a Coffee
                 </button>
-                <div className="flex justify-center gap-4 mb-2 mt-2">
-                  <a href="https://facebook.com/risoca" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-blue-700 hover:text-blue-900 text-xl">
-                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
-                  </a>
-                  <a href="https://instagram.com/risoca" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-pink-600 hover:text-pink-800 text-xl">
-                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.242 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.242 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.783 2.225 7.149 2.163 8.415 2.105 8.795 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.771.128 4.659.334 3.608 1.385 2.557 2.436 2.351 3.548 2.293 4.829 2.235 6.109 2.223 6.519 2.223 12c0 5.481.012 5.891.07 7.171.058 1.281.264 2.393 1.315 3.444 1.051 1.051 2.163 1.257 3.444 1.315C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.281-.058 2.393-.264 3.444-1.315 1.051-1.051 1.257-2.163 1.315-3.444.058-1.28.07-1.69.07-7.171 0-5.481-.012-5.891-.07-7.171-.058-1.281-.264-2.393-1.315-3.444C19.341.334 18.229.128 16.948.07 15.668.012 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-                  </a>
-                  <a href="https://x.com/risoca" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="text-black hover:text-gray-700 text-xl">
-                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.998 3h-3.447L12 9.248 6.45 3H3l7.19 8.188L3 21h3.448L12 14.742 17.55 21H21l-7.19-8.188L20.998 3z"/>
-                    </svg>
-                  </a>
+                <div className="flex flex-row items-center justify-center gap-4 mt-2">
+                  <Link href="/guides" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
+                    <span>📖</span> Guides
+                  </Link>
+                  <Link href="/privacy" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
+                    <span>🔒</span> Privacy Policy
+                  </Link>
+                  <Link href="/terms" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
+                    <span>📜</span> Terms of Use
+                  </Link>
                 </div>
                 <div className="w-full text-center text-xs text-gray-500 mt-2">
                   All rights reserved Risoca © {new Date().getFullYear()}
@@ -1103,10 +1107,11 @@ function HomePageInner(): JSX.Element {
               {subjectInfo ? subjectInfo.fullName : 'Subject Dashboard'}
             </h1>
             <SubjectDashboard
-              questions={questions}
-              userAnswers={userAnswers}
-              subjectAbbreviation={selectedSubject}
+              questions={questions} 
+              userAnswers={userAnswers} 
+              subjectAbbreviation={selectedSubject} 
               onStartQuiz={async (subjectAbbr) => {
+                setQuizSource('dashboard');
                 if (!subjectAbbr) return;
                 // Validate using the subjects array
                 const validSubjects = subjects.map(s => s.abbreviation);
@@ -1124,14 +1129,14 @@ function HomePageInner(): JSX.Element {
                       setQuestions(subjectQuestions);
                       setCurrentQuestionIndex(0);
                       setQuizMode('quiz');
-                      setCurrentView('quiz');
+                   setCurrentView('quiz');
                       setSelectedSubject(subjectAbbr);
-                    } else {
+                } else {
                       toast({ title: "No Questions Found", description: `No questions found for ${subjectAbbr}.`, variant: "destructive" });
                     }
                   } else {
                     toast({ title: "Error", description: `Failed to load questions for ${subjectAbbr}.`, variant: "destructive" });
-                  }
+                }
                 } catch (err) {
                   toast({ title: "Error", description: `Failed to load questions for ${subjectAbbr}.`, variant: "destructive" });
                 } finally {
@@ -1155,41 +1160,57 @@ function HomePageInner(): JSX.Element {
         const totalCorrect = validUserAnswers.filter(ans => ans.isCorrect).length;
         // Recommendations removed
         return (
-          <div className="min-h-[70vh] flex flex-col items-center justify-center bg-white/80 rounded-xl shadow-lg p-4 sm:p-6 md:p-8 w-full max-w-md mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-blue-700 text-center drop-shadow-sm">Overall Dashboard</h2>
-            <div className="w-full flex flex-col items-center gap-3 sm:gap-4">
-              <div className="w-full bg-blue-100 rounded-lg p-3 sm:p-4 flex flex-col items-center mb-2 sm:mb-4">
-                <div className="text-base sm:text-lg font-semibold text-blue-900">Total Questions Answered</div>
-                <div className="text-xl sm:text-2xl font-bold text-blue-700">{totalAnswered}</div>
+          <div className="relative min-h-[80vh] flex flex-col items-center justify-center w-full max-w-3xl mx-auto py-8 px-2 sm:px-6 md:px-10">
+            {/* Decorative Background */}
+            <div className="fixed inset-0 pointer-events-none z-0">
+              <div className="absolute -top-32 -left-32 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl" />
+              <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-green-400/10 rounded-full blur-3xl" />
               </div>
-              <div className="w-full bg-green-100 rounded-lg p-3 sm:p-4 flex flex-col items-center mb-2 sm:mb-4">
-                <div className="text-base sm:text-lg font-semibold text-green-900">Total Correct Answers</div>
-                <div className="text-xl sm:text-2xl font-bold text-green-700">{totalCorrect}</div>
+            {/* Header */}
+            <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="z-10 w-full flex flex-col items-center mb-8">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-4xl md:text-5xl">📊</span>
+                <h2 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600 dark:from-blue-400 dark:to-green-400 drop-shadow text-center">Overall Dashboard</h2>
               </div>
-              <div className="w-full bg-yellow-100 rounded-lg p-3 sm:p-4 flex flex-col items-center mb-2 sm:mb-4">
-                <div className="text-base sm:text-lg font-semibold text-yellow-900">Accuracy</div>
-                <div className="text-xl sm:text-2xl font-bold text-yellow-700">{totalAnswered > 0 ? ((totalCorrect / totalAnswered) * 100).toFixed(1) : 0}%</div>
+              <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 text-center max-w-2xl">See your overall progress, accuracy, and activity across all subjects. Use this dashboard to track your improvement and stay motivated!</p>
+            </motion.div>
+            {/* Stat Cards */}
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="z-10 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 w-full mb-8">
+              <div className="bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900/40 dark:to-blue-800/40 rounded-2xl shadow-lg p-4 sm:p-6 flex flex-col items-center min-h-[80px]">
+                <span className="text-base sm:text-lg font-semibold text-blue-800 dark:text-blue-200 mb-1">Total Answered</span>
+                <span className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-300">{totalAnswered}</span>
               </div>
+              <div className="bg-gradient-to-br from-green-100 to-green-50 dark:from-green-900/40 dark:to-green-800/40 rounded-2xl shadow-lg p-4 sm:p-6 flex flex-col items-center min-h-[80px]">
+                <span className="text-base sm:text-lg font-semibold text-green-800 dark:text-green-200 mb-1">Total Correct</span>
+                <span className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-300">{totalCorrect}</span>
             </div>
-            <div className="w-full mt-6">
-              <div className="flex justify-end mb-2">
+              <div className="bg-gradient-to-br from-yellow-100 to-yellow-50 dark:from-yellow-900/40 dark:to-yellow-800/40 rounded-2xl shadow-lg p-4 sm:p-6 flex flex-col items-center min-h-[80px]">
+                <span className="text-base sm:text-lg font-semibold text-yellow-800 dark:text-yellow-200 mb-1">Accuracy</span>
+                <span className="text-2xl sm:text-3xl font-bold text-yellow-600 dark:text-yellow-300">{totalAnswered > 0 ? ((totalCorrect / totalAnswered) * 100).toFixed(1) : 0}%</span>
+              </div>
+            </motion.div>
+            {/* Charts Section */}
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="z-10 w-full bg-white/90 dark:bg-[#23272f]/90 backdrop-blur rounded-2xl shadow-2xl p-6 md:p-10 border border-white/20">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-2">
+                <div className="flex items-center gap-2">
                 <button
-                  className={`px-3 py-1 rounded-l-full border border-blue-300 text-blue-800 font-semibold transition text-sm sm:text-base ${subjectChartView === 'daily' ? 'bg-blue-200' : 'bg-white'}`}
+                    className={`px-3 py-1 rounded-l-full border border-blue-300 text-blue-800 font-semibold transition text-sm sm:text-base ${subjectChartView === 'daily' ? 'bg-blue-200' : 'bg-white dark:bg-[#23272f]'}`}
                   onClick={() => setSubjectChartView('daily')}
                 >
                   Daily
                 </button>
                 <button
-                  className={`px-3 py-1 rounded-r-full border border-blue-300 text-blue-800 font-semibold transition text-sm sm:text-base -ml-px ${subjectChartView === 'monthly' ? 'bg-blue-200' : 'bg-white'}`}
+                    className={`px-3 py-1 rounded-r-full border border-blue-300 text-blue-800 font-semibold transition text-sm sm:text-base -ml-px ${subjectChartView === 'monthly' ? 'bg-blue-200' : 'bg-white dark:bg-[#23272f]'}`}
                   onClick={() => setSubjectChartView('monthly')}
                 >
                   Monthly
                 </button>
+                </div>
               </div>
               {subjectChartView === 'daily' ? (
                 <>
                   <h3 className="text-lg sm:text-xl font-bold mb-2 text-blue-800">Subjects Taken (Daily)</h3>
-                  <ResponsiveContainer width="100%" height={160}>
+                  <ResponsiveContainer width="100%" height={180}>
                     <BarChart data={dailySubjectData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                       <XAxis dataKey="date" fontSize={10} />
                       <YAxis allowDecimals={false} fontSize={10} />
@@ -1204,7 +1225,7 @@ function HomePageInner(): JSX.Element {
               ) : (
                 <>
                   <h3 className="text-lg sm:text-xl font-bold mb-2 text-blue-800">Subjects Taken (Monthly)</h3>
-                  <ResponsiveContainer width="100%" height={160}>
+                  <ResponsiveContainer width="100%" height={180}>
                     <BarChart data={monthlySubjectData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                       <XAxis dataKey="month" fontSize={10} />
                       <YAxis allowDecimals={false} fontSize={10} />
@@ -1218,7 +1239,7 @@ function HomePageInner(): JSX.Element {
                 </>
               )}
               <h3 className="text-lg sm:text-xl font-bold mb-2 text-blue-800 mt-6">Questions Taken Daily</h3>
-              <ResponsiveContainer width="100%" height={160}>
+              <ResponsiveContainer width="100%" height={180}>
                 <LineChart data={dailyQuestionsData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                   <XAxis dataKey="date" fontSize={10} />
                   <YAxis allowDecimals={false} fontSize={10} />
@@ -1227,8 +1248,8 @@ function HomePageInner(): JSX.Element {
                   <Line type="monotone" dataKey="questions" stroke="#f59e42" strokeWidth={2} dot={{ r: 3 }} />
                 </LineChart>
               </ResponsiveContainer>
-            </div>
-            <Button onClick={handleGoHome} variant="secondary" className="mt-6 w-full">Back to Home</Button>
+            </motion.div>
+            <Button onClick={handleGoHome} variant="secondary" className="mt-8 w-full max-w-xs z-10">Back to Home</Button>
           </div>
         );
       default:
