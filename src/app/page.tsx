@@ -341,6 +341,13 @@ function HomePageInner(): JSX.Element {
     }
   }, [session]);
 
+  useEffect(() => {
+    if (session) {
+      fetch("/api/sync-user");
+      router.push("/dashboard");
+    }
+  }, [session]);
+
   // Persist field, course, and CPA state
   useEffect(() => {
     localStorage.setItem('selectedFieldIdx', selectedFieldIdx !== null ? String(selectedFieldIdx) : '');
