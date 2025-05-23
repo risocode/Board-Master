@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
 
-export function useSupabaseProfileSync() {
+export function useSupabaseProfileSync(userEmailOrId: string) {
   useEffect(() => {
     async function syncProfile() {
       const { data: { user } } = await supabase.auth.getUser();

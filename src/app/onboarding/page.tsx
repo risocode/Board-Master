@@ -3,9 +3,9 @@ export const dynamic = "force-dynamic";
 
 import React, { useState, Suspense } from "react";
 import Image from "next/image";
-import { signInWithGoogle } from "../../../lib/supabaseClient";
 import Link from "next/link";
 import styled from "styled-components";
+import { signIn } from "next-auth/react";
 
 const StyledWrapper = styled.div`
   button {
@@ -221,7 +221,7 @@ function OnboardingContent() {
           </p>
           <StyledWrapper className="w-full mb-2">
             <button
-              onClick={signInWithGoogle}
+              onClick={() => signIn("google", { callbackUrl: "/" })}
               style={{ width: "100%" }}
             >
               <span style={{ display: "inline-flex", alignItems: "center", marginRight: 8 }}>
