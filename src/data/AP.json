@@ -1,0 +1,170 @@
+[
+  {
+    "id": "AP1",
+    "question": "A company has the following information:\n- Total assets: ₱5,000,000\n- Total liabilities: ₱2,000,000\n- Net income: ₱500,000\n- Materiality threshold: 5% of net income\n\nWhat is the materiality amount for this audit?",
+    "options": [
+      {
+        "id": "a",
+        "text": "₱25,000"
+      },
+      {
+        "id": "b",
+        "text": "₱50,000"
+      },
+      {
+        "id": "c",
+        "text": "₱100,000"
+      },
+      {
+        "id": "d",
+        "text": "₱250,000"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "Materiality = Net Income × Materiality Threshold\n₱500,000 × 5% = ₱25,000"
+  },
+  {
+    "id": "AP2",
+    "question": "An auditor is calculating the sample size for testing accounts receivable. Given:\n- Population size: 1,000 accounts\n- Expected error rate: 2%\n- Confidence level: 95%\n- Tolerable error rate: 5%\n\nWhat is the minimum sample size needed? (Use the formula: n = (Z² × p × q) / E² where Z=1.96 for 95% confidence)",
+    "options": [
+      {
+        "id": "a",
+        "text": "30 accounts"
+      },
+      {
+        "id": "b",
+        "text": "61 accounts"
+      },
+      {
+        "id": "c",
+        "text": "93 accounts"
+      },
+      {
+        "id": "d",
+        "text": "120 accounts"
+      }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Using the formula: n = (1.96² × 0.02 × 0.98) / 0.05²\nn = (3.8416 × 0.0196) / 0.0025\nn = 0.0753 / 0.0025\nn = 61.12 (round up to 61)"
+  },
+  {
+    "id": "AP3",
+    "question": "A company has the following inventory information:\n- Beginning inventory: ₱200,000\n- Purchases: ₱800,000\n- Ending inventory: ₱150,000\n- Cost of goods sold: ₱850,000\n\nCalculate the inventory turnover ratio.",
+    "options": [
+      {
+        "id": "a",
+        "text": "4.86 times"
+      },
+      {
+        "id": "b",
+        "text": "5.67 times"
+      },
+      {
+        "id": "c",
+        "text": "6.15 times"
+      },
+      {
+        "id": "d",
+        "text": "7.25 times"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "Inventory Turnover = Cost of Goods Sold / Average Inventory\nAverage Inventory = (Beginning + Ending) / 2\nAverage Inventory = (₱200,000 + ₱150,000) / 2 = ₱175,000\nInventory Turnover = ₱850,000 / ₱175,000 = 4.86 times"
+  },
+  {
+    "id": "AP4",
+    "question": "A company has the following financial information:\n- Current assets: ₱3,000,000\n- Current liabilities: ₱1,500,000\n- Inventory: ₱800,000\n- Prepaid expenses: ₱200,000\n\nCalculate the quick ratio.",
+    "options": [
+      {
+        "id": "a",
+        "text": "1.33"
+      },
+      {
+        "id": "b",
+        "text": "1.50"
+      },
+      {
+        "id": "c",
+        "text": "2.00"
+      },
+      {
+        "id": "d",
+        "text": "2.50"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "Quick Ratio = (Current Assets - Inventory - Prepaid Expenses) / Current Liabilities\nQuick Assets = ₱3,000,000 - ₱800,000 - ₱200,000 = ₱2,000,000\nQuick Ratio = ₱2,000,000 / ₱1,500,000 = 1.33"
+  },
+  {
+    "id": "AP5",
+    "question": "An auditor is calculating the fair value of a mineral property. Given:\n- Estimated reserves: 2,000,000 tons\n- Current market price: ₱80 per ton\n- Extraction cost: ₱30 per ton\n- Discount rate: 10%\n- Expected extraction period: 8 years\n\nCalculate the fair value of the mineral property.",
+    "options": [
+      {
+        "id": "a",
+        "text": "₱54,545,455"
+      },
+      {
+        "id": "b",
+        "text": "₱55,545,455"
+      },
+      {
+        "id": "c",
+        "text": "₱56,545,455"
+      },
+      {
+        "id": "d",
+        "text": "₱57,545,455"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "Annual Production = Total Reserves / Extraction Period\nAnnual Production = 2,000,000 / 8 = 250,000 tons\nAnnual Cash Flow = (Market Price - Extraction Cost) × Annual Production\nAnnual Cash Flow = (₱80 - ₱30) × 250,000 = ₱12,500,000\nPresent Value = Annual Cash Flow × PV factor (8 years, 10%)\nPresent Value = ₱12,500,000 × 4.3636 = ₱54,545,455"
+  },
+  {
+    "id": "AP6",
+    "question": "A company has the following information:\n- Net sales: ₱10,000,000\n- Cost of goods sold: ₱6,000,000\n- Operating expenses: ₱2,000,000\n- Interest expense: ₱500,000\n- Tax rate: 30%\n\nCalculate the net profit margin.",
+    "options": [
+      {
+        "id": "a",
+        "text": "10.5%"
+      },
+      {
+        "id": "b",
+        "text": "12.5%"
+      },
+      {
+        "id": "c",
+        "text": "15.0%"
+      },
+      {
+        "id": "d",
+        "text": "17.5%"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "Net Income = Net Sales - COGS - Operating Expenses - Interest Expense\nNet Income = ₱10,000,000 - ₱6,000,000 - ₱2,000,000 - ₱500,000 = ₱1,500,000\nAfter Tax = ₱1,500,000 × (1 - 0.30) = ₱1,050,000\nNet Profit Margin = Net Income / Net Sales\nNet Profit Margin = ₱1,050,000 / ₱10,000,000 = 10.5%"
+  },
+  {
+    "id": "AP7",
+    "question": "An auditor is calculating the depreciation expense using the double-declining balance method. Given:\n- Cost of asset: ₱1,000,000\n- Salvage value: ₱100,000\n- Useful life: 5 years\n\nWhat is the depreciation expense for the first year?",
+    "options": [
+      {
+        "id": "a",
+        "text": "₱400,000"
+      },
+      {
+        "id": "b",
+        "text": "₱360,000"
+      },
+      {
+        "id": "c",
+        "text": "₱320,000"
+      },
+      {
+        "id": "d",
+        "text": "₱280,000"
+      }
+    ],
+    "correctAnswer": "a",
+    "explanation": "Straight-line rate = 1/5 = 20%\nDouble-declining rate = 20% × 2 = 40%\nFirst year depreciation = ₱1,000,000 × 40% = ₱400,000"
+  }
+] 
