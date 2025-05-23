@@ -5,8 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { CheckCircle, XCircle, CalendarDays } from 'lucide-react';
 
 interface SubjectDashboardProps {
-  questions: Question[];
-  userAnswers: UserAnswer[];
+  questions: Question[]; 
+  userAnswers: UserAnswer[]; 
   onStartQuiz: (subjectAbbr: string) => void;
   subjectAbbreviation?: string;
   subjectFullName?: string;
