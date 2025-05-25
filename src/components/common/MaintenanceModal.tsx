@@ -62,8 +62,8 @@ const Card: React.FC<{ courseName?: string }> = ({ courseName }) => {
           className="image"
           priority
         />
-        {courseName && <div className="course-name">{courseName} <br /> <span className="is-label">is</span></div>}
-        <div className="heading">Under Construction</div>
+        {courseName && <div className="course-name">{courseName} <br /> <span className="is-label">Is Currently</span></div>}
+        <div className="heading">Under Development</div>
       </div>
     </StyledWrapper>
   );
