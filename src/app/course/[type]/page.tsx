@@ -404,14 +404,14 @@ export default function DynamicCoursePage() {
           <span className="text-2xl">☕</span> Buy Me a Coffee
         </Button>
         <div className="flex flex-row items-center justify-center gap-x-8 w-full mt-2 whitespace-nowrap">
-          <Link href="/guides" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
-            <span>📖</span> Guides
-          </Link>
           <Link href="/privacy" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
             <span>🔒</span> Privacy Policy
           </Link>
           <Link href="/terms" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
             <span>📜</span> Terms of Use
+          </Link>
+          <Link href="/contact" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
+            <span>✉️</span> Contact
           </Link>
         </div>
         <div className="w-full text-center text-xs text-gray-500 mt-2">
