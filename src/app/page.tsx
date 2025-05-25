@@ -190,6 +190,9 @@ function HomePage() {
           <Link href="/terms" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
             <span>📜</span> Terms of Use
           </Link>
+          <Link href="/contact" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
+            <span>✉️</span> Contact
+          </Link>
         </div>
         <div className="w-full text-center text-xs text-gray-500 mt-2">
           All rights reserved Risoca © {new Date().getFullYear()}
