@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, XCircle } from 'lucide-react';
 
 interface SubjectDashboardProps {
-  questions: Question[];
-  userAnswers: UserAnswer[];
+  questions: Question[]; 
+  userAnswers: UserAnswer[]; 
   onStartQuiz: (subjectAbbr: string) => void;
   subjectAbbreviation?: string;
   onBackToHome?: () => void;
@@ -23,10 +23,10 @@ const CPA_SUBJECTS = [
   { abbreviation: 'RFBT', fullName: 'Regulatory Framework for Business Transactions' },
 ];
 
-const SubjectDashboard: React.FC<SubjectDashboardProps> = ({
-  questions,
-  userAnswers,
-  onStartQuiz,
+const SubjectDashboard: React.FC<SubjectDashboardProps> = ({ 
+  questions, 
+  userAnswers, 
+  onStartQuiz, 
   subjectAbbreviation,
   onBackToHome,
   dark = false,
@@ -39,33 +39,35 @@ const SubjectDashboard: React.FC<SubjectDashboardProps> = ({
   // Filter questions and answers by selected subject
   const filteredQuestions = questions;
   const subjectQuestionIds = new Set(filteredQuestions.map(q => q.id));
-  const filteredUserAnswers = userAnswers.filter(
-    ua => ua.subjectAbbreviation === selectedSubject && subjectQuestionIds.has(ua.questionId)
-  );
+  const filteredUserAnswers = userAnswers.filter(ua => subjectQuestionIds.has(ua.questionId));
 
   // Check if questions failed to load
   const questionsFailedToLoad = filteredQuestions.length === 0;
 
   // --- Daily Stats Calculation ---
   const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  today.setHours(0, 0, 0, 0); // Set to midnight for accurate daily comparison
+
   const dailyAnswersForSubject = filteredUserAnswers.filter(ua => {
     if (!ua.timestamp) return false;
     const answerDate = new Date(ua.timestamp);
     answerDate.setHours(0, 0, 0, 0);
     return answerDate.getTime() === today.getTime();
   });
+
   const dailyCorrectAnswers = dailyAnswersForSubject.filter(answer => answer.isCorrect).length;
   const dailyIncorrectAnswers = dailyAnswersForSubject.filter(answer => !answer.isCorrect).length;
 
-  // --- Overall Subject Stats Calculation ---
+  // --- Overall Subject Stats Calculation (based on latest attempt per question for this subject) ---
   const latestAnswersForSubject = filteredUserAnswers;
   const overallSubjectCorrectAnswers = latestAnswersForSubject.filter(answer => answer.isCorrect).length;
   const overallSubjectIncorrectAnswers = latestAnswersForSubject.filter(answer => !answer.isCorrect).length;
-
+  
   return (
     <div className="w-full max-w-md mx-auto mt-8 px-2">
-      <div className="w-full rounded-3xl shadow-2xl p-0 bg-white/90 dark:bg-[#23272f]/90 backdrop-blur border border-white/20">
+      <div
+        className="w-full rounded-3xl shadow-2xl p-0 bg-white/90 dark:bg-[#23272f]/90 backdrop-blur border border-white/20"
+      >
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 p-4 pb-0">
           {/* Subject Dropdown left-aligned */}
           <div className="w-full sm:w-auto flex flex-col">
@@ -84,9 +86,12 @@ const SubjectDashboard: React.FC<SubjectDashboardProps> = ({
           </div>
         </div>
         <div className="px-4 pt-2 pb-0">
+          {/* Subject Name as Subheading */}
           <div className="text-lg font-semibold text-center text-blue-700 dark:text-blue-200 mb-2">{selectedSubjectInfo?.fullName}</div>
+          {/* Subheading */}
           <div className="text-sm font-medium text-center text-blue-600 dark:text-blue-300 mb-2">Daily Performance for {selectedSubjectInfo?.abbreviation}</div>
         </div>
+        {/* Compact Stats Grid */}
         <div className="px-4 pb-2">
           {questionsFailedToLoad ? (
             <div className="text-center p-4 bg-red-50 dark:bg-red-900/20 rounded-xl shadow">
@@ -108,8 +113,8 @@ const SubjectDashboard: React.FC<SubjectDashboardProps> = ({
                 <div className="rounded-xl flex flex-col items-center py-3 shadow bg-gradient-to-br from-red-100 via-white to-red-50 dark:from-red-900/60 dark:via-[#23272f] dark:to-red-800/40">
                   <span className="text-xs font-medium mb-1 text-red-700 dark:text-red-200">Daily Incorrect</span>
                   <span className="text-xl font-bold text-red-500 dark:text-red-300 flex items-center gap-1"><XCircle className="w-5 h-5" />{dailyIncorrectAnswers}</span>
-                </div>
-              </div>
+            </div>
+          </div>
               <div className="text-xs text-gray-500 dark:text-gray-400 mb-2 text-center">Answers recorded today ({new Date().toLocaleDateString()}). Resets at midnight.</div>
               <hr className="my-3 border-blue-200 dark:border-blue-800/40" />
               <div className="text-sm font-semibold mb-2 text-blue-700 dark:text-blue-200">Overall Progress</div>
@@ -117,12 +122,12 @@ const SubjectDashboard: React.FC<SubjectDashboardProps> = ({
                 <div className="rounded-xl flex flex-col items-center py-3 shadow bg-gradient-to-br from-green-100 via-white to-green-50 dark:from-green-900/60 dark:via-[#23272f] dark:to-green-800/40">
                   <span className="text-xs font-medium mb-1 text-green-700 dark:text-green-200">Overall Correct</span>
                   <span className="text-xl font-bold text-green-600 dark:text-green-300 flex items-center gap-1"><CheckCircle className="w-5 h-5" />{overallSubjectCorrectAnswers}</span>
-                </div>
+            </div>
                 <div className="rounded-xl flex flex-col items-center py-3 shadow bg-gradient-to-br from-red-100 via-white to-red-50 dark:from-red-900/60 dark:via-[#23272f] dark:to-red-800/40">
                   <span className="text-xs font-medium mb-1 text-red-700 dark:text-red-200">Overall Incorrect</span>
                   <span className="text-xl font-bold text-red-500 dark:text-red-300 flex items-center gap-1"><XCircle className="w-5 h-5" />{overallSubjectIncorrectAnswers}</span>
-                </div>
-              </div>
+            </div>
+          </div>
             </>
           )}
         </div>
@@ -148,4 +153,4 @@ const SubjectDashboard: React.FC<SubjectDashboardProps> = ({
   );
 };
 
-export default SubjectDashboard; 
+export default SubjectDashboard;

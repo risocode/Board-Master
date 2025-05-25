@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useTheme } from "@/components/ThemeContext";
+import { useTheme } from "@/components/common/ThemeContext";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -191,7 +191,7 @@ export default function PrivacyPage() {
                 <span className="text-3xl">📝</span> 7. Changes to This Policy
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last Updated" date.</p>
+                <p className="text-lg leading-relaxed">We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the &quot;Last Updated&quot; date.</p>
               </div>
             </motion.section>
 

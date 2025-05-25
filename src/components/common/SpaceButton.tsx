@@ -1,11 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SpaceButton = ({ onClick, disabled }: { onClick?: () => void; disabled?: boolean }) => {
+const SpaceButton = ({
+  label = 'PROCEED',
+  onClick,
+  disabled = false,
+}: {
+  label?: React.ReactNode;
+  onClick?: () => void;
+  disabled?: boolean;
+}) => {
   return (
     <StyledWrapper>
-      <button type="button" className="btn" onClick={onClick} disabled={disabled} style={{ opacity: disabled ? 0.5 : 1, pointerEvents: disabled ? 'none' : 'auto' }}>
-        <strong>PROCEED</strong>
+      <button
+        type="button"
+        className="btn"
+        onClick={onClick}
+        disabled={disabled}
+        style={{ width: 'auto', minWidth: '13rem', whiteSpace: 'nowrap', overflow: 'visible' }}
+      >
+        <strong>{label}</strong>
         <div id="container-stars">
           <div id="stars" />
         </div>
@@ -16,16 +30,19 @@ const SpaceButton = ({ onClick, disabled }: { onClick?: () => void; disabled?: b
       </button>
     </StyledWrapper>
   );
-}
+};
 
 const StyledWrapper = styled.div`
   .btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 13rem;
-    overflow: hidden;
-    height: 3rem;
+    width: auto;
+    min-width: 12rem;
+    white-space: nowrap;
+    overflow: visible;
+    height: 3.2rem;
+    margin: 0 0.5rem;
     background-size: 300% 300%;
     cursor: pointer;
     backdrop-filter: blur(1rem);
@@ -46,6 +63,12 @@ const StyledWrapper = styled.div`
     position: relative;
   }
 
+  .btn:disabled {
+    opacity: 1;
+    cursor: default;
+    pointer-events: none;
+  }
+
   #container-stars {
     position: absolute;
     z-index: -1;
@@ -59,11 +82,13 @@ const StyledWrapper = styled.div`
 
   strong {
     z-index: 2;
-    font-family: "Avalors Personal Use", serif;
-    font-size: 12px;
-    letter-spacing: 5px;
+    font-family: "Avalors Personal Use";
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 3px;
     color: #ffffff;
     text-shadow: 0 0 4px white;
+    padding: 0 1.5rem;
   }
 
   #glow {

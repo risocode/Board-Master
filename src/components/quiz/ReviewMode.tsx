@@ -1,10 +1,9 @@
-
 "use client";
 
 import type React from 'react';
 import type { Question, UserAnswer } from '@/types/quiz';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { CheckCircle, XCircle, RotateCcw, Library } from 'lucide-react'; // Changed FilePlus2 to Library
 import { cn } from '@/lib/utils';

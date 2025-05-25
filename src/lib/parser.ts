@@ -1,11 +1,12 @@
-import type { Question, AnswerChoice } from '@/types/quiz';
+import type { Question, Choice } from "@/types/quiz";
 import { v4 as uuidv4 } from 'uuid'; // Assuming uuid is installed, if not, can use Math.random or other simple id generator
+
 
 // Helper to ensure uuid is available or provide a fallback
 const generateId = (): string => {
   try {
     return uuidv4();
-  } catch (e) {
+  } catch {
     // Fallback if uuid is not available (e.g. in environments where crypto is limited or package not installed)
     // This is a very basic fallback and not guaranteed to be unique in large datasets.
     return Date.now().toString(36) + Math.random().toString(36).substring(2);
@@ -20,18 +21,24 @@ export function parseJsonQuestions(jsonString: string): Question[] {
       throw new Error("JSON data must be an array of questions.");
     }
     // Basic validation for question structure
-    return data.map((q: any) => ({
-      id: q.id || generateId(),
-      text: q.text || "No question text provided",
-      choices: Array.isArray(q.choices) 
-        ? q.choices.map((c: any) => ({
-            id: c.id || generateId(),
-            text: c.text || "No choice text"
-          }))
+    return data.map((q: unknown) => {
+      const question = q as Partial<Question> & { choices?: Partial<Choice>[] };
+      return {
+        id: question.id || generateId(),
+        text: question.text || "No question text provided",
+        choices: Array.isArray(question.choices)
+          ? question.choices.map((c: unknown) => {
+              const choice = c as Partial<Choice>;
+              return {
+                id: choice.id || generateId(),
+                text: choice.text || "No choice text"
+              };
+            })
         : [],
-      correctAnswerId: q.correctAnswerId || (q.choices && q.choices.length > 0 ? q.choices[0].id || generateId() : generateId()), // Default to first choice if not specified
-      explanation: q.explanation || "",
-    }));
+        correctAnswerId: question.correctAnswerId || (question.choices && question.choices.length > 0 ? question.choices[0].id || generateId() : generateId()),
+        explanation: question.explanation || "",
+      };
+    });
   } catch (error) {
     console.error("Error parsing JSON questions:", error);
     throw new Error("Invalid JSON format for questions.");
@@ -47,7 +54,7 @@ export function parseTextQuestions(text: string): Question[] {
     if (lines.length < 2) return; // Must have question text and at least one choice
 
     const questionText = lines[0];
-    const choices: AnswerChoice[] = [];
+    const choices: Choice[] = [];
     let correctAnswerId = "";
     let explanation = "";
 
@@ -106,17 +113,24 @@ export function parseJsonQuestionsSimpleId(jsonString: string): Question[] {
     if (!Array.isArray(data)) {
       throw new Error("JSON data must be an array of questions.");
     }
-    return data.map((q: any) => {
-      const choices = Array.isArray(q.choices)
-        ? q.choices.map((c: any) => ({
-            id: c.id || simpleId(),
-            text: c.text || "No choice text"
-          }))
+    return data.map((q: unknown) => {
+      const question = q as Partial<Question> & { choices?: Partial<Choice>[] };
+      const choices = Array.isArray(question.choices)
+        ? question.choices.map((c: unknown) => {
+            const choice = c as Partial<Choice>;
+            return {
+              id: choice.id || simpleId(),
+              text: choice.text || "No choice text"
+            };
+          })
         : [];
-      let correctAnswerId = q.correctAnswerId;
+      let correctAnswerId = question.correctAnswerId;
       if (!correctAnswerId && choices.length > 0) {
         // If correctAnswerId is not provided, try to find it based on a property like isCorrect
-        const correctChoice = choices.find((c: any) => c.isCorrect === true);
+        const correctChoice = choices.find((c) => {
+          const maybeCorrect = c as Partial<Choice> & { isCorrect?: boolean };
+          return maybeCorrect.isCorrect === true;
+        });
         if (correctChoice) {
           correctAnswerId = correctChoice.id;
         } else if (choices.length > 0) {
@@ -129,11 +143,11 @@ export function parseJsonQuestionsSimpleId(jsonString: string): Question[] {
       }
 
       return {
-        id: q.id || simpleId(),
-        text: q.text || "No question text provided",
+        id: question.id || simpleId(),
+        text: question.text || "No question text provided",
         choices,
-        correctAnswerId,
-        explanation: q.explanation || "",
+        correctAnswerId: correctAnswerId || simpleId(),
+        explanation: question.explanation || "",
       };
     });
   } catch (error) {
@@ -152,7 +166,7 @@ export function parseTextQuestionsSimpleId(text: string): Question[] {
     if (lines.length < 2) return; 
 
     const questionText = lines[0];
-    const currentChoices: AnswerChoice[] = [];
+    const currentChoices: Choice[] = [];
     let currentCorrectAnswerId = "";
     let currentExplanation = "";
 
@@ -192,6 +206,3 @@ export function parseTextQuestionsSimpleId(text: string): Question[] {
 
   return questions;
 }
-
-// Adding UUID to package.json is recommended for truly unique IDs if this were a larger scale app.
-// For now, simpleId should work for local use.

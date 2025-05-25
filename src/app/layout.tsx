@@ -1,14 +1,13 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { ThemeProvider } from '@/components/common/ThemeContext';
 import './global.css';
-import { ThemeProvider } from '@/components/ThemeContext';
-import AuthProvider from '@/components/AuthProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'BoardMaster - Your Board Exam Review Companion',
-  description: 'Comprehensive board exam review platform with practice questions and progress tracking',
+  title: 'Board Exam Review Questions',
+  description: 'Practice questions for board exam preparation',
 };
 
 export default function RootLayout({
@@ -17,13 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body className={inter.className}>
-        <AuthProvider>
-          <ThemeProvider>
-            {children}
-          </ThemeProvider>
-        </AuthProvider>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

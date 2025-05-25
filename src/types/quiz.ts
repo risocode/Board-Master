@@ -1,4 +1,3 @@
-
 export interface Choice {
   id: string;
   text: string; // Change from AnswerChoice to Choice
@@ -19,5 +18,6 @@ export interface UserAnswer {
   selectedAnswerId: string;
   isCorrect: boolean;
   timestamp: string; // Added timestamp for daily tracking
+  subjectAbbreviation: string;
 }
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useTheme } from "@/components/ThemeContext";
+import { useTheme } from "@/components/common/ThemeContext";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -121,7 +121,7 @@ export default function TermsPage() {
                 <span className="text-3xl">⚠️</span> 4. Disclaimer
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">The materials on BoardMaster are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including, without limitation:</p>
+                <p className="text-lg leading-relaxed">The materials on BoardMaster are provided on an &apos;as is&apos; basis. We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including, without limitation:</p>
                 <ul className="list-disc list-inside space-y-3 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 p-6 rounded-xl">
                   <li className="hover:translate-x-2 transition-transform">Implied warranties of merchantability</li>
                   <li className="hover:translate-x-2 transition-transform">Fitness for a particular purpose</li>

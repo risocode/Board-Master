@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useTheme } from "@/components/ThemeContext";
+import { useTheme } from "@/components/common/ThemeContext";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -65,7 +65,7 @@ export default function GuidesPage() {
                 <span className="text-3xl">🚀</span> Getting Started
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg">Welcome to BoardMaster! Here's how to get started:</p>
+                <p className="text-lg">Welcome to BoardMaster! Here&apos;s how to get started:</p>
                 <ol className="list-decimal list-inside space-y-3">
                   <li className="hover:translate-x-2 transition-transform">Select your field of study from the dropdown menu</li>
                   <li className="hover:translate-x-2 transition-transform">Choose your specific course</li>

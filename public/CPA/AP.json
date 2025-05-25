@@ -1,806 +1,1610 @@
 [
   {
-    "id": "AP1",
+    "id": "AP-0001",
     "text": "A company has the following information:\n- Total assets: ₱5,000,000\n- Total liabilities: ₱2,000,000\n- Net income: ₱500,000\n- Materiality threshold: 5% of net income\n\nWhat is the materiality amount for this audit?",
     "choices": [
-      { "id": "a", "text": "₱25,000" },
-      { "id": "b", "text": "₱50,000" },
-      { "id": "c", "text": "₱100,000" },
-      { "id": "d", "text": "₱250,000" }
+      {
+        "id": "a",
+        "text": "₱25,000"
+      },
+      {
+        "id": "b",
+        "text": "₱50,000"
+      },
+      {
+        "id": "c",
+        "text": "₱100,000"
+      },
+      {
+        "id": "d",
+        "text": "₱250,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Materiality = Net Income × Materiality Threshold\n₱500,000 × 5% = ₱25,000"
   },
   {
-    "id": "AP2",
+    "id": "AP-0002",
     "text": "An auditor is calculating the sample size for testing accounts receivable. Given:\n- Population size: 1,000 accounts\n- Expected error rate: 2%\n- Confidence level: 95%\n- Tolerable error rate: 5%\n\nWhat is the minimum sample size needed? (Use the formula: n = (Z² × p × q) / E² where Z=1.96 for 95% confidence)",
     "choices": [
-      { "id": "a", "text": "30 accounts" },
-      { "id": "b", "text": "61 accounts" },
-      { "id": "c", "text": "93 accounts" },
-      { "id": "d", "text": "120 accounts" }
+      {
+        "id": "a",
+        "text": "30 accounts"
+      },
+      {
+        "id": "b",
+        "text": "61 accounts"
+      },
+      {
+        "id": "c",
+        "text": "93 accounts"
+      },
+      {
+        "id": "d",
+        "text": "120 accounts"
+      }
     ],
     "correctAnswerId": "b",
     "explanation": "Using the formula: n = (1.96² × 0.02 × 0.98) / 0.05²\nn = (3.8416 × 0.0196) / 0.0025\nn = 0.0753 / 0.0025\nn = 61.12 (round up to 61)"
   },
   {
-    "id": "AP3",
+    "id": "AP-0003",
     "text": "A company has the following inventory information:\n- Beginning inventory: ₱200,000\n- Purchases: ₱800,000\n- Ending inventory: ₱150,000\n- Cost of goods sold: ₱850,000\n\nCalculate the inventory turnover ratio.",
     "choices": [
-      { "id": "a", "text": "4.86 times" },
-      { "id": "b", "text": "5.67 times" },
-      { "id": "c", "text": "6.15 times" },
-      { "id": "d", "text": "7.25 times" }
+      {
+        "id": "a",
+        "text": "4.86 times"
+      },
+      {
+        "id": "b",
+        "text": "5.67 times"
+      },
+      {
+        "id": "c",
+        "text": "6.15 times"
+      },
+      {
+        "id": "d",
+        "text": "7.25 times"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Inventory Turnover = Cost of Goods Sold / Average Inventory\nAverage Inventory = (Beginning + Ending) / 2\nAverage Inventory = (₱200,000 + ₱150,000) / 2 = ₱175,000\nInventory Turnover = ₱850,000 / ₱175,000 = 4.86 times"
   },
   {
-    "id": "AP4",
+    "id": "AP-0004",
     "text": "A company has the following financial information:\n- Current assets: ₱3,000,000\n- Current liabilities: ₱1,500,000\n- Inventory: ₱800,000\n- Prepaid expenses: ₱200,000\n\nCalculate the quick ratio.",
     "choices": [
-      { "id": "a", "text": "1.33" },
-      { "id": "b", "text": "1.50" },
-      { "id": "c", "text": "2.00" },
-      { "id": "d", "text": "2.50" }
+      {
+        "id": "a",
+        "text": "1.33"
+      },
+      {
+        "id": "b",
+        "text": "1.50"
+      },
+      {
+        "id": "c",
+        "text": "2.00"
+      },
+      {
+        "id": "d",
+        "text": "2.50"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Quick Ratio = (Current Assets - Inventory - Prepaid Expenses) / Current Liabilities\nQuick Assets = ₱3,000,000 - ₱800,000 - ₱200,000 = ₱2,000,000\nQuick Ratio = ₱2,000,000 / ₱1,500,000 = 1.33"
   },
   {
-    "id": "AP5",
+    "id": "AP-0005",
     "text": "An auditor is calculating the fair value of a mineral property. Given:\n- Estimated reserves: 2,000,000 tons\n- Current market price: ₱80 per ton\n- Extraction cost: ₱30 per ton\n- Discount rate: 10%\n- Expected extraction period: 8 years\n\nCalculate the fair value of the mineral property.",
     "choices": [
-      { "id": "a", "text": "₱54,545,455" },
-      { "id": "b", "text": "₱55,545,455" },
-      { "id": "c", "text": "₱56,545,455" },
-      { "id": "d", "text": "₱57,545,455" }
+      {
+        "id": "a",
+        "text": "₱54,545,455"
+      },
+      {
+        "id": "b",
+        "text": "₱55,545,455"
+      },
+      {
+        "id": "c",
+        "text": "₱56,545,455"
+      },
+      {
+        "id": "d",
+        "text": "₱57,545,455"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Annual Production = Total Reserves / Extraction Period\nAnnual Production = 2,000,000 / 8 = 250,000 tons\nAnnual Cash Flow = (Market Price - Extraction Cost) × Annual Production\nAnnual Cash Flow = (₱80 - ₱30) × 250,000 = ₱12,500,000\nPresent Value = Annual Cash Flow × PV factor (8 years, 10%)\nPresent Value = ₱12,500,000 × 4.3636 = ₱54,545,455"
   },
   {
-    "id": "AP6",
+    "id": "AP-0006",
     "text": "A company has the following information:\n- Net sales: ₱10,000,000\n- Cost of goods sold: ₱6,000,000\n- Operating expenses: ₱2,000,000\n- Interest expense: ₱500,000\n- Tax rate: 30%\n\nCalculate the net profit margin.",
     "choices": [
-      { "id": "a", "text": "10.5%" },
-      { "id": "b", "text": "12.5%" },
-      { "id": "c", "text": "15.0%" },
-      { "id": "d", "text": "17.5%" }
+      {
+        "id": "a",
+        "text": "10.5%"
+      },
+      {
+        "id": "b",
+        "text": "12.5%"
+      },
+      {
+        "id": "c",
+        "text": "15.0%"
+      },
+      {
+        "id": "d",
+        "text": "17.5%"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Net Income = Net Sales - COGS - Operating Expenses - Interest Expense\nNet Income = ₱10,000,000 - ₱6,000,000 - ₱2,000,000 - ₱500,000 = ₱1,500,000\nAfter Tax = ₱1,500,000 × (1 - 0.30) = ₱1,050,000\nNet Profit Margin = Net Income / Net Sales\nNet Profit Margin = ₱1,050,000 / ₱10,000,000 = 10.5%"
   },
   {
-    "id": "AP7",
+    "id": "AP-0007",
     "text": "An auditor is calculating the depreciation expense using the double-declining balance method. Given:\n- Cost of asset: ₱1,000,000\n- Salvage value: ₱100,000\n- Useful life: 5 years\n\nWhat is the depreciation expense for the first year?",
     "choices": [
-      { "id": "a", "text": "₱400,000" },
-      { "id": "b", "text": "₱360,000" },
-      { "id": "c", "text": "₱320,000" },
-      { "id": "d", "text": "₱280,000" }
+      {
+        "id": "a",
+        "text": "₱400,000"
+      },
+      {
+        "id": "b",
+        "text": "₱360,000"
+      },
+      {
+        "id": "c",
+        "text": "₱320,000"
+      },
+      {
+        "id": "d",
+        "text": "₱280,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Straight-line rate = 1/5 = 20%\nDouble-declining rate = 20% × 2 = 40%\nFirst year depreciation = ₱1,000,000 × 40% = ₱400,000"
   },
   {
-    "id": "AP8",
+    "id": "AP-0008",
     "text": "A company purchased equipment for ₱600,000 with an estimated useful life of 10 years and no residual value. What is the annual depreciation expense using the straight-line method?",
     "choices": [
-      { "id": "a", "text": "₱60,000" },
-      { "id": "b", "text": "₱50,000" },
-      { "id": "c", "text": "₱40,000" },
-      { "id": "d", "text": "₱30,000" }
+      {
+        "id": "a",
+        "text": "₱60,000"
+      },
+      {
+        "id": "b",
+        "text": "₱50,000"
+      },
+      {
+        "id": "c",
+        "text": "₱40,000"
+      },
+      {
+        "id": "d",
+        "text": "₱30,000"
+      }
     ],
     "correctAnswerId": "b",
     "explanation": "Annual Depreciation = Cost / Useful Life = ₱600,000 / 10 = ₱60,000. Correct answer is ₱60,000 (option a)."
   },
   {
-    "id": "AP9",
+    "id": "AP-0009",
     "text": "Which of the following is NOT a component of internal control?",
     "choices": [
-      { "id": "a", "text": "Control Environment" },
-      { "id": "b", "text": "Risk Assessment" },
-      { "id": "c", "text": "Information and Communication" },
-      { "id": "d", "text": "Financial Leverage" }
+      {
+        "id": "a",
+        "text": "Control Environment"
+      },
+      {
+        "id": "b",
+        "text": "Risk Assessment"
+      },
+      {
+        "id": "c",
+        "text": "Information and Communication"
+      },
+      {
+        "id": "d",
+        "text": "Financial Leverage"
+      }
     ],
     "correctAnswerId": "d",
     "explanation": "Financial Leverage is not a component of internal control. The five components are: Control Environment, Risk Assessment, Control Activities, Information and Communication, and Monitoring."
   },
   {
-    "id": "AP10",
+    "id": "AP-0010",
     "text": "A company's trial balance shows: Cash ₱100,000, Accounts Receivable ₱200,000, Inventory ₱300,000, Accounts Payable ₱150,000, Notes Payable ₱50,000. What is the current ratio?",
     "choices": [
-      { "id": "a", "text": "2.0" },
-      { "id": "b", "text": "3.0" },
-      { "id": "c", "text": "4.0" },
-      { "id": "d", "text": "5.0" }
+      {
+        "id": "a",
+        "text": "2.0"
+      },
+      {
+        "id": "b",
+        "text": "3.0"
+      },
+      {
+        "id": "c",
+        "text": "4.0"
+      },
+      {
+        "id": "d",
+        "text": "5.0"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Current Ratio = (Cash + Accounts Receivable + Inventory) / (Accounts Payable + Notes Payable) = (₱100,000 + ₱200,000 + ₱300,000) / (₱150,000 + ₱50,000) = ₱600,000 / ₱200,000 = 3.0. Correct answer is 3.0 (option b)."
   },
   {
-    "id": "AP11",
+    "id": "AP-0011",
     "text": "Which audit procedure is most effective in verifying the existence of accounts receivable?",
     "choices": [
-      { "id": "a", "text": "Reviewing subsequent collections" },
-      { "id": "b", "text": "Sending confirmation requests to customers" },
-      { "id": "c", "text": "Examining sales invoices" },
-      { "id": "d", "text": "Inspecting shipping documents" }
+      {
+        "id": "a",
+        "text": "Reviewing subsequent collections"
+      },
+      {
+        "id": "b",
+        "text": "Sending confirmation requests to customers"
+      },
+      {
+        "id": "c",
+        "text": "Examining sales invoices"
+      },
+      {
+        "id": "d",
+        "text": "Inspecting shipping documents"
+      }
     ],
     "correctAnswerId": "b",
     "explanation": "Sending confirmation requests to customers is the most effective procedure for verifying the existence of accounts receivable."
   },
   {
-    "id": "AP12",
+    "id": "AP-0012",
     "text": "Which of the following is a substantive test?",
     "choices": [
-      { "id": "a", "text": "Observation of inventory count" },
-      { "id": "b", "text": "Inquiry of management" },
-      { "id": "c", "text": "Recalculation of depreciation expense" },
-      { "id": "d", "text": "Review of internal control policies" }
+      {
+        "id": "a",
+        "text": "Observation of inventory count"
+      },
+      {
+        "id": "b",
+        "text": "Inquiry of management"
+      },
+      {
+        "id": "c",
+        "text": "Recalculation of depreciation expense"
+      },
+      {
+        "id": "d",
+        "text": "Review of internal control policies"
+      }
     ],
     "correctAnswerId": "c",
     "explanation": "Recalculation of depreciation expense is a substantive test. The others are tests of controls or procedures."
   },
   {
-    "id": "AP13",
+    "id": "AP-0013",
     "text": "A company's net income is ₱400,000. Dividends declared were ₱50,000. Beginning retained earnings were ₱200,000. What is the ending retained earnings?",
     "choices": [
-      { "id": "a", "text": "₱550,000" },
-      { "id": "b", "text": "₱600,000" },
-      { "id": "c", "text": "₱650,000" },
-      { "id": "d", "text": "₱700,000" }
+      {
+        "id": "a",
+        "text": "₱550,000"
+      },
+      {
+        "id": "b",
+        "text": "₱600,000"
+      },
+      {
+        "id": "c",
+        "text": "₱650,000"
+      },
+      {
+        "id": "d",
+        "text": "₱700,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Ending Retained Earnings = Beginning + Net Income - Dividends = ₱200,000 + ₱400,000 - ₱50,000 = ₱550,000."
   },
   {
-    "id": "AP14",
+    "id": "AP-0014",
     "text": "Which of the following is an analytical procedure?",
     "choices": [
-      { "id": "a", "text": "Comparing current year sales to prior year sales" },
-      { "id": "b", "text": "Counting cash on hand" },
-      { "id": "c", "text": "Inspecting title documents" },
-      { "id": "d", "text": "Sending confirmations" }
+      {
+        "id": "a",
+        "text": "Comparing current year sales to prior year sales"
+      },
+      {
+        "id": "b",
+        "text": "Counting cash on hand"
+      },
+      {
+        "id": "c",
+        "text": "Inspecting title documents"
+      },
+      {
+        "id": "d",
+        "text": "Sending confirmations"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Comparing current year sales to prior year sales is an analytical procedure."
   },
   {
-    "id": "AP15",
+    "id": "AP-0015",
     "text": "Which of the following is a limitation of internal control?",
     "choices": [
-      { "id": "a", "text": "Collusion among employees" },
-      { "id": "b", "text": "Segregation of duties" },
-      { "id": "c", "text": "Authorization procedures" },
-      { "id": "d", "text": "Physical controls" }
+      {
+        "id": "a",
+        "text": "Collusion among employees"
+      },
+      {
+        "id": "b",
+        "text": "Segregation of duties"
+      },
+      {
+        "id": "c",
+        "text": "Authorization procedures"
+      },
+      {
+        "id": "d",
+        "text": "Physical controls"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Collusion among employees is a limitation of internal control. The others are strengths."
   },
   {
-    "id": "AP16",
+    "id": "AP-0016",
     "text": "Which of the following is a primary purpose of an audit?",
     "choices": [
-      { "id": "a", "text": "To detect fraud" },
-      { "id": "b", "text": "To provide assurance on financial statements" },
-      { "id": "c", "text": "To prepare tax returns" },
-      { "id": "d", "text": "To improve internal controls" }
+      {
+        "id": "a",
+        "text": "To detect fraud"
+      },
+      {
+        "id": "b",
+        "text": "To provide assurance on financial statements"
+      },
+      {
+        "id": "c",
+        "text": "To prepare tax returns"
+      },
+      {
+        "id": "d",
+        "text": "To improve internal controls"
+      }
     ],
     "correctAnswerId": "b",
     "explanation": "The primary purpose of an audit is to provide assurance on financial statements."
   },
   {
-    "id": "AP17",
+    "id": "AP-0017",
     "text": "Which of the following is a test of control?",
     "choices": [
-      { "id": "a", "text": "Reperformance of bank reconciliations" },
-      { "id": "b", "text": "Confirmation of receivables" },
-      { "id": "c", "text": "Analytical review of expenses" },
-      { "id": "d", "text": "Physical count of inventory" }
+      {
+        "id": "a",
+        "text": "Reperformance of bank reconciliations"
+      },
+      {
+        "id": "b",
+        "text": "Confirmation of receivables"
+      },
+      {
+        "id": "c",
+        "text": "Analytical review of expenses"
+      },
+      {
+        "id": "d",
+        "text": "Physical count of inventory"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Reperformance of bank reconciliations is a test of control."
   },
   {
-    "id": "AP18",
+    "id": "AP-0018",
     "text": "Which of the following is an example of a preventive control?",
     "choices": [
-      { "id": "a", "text": "Bank reconciliation" },
-      { "id": "b", "text": "Physical access restrictions" },
-      { "id": "c", "text": "Review of financial statements" },
-      { "id": "d", "text": "Inventory count" }
+      {
+        "id": "a",
+        "text": "Bank reconciliation"
+      },
+      {
+        "id": "b",
+        "text": "Physical access restrictions"
+      },
+      {
+        "id": "c",
+        "text": "Review of financial statements"
+      },
+      {
+        "id": "d",
+        "text": "Inventory count"
+      }
     ],
     "correctAnswerId": "b",
     "explanation": "Physical access restrictions are preventive controls. The others are detective controls."
   },
   {
-    "id": "AP19",
+    "id": "AP-0019",
     "text": "A company uses the periodic inventory system. Beginning inventory is ₱100,000, purchases are ₱400,000, and ending inventory is ₱80,000. What is the cost of goods sold?",
     "choices": [
-      { "id": "a", "text": "₱420,000" },
-      { "id": "b", "text": "₱380,000" },
-      { "id": "c", "text": "₱320,000" },
-      { "id": "d", "text": "₱480,000" }
+      {
+        "id": "a",
+        "text": "₱420,000"
+      },
+      {
+        "id": "b",
+        "text": "₱380,000"
+      },
+      {
+        "id": "c",
+        "text": "₱320,000"
+      },
+      {
+        "id": "d",
+        "text": "₱480,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "COGS = Beginning Inventory + Purchases - Ending Inventory = ₱100,000 + ₱400,000 - ₱80,000 = ₱420,000."
   },
   {
-    "id": "AP20",
+    "id": "AP-0020",
     "text": "Which of the following is a characteristic of audit evidence?",
     "choices": [
-      { "id": "a", "text": "Relevance" },
-      { "id": "b", "text": "Timeliness" },
-      { "id": "c", "text": "Materiality" },
-      { "id": "d", "text": "Comparability" }
+      {
+        "id": "a",
+        "text": "Relevance"
+      },
+      {
+        "id": "b",
+        "text": "Timeliness"
+      },
+      {
+        "id": "c",
+        "text": "Materiality"
+      },
+      {
+        "id": "d",
+        "text": "Comparability"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Relevance is a key characteristic of audit evidence."
   },
   {
-    "id": "AP21",
+    "id": "AP-0021",
     "text": "Which of the following is a responsibility of the auditor?",
     "choices": [
-      { "id": "a", "text": "Prepare financial statements" },
-      { "id": "b", "text": "Express an opinion on financial statements" },
-      { "id": "c", "text": "Set company policies" },
-      { "id": "d", "text": "Authorize transactions" }
+      {
+        "id": "a",
+        "text": "Prepare financial statements"
+      },
+      {
+        "id": "b",
+        "text": "Express an opinion on financial statements"
+      },
+      {
+        "id": "c",
+        "text": "Set company policies"
+      },
+      {
+        "id": "d",
+        "text": "Authorize transactions"
+      }
     ],
     "correctAnswerId": "b",
     "explanation": "The auditor's responsibility is to express an opinion on the financial statements."
   },
   {
-    "id": "AP22",
+    "id": "AP-0022",
     "text": "Which of the following is a limitation of an audit?",
     "choices": [
-      { "id": "a", "text": "Use of sampling" },
-      { "id": "b", "text": "Professional skepticism" },
-      { "id": "c", "text": "Audit planning" },
-      { "id": "d", "text": "Audit documentation" }
+      {
+        "id": "a",
+        "text": "Use of sampling"
+      },
+      {
+        "id": "b",
+        "text": "Professional skepticism"
+      },
+      {
+        "id": "c",
+        "text": "Audit planning"
+      },
+      {
+        "id": "d",
+        "text": "Audit documentation"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Use of sampling is a limitation of an audit. The others are part of the audit process."
   },
   {
-    "id": "AP23",
+    "id": "AP-0023",
     "text": "Which of the following is a test of details?",
     "choices": [
-      { "id": "a", "text": "Observation of inventory count" },
-      { "id": "b", "text": "Recalculation of payroll expense" },
-      { "id": "c", "text": "Analytical review of sales" },
-      { "id": "d", "text": "Inquiry of management" }
+      {
+        "id": "a",
+        "text": "Observation of inventory count"
+      },
+      {
+        "id": "b",
+        "text": "Recalculation of payroll expense"
+      },
+      {
+        "id": "c",
+        "text": "Analytical review of sales"
+      },
+      {
+        "id": "d",
+        "text": "Inquiry of management"
+      }
     ],
     "correctAnswerId": "b",
     "explanation": "Recalculation of payroll expense is a test of details."
   },
   {
-    "id": "AP24",
+    "id": "AP-0024",
     "text": "Which of the following is a detective control?",
     "choices": [
-      { "id": "a", "text": "Segregation of duties" },
-      { "id": "b", "text": "Bank reconciliation" },
-      { "id": "c", "text": "Password protection" },
-      { "id": "d", "text": "Authorization of transactions" }
+      {
+        "id": "a",
+        "text": "Segregation of duties"
+      },
+      {
+        "id": "b",
+        "text": "Bank reconciliation"
+      },
+      {
+        "id": "c",
+        "text": "Password protection"
+      },
+      {
+        "id": "d",
+        "text": "Authorization of transactions"
+      }
     ],
     "correctAnswerId": "b",
     "explanation": "Bank reconciliation is a detective control."
   },
   {
-    "id": "AP25",
+    "id": "AP-0025",
     "text": "Which of the following is a purpose of audit documentation?",
     "choices": [
-      { "id": "a", "text": "Provide evidence of audit work performed" },
-      { "id": "b", "text": "Replace the need for audit procedures" },
-      { "id": "c", "text": "Serve as a substitute for client records" },
-      { "id": "d", "text": "Eliminate the need for supervision" }
+      {
+        "id": "a",
+        "text": "Provide evidence of audit work performed"
+      },
+      {
+        "id": "b",
+        "text": "Replace the need for audit procedures"
+      },
+      {
+        "id": "c",
+        "text": "Serve as a substitute for client records"
+      },
+      {
+        "id": "d",
+        "text": "Eliminate the need for supervision"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Audit documentation provides evidence of audit work performed."
   },
   {
-    "id": "AP26",
+    "id": "AP-0026",
     "text": "Which of the following is a control activity?",
     "choices": [
-      { "id": "a", "text": "Risk assessment" },
-      { "id": "b", "text": "Monitoring" },
-      { "id": "c", "text": "Physical controls" },
-      { "id": "d", "text": "Control environment" }
+      {
+        "id": "a",
+        "text": "Risk assessment"
+      },
+      {
+        "id": "b",
+        "text": "Monitoring"
+      },
+      {
+        "id": "c",
+        "text": "Physical controls"
+      },
+      {
+        "id": "d",
+        "text": "Control environment"
+      }
     ],
     "correctAnswerId": "c",
     "explanation": "Physical controls are a type of control activity."
   },
   {
-    "id": "AP27",
+    "id": "AP-0027",
     "text": "Which of the following is a type of audit opinion?",
     "choices": [
-      { "id": "a", "text": "Unqualified" },
-      { "id": "b", "text": "Qualified" },
-      { "id": "c", "text": "Adverse" },
-      { "id": "d", "text": "All of the above" }
+      {
+        "id": "a",
+        "text": "Unqualified"
+      },
+      {
+        "id": "b",
+        "text": "Qualified"
+      },
+      {
+        "id": "c",
+        "text": "Adverse"
+      },
+      {
+        "id": "d",
+        "text": "All of the above"
+      }
     ],
     "correctAnswerId": "d",
     "explanation": "All listed are types of audit opinions: unqualified, qualified, and adverse."
   },
   {
-    "id": "AP28",
+    "id": "AP-0028",
     "text": "A company purchased inventory for ₱120,000. Freight-in was ₱8,000 and purchase returns were ₱3,000. What is the cost of inventory?",
     "choices": [
-      { "id": "a", "text": "₱125,000" },
-      { "id": "b", "text": "₱128,000" },
-      { "id": "c", "text": "₱120,000" },
-      { "id": "d", "text": "₱115,000" }
+      {
+        "id": "a",
+        "text": "₱125,000"
+      },
+      {
+        "id": "b",
+        "text": "₱128,000"
+      },
+      {
+        "id": "c",
+        "text": "₱120,000"
+      },
+      {
+        "id": "d",
+        "text": "₱115,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Cost = Purchase + Freight-in - Returns = ₱120,000 + ₱8,000 - ₱3,000 = ₱125,000."
   },
   {
-    "id": "AP29",
+    "id": "AP-0029",
     "text": "A company issued a ₱500,000, 8% note on July 1, 2023, due in 1 year. What is the interest expense for the year ended December 31, 2023?",
     "choices": [
-      { "id": "a", "text": "₱20,000" },
-      { "id": "b", "text": "₱40,000" },
-      { "id": "c", "text": "₱16,000" },
-      { "id": "d", "text": "₱24,000" }
+      {
+        "id": "a",
+        "text": "₱20,000"
+      },
+      {
+        "id": "b",
+        "text": "₱40,000"
+      },
+      {
+        "id": "c",
+        "text": "₱16,000"
+      },
+      {
+        "id": "d",
+        "text": "₱24,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Interest = Principal × Rate × Time = ₱500,000 × 8% × 6/12 = ₱20,000."
   },
   {
-    "id": "AP30",
+    "id": "AP-0030",
     "text": "A company's bank statement shows an ending balance of ₱150,000. Outstanding checks total ₱20,000 and deposits in transit are ₱10,000. What is the adjusted cash balance?",
     "choices": [
-      { "id": "a", "text": "₱140,000" },
-      { "id": "b", "text": "₱160,000" },
-      { "id": "c", "text": "₱180,000" },
-      { "id": "d", "text": "₱120,000" }
+      {
+        "id": "a",
+        "text": "₱140,000"
+      },
+      {
+        "id": "b",
+        "text": "₱160,000"
+      },
+      {
+        "id": "c",
+        "text": "₱180,000"
+      },
+      {
+        "id": "d",
+        "text": "₱120,000"
+      }
     ],
     "correctAnswerId": "b",
     "explanation": "Adjusted balance = ₱150,000 - ₱20,000 + ₱10,000 = ₱140,000. Correct answer is ₱140,000 (option a)."
   },
   {
-    "id": "AP31",
+    "id": "AP-0031",
     "text": "A company's trial balance includes: Equipment ₱400,000, Accumulated Depreciation ₱120,000. What is the book value of the equipment?",
     "choices": [
-      { "id": "a", "text": "₱520,000" },
-      { "id": "b", "text": "₱280,000" },
-      { "id": "c", "text": "₱400,000" },
-      { "id": "d", "text": "₱120,000" }
+      {
+        "id": "a",
+        "text": "₱520,000"
+      },
+      {
+        "id": "b",
+        "text": "₱280,000"
+      },
+      {
+        "id": "c",
+        "text": "₱400,000"
+      },
+      {
+        "id": "d",
+        "text": "₱120,000"
+      }
     ],
     "correctAnswerId": "b",
     "explanation": "Book value = Equipment - Accumulated Depreciation = ₱400,000 - ₱120,000 = ₱280,000."
   },
   {
-    "id": "AP32",
+    "id": "AP-0032",
     "text": "A company made sales of ₱900,000, of which ₱200,000 were on credit. If the accounts receivable turnover is 8 times, what is the average accounts receivable?",
     "choices": [
-      { "id": "a", "text": "₱25,000" },
-      { "id": "b", "text": "₱112,500" },
-      { "id": "c", "text": "₱100,000" },
-      { "id": "d", "text": "₱225,000" }
+      {
+        "id": "a",
+        "text": "₱25,000"
+      },
+      {
+        "id": "b",
+        "text": "₱112,500"
+      },
+      {
+        "id": "c",
+        "text": "₱100,000"
+      },
+      {
+        "id": "d",
+        "text": "₱225,000"
+      }
     ],
     "correctAnswerId": "c",
     "explanation": "Turnover = Credit Sales / Average Receivable → Average Receivable = ₱200,000 / 8 = ₱25,000."
   },
   {
-    "id": "AP33",
+    "id": "AP-0033",
     "text": "A company's payroll register shows gross pay of ₱300,000, withholdings of ₱40,000, and employer payroll taxes of ₱30,000. What is the total payroll expense?",
     "choices": [
-      { "id": "a", "text": "₱300,000" },
-      { "id": "b", "text": "₱330,000" },
-      { "id": "c", "text": "₱370,000" },
-      { "id": "d", "text": "₱340,000" }
+      {
+        "id": "a",
+        "text": "₱300,000"
+      },
+      {
+        "id": "b",
+        "text": "₱330,000"
+      },
+      {
+        "id": "c",
+        "text": "₱370,000"
+      },
+      {
+        "id": "d",
+        "text": "₱340,000"
+      }
     ],
     "correctAnswerId": "b",
     "explanation": "Total payroll expense = Gross pay + Employer payroll taxes = ₱300,000 + ₱30,000 = ₱330,000."
   },
   {
-    "id": "AP34",
+    "id": "AP-0034",
     "text": "A company's beginning inventory is ₱50,000, purchases are ₱200,000, and ending inventory is ₱70,000. What is the cost of goods sold?",
     "choices": [
-      { "id": "a", "text": "₱180,000" },
-      { "id": "b", "text": "₱250,000" },
-      { "id": "c", "text": "₱220,000" },
-      { "id": "d", "text": "₱280,000" }
+      {
+        "id": "a",
+        "text": "₱180,000"
+      },
+      {
+        "id": "b",
+        "text": "₱250,000"
+      },
+      {
+        "id": "c",
+        "text": "₱220,000"
+      },
+      {
+        "id": "d",
+        "text": "₱280,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "COGS = Beginning Inventory + Purchases - Ending Inventory = ₱50,000 + ₱200,000 - ₱70,000 = ₱180,000."
   },
   {
-    "id": "AP35",
+    "id": "AP-0035",
     "text": "A company's net credit sales are ₱600,000. The allowance for doubtful accounts is 2% of sales. What is the bad debt expense?",
     "choices": [
-      { "id": "a", "text": "₱12,000" },
-      { "id": "b", "text": "₱10,000" },
-      { "id": "c", "text": "₱15,000" },
-      { "id": "d", "text": "₱18,000" }
+      {
+        "id": "a",
+        "text": "₱12,000"
+      },
+      {
+        "id": "b",
+        "text": "₱10,000"
+      },
+      {
+        "id": "c",
+        "text": "₱15,000"
+      },
+      {
+        "id": "d",
+        "text": "₱18,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Bad debt expense = ₱600,000 × 2% = ₱12,000."
   },
   {
-    "id": "AP36",
+    "id": "AP-0036",
     "text": "A company purchased a vehicle for ₱900,000. It is expected to be used for 5 years with a residual value of ₱100,000. What is the annual depreciation expense using the straight-line method?",
     "choices": [
-      { "id": "a", "text": "₱160,000" },
-      { "id": "b", "text": "₱180,000" },
-      { "id": "c", "text": "₱200,000" },
-      { "id": "d", "text": "₱150,000" }
+      {
+        "id": "a",
+        "text": "₱160,000"
+      },
+      {
+        "id": "b",
+        "text": "₱180,000"
+      },
+      {
+        "id": "c",
+        "text": "₱200,000"
+      },
+      {
+        "id": "d",
+        "text": "₱150,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Depreciation = (Cost - Residual) / Useful Life = (₱900,000 - ₱100,000) / 5 = ₱160,000."
   },
   {
-    "id": "AP37",
+    "id": "AP-0037",
     "text": "A company's sales are ₱1,200,000, cost of goods sold is ₱800,000, and operating expenses are ₱250,000. What is the net income?",
     "choices": [
-      { "id": "a", "text": "₱150,000" },
-      { "id": "b", "text": "₱200,000" },
-      { "id": "c", "text": "₱250,000" },
-      { "id": "d", "text": "₱300,000" }
+      {
+        "id": "a",
+        "text": "₱150,000"
+      },
+      {
+        "id": "b",
+        "text": "₱200,000"
+      },
+      {
+        "id": "c",
+        "text": "₱250,000"
+      },
+      {
+        "id": "d",
+        "text": "₱300,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Net income = Sales - COGS - Operating Expenses = ₱1,200,000 - ₱800,000 - ₱250,000 = ₱150,000."
   },
   {
-    "id": "AP38",
+    "id": "AP-0038",
     "text": "A company purchased a machine for ₱500,000. The machine has a useful life of 5 years and a residual value of ₱50,000. What is the annual depreciation expense using the straight-line method?",
     "choices": [
-      { "id": "a", "text": "₱90,000" },
-      { "id": "b", "text": "₱100,000" },
-      { "id": "c", "text": "₱110,000" },
-      { "id": "d", "text": "₱120,000" }
+      {
+        "id": "a",
+        "text": "₱90,000"
+      },
+      {
+        "id": "b",
+        "text": "₱100,000"
+      },
+      {
+        "id": "c",
+        "text": "₱110,000"
+      },
+      {
+        "id": "d",
+        "text": "₱120,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Depreciation = (Cost - Residual Value) / Useful Life = (₱500,000 - ₱50,000) / 5 = ₱90,000."
   },
   {
-    "id": "AP39",
+    "id": "AP-0039",
     "text": "A company's sales are ₱2,000,000, cost of goods sold is ₱1,200,000, and operating expenses are ₱500,000. What is the gross profit?",
     "choices": [
-      { "id": "a", "text": "₱800,000" },
-      { "id": "b", "text": "₱1,300,000" },
-      { "id": "c", "text": "₱500,000" },
-      { "id": "d", "text": "₱300,000" }
+      {
+        "id": "a",
+        "text": "₱800,000"
+      },
+      {
+        "id": "b",
+        "text": "₱1,300,000"
+      },
+      {
+        "id": "c",
+        "text": "₱500,000"
+      },
+      {
+        "id": "d",
+        "text": "₱300,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Gross profit = Sales - Cost of Goods Sold = ₱2,000,000 - ₱1,200,000 = ₱800,000."
   },
   {
-    "id": "AP40",
+    "id": "AP-0040",
     "text": "A company's beginning retained earnings are ₱100,000. Net income for the year is ₱250,000 and dividends declared are ₱30,000. What is the ending retained earnings?",
     "choices": [
-      { "id": "a", "text": "₱320,000" },
-      { "id": "b", "text": "₱350,000" },
-      { "id": "c", "text": "₱380,000" },
-      { "id": "d", "text": "₱400,000" }
+      {
+        "id": "a",
+        "text": "₱320,000"
+      },
+      {
+        "id": "b",
+        "text": "₱350,000"
+      },
+      {
+        "id": "c",
+        "text": "₱380,000"
+      },
+      {
+        "id": "d",
+        "text": "₱400,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Ending retained earnings = Beginning + Net Income - Dividends = ₱100,000 + ₱250,000 - ₱30,000 = ₱320,000."
   },
   {
-    "id": "AP41",
+    "id": "AP-0041",
     "text": "A company's accounts receivable at year-end is ₱180,000. The allowance for doubtful accounts is 3%. What is the required balance in the allowance account?",
     "choices": [
-      { "id": "a", "text": "₱5,400" },
-      { "id": "b", "text": "₱6,000" },
-      { "id": "c", "text": "₱4,800" },
-      { "id": "d", "text": "₱3,600" }
+      {
+        "id": "a",
+        "text": "₱5,400"
+      },
+      {
+        "id": "b",
+        "text": "₱6,000"
+      },
+      {
+        "id": "c",
+        "text": "₱4,800"
+      },
+      {
+        "id": "d",
+        "text": "₱3,600"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Allowance = ₱180,000 × 3% = ₱5,400."
   },
   {
-    "id": "AP42",
+    "id": "AP-0042",
     "text": "A company's cash receipts per books are ₱250,000. Deposits in transit are ₱20,000 and outstanding checks are ₱15,000. What is the adjusted bank balance?",
     "choices": [
-      { "id": "a", "text": "₱255,000" },
-      { "id": "b", "text": "₱235,000" },
-      { "id": "c", "text": "₱220,000" },
-      { "id": "d", "text": "₱285,000" }
+      {
+        "id": "a",
+        "text": "₱255,000"
+      },
+      {
+        "id": "b",
+        "text": "₱235,000"
+      },
+      {
+        "id": "c",
+        "text": "₱220,000"
+      },
+      {
+        "id": "d",
+        "text": "₱285,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Adjusted bank balance = Cash receipts + Deposits in transit - Outstanding checks = ₱250,000 + ₱20,000 - ₱15,000 = ₱255,000."
   },
   {
-    "id": "AP43",
+    "id": "AP-0043",
     "text": "A company's inventory turnover ratio is 6 times. Average inventory is ₱90,000. What is the cost of goods sold?",
     "choices": [
-      { "id": "a", "text": "₱540,000" },
-      { "id": "b", "text": "₱600,000" },
-      { "id": "c", "text": "₱480,000" },
-      { "id": "d", "text": "₱360,000" }
+      {
+        "id": "a",
+        "text": "₱540,000"
+      },
+      {
+        "id": "b",
+        "text": "₱600,000"
+      },
+      {
+        "id": "c",
+        "text": "₱480,000"
+      },
+      {
+        "id": "d",
+        "text": "₱360,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "COGS = Inventory Turnover × Average Inventory = 6 × ₱90,000 = ₱540,000."
   },
   {
-    "id": "AP44",
+    "id": "AP-0044",
     "text": "A company's net sales are ₱1,500,000 and accounts receivable at year-end is ₱250,000. What is the accounts receivable turnover ratio?",
     "choices": [
-      { "id": "a", "text": "6.0" },
-      { "id": "b", "text": "5.0" },
-      { "id": "c", "text": "7.0" },
-      { "id": "d", "text": "8.0" }
+      {
+        "id": "a",
+        "text": "6.0"
+      },
+      {
+        "id": "b",
+        "text": "5.0"
+      },
+      {
+        "id": "c",
+        "text": "7.0"
+      },
+      {
+        "id": "d",
+        "text": "8.0"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Turnover = Net Sales / Accounts Receivable = ₱1,500,000 / ₱250,000 = 6.0."
   },
   {
-    "id": "AP45",
+    "id": "AP-0045",
     "text": "A company's total assets are ₱2,000,000 and total liabilities are ₱800,000. What is the debt to equity ratio?",
     "choices": [
-      { "id": "a", "text": "0.67" },
-      { "id": "b", "text": "0.40" },
-      { "id": "c", "text": "1.00" },
-      { "id": "d", "text": "0.80" }
+      {
+        "id": "a",
+        "text": "0.67"
+      },
+      {
+        "id": "b",
+        "text": "0.40"
+      },
+      {
+        "id": "c",
+        "text": "1.00"
+      },
+      {
+        "id": "d",
+        "text": "0.80"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Equity = Assets - Liabilities = ₱2,000,000 - ₱800,000 = ₱1,200,000. Debt to equity = ₱800,000 / ₱1,200,000 = 0.67."
   },
   {
-    "id": "AP46",
+    "id": "AP-0046",
     "text": "A company's gross profit is ₱400,000 and net sales are ₱1,000,000. What is the gross profit rate?",
     "choices": [
-      { "id": "a", "text": "40%" },
-      { "id": "b", "text": "30%" },
-      { "id": "c", "text": "50%" },
-      { "id": "d", "text": "60%" }
+      {
+        "id": "a",
+        "text": "40%"
+      },
+      {
+        "id": "b",
+        "text": "30%"
+      },
+      {
+        "id": "c",
+        "text": "50%"
+      },
+      {
+        "id": "d",
+        "text": "60%"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Gross profit rate = Gross Profit / Net Sales = ₱400,000 / ₱1,000,000 = 40%."
   },
   {
-    "id": "AP47",
+    "id": "AP-0047",
     "text": "A company's beginning inventory is ₱70,000, purchases are ₱300,000, and ending inventory is ₱90,000. What is the cost of goods sold?",
     "choices": [
-      { "id": "a", "text": "₱280,000" },
-      { "id": "b", "text": "₱320,000" },
-      { "id": "c", "text": "₱360,000" },
-      { "id": "d", "text": "₱380,000" }
+      {
+        "id": "a",
+        "text": "₱280,000"
+      },
+      {
+        "id": "b",
+        "text": "₱320,000"
+      },
+      {
+        "id": "c",
+        "text": "₱360,000"
+      },
+      {
+        "id": "d",
+        "text": "₱380,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "COGS = Beginning Inventory + Purchases - Ending Inventory = ₱70,000 + ₱300,000 - ₱90,000 = ₱280,000. Correct answer is ₱280,000 (option a)."
   },
   {
-    "id": "AP48",
+    "id": "AP-0048",
     "text": "A company purchased office supplies for ₱15,000. At year-end, ₱4,000 worth of supplies remained unused. What is the supplies expense for the year?",
     "choices": [
-      { "id": "a", "text": "₱4,000" },
-      { "id": "b", "text": "₱11,000" },
-      { "id": "c", "text": "₱15,000" },
-      { "id": "d", "text": "₱19,000" }
+      {
+        "id": "a",
+        "text": "₱4,000"
+      },
+      {
+        "id": "b",
+        "text": "₱11,000"
+      },
+      {
+        "id": "c",
+        "text": "₱15,000"
+      },
+      {
+        "id": "d",
+        "text": "₱19,000"
+      }
     ],
     "correctAnswerId": "b",
     "explanation": "Supplies expense = Purchased - Unused = ₱15,000 - ₱4,000 = ₱11,000."
   },
   {
-    "id": "AP49",
+    "id": "AP-0049",
     "text": "A company's cash balance per books is ₱80,000. There are outstanding checks of ₱10,000 and a deposit in transit of ₱5,000. What is the adjusted bank balance?",
     "choices": [
-      { "id": "a", "text": "₱75,000" },
-      { "id": "b", "text": "₱85,000" },
-      { "id": "c", "text": "₱95,000" },
-      { "id": "d", "text": "₱70,000" }
+      {
+        "id": "a",
+        "text": "₱75,000"
+      },
+      {
+        "id": "b",
+        "text": "₱85,000"
+      },
+      {
+        "id": "c",
+        "text": "₱95,000"
+      },
+      {
+        "id": "d",
+        "text": "₱70,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Adjusted bank balance = ₱80,000 - ₱10,000 + ₱5,000 = ₱75,000."
   },
   {
-    "id": "AP50",
+    "id": "AP-0050",
     "text": "A company's net income is ₱300,000. Depreciation expense is ₱40,000 and there was a gain on sale of equipment of ₱10,000. What is the cash flow from operating activities (indirect method)?",
     "choices": [
-      { "id": "a", "text": "₱330,000" },
-      { "id": "b", "text": "₱350,000" },
-      { "id": "c", "text": "₱290,000" },
-      { "id": "d", "text": "₱270,000" }
+      {
+        "id": "a",
+        "text": "₱330,000"
+      },
+      {
+        "id": "b",
+        "text": "₱350,000"
+      },
+      {
+        "id": "c",
+        "text": "₱290,000"
+      },
+      {
+        "id": "d",
+        "text": "₱270,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Cash flow = Net income + Depreciation - Gain = ₱300,000 + ₱40,000 - ₱10,000 = ₱330,000."
   },
   {
-    "id": "AP51",
+    "id": "AP-0051",
     "text": "A company's sales are ₱1,000,000, cost of goods sold is ₱600,000, and operating expenses are ₱250,000. What is the operating income?",
     "choices": [
-      { "id": "a", "text": "₱150,000" },
-      { "id": "b", "text": "₱100,000" },
-      { "id": "c", "text": "₱250,000" },
-      { "id": "d", "text": "₱400,000" }
+      {
+        "id": "a",
+        "text": "₱150,000"
+      },
+      {
+        "id": "b",
+        "text": "₱100,000"
+      },
+      {
+        "id": "c",
+        "text": "₱250,000"
+      },
+      {
+        "id": "d",
+        "text": "₱400,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Operating income = Sales - COGS - Operating Expenses = ₱1,000,000 - ₱600,000 - ₱250,000 = ₱150,000."
   },
   {
-    "id": "AP52",
+    "id": "AP-0052",
     "text": "A company's beginning inventory is ₱60,000, purchases are ₱180,000, and ending inventory is ₱50,000. What is the cost of goods sold?",
     "choices": [
-      { "id": "a", "text": "₱190,000" },
-      { "id": "b", "text": "₱170,000" },
-      { "id": "c", "text": "₱210,000" },
-      { "id": "d", "text": "₱230,000" }
+      {
+        "id": "a",
+        "text": "₱190,000"
+      },
+      {
+        "id": "b",
+        "text": "₱170,000"
+      },
+      {
+        "id": "c",
+        "text": "₱210,000"
+      },
+      {
+        "id": "d",
+        "text": "₱230,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "COGS = Beginning Inventory + Purchases - Ending Inventory = ₱60,000 + ₱180,000 - ₱50,000 = ₱190,000."
   },
   {
-    "id": "AP53",
+    "id": "AP-0053",
     "text": "A company's accounts receivable is ₱120,000. If 5% is estimated to be uncollectible, what is the bad debt expense?",
     "choices": [
-      { "id": "a", "text": "₱6,000" },
-      { "id": "b", "text": "₱5,000" },
-      { "id": "c", "text": "₱7,000" },
-      { "id": "d", "text": "₱8,000" }
+      {
+        "id": "a",
+        "text": "₱6,000"
+      },
+      {
+        "id": "b",
+        "text": "₱5,000"
+      },
+      {
+        "id": "c",
+        "text": "₱7,000"
+      },
+      {
+        "id": "d",
+        "text": "₱8,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Bad debt expense = ₱120,000 × 5% = ₱6,000."
   },
   {
-    "id": "AP54",
+    "id": "AP-0054",
     "text": "A company's equipment cost ₱400,000 and has accumulated depreciation of ₱150,000. What is the book value of the equipment?",
     "choices": [
-      { "id": "a", "text": "₱250,000" },
-      { "id": "b", "text": "₱400,000" },
-      { "id": "c", "text": "₱150,000" },
-      { "id": "d", "text": "₱550,000" }
+      {
+        "id": "a",
+        "text": "₱250,000"
+      },
+      {
+        "id": "b",
+        "text": "₱400,000"
+      },
+      {
+        "id": "c",
+        "text": "₱150,000"
+      },
+      {
+        "id": "d",
+        "text": "₱550,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Book value = Cost - Accumulated Depreciation = ₱400,000 - ₱150,000 = ₱250,000."
   },
   {
-    "id": "AP55",
+    "id": "AP-0055",
     "text": "A company's net sales are ₱900,000 and average accounts receivable is ₱150,000. What is the accounts receivable turnover ratio?",
     "choices": [
-      { "id": "a", "text": "6.0" },
-      { "id": "b", "text": "5.0" },
-      { "id": "c", "text": "7.0" },
-      { "id": "d", "text": "8.0" }
+      {
+        "id": "a",
+        "text": "6.0"
+      },
+      {
+        "id": "b",
+        "text": "5.0"
+      },
+      {
+        "id": "c",
+        "text": "7.0"
+      },
+      {
+        "id": "d",
+        "text": "8.0"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Turnover = Net Sales / Average Accounts Receivable = ₱900,000 / ₱150,000 = 6.0."
   },
   {
-    "id": "AP56",
+    "id": "AP-0056",
     "text": "A company's total assets are ₱1,500,000 and total liabilities are ₱600,000. What is the equity?",
     "choices": [
-      { "id": "a", "text": "₱900,000" },
-      { "id": "b", "text": "₱600,000" },
-      { "id": "c", "text": "₱1,100,000" },
-      { "id": "d", "text": "₱2,100,000" }
+      {
+        "id": "a",
+        "text": "₱900,000"
+      },
+      {
+        "id": "b",
+        "text": "₱600,000"
+      },
+      {
+        "id": "c",
+        "text": "₱1,100,000"
+      },
+      {
+        "id": "d",
+        "text": "₱2,100,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Equity = Assets - Liabilities = ₱1,500,000 - ₱600,000 = ₱900,000."
   },
   {
-    "id": "AP57",
+    "id": "AP-0057",
     "text": "A company's gross profit is ₱350,000 and net sales are ₱1,000,000. What is the gross profit rate?",
     "choices": [
-      { "id": "a", "text": "35%" },
-      { "id": "b", "text": "30%" },
-      { "id": "c", "text": "40%" },
-      { "id": "d", "text": "45%" }
+      {
+        "id": "a",
+        "text": "35%"
+      },
+      {
+        "id": "b",
+        "text": "30%"
+      },
+      {
+        "id": "c",
+        "text": "40%"
+      },
+      {
+        "id": "d",
+        "text": "45%"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Gross profit rate = Gross Profit / Net Sales = ₱350,000 / ₱1,000,000 = 35%."
   },
   {
-    "id": "AP58",
+    "id": "AP-0058",
     "text": "A company's beginning inventory is ₱40,000, purchases are ₱160,000, and ending inventory is ₱50,000. What is the cost of goods sold?",
     "choices": [
-      { "id": "a", "text": "₱150,000" },
-      { "id": "b", "text": "₱170,000" },
-      { "id": "c", "text": "₱200,000" },
-      { "id": "d", "text": "₱180,000" }
+      {
+        "id": "a",
+        "text": "₱150,000"
+      },
+      {
+        "id": "b",
+        "text": "₱170,000"
+      },
+      {
+        "id": "c",
+        "text": "₱200,000"
+      },
+      {
+        "id": "d",
+        "text": "₱180,000"
+      }
     ],
     "correctAnswerId": "b",
     "explanation": "COGS = Beginning Inventory + Purchases - Ending Inventory = ₱40,000 + ₱160,000 - ₱50,000 = ₱150,000. Correct answer is ₱150,000 (option a)."
   },
   {
-    "id": "AP59",
+    "id": "AP-0059",
     "text": "A company's net sales are ₱800,000 and average accounts receivable is ₱100,000. What is the accounts receivable turnover ratio?",
     "choices": [
-      { "id": "a", "text": "7.0" },
-      { "id": "b", "text": "8.0" },
-      { "id": "c", "text": "6.0" },
-      { "id": "d", "text": "9.0" }
+      {
+        "id": "a",
+        "text": "7.0"
+      },
+      {
+        "id": "b",
+        "text": "8.0"
+      },
+      {
+        "id": "c",
+        "text": "6.0"
+      },
+      {
+        "id": "d",
+        "text": "9.0"
+      }
     ],
     "correctAnswerId": "b",
     "explanation": "Turnover = Net Sales / Average Accounts Receivable = ₱800,000 / ₱100,000 = 8.0. Correct answer is 8.0 (option b)."
   },
   {
-    "id": "AP60",
+    "id": "AP-0060",
     "text": "A company's total assets are ₱2,400,000 and total liabilities are ₱900,000. What is the equity?",
     "choices": [
-      { "id": "a", "text": "₱1,400,000" },
-      { "id": "b", "text": "₱1,500,000" },
-      { "id": "c", "text": "₱1,600,000" },
-      { "id": "d", "text": "₱1,700,000" }
+      {
+        "id": "a",
+        "text": "₱1,400,000"
+      },
+      {
+        "id": "b",
+        "text": "₱1,500,000"
+      },
+      {
+        "id": "c",
+        "text": "₱1,600,000"
+      },
+      {
+        "id": "d",
+        "text": "₱1,700,000"
+      }
     ],
     "correctAnswerId": "b",
     "explanation": "Equity = Assets - Liabilities = ₱2,400,000 - ₱900,000 = ₱1,500,000. Correct answer is ₱1,500,000 (option b)."
   },
   {
-    "id": "AP61",
+    "id": "AP-0061",
     "text": "A company's gross profit is ₱500,000 and net sales are ₱1,250,000. What is the gross profit rate?",
     "choices": [
-      { "id": "a", "text": "40%" },
-      { "id": "b", "text": "45%" },
-      { "id": "c", "text": "35%" },
-      { "id": "d", "text": "50%" }
+      {
+        "id": "a",
+        "text": "40%"
+      },
+      {
+        "id": "b",
+        "text": "45%"
+      },
+      {
+        "id": "c",
+        "text": "35%"
+      },
+      {
+        "id": "d",
+        "text": "50%"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Gross profit rate = Gross Profit / Net Sales = ₱500,000 / ₱1,250,000 = 40%. Correct answer is 40% (option a)."
   },
   {
-    "id": "AP62",
+    "id": "AP-0062",
     "text": "A company's net income is ₱600,000. Depreciation expense is ₱80,000 and there was a loss on sale of equipment of ₱20,000. What is the cash flow from operating activities (indirect method)?",
     "choices": [
-      { "id": "a", "text": "₱700,000" },
-      { "id": "b", "text": "₱660,000" },
-      { "id": "c", "text": "₱680,000" },
-      { "id": "d", "text": "₱600,000" }
+      {
+        "id": "a",
+        "text": "₱700,000"
+      },
+      {
+        "id": "b",
+        "text": "₱660,000"
+      },
+      {
+        "id": "c",
+        "text": "₱680,000"
+      },
+      {
+        "id": "d",
+        "text": "₱600,000"
+      }
     ],
     "correctAnswerId": "c",
     "explanation": "Cash flow = Net income + Depreciation + Loss = ₱600,000 + ₱80,000 + ₱20,000 = ₱700,000. Correct answer is ₱700,000 (option a)."
   },
   {
-    "id": "AP63",
+    "id": "AP-0063",
     "text": "A company's sales are ₱1,800,000, cost of goods sold is ₱1,200,000, and operating expenses are ₱400,000. What is the net income?",
     "choices": [
-      { "id": "a", "text": "₱200,000" },
-      { "id": "b", "text": "₱300,000" },
-      { "id": "c", "text": "₱400,000" },
-      { "id": "d", "text": "₱500,000" }
+      {
+        "id": "a",
+        "text": "₱200,000"
+      },
+      {
+        "id": "b",
+        "text": "₱300,000"
+      },
+      {
+        "id": "c",
+        "text": "₱400,000"
+      },
+      {
+        "id": "d",
+        "text": "₱500,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Net income = Sales - COGS - Operating Expenses = ₱1,800,000 - ₱1,200,000 - ₱400,000 = ₱200,000. Correct answer is ₱200,000 (option a)."
   },
   {
-    "id": "AP64",
+    "id": "AP-0064",
     "text": "A company's equipment cost ₱600,000 and has accumulated depreciation of ₱250,000. What is the book value of the equipment?",
     "choices": [
-      { "id": "a", "text": "₱350,000" },
-      { "id": "b", "text": "₱400,000" },
-      { "id": "c", "text": "₱450,000" },
-      { "id": "d", "text": "₱500,000" }
+      {
+        "id": "a",
+        "text": "₱350,000"
+      },
+      {
+        "id": "b",
+        "text": "₱400,000"
+      },
+      {
+        "id": "c",
+        "text": "₱450,000"
+      },
+      {
+        "id": "d",
+        "text": "₱500,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Book value = Cost - Accumulated Depreciation = ₱600,000 - ₱250,000 = ₱350,000. Correct answer is ₱350,000 (option a)."
   },
   {
-    "id": "AP65",
+    "id": "AP-0065",
     "text": "A company's accounts receivable is ₱200,000. If 4% is estimated to be uncollectible, what is the bad debt expense?",
     "choices": [
-      { "id": "a", "text": "₱8,000" },
-      { "id": "b", "text": "₱7,000" },
-      { "id": "c", "text": "₱6,000" },
-      { "id": "d", "text": "₱9,000" }
+      {
+        "id": "a",
+        "text": "₱8,000"
+      },
+      {
+        "id": "b",
+        "text": "₱7,000"
+      },
+      {
+        "id": "c",
+        "text": "₱6,000"
+      },
+      {
+        "id": "d",
+        "text": "₱9,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Bad debt expense = ₱200,000 × 4% = ₱8,000. Correct answer is ₱8,000 (option a)."
   },
   {
-    "id": "AP66",
+    "id": "AP-0066",
     "text": "A company purchased inventory for ₱180,000. Freight-in was ₱12,000 and purchase returns were ₱7,000. What is the cost of inventory?",
     "choices": [
-      { "id": "a", "text": "₱185,000" },
-      { "id": "b", "text": "₱190,000" },
-      { "id": "c", "text": "₱195,000" },
-      { "id": "d", "text": "₱200,000" }
+      {
+        "id": "a",
+        "text": "₱185,000"
+      },
+      {
+        "id": "b",
+        "text": "₱190,000"
+      },
+      {
+        "id": "c",
+        "text": "₱195,000"
+      },
+      {
+        "id": "d",
+        "text": "₱200,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Cost = Purchase + Freight-in - Returns = ₱180,000 + ₱12,000 - ₱7,000 = ₱185,000. Correct answer is ₱185,000 (option a)."
   },
   {
-    "id": "AP67",
+    "id": "AP-0067",
     "text": "A company issued a ₱1,000,000, 10% note on October 1, 2023, due in 1 year. What is the interest expense for the year ended December 31, 2023?",
     "choices": [
-      { "id": "a", "text": "₱25,000" },
-      { "id": "b", "text": "₱30,000" },
-      { "id": "c", "text": "₱20,000" },
-      { "id": "d", "text": "₱35,000" }
+      {
+        "id": "a",
+        "text": "₱25,000"
+      },
+      {
+        "id": "b",
+        "text": "₱30,000"
+      },
+      {
+        "id": "c",
+        "text": "₱20,000"
+      },
+      {
+        "id": "d",
+        "text": "₱35,000"
+      }
     ],
     "correctAnswerId": "a",
     "explanation": "Interest = Principal × Rate × Time = ₱1,000,000 × 10% × 3/12 = ₱25,000. Correct answer is ₱25,000 (option a)."
   }
-] 
+]

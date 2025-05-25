@@ -23,6 +23,12 @@ const nextConfig = withPWA({
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'uiverse.io',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 });
