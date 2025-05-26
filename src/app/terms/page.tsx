@@ -26,7 +26,7 @@ export default function TermsPage() {
         >
           <Link href="/" className="hover:opacity-80 transition-opacity">
             <Image
-              src="/logo/berq.png"
+              src={theme === 'dark' ? '/logo/berq-g.png' : '/logo/berq-b.png'}
               alt="Board Exam Review Questions Logo"
               width={120}
               height={50}
@@ -65,7 +65,7 @@ export default function TermsPage() {
                 <span className="text-3xl">📜</span> 1. Acceptance of Terms
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">By accessing and using BoardMaster, you agree to be bound by these Terms of Use and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.</p>
+                <p className="text-lg leading-relaxed">By using BoardMaster, you agree to these terms. If you do not agree, do not use the app.</p>
               </div>
             </motion.section>
 
@@ -80,13 +80,7 @@ export default function TermsPage() {
                 <span className="text-3xl">🔒</span> 2. Use License
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">Permission is granted to temporarily use BoardMaster for personal, non-commercial purposes. This license does not include:</p>
-                <ul className="list-disc list-inside space-y-3 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 p-6 rounded-xl">
-                  <li className="hover:translate-x-2 transition-transform">Modifying or copying the materials</li>
-                  <li className="hover:translate-x-2 transition-transform">Using the materials for any commercial purpose</li>
-                  <li className="hover:translate-x-2 transition-transform">Attempting to reverse engineer any software contained on BoardMaster</li>
-                  <li className="hover:translate-x-2 transition-transform">Removing any copyright or other proprietary notations</li>
-                </ul>
+                <p className="text-lg leading-relaxed">You may use BoardMaster for personal, non-commercial purposes only. You may not copy, modify, or redistribute the app or its content.</p>
               </div>
             </motion.section>
 
@@ -98,15 +92,10 @@ export default function TermsPage() {
             >
               <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-purple-500 to-indigo-500 rounded-full" />
               <h2 className="text-2xl font-semibold mb-6 text-purple-600 dark:text-purple-400 flex items-center gap-3">
-                <span className="text-3xl">👤</span> 3. User Account
+                <span className="text-3xl">👤</span> 3. User Account & Data
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">To access certain features of BoardMaster, you must create an account. You are responsible for:</p>
-                <ul className="list-disc list-inside space-y-3 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 p-6 rounded-xl">
-                  <li className="hover:translate-x-2 transition-transform">Maintaining the confidentiality of your account</li>
-                  <li className="hover:translate-x-2 transition-transform">All activities that occur under your account</li>
-                  <li className="hover:translate-x-2 transition-transform">Notifying us immediately of any unauthorized use</li>
-                </ul>
+                <p className="text-lg leading-relaxed">No server-side accounts are created. Your profile and quiz data are stored locally in your browser. You are responsible for your own device and browser data.</p>
               </div>
             </motion.section>
 
@@ -121,12 +110,7 @@ export default function TermsPage() {
                 <span className="text-3xl">⚠️</span> 4. Disclaimer
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">The materials on BoardMaster are provided on an &apos;as is&apos; basis. We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including, without limitation:</p>
-                <ul className="list-disc list-inside space-y-3 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 p-6 rounded-xl">
-                  <li className="hover:translate-x-2 transition-transform">Implied warranties of merchantability</li>
-                  <li className="hover:translate-x-2 transition-transform">Fitness for a particular purpose</li>
-                  <li className="hover:translate-x-2 transition-transform">Non-infringement of intellectual property</li>
-                </ul>
+                <p className="text-lg leading-relaxed">The app is provided "as is" without warranties. Quiz content is for educational purposes only.</p>
               </div>
             </motion.section>
 
@@ -141,7 +125,7 @@ export default function TermsPage() {
                 <span className="text-3xl">⚖️</span> 5. Limitations
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">In no event shall BoardMaster or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on BoardMaster.</p>
+                <p className="text-lg leading-relaxed">The app creators are not liable for any damages or data loss. Use at your own risk.</p>
               </div>
             </motion.section>
 
@@ -156,7 +140,7 @@ export default function TermsPage() {
                 <span className="text-3xl">📝</span> 6. Revisions
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">We may revise these terms of service at any time without notice. By using BoardMaster, you agree to be bound by the current version of these terms of service.</p>
+                <p className="text-lg leading-relaxed">These terms may be updated at any time. Changes will be posted on this page.</p>
               </div>
             </motion.section>
 
@@ -171,7 +155,7 @@ export default function TermsPage() {
                 <span className="text-3xl">🌍</span> 7. Governing Law
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">These terms and conditions are governed by and construed in accordance with the laws of the Philippines and you irrevocably submit to the exclusive jurisdiction of the courts in that location.</p>
+                <p className="text-lg leading-relaxed">These terms are governed by the laws of the Philippines.</p>
               </div>
             </motion.section>
           </div>

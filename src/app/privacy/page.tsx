@@ -26,7 +26,7 @@ export default function PrivacyPage() {
         >
           <Link href="/" className="hover:opacity-80 transition-opacity">
             <Image
-              src="/logo/berq.png"
+              src={theme === 'dark' ? '/logo/berq-g.png' : '/logo/berq-b.png'}
               alt="Board Exam Review Questions Logo"
               width={120}
               height={50}
@@ -65,12 +65,11 @@ export default function PrivacyPage() {
                 <span className="text-3xl">📋</span> 1. Information We Collect
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">We collect information that you provide directly to us, including:</p>
+                <p className="text-lg leading-relaxed">All information you provide (profile, quiz progress, answers, preferences) is stored locally in your browser. No information is sent to any server or third party.</p>
                 <ul className="list-disc list-inside space-y-3 bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20 p-6 rounded-xl">
-                  <li className="hover:translate-x-2 transition-transform">Account information (name, email address)</li>
-                  <li className="hover:translate-x-2 transition-transform">Profile information (optional personal details)</li>
-                  <li className="hover:translate-x-2 transition-transform">Usage data (quiz results, progress tracking)</li>
-                  <li className="hover:translate-x-2 transition-transform">Device information (browser type, IP address)</li>
+                  <li>Your profile (name, middle name, last name, age, birthdate, address)</li>
+                  <li>Quiz progress, answers, and statistics</li>
+                  <li>Theme and UI preferences</li>
                 </ul>
               </div>
             </motion.section>
@@ -86,14 +85,7 @@ export default function PrivacyPage() {
                 <span className="text-3xl">🎯</span> 2. How We Use Your Information
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">We use the collected information for:</p>
-                <ul className="list-disc list-inside space-y-3 bg-gradient-to-r from-teal-50 to-green-50 dark:from-teal-900/20 dark:to-green-900/20 p-6 rounded-xl">
-                  <li className="hover:translate-x-2 transition-transform">Providing and maintaining our service</li>
-                  <li className="hover:translate-x-2 transition-transform">Personalizing your experience</li>
-                  <li className="hover:translate-x-2 transition-transform">Tracking your progress and performance</li>
-                  <li className="hover:translate-x-2 transition-transform">Improving our services</li>
-                  <li className="hover:translate-x-2 transition-transform">Communicating with you about updates</li>
-                </ul>
+                <p className="text-lg leading-relaxed">Your data is used only to personalize your experience, track your quiz progress, and remember your preferences. No data is shared or sold.</p>
               </div>
             </motion.section>
 
@@ -108,13 +100,7 @@ export default function PrivacyPage() {
                 <span className="text-3xl">🔒</span> 3. Data Storage and Security
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">We implement appropriate security measures to protect your personal information:</p>
-                <ul className="list-disc list-inside space-y-3 bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20 p-6 rounded-xl">
-                  <li className="hover:translate-x-2 transition-transform">Secure data storage using industry-standard encryption</li>
-                  <li className="hover:translate-x-2 transition-transform">Regular security assessments</li>
-                  <li className="hover:translate-x-2 transition-transform">Limited access to personal information</li>
-                  <li className="hover:translate-x-2 transition-transform">Secure transmission of data</li>
-                </ul>
+                <p className="text-lg leading-relaxed">All data is stored in your browser's localStorage. No data is transmitted to any server. If you clear your browser data, your profile and progress will be lost.</p>
               </div>
             </motion.section>
 
@@ -129,12 +115,7 @@ export default function PrivacyPage() {
                 <span className="text-3xl">🤝</span> 4. Third-Party Services
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">We use third-party services that may collect information:</p>
-                <ul className="list-disc list-inside space-y-3 bg-gradient-to-r from-teal-50 to-green-50 dark:from-teal-900/20 dark:to-green-900/20 p-6 rounded-xl">
-                  <li className="hover:translate-x-2 transition-transform">Google Authentication for sign-in</li>
-                  <li className="hover:translate-x-2 transition-transform">Analytics services to improve our platform</li>
-                  <li className="hover:translate-x-2 transition-transform">Cloud storage providers for data hosting</li>
-                </ul>
+                <p className="text-lg leading-relaxed">No third-party analytics, ads, or authentication are used. No information is shared with any external service.</p>
               </div>
             </motion.section>
 
@@ -149,14 +130,7 @@ export default function PrivacyPage() {
                 <span className="text-3xl">👤</span> 5. Your Rights
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">You have the right to:</p>
-                <ul className="list-disc list-inside space-y-3 bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20 p-6 rounded-xl">
-                  <li className="hover:translate-x-2 transition-transform">Access your personal information</li>
-                  <li className="hover:translate-x-2 transition-transform">Correct inaccurate data</li>
-                  <li className="hover:translate-x-2 transition-transform">Request deletion of your data</li>
-                  <li className="hover:translate-x-2 transition-transform">Opt-out of communications</li>
-                  <li className="hover:translate-x-2 transition-transform">Export your data</li>
-                </ul>
+                <p className="text-lg leading-relaxed">You can edit or delete your profile at any time. You can clear your browser data to remove all stored information.</p>
               </div>
             </motion.section>
 
@@ -171,12 +145,7 @@ export default function PrivacyPage() {
                 <span className="text-3xl">🍪</span> 6. Cookies
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">We use cookies to:</p>
-                <ul className="list-disc list-inside space-y-3 bg-gradient-to-r from-teal-50 to-green-50 dark:from-teal-900/20 dark:to-green-900/20 p-6 rounded-xl">
-                  <li className="hover:translate-x-2 transition-transform">Remember your preferences</li>
-                  <li className="hover:translate-x-2 transition-transform">Analyze site usage</li>
-                  <li className="hover:translate-x-2 transition-transform">Improve user experience</li>
-                </ul>
+                <p className="text-lg leading-relaxed">No cookies are used. All data is stored in localStorage.</p>
               </div>
             </motion.section>
 
@@ -191,7 +160,7 @@ export default function PrivacyPage() {
                 <span className="text-3xl">📝</span> 7. Changes to This Policy
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the &quot;Last Updated&quot; date.</p>
+                <p className="text-lg leading-relaxed">This policy may be updated. Changes will be posted on this page.</p>
               </div>
             </motion.section>
 
@@ -206,10 +175,7 @@ export default function PrivacyPage() {
                 <span className="text-3xl">📧</span> 8. Contact Us
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">If you have any questions about this Privacy Policy, please contact us at:</p>
-                <div className="bg-gradient-to-r from-teal-50 to-green-50 dark:from-teal-900/20 dark:to-green-900/20 p-6 rounded-xl">
-                  <p className="text-lg font-medium text-teal-700 dark:text-teal-300">Email: support@risoca.com</p>
-                </div>
+                <p className="text-lg leading-relaxed">If you have any questions about this Privacy Policy, please use the contact link in the app.</p>
               </div>
             </motion.section>
           </div>

@@ -335,15 +335,14 @@ export default function DynamicCoursePage() {
         </button>
       </div>
       {/* Logo */}
-      <div className="flex flex-col items-center mb-6 mt-2">
+      <div className="flex flex-col items-center mb-0 mt-0">
         <Image
-          src="/logo/berq.png"
+          src={theme === 'dark' ? '/logo/berq-g.png' : '/logo/berq-b.png'}
           alt="Board Exam Review Questions Logo"
-          width={120}
-          height={100}
+          width={300}
+          height={120}
           priority
           className="mb-2"
-          style={{ width: 'auto', height: 'auto' }}
         />
       </div>
       {/* User Name and Professional Title */}
