@@ -4,6 +4,7 @@ import { ThemeProvider } from '@/components/common/ThemeContext';
 import ErrorBoundary from '@/components/common/ErrorBoundary';
 import { Analytics } from "@vercel/analytics/next";
 import './global.css';
+import PWAInstallPrompt from '@/components/common/PWAInstallPrompt';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -65,6 +66,7 @@ export default function RootLayout({
             {children}
           </ThemeProvider>
         </ErrorBoundary>
+        <PWAInstallPrompt />
         <Analytics />
       </body>
     </html>
