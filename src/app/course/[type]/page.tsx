@@ -368,6 +368,8 @@ export default function DynamicCoursePage() {
       timestamp: new Date().toISOString(),
       subjectAbbreviation: selectedSubject || ''
     };
+  
+    // Update global answers (for dashboard/history)
     setUserAnswers(prev => {
       const updated = [...prev, newAnswer];
       try {
@@ -377,6 +379,9 @@ export default function DynamicCoursePage() {
       }
       return updated;
     });
+  
+    const [currentQuizAnswers, setCurrentQuizAnswers] = useState<UserAnswer[]>([]);// Update current quiz session answers
+    setCurrentQuizAnswers(prev => [...prev, newAnswer]);
   
     // --- Add this for points and level progress ---
     if (isCorrect) {
@@ -475,35 +480,35 @@ export default function DynamicCoursePage() {
       </div>
       {/* Main Action Buttons */}
       <div className="flex flex-col items-center w-full max-w-md mx-auto gap-4 mb-6">
-        <Button
-          onClick={() => {
-            setQuizSource('subjects');
-            setShowQuizSubjectModal(true);
-          }}
+      <Button
+        onClick={() => {
+          setQuizSource('subjects');
+          setShowQuizSubjectModal(true);
+        }}
           className="w-full h-14 rounded-xl bg-pink-200 text-pink-900 font-bold text-lg shadow-md hover:bg-pink-300 transition"
-        >
-          Take Quiz
-        </Button>
-        <Button
-          onClick={() => {
-            setQuizSource('dashboard');
-            if (!selectedSubject) {
-              setSelectedSubject(subjects[0].abbreviation);
-            }
-            setCurrentView('dashboard');
-          }}
+      >
+        Take Quiz
+      </Button>
+      <Button
+        onClick={() => {
+          setQuizSource('dashboard');
+          if (!selectedSubject) {
+            setSelectedSubject(subjects[0].abbreviation);
+          }
+          setCurrentView('dashboard');
+        }}
           className="w-full h-14 rounded-xl border-2 border-blue-400 text-blue-800 font-semibold text-lg bg-white shadow hover:bg-blue-50 hover:border-blue-600 transition"
-          variant="outline"
-        >
-          Subject Dashboard
-        </Button>
-        <Button
-          onClick={() => setCurrentView('overallDashboard')}
+        variant="outline"
+      >
+        Subject Dashboard
+      </Button>
+      <Button
+        onClick={() => setCurrentView('overallDashboard')}
           className="w-full h-14 rounded-xl border-2 border-blue-400 text-blue-800 font-semibold text-lg bg-white shadow hover:bg-blue-50 hover:border-blue-600 transition"
-          variant="outline"
-        >
-          Overall Dashboard
-        </Button>
+        variant="outline"
+      >
+        Overall Dashboard
+      </Button>
       </div>
       {/* Menu Bar - Level, Points, Daily Check In */}
         <div className="w-full max-w-xl mx-auto mb-8">
@@ -738,12 +743,7 @@ export default function DynamicCoursePage() {
                   const data = await res.json();
                   const subjectQuestions = parseJsonQuestions(JSON.stringify(data));
                   if (subjectQuestions.length > 0) {
-                    // Clear user answers for this subject before starting quiz
-                    setUserAnswers(prev => {
-                      const filtered = prev.filter(ans => ans.subjectAbbreviation !== subjectAbbr);
-                      localStorage.setItem(`${courseType}_userAnswers`, JSON.stringify(filtered));
-                      return filtered;
-                    });
+                    // DO NOT clear userAnswers here!
                     setQuestions(shuffleArray(subjectQuestions));
                     setCurrentQuestionIndex(0);
                     setQuizMode('quiz');
@@ -1011,7 +1011,7 @@ export default function DynamicCoursePage() {
                           <span className="bg-white rounded-full p-1 flex items-center justify-center shadow-lg">
                             <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>
+          </svg>
                           </span>
                         </span>
                       </>
@@ -1028,7 +1028,7 @@ export default function DynamicCoursePage() {
                         <text x="16" y="21" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#B8860B">₵</text>
                       </svg>
                     </span>
-                  </div>
+        </div>
                 );
               })}
             </div>
