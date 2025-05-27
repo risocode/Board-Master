@@ -119,15 +119,10 @@ function HomePage() {
     if (selectedFieldIdx === null || selectedCourseIdx === null) return;
     const selectedField = FIELDS[selectedFieldIdx];
     const selectedCourse = selectedField.courses[selectedCourseIdx];
-    // Route to the dynamic course page using the course abbreviation (use only the first part if abbr has a slash)
     const courseType = selectedCourse.abbr.split('/')[0];
-    
-    // Check if the course is CPA or BSA
-    if (courseType === 'CPA' || courseType === 'BSA') {
-      router.push(`/course/${courseType}`);
-    } else {
-      setShowMaintenance(true);
-    }
+    const redirectUrl = `/course/${courseType}`;
+    console.log('Proceeding to sign-in with:', { courseType, redirectUrl });
+    router.push(`/sign-in?course=${courseType}&redirect_url=${encodeURIComponent(redirectUrl)}`);
   };
 
   return (

@@ -2,8 +2,6 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'next/navigation';
-import { getProfessionalTitleAndWelcome } from '@/data/professionalTitles';
-import SpaceButton from '@/components/common/SpaceButton';
 import { Button } from '@/components/ui/button';
 import { ThemeProvider, useTheme } from '@/components/common/ThemeContext';
 import Switch from '@/components/Switch';
@@ -22,6 +20,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, Line
 import { motion } from 'framer-motion';
 import { PointCalculator } from '@/lib/pointCalculator';
 import { Dialog } from '@headlessui/react';
+import ProfileModal from '@/components/ProfileModal';
 
 const subjects = [
   { abbreviation: 'FAR', fullName: 'Financial Accounting and Reporting' },
@@ -54,12 +53,6 @@ const shuffleArray = <T,>(array: T[]): T[] => {
   return shuffled;
 };
 
-// Helper to format names: Capitalize first letter, lowercase the rest
-function formatFullName(first: string, middle: string, last: string) {
-  const cap = (s: string) => s ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : '';
-  return [cap(first), cap(middle), cap(last)].filter(Boolean).join(' ');
-}
-
 export default function DynamicCoursePage() {
   // All hooks at the top, before any early returns
   const params = useParams() || {};
@@ -79,13 +72,6 @@ export default function DynamicCoursePage() {
   const [showQuizSubjectModal, setShowQuizSubjectModal] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [showGcashModal, setShowGcashModal] = useState(false);
-  const [profile, setProfile] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('userProfile');
-      if (saved) return JSON.parse(saved);
-    }
-    return { firstName: '', middleName: '', lastName: '', age: '', birthdate: '', address: '' };
-  });
   const [userPoints, setUserPoints] = useState<UserPoints>(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('userPoints');
@@ -117,10 +103,24 @@ export default function DynamicCoursePage() {
     return 1;
   });
   const [showCheckInReward, setShowCheckInReward] = useState(false);
-  const [currentQuizAnswers, setCurrentQuizAnswers] = useState<UserAnswer[]>([]);
-
-  // Professional title and welcome message
-  const { title } = getProfessionalTitleAndWelcome(courseType);
+  const [firstName, setFirstName] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('userFirstName') || '';
+    }
+    return '';
+  });
+  const [middleName, setMiddleName] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('userMiddleName') || '';
+    }
+    return '';
+  });
+  const [lastName, setLastName] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('userLastName') || '';
+    }
+    return '';
+  });
 
   // Add a helper to check if the course is CPA/BSA
   const isCPAorBSA = courseType === 'CPA' || courseType === 'BSA';
@@ -358,6 +358,18 @@ export default function DynamicCoursePage() {
     }
   }, [currentView, selectedSubject, questions, courseType]);
 
+  // On mount, always load and format names from localStorage
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const f = localStorage.getItem('userFirstName') || '';
+      const m = localStorage.getItem('userMiddleName') || '';
+      const l = localStorage.getItem('userLastName') || '';
+      setFirstName(f);
+      setMiddleName(m);
+      setLastName(l);
+    }
+  }, []);
+
   if (!mounted) {
     // Optionally, return a skeleton or just null
     return null;
@@ -386,9 +398,6 @@ export default function DynamicCoursePage() {
       }
       return updated;
     });
-  
-    // Update current quiz session answers
-    setCurrentQuizAnswers(prev => [...prev, newAnswer]);
   
     // --- Add this for points and level progress ---
     if (isCorrect) {
@@ -451,8 +460,10 @@ export default function DynamicCoursePage() {
       {/* Top right: Theme/Profile */}
       <div className="absolute top-4 right-4 z-10 flex items-center gap-2">
         <Switch checked={theme === 'dark'} onChange={toggleTheme} />
-        <button onClick={() => setShowProfileModal(true)} className="rounded-full border-2 border-gray-300 w-10 h-10 flex items-center justify-center bg-white shadow hover:shadow-lg transition">
-          <span className="text-2xl">👤</span>
+        <button
+          onClick={() => setShowProfileModal(true)}
+          className="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-200 hover:border-blue-400 transition-all"
+        >
         </button>
       </div>
       {/* Logo at the top, centered */}
@@ -472,17 +483,6 @@ export default function DynamicCoursePage() {
           WELCOME
         </div>
         <div className="flex justify-center w-full mb-2">
-          {getFullName() ? (
-            <SpaceButton
-              label={<span className="block w-full text-center whitespace-nowrap overflow-hidden text-ellipsis max-w-xs">{`${getFullName()}${title ? ", " + title : ''}`}</span>}
-              disabled
-            />
-          ) : (
-            <SpaceButton
-              label={<span className="block w-full text-center whitespace-nowrap overflow-hidden text-ellipsis max-w-xs">EDIT PROFILE</span>}
-              onClick={() => { setShowProfileModal(true); }}
-            />
-          )}
         </div>
       </div>
       {/* Main Action Buttons */}
@@ -565,9 +565,9 @@ export default function DynamicCoursePage() {
       <div className="w-full flex flex-col items-center mt-auto pt-8">
         <div className="w-full max-w-md mx-auto mb-4">
           <button
-            onClick={() => setShowGcashModal(true)}
+          onClick={() => setShowGcashModal(true)}
             className="bg-yellow-100 border border-yellow-300 rounded-xl shadow flex items-center justify-center px-4 py-3 mb-2 w-full"
-          >
+        >
             <span className="text-2xl mr-2 animate-bounce">☕</span>
             <span className="font-bold text-yellow-900">Buy Me a Coffee</span>
           </button>
@@ -597,7 +597,6 @@ export default function DynamicCoursePage() {
         <div className="min-h-[90vh] flex flex-col items-center justify-center px-2 py-6">
           <div className="w-full max-w-lg bg-white/60 rounded-xl shadow-lg p-8 flex flex-col items-center">
             <h2 className="text-3xl font-extrabold mb-6 text-blue-700 text-center drop-shadow-sm">
-              {getFullName() ? `${getFullName()}${title ? ", " + title : ''}` : 'Edit Profile'}
             </h2>
             <div className="text-lg text-center mb-6 text-blue-800">Sorry, quiz subjects and dashboards are only available for CPA/BSA at this time.</div>
             <Button onClick={() => setShowProfileModal(true)} className="mb-4">Edit Profile</Button>
@@ -972,12 +971,6 @@ export default function DynamicCoursePage() {
     }
   };
 
-  // Helper to get full name (trim and collapse spaces)
-  const getFullName = () => {
-    if (!profile.firstName && !profile.lastName) return '';
-    return formatFullName(profile.firstName, profile.middleName, profile.lastName);
-  };
-
   // For daily check-in modal: build claimed days array
   const claimedDays = Array(7).fill(false);
   for (let i = 0; i < Math.min(streak, 7); i++) {
@@ -1077,7 +1070,7 @@ export default function DynamicCoursePage() {
                         <text x="16" y="21" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#B8860B">₵</text>
                       </svg>
                     </span>
-                  </div>
+          </div>
                 );
               })()}
               {/* Day 6 */}
@@ -1114,7 +1107,7 @@ export default function DynamicCoursePage() {
                         <text x="16" y="21" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#B8860B">₵</text>
                       </svg>
                     </span>
-                  </div>
+        </div>
                 );
               })()}
               {/* Day 7 */}
@@ -1186,35 +1179,17 @@ export default function DynamicCoursePage() {
         </div>
       </Dialog>
       {showProfileModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
-          <div className="bg-white rounded-3xl shadow-2xl p-6 max-w-sm w-full flex flex-col items-center relative animate-fade-in border-2 border-blue-200">
-            <button onClick={() => { setShowProfileModal(false); }} className="absolute top-4 right-4 text-gray-400 hover:text-blue-500 text-3xl font-bold transition-all">&times;</button>
-            <h2 className="text-2xl font-bold mb-4 text-blue-700">Edit Profile</h2>
-            <form className="flex flex-col gap-2 w-full" onSubmit={e => {
-              e.preventDefault();
-              const form = e.target as HTMLFormElement;
-              const firstName = (form.elements[0] as HTMLInputElement).value.trim();
-              const middleName = (form.elements[1] as HTMLInputElement).value.trim();
-              const lastName = (form.elements[2] as HTMLInputElement).value.trim();
-              const age = (form.elements[3] as HTMLInputElement).value.trim();
-              const birthdate = (form.elements[4] as HTMLInputElement).value.trim();
-              const address = (form.elements[5] as HTMLInputElement).value.trim();
-              setProfile({ firstName, middleName, lastName, age, birthdate, address });
-              if (typeof window !== 'undefined') {
-                localStorage.setItem('userProfile', JSON.stringify({ firstName, middleName, lastName, age, birthdate, address }));
-              }
-              setShowProfileModal(false);
-            }}>
-              <input required placeholder="First Name" className="w-full px-4 py-2 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-400 transition-all text-blue-900 placeholder:text-blue-400 bg-white shadow-sm text-sm" defaultValue={profile.firstName} />
-              <input required placeholder="Middle Name" className="w-full px-4 py-2 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-400 transition-all text-blue-900 placeholder:text-blue-400 bg-white shadow-sm text-sm" defaultValue={profile.middleName} />
-              <input required placeholder="Last Name" className="w-full px-4 py-2 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-400 transition-all text-blue-900 placeholder:text-blue-400 bg-white shadow-sm text-sm" defaultValue={profile.lastName} />
-              <input type="number" min={0} placeholder="Age (optional)" className="w-full px-4 py-2 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-400 transition-all text-blue-900 placeholder:text-blue-400 bg-white shadow-sm text-sm" defaultValue={profile.age} />
-              <input type="date" placeholder="Birthdate (optional)" className="w-full px-4 py-2 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-400 transition-all text-blue-900 placeholder:text-blue-400 bg-white shadow-sm text-sm" defaultValue={profile.birthdate} />
-              <input placeholder="Address (optional)" className="w-full px-4 py-2 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-400 transition-all text-blue-900 placeholder:text-blue-400 bg-white shadow-sm text-sm" defaultValue={profile.address} />
-              <button type="submit" className="w-full mt-2 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-pink-400 text-white font-bold text-base shadow-lg hover:from-pink-500 hover:to-blue-400 transition-all">Save Profile</button>
-            </form>
-          </div>
-        </div>
+        <ProfileModal
+          isOpen={showProfileModal}
+          onClose={() => setShowProfileModal(false)}
+          courseType={courseType}
+          middleName={middleName}
+          setMiddleName={setMiddleName}
+          firstName={firstName}
+          setFirstName={setFirstName}
+          lastName={lastName}
+          setLastName={setLastName}
+        />
       )}
       {showGcashModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
