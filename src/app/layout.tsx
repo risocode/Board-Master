@@ -31,15 +31,16 @@ export const metadata: Metadata = {
     title: 'Board Exam Review Questions',
     description: 'Comprehensive board exam review questions for various courses',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
   robots: {
     index: true,
     follow: true,
   },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
