@@ -488,16 +488,16 @@ export default function DynamicCoursePage() {
         </Button>
       </div>
       {/* Menu Bar - Level, Points, Daily Check In */}
-      <div className="w-full max-w-xl mx-auto mb-8">
-        <div className="flex items-center justify-between bg-gradient-to-r from-blue-50 to-green-50 shadow-lg rounded-2xl px-6 py-4 gap-6 border border-blue-100">
+        <div className="w-full max-w-xl mx-auto mb-8">
+        <div className="flex flex-col sm:flex-row items-center justify-between bg-gradient-to-r from-blue-50 to-green-50 shadow-lg rounded-2xl px-3 py-2 sm:px-6 sm:py-4 gap-3 sm:gap-6 border border-blue-100">
           {/* Level and Progress */}
-          <div className="flex items-center gap-4 flex-1 min-w-0">
+          <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0 w-full">
             <div className="flex flex-col items-start">
               <span className="text-xs text-gray-500 font-medium">Lvl</span>
-              <span className="text-2xl font-bold text-blue-900 leading-none">{level}</span>
+              <span className="text-xl sm:text-2xl font-bold text-blue-900 leading-none">{level}</span>
             </div>
             <div className="flex-1 flex flex-col justify-center min-w-0">
-              <div className="relative w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+              <div className="relative w-full h-2 sm:h-3 bg-gray-200 rounded-full overflow-hidden">
                 <div
                   className="absolute left-0 top-0 h-full bg-gradient-to-r from-green-400 to-blue-400 rounded-full transition-all duration-500 shadow-inner"
                   style={{ width: `${progress * 100}%` }}
@@ -508,7 +508,7 @@ export default function DynamicCoursePage() {
           </div>
 
           {/* Points */}
-          <div className="flex items-center gap-1 mx-6">
+          <div className="flex items-center gap-1 mx-0 sm:mx-6 mt-2 sm:mt-0">
             <span className="text-yellow-500 text-xl animate-pulse">
               <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="gold" strokeWidth="2" fill="yellow" /></svg>
             </span>
@@ -518,7 +518,7 @@ export default function DynamicCoursePage() {
 
           {/* Daily Check-In Button */}
           <button
-            className="ml-2 px-5 py-2 rounded-xl border border-green-300 bg-white text-green-700 font-semibold shadow-sm hover:bg-green-50 hover:scale-105 transition-all duration-200 focus:ring-2 focus:ring-green-200 focus:outline-none"
+            className="w-full sm:w-auto mt-2 sm:mt-0 px-5 py-2 rounded-xl border border-green-300 bg-white text-green-700 font-semibold shadow-sm hover:bg-green-50 hover:scale-105 transition-all duration-200 focus:ring-2 focus:ring-green-200 focus:outline-none"
             onClick={() => {
               if (canCheckIn) {
                 handleDailyCheckIn();
