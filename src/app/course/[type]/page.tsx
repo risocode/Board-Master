@@ -537,26 +537,28 @@ export default function DynamicCoursePage() {
             </div>
           </div>
         );
-      case 'dashboard':
-        if (isLoading) {
-          return (
-            <div className="flex flex-col items-center space-y-4">
-              <Skeleton className="h-10 w-[300px] mb-6" />
-              <Skeleton className="h-24 w-full max-w-md mb-4" />
-              <Skeleton className="h-24 w-full max-w-md mb-4" />
-              <Skeleton className="h-10 w-48" />
-            </div>
-          );
-        }
-        if (!questions || questions.length === 0 || !selectedSubject) {
-          return (
-            <div className="text-center p-10 bg-card rounded-lg shadow-lg">
-              <h2 className="text-2xl font-semibold mb-2 text-card-foreground">Dashboard Not Available</h2>
-              <p className="text-muted-foreground mb-4">Please select a subject with questions to view its dashboard.</p>
-              <Button onClick={() => setCurrentView('mainDashboard')} className="mr-2">Back to Home</Button>
-            </div>
-          );
-        }
+        case 'dashboard':
+          if (isLoading || !selectedSubject || questions === null) {
+            // Show a loading spinner or skeleton while loading or waiting for data
+            return (
+              <div className="flex flex-col items-center space-y-4">
+                <Skeleton className="h-10 w-[300px] mb-6" />
+                <Skeleton className="h-24 w-full max-w-md mb-4" />
+                <Skeleton className="h-24 w-full max-w-md mb-4" />
+                <Skeleton className="h-10 w-48" />
+              </div>
+            );
+          }
+          if (questions.length === 0) {
+            // Only show this if we know there are no questions for the selected subject
+            return (
+              <div className="text-center p-10 bg-card rounded-lg shadow-lg">
+                <h2 className="text-2xl font-semibold mb-2 text-card-foreground">Dashboard Not Available</h2>
+                <p className="text-muted-foreground mb-4">Please select a subject with questions to view its dashboard.</p>
+                <Button onClick={() => setCurrentView('mainDashboard')} className="mr-2">Back to Home</Button>
+              </div>
+            );
+          }
         // In the dashboard case, filter userAnswers for the current subject
         return (
           <div className="flex flex-col items-center">
