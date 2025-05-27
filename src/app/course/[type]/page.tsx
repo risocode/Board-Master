@@ -54,6 +54,12 @@ const shuffleArray = <T,>(array: T[]): T[] => {
   return shuffled;
 };
 
+// Helper to format names: Capitalize first letter, lowercase the rest
+function formatFullName(first: string, middle: string, last: string) {
+  const cap = (s: string) => s ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : '';
+  return [cap(first), cap(middle), cap(last)].filter(Boolean).join(' ');
+}
+
 export default function DynamicCoursePage() {
   // All hooks at the top, before any early returns
   const params = useParams() || {};
@@ -111,6 +117,7 @@ export default function DynamicCoursePage() {
     return 1;
   });
   const [showCheckInReward, setShowCheckInReward] = useState(false);
+  const [currentQuizAnswers, setCurrentQuizAnswers] = useState<UserAnswer[]>([]);
 
   // Professional title and welcome message
   const { title } = getProfessionalTitleAndWelcome(courseType);
@@ -380,7 +387,7 @@ export default function DynamicCoursePage() {
       return updated;
     });
   
-    const [currentQuizAnswers, setCurrentQuizAnswers] = useState<UserAnswer[]>([]);// Update current quiz session answers
+    // Update current quiz session answers
     setCurrentQuizAnswers(prev => [...prev, newAnswer]);
   
     // --- Add this for points and level progress ---
@@ -557,10 +564,13 @@ export default function DynamicCoursePage() {
       {/* Footer container at the bottom */}
       <div className="w-full flex flex-col items-center mt-auto pt-8">
         <div className="w-full max-w-md mx-auto mb-4">
-          <div className="bg-yellow-100 border border-yellow-300 rounded-xl shadow flex items-center justify-center px-4 py-3 mb-2">
-            <span className="text-2xl mr-2">☕</span>
+          <button
+            onClick={() => setShowGcashModal(true)}
+            className="bg-yellow-100 border border-yellow-300 rounded-xl shadow flex items-center justify-center px-4 py-3 mb-2 w-full"
+          >
+            <span className="text-2xl mr-2 animate-bounce">☕</span>
             <span className="font-bold text-yellow-900">Buy Me a Coffee</span>
-          </div>
+          </button>
         </div>
         <div className="flex flex-row items-center justify-center gap-x-8 w-full max-w-md mb-2 whitespace-nowrap">
           <Link href="/privacy" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
@@ -965,7 +975,7 @@ export default function DynamicCoursePage() {
   // Helper to get full name (trim and collapse spaces)
   const getFullName = () => {
     if (!profile.firstName && !profile.lastName) return '';
-    return `${profile.firstName} ${profile.middleName} ${profile.lastName}`.replace(/  +/g, ' ').trim();
+    return formatFullName(profile.firstName, profile.middleName, profile.lastName);
   };
 
   // For daily check-in modal: build claimed days array

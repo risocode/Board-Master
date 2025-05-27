@@ -102,6 +102,7 @@ function HomePage() {
   const [selectedFieldIdx, setSelectedFieldIdx] = useState<number | null>(null);
   const [selectedCourseIdx, setSelectedCourseIdx] = useState<number | null>(null);
   const [showMaintenance, setShowMaintenance] = useState(false);
+  const [showGcashModal, setShowGcashModal] = useState(false);
 
   // Get the selected course name for the modal
   let selectedCourseName: string | undefined = undefined;
@@ -175,12 +176,33 @@ function HomePage() {
         onClick={handleProceed}
         disabled={selectedFieldIdx === null || selectedCourseIdx === null}
       />
-      {/* Footer container */}
-      <div className="w-full max-w-xs flex flex-col items-center mt-8 border-t border-gray-200 pt-4 gap-2">
-        <button className="text-yellow-800 font-bold bg-yellow-100 border border-yellow-300 rounded-lg px-4 py-2 shadow hover:bg-yellow-200 hover:scale-105 transition-all duration-150 flex items-center gap-2">
-          <span className="text-2xl">☕</span> Buy Me a Coffee
+      {showGcashModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+          <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-xs w-full flex flex-col items-center relative animate-fade-in border-2 border-yellow-200">
+            <button onClick={() => setShowGcashModal(false)} className="absolute top-3 right-4 text-gray-400 hover:text-gray-700 text-3xl font-bold">&times;</button>
+            <div className="flex flex-col items-center mb-2">
+              <span className="text-4xl mb-2 animate-bounce">☕❤️</span>
+              <h2 className="text-2xl font-extrabold text-yellow-800 mb-1 text-center">Support the App!</h2>
+              <p className="text-base text-gray-700 mb-2 text-center">If you find this app helpful, you can buy me a coffee and help keep it free for everyone. Your support means a lot! 🙏</p>
+            </div>
+            <div className="bg-yellow-50 border-4 border-yellow-300 rounded-2xl shadow-lg p-2 mb-4 flex flex-col items-center">
+              <Image src="/Gcash/gcash.jpg" alt="GCash QR Code" width={192} height={192} className="w-48 h-48 object-contain rounded-xl" />
+              <span className="text-xs text-gray-500 mt-2">Scan with your GCash app</span>
+            </div>
+            <p className="text-center text-yellow-900 text-sm font-semibold">Thank you for your generosity and for supporting Filipino board exam takers! 💙</p>
+          </div>
+        </div>
+      )}
+      <div className="flex flex-col items-center w-full mt-2">
+        <button
+          onClick={() => setShowGcashModal(true)}
+          className="bg-yellow-100 border border-yellow-300 rounded-xl shadow flex items-center justify-center px-4 py-3 my-3 transition hover:bg-yellow-200 cursor-pointer hover:scale-105 mx-auto"
+          style={{ maxWidth: 320 }}
+        >
+          <span className="text-2xl mr-2 animate-bounce">☕</span>
+          <span className="font-bold text-yellow-900 text-lg sm:text-xl">Buy Me a Coffee</span>
         </button>
-        <div className="flex flex-row items-center justify-center gap-x-8 w-full mt-2 whitespace-nowrap">
+        <div className="flex flex-row items-center justify-center gap-x-8 w-full whitespace-nowrap">
           <Link href="/privacy" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
             <span>🔒</span> Privacy Policy
           </Link>
@@ -191,9 +213,9 @@ function HomePage() {
             <span>✉️</span> Contact
           </Link>
         </div>
-        <div className="w-full text-center text-xs text-gray-500 mt-2">
-          All rights reserved Risoca © {new Date().getFullYear()}
-        </div>
+      </div>
+      <div className="w-full text-center text-xs text-gray-500 mt-2">
+        All rights reserved Risoca © {new Date().getFullYear()}
       </div>
     </div>
   );
