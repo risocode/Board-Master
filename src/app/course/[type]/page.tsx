@@ -368,10 +368,8 @@ export default function DynamicCoursePage() {
       timestamp: new Date().toISOString(),
       subjectAbbreviation: selectedSubject || ''
     };
-    // Immediately update state and persist to localStorage
     setUserAnswers(prev => {
       const updated = [...prev, newAnswer];
-      // Save to localStorage immediately
       try {
         localStorage.setItem(`${courseType}_userAnswers`, JSON.stringify(updated));
       } catch (error) {
@@ -379,6 +377,26 @@ export default function DynamicCoursePage() {
       }
       return updated;
     });
+  
+    // --- Add this for points and level progress ---
+    if (isCorrect) {
+      const transaction = PointCalculator.calculatePoints(
+        userPoints,
+        true,
+        true,
+        questionId,
+        selectedSubject || ''
+      );
+      if (transaction) {
+        setUserPoints(prev => {
+          const updated = PointCalculator.updateUserPoints(prev, transaction);
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('userPoints', JSON.stringify(updated));
+          }
+          return updated;
+        });
+      }
+    }
   };
 
   const handleNextQuestion = () => {
@@ -721,7 +739,11 @@ export default function DynamicCoursePage() {
                   const subjectQuestions = parseJsonQuestions(JSON.stringify(data));
                   if (subjectQuestions.length > 0) {
                     // Clear user answers for this subject before starting quiz
-                    // Shuffle questions before setting
+                    setUserAnswers(prev => {
+                      const filtered = prev.filter(ans => ans.subjectAbbreviation !== subjectAbbr);
+                      localStorage.setItem(`${courseType}_userAnswers`, JSON.stringify(filtered));
+                      return filtered;
+                    });
                     setQuestions(shuffleArray(subjectQuestions));
                     setCurrentQuestionIndex(0);
                     setQuizMode('quiz');
@@ -733,8 +755,6 @@ export default function DynamicCoursePage() {
                 } else {
                   toast({ title: "Error", description: `Failed to load questions for ${subjectAbbr}.`, variant: "destructive" });
                 }
-              } catch {
-                toast({ title: "Error", description: `Failed to load questions for ${subjectAbbr}.`, variant: "destructive" });
               } finally {
                 setIsLoading(false);
               }
