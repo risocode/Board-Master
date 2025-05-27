@@ -21,7 +21,7 @@ export default function Page() {
       <SignUp
         path={pathname}
         routing="path"
-        afterSignUpUrl={redirectUrl}
+        fallbackRedirectUrl={redirectUrl}
         appearance={{
           elements: {
             headerTitle: 'text-2xl font-bold text-blue-900',
