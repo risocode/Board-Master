@@ -16,9 +16,12 @@ import QuizDisplay from '@/components/quiz/QuizDisplay';
 import ReviewMode from '@/components/quiz/ReviewMode';
 import SubjectDashboard from '@/components/SubjectDashboard';
 import type { Question, UserAnswer } from '@/types/quiz';
+import type { UserPoints } from '@/types/points';
 import { parseJsonQuestions } from '@/lib/parser';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, LineChart, CartesianGrid, Line } from 'recharts';
 import { motion } from 'framer-motion';
+import { PointCalculator } from '@/lib/pointCalculator';
+import { Dialog } from '@headlessui/react';
 
 const subjects = [
   { abbreviation: 'FAR', fullName: 'Financial Accounting and Reporting' },
@@ -77,6 +80,37 @@ export default function DynamicCoursePage() {
     }
     return { firstName: '', middleName: '', lastName: '', age: '', birthdate: '', address: '' };
   });
+  const [userPoints, setUserPoints] = useState<UserPoints>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('userPoints');
+      if (saved) return JSON.parse(saved);
+    }
+    return {
+      userId: 'user-id', // Replace with actual user id
+      totalPoints: 0,
+      levelPoints: 0,
+      correctAnswers: 0,
+      perfectAnswers: 0,
+      transactions: [],
+    };
+  });
+  const [checkInModalOpen, setCheckInModalOpen] = useState(false);
+  const [checkInReward, setCheckInReward] = useState<number | null>(null);
+  const [checkInDay, setCheckInDay] = useState(1);
+  const [lastCheckInDate, setLastCheckInDate] = useState<string | null>(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('lastCheckInDate');
+    }
+    return null;
+  });
+  const [streak, setStreak] = useState<number>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('checkInStreak');
+      return saved ? parseInt(saved, 10) : 1;
+    }
+    return 1;
+  });
+  const [showCheckInReward, setShowCheckInReward] = useState(false);
 
   // Professional title and welcome message
   const { title } = getProfessionalTitleAndWelcome(courseType);
@@ -92,6 +126,63 @@ export default function DynamicCoursePage() {
 
   // Add a state to track the subject chart view
   const [subjectChartView, setSubjectChartView] = useState<'daily' | 'monthly'>('daily');
+
+  // Level/progress calculation
+  const level = PointCalculator.getLevelFromPoints(userPoints.levelPoints);
+  const pointsForNextLevel = PointCalculator.getPointsForNextLevel(level);
+  const pointsForCurrentLevel = PointCalculator.getPointsForNextLevel(level - 1) || 0;
+  const progress = Math.min(1, (userPoints.levelPoints - pointsForCurrentLevel) / (pointsForNextLevel - pointsForCurrentLevel));
+
+  // Daily check-in logic
+  const today = new Date().toDateString();
+  const canCheckIn = PointCalculator.isCheckInAvailable(lastCheckInDate);
+  const handleDailyCheckIn = () => {
+    let newStreak = streak;
+    let newDay = streak;
+    if (lastCheckInDate) {
+      const last = new Date(lastCheckInDate);
+      const now = new Date();
+      const diffDays = Math.floor((now.getTime() - last.getTime()) / (1000 * 60 * 60 * 24));
+      if (diffDays === 1) {
+        newStreak = streak + 1;
+        newDay = newStreak > 7 ? 7 : newStreak;
+      } else if (diffDays > 1) {
+        newDay = 1;
+        newStreak = streak;
+      }
+    }
+    const reward = PointCalculator.getCheckInReward(newDay);
+    setCheckInReward(reward);
+    setCheckInDay(newDay);
+    setShowCheckInReward(true);
+    setCheckInModalOpen(true);
+    setUserPoints(prev => {
+      const updated = {
+        ...prev,
+        totalPoints: prev.totalPoints + reward,
+        transactions: [
+          ...prev.transactions,
+          {
+            id: crypto.randomUUID(),
+            userId: prev.userId,
+            points: reward,
+            type: 'DAILY_CHECKIN' as const,
+            timestamp: new Date().toISOString(),
+          },
+        ],
+      };
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('userPoints', JSON.stringify(updated));
+      }
+      return updated;
+    });
+    setLastCheckInDate(today);
+    setStreak(newStreak);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('lastCheckInDate', today);
+      localStorage.setItem('checkInStreak', newStreak.toString());
+    }
+  };
 
   // Define handleSubjectSelected with useCallback at the top with other hooks
   const handleSubjectSelected = useCallback(async (subjectAbbreviation: string) => {
@@ -327,15 +418,15 @@ export default function DynamicCoursePage() {
   const renderDashboard = () => (
     <div className={`min-h-[90vh] flex flex-col items-center px-2 py-6 pt-6 relative ${theme}`}
          style={{ background: theme === 'dark' ? '#181c24' : '#eaf4fb', color: theme === 'dark' ? '#eaf4fb' : '#181c24', transition: 'background 0.3s, color 0.3s' }}>
-      {/* Theme Switch and Profile Icon */}
+      {/* Top right: Theme/Profile */}
       <div className="absolute top-4 right-4 z-10 flex items-center gap-2">
         <Switch checked={theme === 'dark'} onChange={toggleTheme} />
         <button onClick={() => setShowProfileModal(true)} className="rounded-full border-2 border-gray-300 w-10 h-10 flex items-center justify-center bg-white shadow hover:shadow-lg transition">
           <span className="text-2xl">👤</span>
         </button>
       </div>
-      {/* Logo */}
-      <div className="flex flex-col items-center mb-0 mt-0">
+      {/* Logo at the top, centered */}
+      <div className="flex flex-col items-center mt-2 mb-2">
         <Image
           src={theme === 'dark' ? '/logo/berq-g.png' : '/logo/berq-b.png'}
           alt="Board Exam Review Questions Logo"
@@ -345,12 +436,12 @@ export default function DynamicCoursePage() {
           className="mb-2"
         />
       </div>
-      {/* User Name and Professional Title */}
+      {/* Welcome and Edit Profile */}
       <div className="flex flex-col items-center mb-4 w-full">
-        <div className="text-center font-extrabold text-3xl md:text-4xl mb-4 bg-gradient-to-r from-yellow-400 via-pink-500 to-blue-500 text-transparent bg-clip-text drop-shadow-lg tracking-wide select-none transition-all duration-300 w-full">
+        <div className="text-center font-extrabold text-4xl md:text-5xl mb-4 bg-gradient-to-r from-yellow-400 via-pink-500 to-blue-500 text-transparent bg-clip-text drop-shadow-lg tracking-wide select-none transition-all duration-300 w-full">
           WELCOME
         </div>
-        <div className="flex justify-center w-full">
+        <div className="flex justify-center w-full mb-2">
           {getFullName() ? (
             <SpaceButton
               label={<span className="block w-full text-center whitespace-nowrap overflow-hidden text-ellipsis max-w-xs">{`${getFullName()}${title ? ", " + title : ''}`}</span>}
@@ -364,45 +455,91 @@ export default function DynamicCoursePage() {
           )}
         </div>
       </div>
-      {/* Main Buttons */}
-      <Button
-        onClick={() => {
-          setQuizSource('subjects');
-          setShowQuizSubjectModal(true);
-        }}
-        className="w-full max-w-md h-14 mb-4 rounded-xl bg-pink-200 text-pink-900 font-bold text-lg shadow-md hover:bg-pink-300 transition"
-      >
-        Take Quiz
-      </Button>
-      <Button
-        onClick={() => {
-          setQuizSource('dashboard');
-          if (!selectedSubject) {
-            setSelectedSubject(subjects[0].abbreviation);
-          }
-          setCurrentView('dashboard');
-        }}
-        className="w-full max-w-md h-14 mb-4 rounded-xl border-2 border-blue-400 text-blue-800 font-semibold text-lg bg-white shadow hover:bg-blue-50 hover:border-blue-600 transition"
-        variant="outline"
-      >
-        Subject Dashboard
-      </Button>
-      <Button
-        onClick={() => setCurrentView('overallDashboard')}
-        className="w-full max-w-md h-14 mb-4 rounded-xl border-2 border-blue-400 text-blue-800 font-semibold text-lg bg-white shadow hover:bg-blue-50 hover:border-blue-600 transition"
-        variant="outline"
-      >
-        Overall Dashboard
-      </Button>
-      {/* Footer container */}
-      <div className="w-full max-w-xs flex flex-col items-center mt-8 border-t border-gray-200 pt-4 gap-2">
+      {/* Main Action Buttons */}
+      <div className="flex flex-col items-center w-full max-w-md mx-auto gap-4 mb-6">
         <Button
-          onClick={() => setShowGcashModal(true)}
-          className="text-yellow-800 font-bold bg-yellow-100 border border-yellow-300 rounded-lg px-4 py-2 shadow hover:bg-yellow-200 hover:scale-105 transition-all duration-150 flex items-center gap-2 w-full max-w-xs justify-center mb-2"
+          onClick={() => {
+            setQuizSource('subjects');
+            setShowQuizSubjectModal(true);
+          }}
+          className="w-full h-14 rounded-xl bg-pink-200 text-pink-900 font-bold text-lg shadow-md hover:bg-pink-300 transition"
         >
-          <span className="text-2xl">☕</span> Buy Me a Coffee
+          Take Quiz
         </Button>
-        <div className="flex flex-row items-center justify-center gap-x-8 w-full mt-2 whitespace-nowrap">
+        <Button
+          onClick={() => {
+            setQuizSource('dashboard');
+            if (!selectedSubject) {
+              setSelectedSubject(subjects[0].abbreviation);
+            }
+            setCurrentView('dashboard');
+          }}
+          className="w-full h-14 rounded-xl border-2 border-blue-400 text-blue-800 font-semibold text-lg bg-white shadow hover:bg-blue-50 hover:border-blue-600 transition"
+          variant="outline"
+        >
+          Subject Dashboard
+        </Button>
+        <Button
+          onClick={() => setCurrentView('overallDashboard')}
+          className="w-full h-14 rounded-xl border-2 border-blue-400 text-blue-800 font-semibold text-lg bg-white shadow hover:bg-blue-50 hover:border-blue-600 transition"
+          variant="outline"
+        >
+          Overall Dashboard
+        </Button>
+      </div>
+      {/* Menu Bar - Level, Points, Daily Check In */}
+      <div className="w-full max-w-xl mx-auto mb-8">
+        <div className="flex items-center justify-between bg-gradient-to-r from-blue-50 to-green-50 shadow-lg rounded-2xl px-6 py-4 gap-6 border border-blue-100">
+          {/* Level and Progress */}
+          <div className="flex items-center gap-4 flex-1 min-w-0">
+            <div className="flex flex-col items-start">
+              <span className="text-xs text-gray-500 font-medium">Lvl</span>
+              <span className="text-2xl font-bold text-blue-900 leading-none">{level}</span>
+            </div>
+            <div className="flex-1 flex flex-col justify-center min-w-0">
+              <div className="relative w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                <div
+                  className="absolute left-0 top-0 h-full bg-gradient-to-r from-green-400 to-blue-400 rounded-full transition-all duration-500 shadow-inner"
+                  style={{ width: `${progress * 100}%` }}
+                />
+              </div>
+              <span className="text-xs text-gray-400 mt-1">Progress to next level</span>
+            </div>
+          </div>
+
+          {/* Points */}
+          <div className="flex items-center gap-1 mx-6">
+            <span className="text-yellow-500 text-xl animate-pulse">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="gold" strokeWidth="2" fill="yellow" /></svg>
+            </span>
+            <span className="font-bold text-gray-800 text-lg">{userPoints.totalPoints}</span>
+            <span className="text-xs text-gray-500 ml-1">points</span>
+          </div>
+
+          {/* Daily Check-In Button */}
+          <button
+            className="ml-2 px-5 py-2 rounded-xl border border-green-300 bg-white text-green-700 font-semibold shadow-sm hover:bg-green-50 hover:scale-105 transition-all duration-200 focus:ring-2 focus:ring-green-200 focus:outline-none"
+            onClick={() => {
+              if (canCheckIn) {
+                handleDailyCheckIn();
+              } else {
+                setCheckInModalOpen(true);
+              }
+            }}
+          >
+            Daily Check In
+          </button>
+        </div>
+      </div>
+      {/* Footer container at the bottom */}
+      <div className="w-full flex flex-col items-center mt-auto pt-8">
+        <div className="w-full max-w-md mx-auto mb-4">
+          <div className="bg-yellow-100 border border-yellow-300 rounded-xl shadow flex items-center justify-center px-4 py-3 mb-2">
+            <span className="text-2xl mr-2">☕</span>
+            <span className="font-bold text-yellow-900">Buy Me a Coffee</span>
+          </div>
+        </div>
+        <div className="flex flex-row items-center justify-center gap-x-8 w-full max-w-md mb-2 whitespace-nowrap">
           <Link href="/privacy" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
             <span>🔒</span> Privacy Policy
           </Link>
@@ -462,6 +599,8 @@ export default function DynamicCoursePage() {
               totalQuestions={questions.length}
               userAnswer={userAnswerForCurrentQuestion}
               quizSource={quizSource}
+              userPoints={userPoints}
+              onPointsUpdate={setUserPoints} 
             />
           );
         } else {
@@ -809,6 +948,12 @@ export default function DynamicCoursePage() {
     return `${profile.firstName} ${profile.middleName} ${profile.lastName}`.replace(/  +/g, ' ').trim();
   };
 
+  // For daily check-in modal: build claimed days array
+  const claimedDays = Array(7).fill(false);
+  for (let i = 0; i < Math.min(streak, 7); i++) {
+    claimedDays[i] = true;
+  }
+
   return (
     <ThemeProvider>
       <main className="w-full max-w-4xl mx-auto p-4 md:p-8 font-sans transition-all duration-500 ease-in-out">
@@ -821,41 +966,195 @@ export default function DynamicCoursePage() {
         {currentView !== 'mainDashboard' && renderContent()}
       </main>
       <Toaster />
-      {isLoading && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-50">
-          <svg xmlns="http://www.w3.org/2000/svg" height="200px" width="200px" viewBox="0 0 200 200" className="pencil">
-            <defs>
-              <clipPath id="pencil-eraser">
-                <rect height={30} width={30} ry={5} rx={5} />
-              </clipPath>
-            </defs>
-            <circle transform="rotate(-113,100,100)" strokeLinecap="round" strokeDashoffset="439.82" strokeDasharray="439.82 439.82" strokeWidth={2} stroke="currentColor" fill="none" r={70} className="pencil__stroke" />
-            <g transform="translate(100,100)" className="pencil__rotate">
-              <g fill="none">
-                <circle transform="rotate(-90)" strokeDashoffset={402} strokeDasharray="402.12 402.12" strokeWidth={30} stroke="hsl(223,90%,50%)" r={64} className="pencil__body1" />
-                <circle transform="rotate(-90)" strokeDashoffset={465} strokeDasharray="464.96 464.96" strokeWidth={10} stroke="hsl(223,90%,60%)" r={74} className="pencil__body2" />
-                <circle transform="rotate(-90)" strokeDashoffset={339} strokeDasharray="339.29 339.29" strokeWidth={10} stroke="hsl(223,90%,40%)" r={54} className="pencil__body3" />
-              </g>
-              <g transform="rotate(-90) translate(49,0)" className="pencil__eraser">
-                <g className="pencil__eraser-skew">
-                  <rect height={30} width={30} ry={5} rx={5} fill="hsl(223,90%,70%)" />
-                  <rect clipPath="url(#pencil-eraser)" height={30} width={5} fill="hsl(223,90%,60%)" />
-                  <rect height={20} width={30} fill="hsl(223,10%,90%)" />
-                  <rect height={20} width={15} fill="hsl(223,10%,70%)" />
-                  <rect height={20} width={5} fill="hsl(223,10%,80%)" />
-                  <rect height={2} width={30} y={6} fill="hsla(223,10%,10%,0.2)" />
-                  <rect height={2} width={30} y={13} fill="hsla(223,10%,10%,0.2)" />
-                </g>
-              </g>
-              <g transform="rotate(-90) translate(49,-30)" className="pencil__point">
-                <polygon points="15 0,30 30,0 30" fill="hsl(33,90%,70%)" />
-                <polygon points="15 0,6 30,0 30" fill="hsl(33,90%,50%)" />
-                <polygon points="15 0,20 10,10 10" fill="hsl(223,10%,10%)" />
-              </g>
-            </g>
-          </svg>
+      {/* Daily Check-In Modal */}
+      <Dialog open={checkInModalOpen} onClose={() => setCheckInModalOpen(false)} className="fixed z-50 inset-0 flex items-center justify-center">
+        {/* Overlay */}
+        <div className="fixed inset-0 bg-black/60" aria-hidden="true" />
+        {/* Modal Content */}
+        <div className="relative bg-[#181c24] rounded-2xl p-6 max-w-sm w-full flex flex-col items-center border-2 border-green-700 animate-fade-in shadow-xl">
+          <h2 className="text-2xl font-bold text-white mb-1 text-center">Daily Check In</h2>
+          <div className="text-gray-300 text-sm mb-6 text-center">You have consecutively checked in for <span className="font-bold text-green-400">{streak}</span> day(s).</div>
+          <div className="w-full flex flex-col items-center mb-8">
+            <div className="grid grid-cols-4 gap-3 mb-3 w-full justify-items-center">
+              {Array.from({ length: 4 }).map((_, i) => {
+                const isCurrent = i + 1 === checkInDay;
+                const isClaimed = claimedDays[i];
+                return (
+                  <div
+                    key={i}
+                    className={`relative flex flex-col items-center justify-center rounded-xl p-2 w-20 h-24 border border-gray-700 bg-[#23272f] transition-all duration-200 overflow-hidden`}
+                  >
+                    {/* Overlay for claimed days */}
+                    {isClaimed && (
+                      <>
+                        <span className="absolute inset-0 flex items-center justify-center z-20">
+                          <span className="bg-white rounded-full p-1 flex items-center justify-center shadow-lg">
+                            <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                        </span>
+                      </>
+                    )}
+                    {/* Day label and icon, faded if claimed */}
+                    <span className={`mt-1 ${isCurrent ? 'text-white font-extrabold text-lg md:text-2xl' : 'text-white text-base font-bold'} ${isClaimed ? 'opacity-40' : ''}`}>
+                      Day {i + 1}
+                    </span>
+                    <span className={`mt-2 ${isClaimed ? 'opacity-40' : ''}`}>
+                      {/* Coin SVG */}
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="16" fill="#FFD700" />
+                        <circle cx="16" cy="16" r="13" fill="#F6C700" />
+                        <text x="16" y="21" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#B8860B">₵</text>
+                      </svg>
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="grid grid-cols-4 gap-3 w-full justify-items-center">
+              {/* Day 5 */}
+              {(() => {
+                const i = 4;
+                const isCurrent = i + 1 === checkInDay;
+                const isClaimed = claimedDays[i];
+                return (
+                  <div
+                    key={i}
+                    className={`relative flex flex-col items-center justify-center rounded-xl p-2 w-20 h-24 border border-gray-700 bg-[#23272f] transition-all duration-200 overflow-hidden`}
+                  >
+                    {/* Overlay for claimed days */}
+                    {isClaimed && (
+                      <>
+                        <span className="absolute inset-0 flex items-center justify-center z-20">
+                          <span className="bg-white rounded-full p-1 flex items-center justify-center shadow-lg">
+                            <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                        </span>
+                      </>
+                    )}
+                    {/* Day label and icon, faded if claimed */}
+                    <span className={`mt-1 ${isCurrent ? 'text-white font-extrabold text-lg md:text-2xl' : 'text-white text-base font-bold'} ${isClaimed ? 'opacity-40' : ''}`}>
+                      Day {i + 1}
+                    </span>
+                    <span className={`mt-2 ${isClaimed ? 'opacity-40' : ''}`}>
+                      {/* Coin SVG */}
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="16" fill="#FFD700" />
+                        <circle cx="16" cy="16" r="13" fill="#F6C700" />
+                        <text x="16" y="21" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#B8860B">₵</text>
+                      </svg>
+                    </span>
+                  </div>
+                );
+              })()}
+              {/* Day 6 */}
+              {(() => {
+                const i = 5;
+                const isCurrent = i + 1 === checkInDay;
+                const isClaimed = claimedDays[i];
+                return (
+                  <div
+                    key={i}
+                    className={`relative flex flex-col items-center justify-center rounded-xl p-2 w-20 h-24 border border-gray-700 bg-[#23272f] transition-all duration-200 overflow-hidden`}
+                  >
+                    {/* Overlay for claimed days */}
+                    {isClaimed && (
+                      <>
+                        <span className="absolute inset-0 flex items-center justify-center z-20">
+                          <span className="bg-white rounded-full p-1 flex items-center justify-center shadow-lg">
+                            <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                        </span>
+                      </>
+                    )}
+                    {/* Day label and icon, faded if claimed */}
+                    <span className={`mt-1 ${isCurrent ? 'text-white font-extrabold text-lg md:text-2xl' : 'text-white text-base font-bold'} ${isClaimed ? 'opacity-40' : ''}`}>
+                      Day {i + 1}
+                    </span>
+                    <span className={`mt-2 ${isClaimed ? 'opacity-40' : ''}`}>
+                      {/* Coin SVG */}
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="16" fill="#FFD700" />
+                        <circle cx="16" cy="16" r="13" fill="#F6C700" />
+                        <text x="16" y="21" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#B8860B">₵</text>
+                      </svg>
+                    </span>
+                  </div>
+                );
+              })()}
+              {/* Day 7 */}
+              {(() => {
+                const i = 6;
+                const isCurrent = i + 1 === checkInDay;
+                const isClaimed = claimedDays[i];
+                return (
+                  <div
+                    key={i}
+                    className={`relative flex flex-col items-center justify-center rounded-xl p-2 h-24 col-span-2 w-full border border-gray-700 bg-[#23272f] transition-all duration-200 overflow-hidden`}
+                  >
+                    {/* Overlay for claimed days */}
+                    {isClaimed && (
+                      <>
+                        <span className="absolute inset-0 flex items-center justify-center z-20">
+                          <span className="bg-white rounded-full p-1 flex items-center justify-center shadow-lg">
+                            <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                        </span>
+                      </>
+                    )}
+                    {/* Day label and icon, faded if claimed */}
+                    <span className={`mt-1 ${isCurrent ? 'text-white font-extrabold text-lg md:text-2xl' : 'text-white text-base font-bold'} ${isClaimed ? 'opacity-40' : ''}`}>
+                      Day {i + 1}
+                    </span>
+                    <span className={`mt-2 flex justify-center items-center w-full ${isClaimed ? 'opacity-40' : ''}`}>
+                      {/* Gift SVG */}
+                      <svg width="70" height="70" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-auto">
+                        <rect x="6" y="14" width="24" height="16" rx="3" fill="#FFD700" />
+                        <rect x="10" y="18" width="16" height="8" rx="2" fill="#FFB300" />
+                        <rect x="16" y="14" width="4" height="16" fill="#FF5252" />
+                        <rect x="6" y="14" width="24" height="4" fill="#FF5252" />
+                        <rect x="12" y="6" width="12" height="8" rx="4" fill="#FFD700" />
+                        <rect x="16" y="6" width="4" height="8" fill="#FF5252" />
+                      </svg>
+                    </span>
+                  </div>
+                );
+              })()}
+            </div>
+          </div>
+          <div className="text-lg font-bold text-green-400 mb-1 text-center">Day {checkInDay}</div>
+          <div className="flex flex-col items-center justify-center mb-6 min-h-[48px]">
+            {showCheckInReward ? (
+              <div className="flex items-center gap-2 text-amber-400 text-2xl font-bold">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7 text-amber-400">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="#FFD700" />
+                </svg>
+                +{checkInReward} points
+              </div>
+            ) : (
+              <>
+                <p className="text-lg font-semibold text-green-400">Already claimed!</p>
+                <p className="text-base text-gray-200">Come back tomorrow.</p>
+              </>
+            )}
+          </div>
+          <div className="w-full flex justify-center mt-2">
+            <Button
+              className="w-full bg-green-500 text-white font-bold text-lg py-2 rounded-xl hover:bg-green-600 transition-all"
+              onClick={() => { setCheckInModalOpen(false); setShowCheckInReward(false); }}
+            >
+              Close
+            </Button>
+          </div>
         </div>
-      )}
+      </Dialog>
       {showProfileModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
           <div className="bg-white rounded-3xl shadow-2xl p-6 max-w-sm w-full flex flex-col items-center relative animate-fade-in border-2 border-blue-200">

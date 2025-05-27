@@ -110,7 +110,7 @@ export default function TermsPage() {
                 <span className="text-3xl">⚠️</span> 4. Disclaimer
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">The app is provided "as is" without warranties. Quiz content is for educational purposes only.</p>
+                <p className="text-lg leading-relaxed">The app is provided &quot;as is&quot; without warranties. Quiz content is for educational purposes only.</p>
               </div>
             </motion.section>
 

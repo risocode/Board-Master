@@ -100,7 +100,7 @@ export default function PrivacyPage() {
                 <span className="text-3xl">🔒</span> 3. Data Storage and Security
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">All data is stored in your browser's localStorage. No data is transmitted to any server. If you clear your browser data, your profile and progress will be lost.</p>
+                <p className="text-lg leading-relaxed">All data is stored in your browser&apos;s localStorage. No data is transmitted to any server. If you clear your browser data, your profile and progress will be lost.</p>
               </div>
             </motion.section>
 
