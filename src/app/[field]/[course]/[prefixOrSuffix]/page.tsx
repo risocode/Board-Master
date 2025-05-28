@@ -4,6 +4,8 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { ThemeProvider, useTheme } from '@/components/common/ThemeContext';
+import { useLoadingState } from '@/components/common/LoadingContext';
+import { useNavigationLoading } from '@/hooks/useNavigationLoading';
 import Switch from '@/components/Switch';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -63,6 +65,7 @@ export default function DynamicCoursePage() {
   const { isLoading, setIsLoading } = useLoadingState();
   const params = useParams() || {};
   const course = typeof params.course === 'string' ? params.course : Array.isArray(params.course) ? params.course[0] : '';
+  const courseType = course;
   const { theme, toggleTheme } = useTheme();
   const { toast } = useToast();
   const [mounted, setMounted] = useState(false);
@@ -70,7 +73,7 @@ export default function DynamicCoursePage() {
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [quizMode, setQuizMode] = useState<'quiz' | 'review'>('quiz');
-  const [isLoading, setIsLoading] = useState(false);
+  const [isQuizLoading, setIsQuizLoading] = useState(false);
   const [currentView, setCurrentView] = useState<'mainDashboard' | 'subjects' | 'quiz' | 'dashboard' | 'review' | 'overallDashboard'>('mainDashboard');
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
   const [showQuizSubjectModal, setShowQuizSubjectModal] = useState(false);
@@ -211,7 +214,7 @@ export default function DynamicCoursePage() {
       toast({ title: "Not Available", description: "Quiz subjects are only available for CPA/BSA.", variant: "destructive" });
       return;
     }
-    setIsLoading(true);
+    setIsQuizLoading(true);
     setSelectedSubject(subjectAbbreviation);
     setShowQuizSubjectModal(false);
     try {
@@ -239,9 +242,9 @@ export default function DynamicCoursePage() {
     } catch {
       toast({ title: "Error", description: "Failed to load questions.", variant: "destructive" });
     } finally {
-      setIsLoading(false);
+      setIsQuizLoading(false);
     }
-  }, [course, isCPAorBSA, toast, nextViewAfterSubjectSelection, setIsLoading]);
+  }, [course, isCPAorBSA, toast, nextViewAfterSubjectSelection, setIsQuizLoading]);
 
   // Restore state from localStorage
   useEffect(() => {
@@ -393,7 +396,7 @@ export default function DynamicCoursePage() {
   }, []);
 
   if (!mounted) {
-    return <Loader />;
+    return <Loader loading={true} />;
   }
 
   const currentQuestionForQuiz = questions ? questions[currentQuestionIndex] : null;
@@ -732,10 +735,10 @@ export default function DynamicCoursePage() {
     // Always render the dashboard UI
     switch (currentView) {
       case 'quiz':
-        if (isLoading) {
+        if (isQuizLoading) {
           return (
             <div className="flex flex-col items-center justify-center min-h-[60vh]">
-              <Loader />
+              <Loader loading={true} />
             </div>
           );
         }
@@ -828,10 +831,10 @@ export default function DynamicCoursePage() {
           </div>
         );
         case 'dashboard':
-          if (isLoading || !selectedSubject || questions === null) {
+          if (isQuizLoading || !selectedSubject || questions === null) {
             return (
               <div className="flex flex-col items-center justify-center min-h-[60vh]">
-                <Loader />
+                <Loader loading={true} />
               </div>
             );
           }
@@ -860,7 +863,7 @@ export default function DynamicCoursePage() {
                 toast({ title: "Invalid Subject", description: `Cannot start quiz for ${subjectAbbr}.`, variant: "destructive" });
                 return;
               }
-              setIsLoading(true);
+              setIsQuizLoading(true);
               try {
                 const res = await fetch(`/CPA/${subjectAbbr}.json`);
                 if (res.ok) {
@@ -880,7 +883,7 @@ export default function DynamicCoursePage() {
                   toast({ title: "Error", description: `Failed to load questions for ${subjectAbbr}.`, variant: "destructive" });
                 }
               } finally {
-                setIsLoading(false);
+                setIsQuizLoading(false);
               }
             }}
             onBackToHome={() => setCurrentView('mainDashboard')}
