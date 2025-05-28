@@ -2,6 +2,7 @@
 
 import { SignIn } from "@clerk/nextjs";
 import { useSearchParams, usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -16,12 +17,21 @@ export default function Page() {
   console.log("[SignIn] Course param:", course);
   console.log("[SignIn] Redirect URL:", redirectUrl);
 
+  // Handle SSO callback redirect
+  useEffect(() => {
+    if (pathname.includes('sso-callback')) {
+      const redirectTo = searchParams.get('redirect_url') || `/course/${course}`;
+      window.location.href = redirectTo;
+    }
+  }, [pathname, searchParams, course]);
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#eaf4fb]">
       <SignIn
         path={pathname}
         routing="path"
-        fallbackRedirectUrl={redirectUrl}
+        redirectUrl={redirectUrl}
+        afterSignInUrl={redirectUrl}
         appearance={{
           elements: {
             headerTitle: 'text-2xl font-bold text-blue-900',
