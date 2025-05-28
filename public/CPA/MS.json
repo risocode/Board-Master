@@ -1,0 +1,4274 @@
+[
+  {
+    "id": "MS-0001",
+    "text": "Which of the following is not a characteristic of Management Services?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "MS is broad in scope"
+      },
+      {
+        "id": "c2",
+        "text": "MS involves problem-solving affecting the future operations of the client"
+      },
+      {
+        "id": "c3",
+        "text": "Beneficiary of service is management"
+      },
+      {
+        "id": "c4",
+        "text": "MS is repetitive as far as the same client is concerned"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Management Services are typically non-repetitive in nature for the same client, as they involve unique problem-solving approaches for each situation."
+  },
+  {
+    "id": "MS-0002",
+    "text": "The major difference(s) between financial and management accounting is that",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Financial accounting reports are prepared primarily for users external to the company"
+      },
+      {
+        "id": "c2",
+        "text": "Management accounting is not under the jurisdiction of the Securities and Exchange Commission"
+      },
+      {
+        "id": "c3",
+        "text": "Government regulations do not apply to management accounting"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above are differences between financial and management accounting"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "All statements correctly identify key differences between financial and management accounting."
+  },
+  {
+    "id": "MS-0003",
+    "text": "The following characteristics refer to Financial Accounting except",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Provides information to external users"
+      },
+      {
+        "id": "c2",
+        "text": "Emphasizes on objective data"
+      },
+      {
+        "id": "c3",
+        "text": "Has no externally imposed standards"
+      },
+      {
+        "id": "c4",
+        "text": "Generates general purpose financial statements"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Financial accounting must follow externally imposed standards such as GAAP or IFRS."
+  },
+  {
+    "id": "MS-0004",
+    "text": "The term \"prime costs\" refers to",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The sum of direct labor costs and all factory overhead costs"
+      },
+      {
+        "id": "c2",
+        "text": "The sum of direct materials costs and direct labor costs"
+      },
+      {
+        "id": "c3",
+        "text": "Manufacturing costs incurred to produce units of output"
+      },
+      {
+        "id": "c4",
+        "text": "All costs associated with manufacturing other than direct labor and direct materials costs"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Prime costs consist of direct materials and direct labor costs only."
+  },
+  {
+    "id": "MS-0005",
+    "text": "The term \"conversion costs\" refers to",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Costs that are associated with marketing, shipping, warehousing, and billing activities"
+      },
+      {
+        "id": "c2",
+        "text": "The sum of direct labor costs and all factory overhead costs"
+      },
+      {
+        "id": "c3",
+        "text": "The sum of direct materials costs and direct labor costs"
+      },
+      {
+        "id": "c4",
+        "text": "Manufacturing costs incurred to produce units of output"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Conversion costs include direct labor and manufacturing overhead, representing the costs to convert raw materials into finished goods."
+  },
+  {
+    "id": "MS-0006",
+    "text": "Cost of goods manufactured is calculated as follows",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Beginning WIP + direct materials used + direct labor + manufacturing overhead + ending WIP"
+      },
+      {
+        "id": "c2",
+        "text": "Direct materials used + direct labor + manufacturing overhead – beginning WIP + ending WIP"
+      },
+      {
+        "id": "c3",
+        "text": "Beginning WIP + direct materials used + direct labor + manufacturing overhead – ending WIP"
+      },
+      {
+        "id": "c4",
+        "text": "Direct materials used + direct labor + manufacturing overhead – ending WIP – beginning WIP"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "This is the correct formula for calculating cost of goods manufactured."
+  },
+  {
+    "id": "MS-0007",
+    "text": "Which of the following statements is false?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "At zero production level, fixed costs are also zero"
+      },
+      {
+        "id": "c2",
+        "text": "At zero production level, fixed costs are usually positive"
+      },
+      {
+        "id": "c3",
+        "text": "At zero production level, variable costs are usually zero"
+      },
+      {
+        "id": "c4",
+        "text": "At zero production level, total costs equal total fixed costs"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Fixed costs remain positive even at zero production level."
+  },
+  {
+    "id": "MS-0008",
+    "text": "Sunk costs",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Are relevant to long-term decisions but not to short-term decisions"
+      },
+      {
+        "id": "c2",
+        "text": "Are relevant to decision making"
+      },
+      {
+        "id": "c3",
+        "text": "Are subtitles for opportunity costs"
+      },
+      {
+        "id": "c4",
+        "text": "In themselves are not relevant to decision making"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Sunk costs are past costs that cannot be changed and are therefore not relevant to future decisions."
+  },
+  {
+    "id": "MS-0009",
+    "text": "The term incremental cost refers to",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The profit foregone by selecting one choice instead of another"
+      },
+      {
+        "id": "c2",
+        "text": "The additional cost of producing or selling another product or service"
+      },
+      {
+        "id": "c3",
+        "text": "A cost that continues to be incurred in the absence of activity"
+      },
+      {
+        "id": "c4",
+        "text": "A cost common to all choices in question and not clearly or feasibly allocable to any of them"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Incremental cost is the additional cost incurred for producing or selling one more unit."
+  },
+  {
+    "id": "MS-0010",
+    "text": "The principal advantage of the scatter-diagram method over the high-low method of cost estimation is that the scatter-diagram method",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Includes costs outside the relevant range."
+      },
+      {
+        "id": "c2",
+        "text": "Considers more than two points."
+      },
+      {
+        "id": "c3",
+        "text": "Can be used with more types of costs than the high-low method."
+      },
+      {
+        "id": "c4",
+        "text": "Gives a precise mathematical fit of the points to the line."
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The scatter-diagram method uses all available data points, not just the highest and lowest points."
+  },
+  {
+    "id": "MS-0011",
+    "text": "Which of the following statements is true when referring to the high-low method of cost analysis?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The high-low method has no major weaknesses"
+      },
+      {
+        "id": "c2",
+        "text": "The high-low method is very hard to apply"
+      },
+      {
+        "id": "c3",
+        "text": "In essence, the high-low method draws a straight line through two data points"
+      },
+      {
+        "id": "c4",
+        "text": "None of the above is true"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "The high-low method uses only the highest and lowest points to estimate the cost line."
+  },
+  {
+    "id": "MS-0012",
+    "text": "Simple regression analysis involves the use of Dependent variables Independent variables",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "One None"
+      },
+      {
+        "id": "c2",
+        "text": "One One"
+      },
+      {
+        "id": "c3",
+        "text": "One Two"
+      },
+      {
+        "id": "c4",
+        "text": "None Two"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Simple regression analysis uses one dependent variable and one independent variable."
+  },
+  {
+    "id": "MS-0013",
+    "text": "In regression analysis, coefficient of determination is a measure of",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The amount of variation in the dependent variable explained by the independent variables"
+      },
+      {
+        "id": "c2",
+        "text": "The amount of variation in the dependent variable unexplained by the independent variables"
+      },
+      {
+        "id": "c3",
+        "text": "The slope of the regression line"
+      },
+      {
+        "id": "c4",
+        "text": "The predicted value of the independent variable"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The coefficient of determination (R²) measures the proportion of variance in the dependent variable that is predictable from the independent variable."
+  },
+  {
+    "id": "MS-0014",
+    "text": "Cost-volume-profit analysis can be used to study the effect of",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Changes in selling prices on a company's profitability"
+      },
+      {
+        "id": "c2",
+        "text": "Changes in fixed and variable costs on a company's profitability"
+      },
+      {
+        "id": "c3",
+        "text": "Changes in product sales mix on a company's profitability"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "CVP analysis can be used to study the effects of changes in selling prices, costs (both fixed and variable), and sales mix on a company's profitability."
+  },
+  {
+    "id": "MS-0015",
+    "text": "Which of the following is not a major assumption underlying CVP analysis?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "All costs incurred by a firm can be separated into their fixed and variable components"
+      },
+      {
+        "id": "c2",
+        "text": "The product selling price per unit is constant at all volume levels"
+      },
+      {
+        "id": "c3",
+        "text": "Operating efficiency and employee productivity are constant at all volume levels"
+      },
+      {
+        "id": "c4",
+        "text": "For multi-product situations, the sales mix can vary at all volume levels"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "CVP analysis assumes a constant sales mix in multi-product situations, not a variable one."
+  },
+  {
+    "id": "MS-0016",
+    "text": "Contribution margin can be defined as",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The amount of sales revenue necessary to cover variable expenses"
+      },
+      {
+        "id": "c2",
+        "text": "Sales revenue minus fixed expenses"
+      },
+      {
+        "id": "c3",
+        "text": "The amount of sales revenue necessary to cover fixed and variable expenses"
+      },
+      {
+        "id": "c4",
+        "text": "Sales revenue minus variable expenses"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Contribution margin is the amount remaining from sales revenue after variable expenses have been deducted."
+  },
+  {
+    "id": "MS-0017",
+    "text": "After the level of volume exceeds the break-even point",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The contribution margin ratio increases"
+      },
+      {
+        "id": "c2",
+        "text": "The total contribution margin exceeds the total fixed costs"
+      },
+      {
+        "id": "c3",
+        "text": "Total fixed costs per unit will remain constant"
+      },
+      {
+        "id": "c4",
+        "text": "The total contribution margin will turn from negative to positive"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "After break-even, the total contribution margin exceeds fixed costs, resulting in profit."
+  },
+  {
+    "id": "MS-0018",
+    "text": "At the break-even point",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Sales would be equal to contribution margin"
+      },
+      {
+        "id": "c2",
+        "text": "Contribution margin would be equal to fixed expenses"
+      },
+      {
+        "id": "c3",
+        "text": "Contribution margin would be equal to net operating income"
+      },
+      {
+        "id": "c4",
+        "text": "Sales would be equal to fixed expenses"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "At break-even point, contribution margin equals fixed expenses, resulting in zero profit."
+  },
+  {
+    "id": "MS-0019",
+    "text": "The break-even point would be increased by",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "A decrease in total fixed expenses"
+      },
+      {
+        "id": "c2",
+        "text": "A decrease in the ratio of variable expenses to sales"
+      },
+      {
+        "id": "c3",
+        "text": "An increase in the contribution margin ratio"
+      },
+      {
+        "id": "c4",
+        "text": "None of these"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "None of the given options would increase the break-even point. In fact, they would all decrease it."
+  },
+  {
+    "id": "MS-0020",
+    "text": "Which of the following strategies could be used to reduce the break-even point? Fixed expenses Contribution margin",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Increase Increase"
+      },
+      {
+        "id": "c2",
+        "text": "Decrease Decrease"
+      },
+      {
+        "id": "c3",
+        "text": "Decrease Increase"
+      },
+      {
+        "id": "c4",
+        "text": "Increase Decrease"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Reducing fixed expenses and increasing contribution margin will lower the break-even point."
+  },
+  {
+    "id": "MS-0021",
+    "text": "Introducing income taxes into cost-volume-profit analysis",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Raises the break-even point"
+      },
+      {
+        "id": "c2",
+        "text": "Lowers the break-even point"
+      },
+      {
+        "id": "c3",
+        "text": "Increases unit sales needed to earn a particular target profit"
+      },
+      {
+        "id": "c4",
+        "text": "Decreases the contribution margin percentage"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Income taxes increase the number of units needed to be sold to achieve a target profit."
+  },
+  {
+    "id": "MS-0022",
+    "text": "The break-even point is that level of activity where:",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Total revenue equals total cost"
+      },
+      {
+        "id": "c2",
+        "text": "Total contribution margin equals the sum of variable cost-plus fixed cost"
+      },
+      {
+        "id": "c3",
+        "text": "Sales revenue equals total variable cost"
+      },
+      {
+        "id": "c4",
+        "text": "Profit is greater than zero"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Break-even point occurs where total revenue equals total cost (both fixed and variable)."
+  },
+  {
+    "id": "MS-0023",
+    "text": "The contribution margin ratio always increases when the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Variable costs as a percentage of net sales increase"
+      },
+      {
+        "id": "c2",
+        "text": "Variable costs as a percentage of net sales decrease"
+      },
+      {
+        "id": "c3",
+        "text": "Break-even point increases"
+      },
+      {
+        "id": "c4",
+        "text": "Break-even point decreases"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "When variable costs decrease as a percentage of sales, the contribution margin ratio increases."
+  },
+  {
+    "id": "MS-0024",
+    "text": "A company's break-even point in pesos of revenue may be affected by equal percentage increase in both selling price and variable cost per unit. The equal percentage changes in selling price and variable cost per unit will cause the break-even point in pesos to",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Decrease by less than the percentage increase in selling price"
+      },
+      {
+        "id": "c2",
+        "text": "Decrease by more than the percentage increase in the selling price"
+      },
+      {
+        "id": "c3",
+        "text": "Increase by the percentage change in variable cost per unit"
+      },
+      {
+        "id": "c4",
+        "text": "Remain unchanged"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Equal percentage changes in selling price and variable cost per unit will not affect the break-even point in pesos."
+  },
+  {
+    "id": "MS-0025",
+    "text": "In a multiple-product firm, the product that has the highest contribution margin per unit will",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Generate more profit for each P1 of sales than the other products"
+      },
+      {
+        "id": "c2",
+        "text": "Have the highest contribution margin ratio"
+      },
+      {
+        "id": "c3",
+        "text": "Generate the most profit for each unit sold"
+      },
+      {
+        "id": "c4",
+        "text": "Have the lowest variable costs per unit"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "The product with the highest contribution margin per unit generates the most profit per unit sold."
+  },
+  {
+    "id": "MS-0026",
+    "text": "The margin of safety would be negative if a company('s)",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Was presently operating at a volume that is below the break-even point"
+      },
+      {
+        "id": "c2",
+        "text": "Present fixed costs were less than its contribution margin"
+      },
+      {
+        "id": "c3",
+        "text": "Variable costs exceeded its fixed costs"
+      },
+      {
+        "id": "c4",
+        "text": "Degree of operating leverage is greater than 100"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "A negative margin of safety occurs when current sales are below the break-even point."
+  },
+  {
+    "id": "MS-0027",
+    "text": "The margin of safety is a key concept of CVP analysis. The margin of safety is the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Contribution margin rate"
+      },
+      {
+        "id": "c2",
+        "text": "Difference between budgeted contribution margin and actual contribution margin"
+      },
+      {
+        "id": "c3",
+        "text": "Difference between budgeted contribution margin and break-even contribution margin"
+      },
+      {
+        "id": "c4",
+        "text": "Difference between budgeted sales and break-even sales"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Margin of safety is the excess of budgeted sales over break-even sales."
+  },
+  {
+    "id": "MS-0028",
+    "text": "If a company is operating at the break-even point",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Its contribution margin will be equal to its variable expenses"
+      },
+      {
+        "id": "c2",
+        "text": "Its margin of safety will be equal to zero"
+      },
+      {
+        "id": "c3",
+        "text": "Its fixed expenses will be equal to its variable expenses"
+      },
+      {
+        "id": "c4",
+        "text": "Its selling price will be equal to its variable expense per unit"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "At break-even point, there is no margin of safety as sales equal break-even sales."
+  },
+  {
+    "id": "MS-0029",
+    "text": "Which of the following is the correct calculation for the degree of operating leverage?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Net operating income divided by total expenses"
+      },
+      {
+        "id": "c2",
+        "text": "Net operating income divided by total contribution margin"
+      },
+      {
+        "id": "c3",
+        "text": "Total contribution margin divided by net operating income"
+      },
+      {
+        "id": "c4",
+        "text": "Variable expense divided by total contribution margin"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Degree of operating leverage is calculated as total contribution margin divided by net operating income."
+  },
+  {
+    "id": "MS-0030",
+    "text": "The costing procedure that treats fixed manufacturing costs as period costs is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Full costing"
+      },
+      {
+        "id": "c2",
+        "text": "Absorption costing"
+      },
+      {
+        "id": "c3",
+        "text": "Variable costing"
+      },
+      {
+        "id": "c4",
+        "text": "Conventional costing"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Variable costing treats fixed manufacturing costs as period costs, expensing them in the period incurred rather than including them in product costs."
+  },
+  {
+    "id": "MS-0031",
+    "text": "Another name for variable costing is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Full costing"
+      },
+      {
+        "id": "c2",
+        "text": "Direct costing"
+      },
+      {
+        "id": "c3",
+        "text": "Job order costing"
+      },
+      {
+        "id": "c4",
+        "text": "Fixed costing"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Direct costing is another term for variable costing, as it only includes direct costs in product costs."
+  },
+  {
+    "id": "MS-0032",
+    "text": "Under variable costing, which of the following are costs that can be inventoried?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Variable selling and administrative expense"
+      },
+      {
+        "id": "c2",
+        "text": "Variable manufacturing overhead"
+      },
+      {
+        "id": "c3",
+        "text": "Fixed manufacturing overhead"
+      },
+      {
+        "id": "c4",
+        "text": "Fixed selling and administrative expense"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Under variable costing, only variable manufacturing costs (including variable manufacturing overhead) are inventoried."
+  },
+  {
+    "id": "MS-0033",
+    "text": "If a firm uses variable costing, fixed manufacturing overhead will be included",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Only on the balance sheet"
+      },
+      {
+        "id": "c2",
+        "text": "Only on the income statement"
+      },
+      {
+        "id": "c3",
+        "text": "On both the balance sheet and income statement"
+      },
+      {
+        "id": "c4",
+        "text": "On neither the balance sheet nor income statement"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Under variable costing, fixed manufacturing overhead is treated as a period cost and is expensed on the income statement."
+  },
+  {
+    "id": "MS-0034",
+    "text": "Under variable costing",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "All product costs are variable"
+      },
+      {
+        "id": "c2",
+        "text": "All period costs are variable"
+      },
+      {
+        "id": "c3",
+        "text": "All product costs are fixed"
+      },
+      {
+        "id": "c4",
+        "text": "Product costs are both fixed and variable"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Under variable costing, only variable costs are considered product costs."
+  },
+  {
+    "id": "MS-0035",
+    "text": "A basic tenet of variable costing is that period costs should be currently expensed. What is the rationale behind this procedure?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "What is the rationale behind this procedure?"
+      },
+      {
+        "id": "c2",
+        "text": "Period costs are uncontrollable and should not be charged to a specific product"
+      },
+      {
+        "id": "c3",
+        "text": "Period costs are generally immaterial in amount and the cost of assigning the amounts to specific products would outweigh the benefits"
+      },
+      {
+        "id": "c4",
+        "text": "Allocation of period costs is arbitrary at best and could lead to erroneous decision by management"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Period costs are expensed immediately because they are incurred regardless of production levels and should not be deferred to future periods."
+  },
+  {
+    "id": "MS-0036",
+    "text": "In an income statement prepared as an internal report using the variable costing method, fixed manufacturing overhead would",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Not be used"
+      },
+      {
+        "id": "c2",
+        "text": "Be used in the computation of operating income but not in the computation of the contribution margin"
+      },
+      {
+        "id": "c3",
+        "text": "Be used in the computation of the contribution margin"
+      },
+      {
+        "id": "c4",
+        "text": "Be treated the same as variable manufacturing overhead"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Fixed manufacturing overhead is deducted after contribution margin in computing operating income."
+  },
+  {
+    "id": "MS-0037",
+    "text": "The FASB requires which of the following to be used in preparation of external financial statements?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Variable costing"
+      },
+      {
+        "id": "c2",
+        "text": "Standard costing"
+      },
+      {
+        "id": "c3",
+        "text": "Activity-based costing"
+      },
+      {
+        "id": "c4",
+        "text": "Absorption costing"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Generally accepted accounting principles (GAAP) require absorption costing for external financial reporting."
+  },
+  {
+    "id": "MS-0038",
+    "text": "Another name for absorption costing is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Full or conventional costing"
+      },
+      {
+        "id": "c2",
+        "text": "Direct costing"
+      },
+      {
+        "id": "c3",
+        "text": "Job order costing"
+      },
+      {
+        "id": "c4",
+        "text": "Fixed costing"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Absorption costing is also known as full costing or conventional costing because it includes all manufacturing costs in product costs."
+  },
+  {
+    "id": "MS-0039",
+    "text": "If a firm uses absorption costing, fixed manufacturing overhead will be included",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Only on the balance sheet"
+      },
+      {
+        "id": "c2",
+        "text": "Only on the income statement"
+      },
+      {
+        "id": "c3",
+        "text": "On both the balance sheet and income statement"
+      },
+      {
+        "id": "c4",
+        "text": "On neither the balance sheet nor income statement"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Under absorption costing, fixed manufacturing overhead is included in inventory (balance sheet) and cost of goods sold (income statement)."
+  },
+  {
+    "id": "MS-0040",
+    "text": "If a firm produces more units than it sells, absorption costing, relative to variable costing, will result in",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Higher income and assets"
+      },
+      {
+        "id": "c2",
+        "text": "Higher income but lower assets"
+      },
+      {
+        "id": "c3",
+        "text": "Lower income but higher assets"
+      },
+      {
+        "id": "c4",
+        "text": "Lower income and assets"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "When production exceeds sales, absorption costing results in higher income (due to fixed overhead being deferred in inventory) and higher assets (due to higher inventory values)."
+  },
+  {
+    "id": "MS-0041",
+    "text": "An ending inventory valuation on an absorption costing balance sheet would",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Sometimes be less than the ending inventory valuation under variable costing"
+      },
+      {
+        "id": "c2",
+        "text": "Always be less than the ending inventory valuation under variable costing"
+      },
+      {
+        "id": "c3",
+        "text": "Always be the same as the ending inventory valuation under variable costing"
+      },
+      {
+        "id": "c4",
+        "text": "Always be greater than or equal to the ending inventory valuation under variable costing"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Absorption costing includes fixed manufacturing overhead in inventory, making it always greater than or equal to variable costing inventory values."
+  },
+  {
+    "id": "MS-0042",
+    "text": "Profit under absorption costing may differ from profit determined under variable costing. How is this difference calculated?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Change in the quantity of all units in inventory times the relevant fixed costs per unit"
+      },
+      {
+        "id": "c2",
+        "text": "Change in the quantity of all units produced times the relevant fixed costs per unit"
+      },
+      {
+        "id": "c3",
+        "text": "Change in the quantity of all units in inventory times the relevant variable cost per unit"
+      },
+      {
+        "id": "c4",
+        "text": "Change in the quantity of all units produced times the relevant variable cost per unit"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The difference in profit is due to the change in inventory levels multiplied by the fixed manufacturing overhead per unit."
+  },
+  {
+    "id": "MS-0043",
+    "text": "What factor, related to manufacturing costs, causes the difference in net earnings computed using absorption costing and net earnings computed using variable costing?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Absorption costing considers all costs in the determination of net earnings, whereas variable costing considers fixed costs to be period costs"
+      },
+      {
+        "id": "c2",
+        "text": "Absorption costing allocates fixed overhead costs between cost of goods sold and inventories, and variable costing considers all fixed costs to be period costs"
+      },
+      {
+        "id": "c3",
+        "text": "Absorption costing inventories all direct costs, but variable costing considers direct costs to be period costs"
+      },
+      {
+        "id": "c4",
+        "text": "Absorption costing inventories all fixed costs for the period in ending finished goods inventory, but variable costing expenses all fixed costs"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The key difference is in how fixed manufacturing overhead is treated - allocated to inventory under absorption costing and expensed immediately under variable costing."
+  },
+  {
+    "id": "MS-0044",
+    "text": "The difference between the reported income under absorption and variable costing is attributable to the difference in the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Income statement formats"
+      },
+      {
+        "id": "c2",
+        "text": "Treatment of fixed manufacturing overhead"
+      },
+      {
+        "id": "c3",
+        "text": "Treatment of variable manufacturing overhead"
+      },
+      {
+        "id": "c4",
+        "text": "Treatment of variable selling, general, and administrative expenses"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The difference in reported income is due to how fixed manufacturing overhead is treated - capitalized in inventory under absorption costing and expensed immediately under variable costing."
+  },
+  {
+    "id": "MS-0045",
+    "text": "Absorption costing differs from variable costing in all of the following except",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Treatment of fixed manufacturing overhead"
+      },
+      {
+        "id": "c2",
+        "text": "Treatment of variable production costs"
+      },
+      {
+        "id": "c3",
+        "text": "Acceptability for external reporting"
+      },
+      {
+        "id": "c4",
+        "text": "Arrangement of the income statement"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Both methods treat variable production costs the same way - as product costs."
+  },
+  {
+    "id": "MS-0046",
+    "text": "Under absorption costing, if sales remain constant from period 1 to period 2, the company will report a larger income in period 2 when",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Period 2 production exceeds period 1 production"
+      },
+      {
+        "id": "c2",
+        "text": "Period 1 production exceeds period 2 production"
+      },
+      {
+        "id": "c3",
+        "text": "Variable production costs are larger in period 2 than period 1"
+      },
+      {
+        "id": "c4",
+        "text": "Fixed production costs are larger in period 2 than period 1"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "When production increases, more fixed overhead is deferred in inventory under absorption costing, resulting in higher reported income."
+  },
+  {
+    "id": "MS-0047",
+    "text": "When inventories increase from one period to the next and all other factors remain constant, income under direct costing",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Will be irrelevant for decision making"
+      },
+      {
+        "id": "c2",
+        "text": "Will be smaller than under absorption costing"
+      },
+      {
+        "id": "c3",
+        "text": "Leads to smaller federal income tax payments"
+      },
+      {
+        "id": "c4",
+        "text": "Will be greater than under absorption costing"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "When inventories increase, absorption costing defers more fixed overhead in inventory, resulting in higher reported income compared to variable costing. TRUE OR FALSE"
+  },
+  {
+    "id": "MS-0048",
+    "text": "A company controls its production costs by comparing its actual monthly production costs with the expected levels. Any significant deviations from expected levels are investigated and evaluated as a basis for corrective actions. The quantitative technique that is most probably being used is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Time-series or trend regression analysis"
+      },
+      {
+        "id": "c2",
+        "text": "Correlation analysis"
+      },
+      {
+        "id": "c3",
+        "text": "Differential calculus"
+      },
+      {
+        "id": "c4",
+        "text": "Standard cost variance analysis"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Standard cost variance analysis involves comparing actual costs with standard costs to identify and investigate significant deviations for corrective action."
+  },
+  {
+    "id": "MS-0049",
+    "text": "A primary purpose of using a standard cost system is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "To make things easier for managers in the production facility"
+      },
+      {
+        "id": "c2",
+        "text": "To provide a distinct measure of cost control"
+      },
+      {
+        "id": "c3",
+        "text": "To minimize the cost per unit of production"
+      },
+      {
+        "id": "c4",
+        "text": "b and c are correct"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Standard cost systems serve multiple purposes, including providing a measure of cost control and helping minimize unit costs through better cost management."
+  },
+  {
+    "id": "MS-0050",
+    "text": "A purpose of standard costing is to",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Replace budgets and budgeting"
+      },
+      {
+        "id": "c2",
+        "text": "Simplify costing procedures"
+      },
+      {
+        "id": "c3",
+        "text": "Eliminate the need for actual costing for external reporting purposes"
+      },
+      {
+        "id": "c4",
+        "text": "Eliminate the need to account for year-end underapplied or overapplied manufacturing overhead"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Standard costing simplifies costing procedures by providing predetermined costs for materials, labor, and overhead."
+  },
+  {
+    "id": "MS-0051",
+    "text": "Standard costs may be used for",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Product costing"
+      },
+      {
+        "id": "c2",
+        "text": "Planning"
+      },
+      {
+        "id": "c3",
+        "text": "Controlling"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Standard costs serve multiple purposes including product costing, planning, and controlling operations."
+  },
+  {
+    "id": "MS-0052",
+    "text": "The standard cost card contains quantities and costs for",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Direct material only"
+      },
+      {
+        "id": "c2",
+        "text": "Direct labor only"
+      },
+      {
+        "id": "c3",
+        "text": "Direct material and direct labor only"
+      },
+      {
+        "id": "c4",
+        "text": "Direct material, direct labor, and overhead"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "A standard cost card includes all manufacturing costs: direct materials, direct labor, and manufacturing overhead."
+  },
+  {
+    "id": "MS-0053",
+    "text": "A company using very tight high standards in a standard cost system should expect that",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "No incentive bonus will be paid"
+      },
+      {
+        "id": "c2",
+        "text": "Most variances will be unfavorable"
+      },
+      {
+        "id": "c3",
+        "text": "Employees will be strongly motivated to attain the standards"
+      },
+      {
+        "id": "c4",
+        "text": "Costs will be controlled better than if lower standards were used"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Very tight standards are difficult to achieve, resulting in frequent unfavorable variances."
+  },
+  {
+    "id": "MS-0054",
+    "text": "The type of standard that is intended to represent challenging, yet attainable results is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Theoretical standard"
+      },
+      {
+        "id": "c2",
+        "text": "Flexible budget standard"
+      },
+      {
+        "id": "c3",
+        "text": "Normal standard"
+      },
+      {
+        "id": "c4",
+        "text": "Expected actual standard"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Normal standards represent challenging but attainable results under normal operating conditions."
+  },
+  {
+    "id": "MS-0055",
+    "text": "Of the following variances, the one that is most useful in assessing the performance of the Purchasing Department is the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Idle capacity variance"
+      },
+      {
+        "id": "c2",
+        "text": "Materials purchase price variance"
+      },
+      {
+        "id": "c3",
+        "text": "Labor rate variance"
+      },
+      {
+        "id": "c4",
+        "text": "Materials price usage variance"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The materials purchase price variance directly reflects the Purchasing Department's ability to obtain materials at favorable prices."
+  },
+  {
+    "id": "MS-0056",
+    "text": "Materials usage variances are normally chargeable to the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Production Department"
+      },
+      {
+        "id": "c2",
+        "text": "Purchasing Department"
+      },
+      {
+        "id": "c3",
+        "text": "Finished Goods Department"
+      },
+      {
+        "id": "c4",
+        "text": "Materials Storage Department"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Materials usage variances are typically the responsibility of the Production Department, which controls how materials are used in production."
+  },
+  {
+    "id": "MS-0057",
+    "text": "When a change in the manufacturing process reduces the number of direct labor hours and standards are unchanged, the resulting variance will be",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "An unfavorable labor usage variance"
+      },
+      {
+        "id": "c2",
+        "text": "An unfavorable labor rate variance"
+      },
+      {
+        "id": "c3",
+        "text": "A favorable labor rate variance"
+      },
+      {
+        "id": "c4",
+        "text": "A favorable labor usage variance"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "When fewer labor hours are used than standard, it results in a favorable labor usage variance."
+  },
+  {
+    "id": "MS-0058",
+    "text": "The most probable reason a company would experience a favorable labor rate variance and an unfavorable labor efficiency variance is that",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The mix of workers assigned to the particular job was heavily weighted toward the use of higher paid, experienced individuals"
+      },
+      {
+        "id": "c2",
+        "text": "The mix of workers assigned to the particular job was heavily weighted toward the use of new, relatively low-paid, unskilled workers"
+      },
+      {
+        "id": "c3",
+        "text": "Because of the production schedule, workers from other production areas were assigned to assist in this particular process"
+      },
+      {
+        "id": "c4",
+        "text": "Defective materials caused more labor to be used in order to produce a standard unit"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Lower-paid workers would create a favorable rate variance, while their inexperience would likely lead to an unfavorable efficiency variance."
+  },
+  {
+    "id": "MS-0059",
+    "text": "Which of the following would least likely cause an unfavorable materials quantity usage variance?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Labor that possesses skills equal to those required by the standards"
+      },
+      {
+        "id": "c2",
+        "text": "Scheduling of substantial overtime"
+      },
+      {
+        "id": "c3",
+        "text": "A mix of direct materials that does not conform to plan"
+      },
+      {
+        "id": "c4",
+        "text": "Materials that do not meet specifications"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Skilled labor would be less likely to cause material waste or inefficiency, making it the least likely cause of an unfavorable materials quantity variance."
+  },
+  {
+    "id": "MS-0060",
+    "text": "The sum of the material price variance calculated at point of purchase and material quantity variance equals",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The total cost variance"
+      },
+      {
+        "id": "c2",
+        "text": "The material mix variance"
+      },
+      {
+        "id": "c3",
+        "text": "The material yield variance"
+      },
+      {
+        "id": "c4",
+        "text": "No meaningful number"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The total material cost variance is the sum of the price variance and quantity variance."
+  },
+  {
+    "id": "MS-0061",
+    "text": "The sum of the material mix and material yield variances equals",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The material purchase price variance"
+      },
+      {
+        "id": "c2",
+        "text": "The material quantity variance"
+      },
+      {
+        "id": "c3",
+        "text": "The total material variance"
+      },
+      {
+        "id": "c4",
+        "text": "None of the above"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The material quantity variance is composed of both mix and yield variances."
+  },
+  {
+    "id": "MS-0062",
+    "text": "The sum of the labor mix and labor yield variances equals",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The labor efficiency variance"
+      },
+      {
+        "id": "c2",
+        "text": "The total labor variance"
+      },
+      {
+        "id": "c3",
+        "text": "The labor rate variance"
+      },
+      {
+        "id": "c4",
+        "text": "Nothing because these two variances cannot be added since they use different costs"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The labor efficiency variance is the sum of the mix and yield variances."
+  },
+  {
+    "id": "MS-0063",
+    "text": "A variable overhead spending variance is caused by",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Using more or fewer actual hours than the standard hours allowed for the production achieved"
+      },
+      {
+        "id": "c2",
+        "text": "Paying a higher/lower average actual overhead price per unit of the activity base than the standard price allowed per unit of the activity base"
+      },
+      {
+        "id": "c3",
+        "text": "Larger/smaller waste and shrinkage associated with the resources involved than expected"
+      },
+      {
+        "id": "c4",
+        "text": "Both b and c are causes"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Variable overhead spending variance can be caused by both price differences and efficiency differences in resource usage."
+  },
+  {
+    "id": "MS-0064",
+    "text": "A favorable fixed overhead spending variance indicates that",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Budgeted fixed overhead is less than actual fixed overhead"
+      },
+      {
+        "id": "c2",
+        "text": "Budgeted fixed overhead is greater than applied fixed overhead"
+      },
+      {
+        "id": "c3",
+        "text": "Applied fixed overhead is greater than budgeted fixed overhead"
+      },
+      {
+        "id": "c4",
+        "text": "Actual fixed overhead is less than budgeted fixed overhead"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "A favorable spending variance occurs when actual fixed overhead costs are less than budgeted amounts."
+  },
+  {
+    "id": "MS-0065",
+    "text": "The variance least significant for purposes of controlling costs is the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Material quantity variance"
+      },
+      {
+        "id": "c2",
+        "text": "Variable overhead efficiency variance"
+      },
+      {
+        "id": "c3",
+        "text": "Fixed overhead spending variance"
+      },
+      {
+        "id": "c4",
+        "text": "Fixed overhead volume variance"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The fixed overhead volume variance is least significant for cost control as it primarily reflects capacity utilization rather than cost management."
+  },
+  {
+    "id": "MS-0066",
+    "text": "The variance most useful in evaluating plant utilization is the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Variable overhead spending variance"
+      },
+      {
+        "id": "c2",
+        "text": "Fixed overhead spending variance"
+      },
+      {
+        "id": "c3",
+        "text": "Variable overhead efficiency variance"
+      },
+      {
+        "id": "c4",
+        "text": "Fixed overhead volume variance"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The fixed overhead volume variance directly measures the difference between actual and budgeted capacity utilization."
+  },
+  {
+    "id": "MS-0067",
+    "text": "An unfavorable fixed overhead volume variance is most often caused by",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Actual fixed overhead incurred exceeding budgeted fixed overhead"
+      },
+      {
+        "id": "c2",
+        "text": "An over-application of fixed overhead to production"
+      },
+      {
+        "id": "c3",
+        "text": "An increase in the level of the finished inventory"
+      },
+      {
+        "id": "c4",
+        "text": "Normal capacity exceeding actual production levels"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "An unfavorable volume variance occurs when actual production is less than normal capacity, resulting in under-utilization of fixed resources."
+  },
+  {
+    "id": "MS-0068",
+    "text": "A budget is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "A planning tool"
+      },
+      {
+        "id": "c2",
+        "text": "A control tool"
+      },
+      {
+        "id": "c3",
+        "text": "A means of communicating goals to the firms divisions"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "A budget serves multiple purposes: it's a planning tool, a control mechanism, and a means of communicating organizational goals."
+  },
+  {
+    "id": "MS-0069",
+    "text": "The preparation of an organizations budget",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Forces management to look ahead and try to see the future of the organization"
+      },
+      {
+        "id": "c2",
+        "text": "Requires that the entire management team work together to make and carry out the yearly plan"
+      },
+      {
+        "id": "c3",
+        "text": "Makes performance review possible at all levels of management"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Budget preparation involves forward planning, team coordination, and establishes benchmarks for performance evaluation."
+  },
+  {
+    "id": "MS-0070",
+    "text": "Which of the following benefits could an organization reasonably expect from an effective budget program?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Better control of the organizations costs"
+      },
+      {
+        "id": "c2",
+        "text": "Better coordination of an organizations activities"
+      },
+      {
+        "id": "c3",
+        "text": "Better communication of the organizations objectives"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "An effective budget program provides cost control, activity coordination, and clear communication of organizational objectives."
+  },
+  {
+    "id": "MS-0071",
+    "text": "Which of the following statements is true?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "All organizations have the same set of budgets"
+      },
+      {
+        "id": "c2",
+        "text": "All organizations are required to budget"
+      },
+      {
+        "id": "c3",
+        "text": "Budgets are a quantitative expression of an organizations goals and objectives"
+      },
+      {
+        "id": "c4",
+        "text": "Budgets should never be used to evaluate performance"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Budgets translate organizational goals and objectives into measurable financial terms."
+  },
+  {
+    "id": "MS-0072",
+    "text": "The primary role of the budget committee is to",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Justify the budget to the executive committee of the board of directors"
+      },
+      {
+        "id": "c2",
+        "text": "Decide on general policies, compile the budget, and manage the budget process"
+      },
+      {
+        "id": "c3",
+        "text": "Settle disputes among operating executives during the development of the annual operating plan"
+      },
+      {
+        "id": "c4",
+        "text": "Develop the annual profit plan by selecting the alternatives to be adopted from the suggestions submitted by the various operating segments"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The budget committee's primary role is to establish policies, coordinate the budget preparation, and oversee the entire budgeting process."
+  },
+  {
+    "id": "MS-0073",
+    "text": "The comprehensive set of budgets that serves as a companys overall financial plan is commonly known as",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "An integrated budget"
+      },
+      {
+        "id": "c2",
+        "text": "A pro-forma budget"
+      },
+      {
+        "id": "c3",
+        "text": "A master budget"
+      },
+      {
+        "id": "c4",
+        "text": "A financial budget"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "The master budget is the comprehensive financial plan that includes all other budgets and serves as the company's overall financial blueprint."
+  },
+  {
+    "id": "MS-0074",
+    "text": "The master budget usually includes",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "An operating budget"
+      },
+      {
+        "id": "c2",
+        "text": "A capital budget"
+      },
+      {
+        "id": "c3",
+        "text": "Pro forma financial statements"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The master budget includes operating budgets, capital budgets, and pro forma financial statements to provide a complete financial picture."
+  },
+  {
+    "id": "MS-0075",
+    "text": "A master budget contains which of the following? Sales Production Pro-forma statements",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Yes Yes Yes"
+      },
+      {
+        "id": "c2",
+        "text": "No No Yes"
+      },
+      {
+        "id": "c3",
+        "text": "No No No"
+      },
+      {
+        "id": "c4",
+        "text": "Yes No Yes"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "A master budget includes sales budgets, production budgets, and pro forma financial statements as essential components."
+  },
+  {
+    "id": "MS-0076",
+    "text": "Chronologically, the first part of the master budget to be prepared would be the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Sales budget"
+      },
+      {
+        "id": "c2",
+        "text": "Production budget"
+      },
+      {
+        "id": "c3",
+        "text": "Cash budget"
+      },
+      {
+        "id": "c4",
+        "text": "Pro forma financial statements"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The sales budget is typically prepared first as it drives many other budgets in the master budget process."
+  },
+  {
+    "id": "MS-0077",
+    "text": "A budget that includes a 12-month planning period at all times is called a ____________ budget",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Pro forma"
+      },
+      {
+        "id": "c2",
+        "text": "Flexible"
+      },
+      {
+        "id": "c3",
+        "text": "Master"
+      },
+      {
+        "id": "c4",
+        "text": "Continuous"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "A continuous budget maintains a 12-month planning horizon by adding a new month as each month is completed."
+  },
+  {
+    "id": "MS-0078",
+    "text": "A companys plan for the acquisition of long-lived assets, such as buildings and equipment, is commonly called a",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Pro-forma budget"
+      },
+      {
+        "id": "c2",
+        "text": "Master budget"
+      },
+      {
+        "id": "c3",
+        "text": "Financial budget"
+      },
+      {
+        "id": "c4",
+        "text": "Capital budget"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The capital budget specifically plans for long-term asset acquisitions and investments."
+  },
+  {
+    "id": "MS-0079",
+    "text": "A company is budgeting its equipment needs on an on-going basis, with a new quarter being added to the budget as the current quarter is completed. This type of budget is most commonly known as a",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "This type of budget is most commonly known as a"
+      },
+      {
+        "id": "c2",
+        "text": "Capital budget"
+      },
+      {
+        "id": "c3",
+        "text": "Rolling budget"
+      },
+      {
+        "id": "c4",
+        "text": "Revised budget"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "A rolling budget is continuously updated by adding a new period as the current period is completed."
+  },
+  {
+    "id": "MS-0080",
+    "text": "The budgeted income statement, budgeted balance sheet, and budgeted statement of cash flows comprise",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The final portion of the master budget"
+      },
+      {
+        "id": "c2",
+        "text": "The first step of the master budget"
+      },
+      {
+        "id": "c3",
+        "text": "The portion of the master budget prepared after the sales forecast and before the remainder of the operational budgets"
+      },
+      {
+        "id": "c4",
+        "text": "The second step of the master budget"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "These financial statements are prepared last in the master budget process, after all operational budgets are completed."
+  },
+  {
+    "id": "MS-0081",
+    "text": "Which of the following is not an operating budget?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Sales budget"
+      },
+      {
+        "id": "c2",
+        "text": "Production budget"
+      },
+      {
+        "id": "c3",
+        "text": "Purchases budget"
+      },
+      {
+        "id": "c4",
+        "text": "Capital budget"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The capital budget is a financial budget, not an operating budget, as it deals with long-term investments rather than day-to-day operations."
+  },
+  {
+    "id": "MS-0082",
+    "text": "Budgeted production for a period is equal to",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The beginning inventory + sales - the ending inventory"
+      },
+      {
+        "id": "c2",
+        "text": "The ending inventory + sales - the beginning inventory"
+      },
+      {
+        "id": "c3",
+        "text": "The ending inventory + the beginning inventory - sales"
+      },
+      {
+        "id": "c4",
+        "text": "Sales + the beginning inventory - purchases"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Budgeted production equals sales plus desired ending inventory minus beginning inventory."
+  },
+  {
+    "id": "MS-0083",
+    "text": "Which of the following equations can be used to budget purchases? BI = beginning inventory, EI = ending inventory desired, CGS = budgeted cost of goods sold, P = budgeted purchases",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "P = CGS + BI - EI"
+      },
+      {
+        "id": "c2",
+        "text": "P = CGS - BI"
+      },
+      {
+        "id": "c3",
+        "text": "P = CGS + EI - BI"
+      },
+      {
+        "id": "c4",
+        "text": "P = CGS - EI + BI"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Budgeted purchases equal cost of goods sold plus desired ending inventory minus beginning inventory."
+  },
+  {
+    "id": "MS-0084",
+    "text": "A company that maintains a raw material inventory, which is based on the following months production needs, will purchase less material than it uses in a month where",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Sales exceed production"
+      },
+      {
+        "id": "c2",
+        "text": "Production exceeds sales"
+      },
+      {
+        "id": "c3",
+        "text": "Planned production exceeds the next months planned production"
+      },
+      {
+        "id": "c4",
+        "text": "Planned production is less than the next months planned production"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "When next month's production is higher, more inventory is needed, so current month's purchases will be less than usage."
+  },
+  {
+    "id": "MS-0085",
+    "text": "If a company has a policy of maintaining an inventory of finished goods at a specified percentage of the next months budgeted sales, budgeted production for January will exceed budgeted sales for January when budgeted",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "February sales exceed budgeted January sales"
+      },
+      {
+        "id": "c2",
+        "text": "January sales exceed budgeted December sales"
+      },
+      {
+        "id": "c3",
+        "text": "January sales exceed budgeted February sales"
+      },
+      {
+        "id": "c4",
+        "text": "December sales exceed budgeted January sales"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "When February sales are higher than January sales, more inventory is needed at the end of January, requiring higher January production."
+  },
+  {
+    "id": "MS-0086",
+    "text": "Which of the following represents a proper sequencing in which the budgets below are prepared?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Direct Material Purchases, Cash, Sales"
+      },
+      {
+        "id": "c2",
+        "text": "Production, Sales, Income Statement"
+      },
+      {
+        "id": "c3",
+        "text": "Sales, Balance Sheet, Direct Labor"
+      },
+      {
+        "id": "c4",
+        "text": "Sales, Production, Manufacturing Overhead"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The proper sequence starts with sales, then production, followed by manufacturing overhead and other operational budgets."
+  },
+  {
+    "id": "MS-0087",
+    "text": "Which of the following items would not be found in the financing section of the cash budget?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Cash payments for debt retirement"
+      },
+      {
+        "id": "c2",
+        "text": "Cash payments for interest"
+      },
+      {
+        "id": "c3",
+        "text": "Dividend payments"
+      },
+      {
+        "id": "c4",
+        "text": "Payment of accounts payable"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Payment of accounts payable is an operating activity, not a financing activity, and would be found in the operating section of the cash budget."
+  },
+  {
+    "id": "MS-0088",
+    "text": "Which of the following is least likely to be affected if unit sales for this month are lower than budgeted?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Production for this month"
+      },
+      {
+        "id": "c2",
+        "text": "Cash receipts for next month"
+      },
+      {
+        "id": "c3",
+        "text": "Production for next month"
+      },
+      {
+        "id": "c4",
+        "text": "Inventory at the end of this month"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Cash receipts for next month are based on next month's sales, not this month's sales, so they are least likely to be affected."
+  },
+  {
+    "id": "MS-0089",
+    "text": "If cash receipts from customers are greater than sales, which of the following is most likely to be true?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Accounts receivable will decrease"
+      },
+      {
+        "id": "c2",
+        "text": "Cash balance will increase"
+      },
+      {
+        "id": "c3",
+        "text": "Outstanding debt will decrease"
+      },
+      {
+        "id": "c4",
+        "text": "The company will show a profit"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "When cash receipts exceed sales, it means customers are paying off their previous receivables, causing accounts receivable to decrease."
+  },
+  {
+    "id": "MS-0090",
+    "text": "What is the process of evaluating financial data that change under alternative courses of action called?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Incremental analysis"
+      },
+      {
+        "id": "c2",
+        "text": "Decision-making analysis"
+      },
+      {
+        "id": "c3",
+        "text": "Contribution margin analysis"
+      },
+      {
+        "id": "c4",
+        "text": "Cost-benefit analysis"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Incremental analysis is the process of evaluating financial data that changes under alternative courses of action to make decisions."
+  },
+  {
+    "id": "MS-0091",
+    "text": "Which one of the following is an alternative name for incremental analysis?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Managerial analysis"
+      },
+      {
+        "id": "c2",
+        "text": "Cost analysis"
+      },
+      {
+        "id": "c3",
+        "text": "Contribution margin analysis"
+      },
+      {
+        "id": "c4",
+        "text": "Differential analysis"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Differential analysis is another term for incremental analysis, as it focuses on the differences between alternatives."
+  },
+  {
+    "id": "MS-0092",
+    "text": "Which of the following pairs of stages in the management decision-making process is properly sequenced?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Evaluate possible courses of action -> Make a decision"
+      },
+      {
+        "id": "c2",
+        "text": "Review the actual impact of the decision -> Determine possible courses of action"
+      },
+      {
+        "id": "c3",
+        "text": "Assign responsibility for the decision -> Identify the problem"
+      },
+      {
+        "id": "c4",
+        "text": "Make a decision -> Assign responsibility for the decision"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The proper sequence is to first evaluate alternatives and then make a decision based on that evaluation."
+  },
+  {
+    "id": "MS-0093",
+    "text": "Relevant costs are",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "All fixed and variable costs"
+      },
+      {
+        "id": "c2",
+        "text": "All costs that would be incurred within the relevant range of production"
+      },
+      {
+        "id": "c3",
+        "text": "Past costs that are expected to be different in the future"
+      },
+      {
+        "id": "c4",
+        "text": "Anticipated future costs that will differ among various alternatives"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Relevant costs are future costs that differ between alternatives and affect decision-making."
+  },
+  {
+    "id": "MS-0094",
+    "text": "An opportunity cost is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "A cost that may be shifted to the future with little or no effect on current operations"
+      },
+      {
+        "id": "c2",
+        "text": "A cost that cannot be avoided because it has already been incurred"
+      },
+      {
+        "id": "c3",
+        "text": "The difference in total costs that results from selecting one alternative instead of another"
+      },
+      {
+        "id": "c4",
+        "text": "The profit foregone by selecting one alternative instead of another"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Opportunity cost represents the potential benefit that is given up when one alternative is chosen over another."
+  },
+  {
+    "id": "MS-0095",
+    "text": "The term incremental cost refers to",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The profit foregone by selecting one choice instead of another"
+      },
+      {
+        "id": "c2",
+        "text": "The additional cost of producing or selling another product or service"
+      },
+      {
+        "id": "c3",
+        "text": "A cost that continues to be incurred in the absence of activity"
+      },
+      {
+        "id": "c4",
+        "text": "A cost common to all choices in question and not clearly or feasibly allocable to any of them"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Incremental cost is the additional cost incurred when producing or selling one more unit."
+  },
+  {
+    "id": "MS-0096",
+    "text": "The term \"differential cost\" refers to",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The profit foregone by selecting one alternative instead of another"
+      },
+      {
+        "id": "c2",
+        "text": "A cost that continues to be incurred even though there is no activity"
+      },
+      {
+        "id": "c3",
+        "text": "A cost common to all alternatives in question and not clearly or practically allocable to any of the alternatives"
+      },
+      {
+        "id": "c4",
+        "text": "The difference in total costs that results from selecting one alternative instead of another"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Differential cost is the difference in total costs between two alternatives."
+  },
+  {
+    "id": "MS-0097",
+    "text": "Which of the following will always be a relevant cost?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Sunk cost"
+      },
+      {
+        "id": "c2",
+        "text": "Fixed cost"
+      },
+      {
+        "id": "c3",
+        "text": "Variable cost"
+      },
+      {
+        "id": "c4",
+        "text": "Opportunity cost"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Opportunity costs are always relevant as they represent potential benefits foregone by choosing one alternative over another."
+  },
+  {
+    "id": "MS-0098",
+    "text": "A cost that does not affect a decision is called an",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Opportunity cost"
+      },
+      {
+        "id": "c2",
+        "text": "Incremental cost"
+      },
+      {
+        "id": "c3",
+        "text": "Avoidable cost"
+      },
+      {
+        "id": "c4",
+        "text": "Irrelevant cost"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Irrelevant costs are those that do not differ between alternatives and therefore do not affect the decision."
+  },
+  {
+    "id": "MS-0099",
+    "text": "A cost incurred in the past that cannot be changed by any future action is a(n)",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Opportunity cost"
+      },
+      {
+        "id": "c2",
+        "text": "Sunk cost"
+      },
+      {
+        "id": "c3",
+        "text": "Relevant cost"
+      },
+      {
+        "id": "c4",
+        "text": "Avoidable cost"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Sunk costs are past costs that cannot be recovered or changed by any future action."
+  },
+  {
+    "id": "MS-0100",
+    "text": "Which of the following is an irrelevant cost?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "An avoidable cost"
+      },
+      {
+        "id": "c2",
+        "text": "An incremental cost"
+      },
+      {
+        "id": "c3",
+        "text": "A sunk cost"
+      },
+      {
+        "id": "c4",
+        "text": "An opportunity cost"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Sunk costs are irrelevant to future decisions as they cannot be changed by any future action."
+  },
+  {
+    "id": "MS-0101",
+    "text": "Relevant costs are always",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Fixed costs"
+      },
+      {
+        "id": "c2",
+        "text": "Variable costs"
+      },
+      {
+        "id": "c3",
+        "text": "Avoidable costs"
+      },
+      {
+        "id": "c4",
+        "text": "Sunk costs"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Relevant costs are those that can be avoided by choosing one alternative over another."
+  },
+  {
+    "id": "MS-0102",
+    "text": "In a make-or-buy decision",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Fixed costs that can be avoided in the future are relevant"
+      },
+      {
+        "id": "c2",
+        "text": "Only variable costs are relevant"
+      },
+      {
+        "id": "c3",
+        "text": "Only prime costs are relevant"
+      },
+      {
+        "id": "c4",
+        "text": "Fixed costs that will continue regardless of the decision are relevant"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "In make-or-buy decisions, fixed costs that can be avoided by buying are relevant to the decision."
+  },
+  {
+    "id": "MS-0103",
+    "text": "In deciding whether to manufacture a part or buy it from an outside vendor, a cost that is relevant to the short-run decision is:",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Direct materials and direct labor"
+      },
+      {
+        "id": "c2",
+        "text": "Variable overhead"
+      },
+      {
+        "id": "c3",
+        "text": "Fixed overhead that will be avoided if the part is bought from an outside vendor"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "All these costs are relevant as they differ between the make and buy alternatives."
+  },
+  {
+    "id": "MS-0104",
+    "text": "Which of the following are relevant in a make or buy decision? Variable costs Avoidable fixed costs Unavoidable fixed costs",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "No Yes Yes"
+      },
+      {
+        "id": "c2",
+        "text": "Yes No Yes"
+      },
+      {
+        "id": "c3",
+        "text": "No No Yes"
+      },
+      {
+        "id": "c4",
+        "text": "Yes Yes No"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Variable costs and avoidable fixed costs are relevant, while unavoidable fixed costs are not."
+  },
+  {
+    "id": "MS-0105",
+    "text": "Which of the following are relevant in a make or buy decision? Prime costs Sunk costs Incremental costs",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Yes Yes Yes"
+      },
+      {
+        "id": "c2",
+        "text": "Yes No Yes"
+      },
+      {
+        "id": "c3",
+        "text": "Yes No No"
+      },
+      {
+        "id": "c4",
+        "text": "No No Yes"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Prime costs and incremental costs are relevant, while sunk costs are not."
+  },
+  {
+    "id": "MS-0106",
+    "text": "In considering a special order that will enable a company to make use of present idle capacity, which of the following costs would be irrelevant?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Fixed factory overhead that can be avoided"
+      },
+      {
+        "id": "c2",
+        "text": "Materials"
+      },
+      {
+        "id": "c3",
+        "text": "Depreciation of the factory building"
+      },
+      {
+        "id": "c4",
+        "text": "Direct labor"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Depreciation is a sunk cost and therefore irrelevant to the special order decision."
+  },
+  {
+    "id": "MS-0107",
+    "text": "The minimum selling price that should be acceptable in a special-order situation is equal to total",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Production cost"
+      },
+      {
+        "id": "c2",
+        "text": "Variable production cost"
+      },
+      {
+        "id": "c3",
+        "text": "Variable costs"
+      },
+      {
+        "id": "c4",
+        "text": "Production cost plus a normal profit margin"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "The minimum acceptable price should at least cover all variable costs associated with the special order."
+  },
+  {
+    "id": "MS-0108",
+    "text": "Production of a special order will increase the contribution margin when the additional revenue from the special order is greater than",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The non-variable costs incurred in producing the order"
+      },
+      {
+        "id": "c2",
+        "text": "The direct materials and labor costs in producing the order"
+      },
+      {
+        "id": "c3",
+        "text": "The fixed costs incurred in producing the order"
+      },
+      {
+        "id": "c4",
+        "text": "The marginal cost in producing the order"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The special order will increase contribution margin when revenue exceeds marginal (incremental) costs."
+  },
+  {
+    "id": "MS-0109",
+    "text": "Irrelevant costs generally include Sunk costs Historical costs Allocated costs",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Yes Yes No"
+      },
+      {
+        "id": "c2",
+        "text": "Yes No No"
+      },
+      {
+        "id": "c3",
+        "text": "No No Yes"
+      },
+      {
+        "id": "c4",
+        "text": "Yes Yes Yes"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Sunk costs, historical costs, and allocated costs are generally irrelevant to decision-making."
+  },
+  {
+    "id": "MS-0110",
+    "text": "The opportunity cost of making a component part in a factory with excess capacity for which there is no alternative use is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The total manufacturing cost of the component"
+      },
+      {
+        "id": "c2",
+        "text": "The total variable cost of the component"
+      },
+      {
+        "id": "c3",
+        "text": "The fixed manufacturing cost of the component"
+      },
+      {
+        "id": "c4",
+        "text": "Zero"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "When there is no alternative use for the excess capacity, there is no opportunity cost."
+  },
+  {
+    "id": "MS-0111",
+    "text": "In evaluating the profitability of a specific organizational segment, all _______________ would be ignored.",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Segment variable costs"
+      },
+      {
+        "id": "c2",
+        "text": "Segment fixed costs"
+      },
+      {
+        "id": "c3",
+        "text": "Costs allocated to the segment"
+      },
+      {
+        "id": "c4",
+        "text": "Period costs"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Allocated costs are arbitrary and should be ignored in segment profitability analysis."
+  },
+  {
+    "id": "MS-0112",
+    "text": "Which of the following is relevant information in a decision whether old equipment presently being used should be replaced by new equipment?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The cost of the old equipment"
+      },
+      {
+        "id": "c2",
+        "text": "The salvage value of the old equipment"
+      },
+      {
+        "id": "c3",
+        "text": "The book value of the old equipment"
+      },
+      {
+        "id": "c4",
+        "text": "The accumulated depreciation of the old equipment"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The salvage value is relevant as it represents a future cash flow that differs between alternatives."
+  },
+  {
+    "id": "MS-0113",
+    "text": "A company is deciding whether or not to replace some old equipment with new equipment. Which of the following is not considered in the incremental analysis?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Annual operating cost of the new equipment"
+      },
+      {
+        "id": "c2",
+        "text": "Annual operating cost of the old equipment"
+      },
+      {
+        "id": "c3",
+        "text": "Net cost of the new equipment"
+      },
+      {
+        "id": "c4",
+        "text": "Book value of the old equipment"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Book value is a sunk cost and therefore irrelevant to the replacement decision."
+  },
+  {
+    "id": "MS-0114",
+    "text": "A company is considering replacing old equipment with new equipment. Which of the following is a relevant cost for incremental analysis?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Total accumulated depreciation of the old equipment"
+      },
+      {
+        "id": "c2",
+        "text": "Cost of the old equipment"
+      },
+      {
+        "id": "c3",
+        "text": "Annual operating cost of the new equipment"
+      },
+      {
+        "id": "c4",
+        "text": "Book value of the old equipment"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "The annual operating cost of the new equipment is a future cost that differs between alternatives."
+  },
+  {
+    "id": "MS-0115",
+    "text": "The point in the production process when joint products are readily identifiable is the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Separation point"
+      },
+      {
+        "id": "c2",
+        "text": "Split-off point"
+      },
+      {
+        "id": "c3",
+        "text": "Common point"
+      },
+      {
+        "id": "c4",
+        "text": "Break-even point"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The split-off point is when joint products become separately identifiable."
+  },
+  {
+    "id": "MS-0116",
+    "text": "The costs incurred prior to the split-off point are referred to as",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Separable costs"
+      },
+      {
+        "id": "c2",
+        "text": "Split-off costs"
+      },
+      {
+        "id": "c3",
+        "text": "Joint product costs"
+      },
+      {
+        "id": "c4",
+        "text": "Joint costs"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Joint costs are those incurred prior to the split-off point that benefit multiple products."
+  },
+  {
+    "id": "MS-0117",
+    "text": "When a scarce resource, such as space, exists in an organization, the criterion that should be used to determine production is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Contribution margin per unit"
+      },
+      {
+        "id": "c2",
+        "text": "Selling price per unit"
+      },
+      {
+        "id": "c3",
+        "text": "Contribution margin per unit of scarce resource"
+      },
+      {
+        "id": "c4",
+        "text": "Total variable costs of production"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "When resources are limited, decisions should be based on contribution margin per unit of the limiting resource."
+  },
+  {
+    "id": "MS-0118",
+    "text": "Assume a company produces three products: A, B, and C. It can only sell up to 3,000 units of each product. Production capacity is unlimited. The company should produce the product (or products) that has (have) the highest",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The company should produce the product (or products) that has (have) the highest"
+      },
+      {
+        "id": "c2",
+        "text": "Contribution margin per hour of machine time"
+      },
+      {
+        "id": "c3",
+        "text": "Gross margin per unit"
+      },
+      {
+        "id": "c4",
+        "text": "Contribution margin per unit"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "When sales are limited but production capacity is unlimited, the company should maximize contribution margin per unit."
+  },
+  {
+    "id": "MS-0119",
+    "text": "A manager is attempting to determine whether a segment of the business should be eliminated. The focus of attention for this decision should be on",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The focus of attention for this decision should be on"
+      },
+      {
+        "id": "c2",
+        "text": "The net income shown on the segment's income statement"
+      },
+      {
+        "id": "c3",
+        "text": "Sales minus total expenses of the segment"
+      },
+      {
+        "id": "c4",
+        "text": "Sales minus total direct expenses of the segment"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The decision should focus on relevant costs (variable and avoidable fixed) and revenues."
+  },
+  {
+    "id": "MS-0120",
+    "text": "Costs which can be eliminated in whole or in part if a particular business segment is discontinued are called:",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Sunk costs"
+      },
+      {
+        "id": "c2",
+        "text": "Opportunity costs"
+      },
+      {
+        "id": "c3",
+        "text": "Avoidable costs"
+      },
+      {
+        "id": "c4",
+        "text": "Irrelevant costs"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Avoidable costs are those that can be eliminated by discontinuing a segment."
+  },
+  {
+    "id": "MS-0121",
+    "text": "Controllable costs are",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Costs that fluctuate in total in response to small changes in the rate of capacity utilization"
+      },
+      {
+        "id": "c2",
+        "text": "Costs that will be unaffected by current managerial decisions"
+      },
+      {
+        "id": "c3",
+        "text": "Costs that management decides to inc ur in the current period to enable the company to achieve objectives other than filling customers orders"
+      },
+      {
+        "id": "c4",
+        "text": "Costs that are likely to respond to the amount of attention devoted to them by a specified manager"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Controllable costs are those that can be influenced by a manager's decisions and actions."
+  },
+  {
+    "id": "MS-0122",
+    "text": "When used for performance evaluation, periodic internal reports based on a responsibility accounting system should not",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Distinguish between controllable and noncontrollable costs"
+      },
+      {
+        "id": "c2",
+        "text": "Be related to the organization chart"
+      },
+      {
+        "id": "c3",
+        "text": "Include allocated fixed overhead"
+      },
+      {
+        "id": "c4",
+        "text": "Include variances between actual and budgeted controllable costs"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Allocated fixed overhead should not be included as it's not controllable by the responsibility center manager. Page 46"
+  },
+  {
+    "id": "MS-0123",
+    "text": "The most desirable measure of departmental performance for evaluating the departmental manager is departmental",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Contribution to indirect expenses"
+      },
+      {
+        "id": "c2",
+        "text": "Revenue less departmental variable expenses"
+      },
+      {
+        "id": "c3",
+        "text": "Revenue less departmental fixed expenses"
+      },
+      {
+        "id": "c4",
+        "text": "Revenue less controllable departmental expenses"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Managers should be evaluated based on revenues and expenses they can control."
+  },
+  {
+    "id": "MS-0124",
+    "text": "Return on investment ROI is a term often used to express income earned on capital invested in a business unit. A companys ROI would be increased if",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Sales decreased by the same peso amount that expenses increased"
+      },
+      {
+        "id": "c2",
+        "text": "Sales and expenses increased by the same percentage that total assets increased"
+      },
+      {
+        "id": "c3",
+        "text": "Net profit margin on sales increased by th e same percentage that total assets increased"
+      },
+      {
+        "id": "c4",
+        "text": "Sales increased by the same peso amount that expenses and total assets increased e. Sales remained the same and expenses were reduced by the same peso amount that total assets decreased"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "ROI would increase because income would increase (expenses reduced) while the investment base (assets) would decrease."
+  },
+  {
+    "id": "MS-0125",
+    "text": "A sub -unit of an organiz ation is evaluated on the basis of its ROI. If this sub -units sales and expenses both increase by P30,000, how will the following measures be affected? ROI Asset turnover Profit margin",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Increase Increase Increase"
+      },
+      {
+        "id": "c2",
+        "text": "Indeterminate Increase Decrease"
+      },
+      {
+        "id": "c3",
+        "text": "No change Increase Decrease"
+      },
+      {
+        "id": "c4",
+        "text": "No change Decrease No change"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "If sales and expenses increase by the same amount, ROI remains unchanged, asset turnover increases, and profit margin decreases."
+  },
+  {
+    "id": "MS-0126",
+    "text": "Residual income is the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Contribution margin of an investment center, less the imputed interest on the invested capital used by the center"
+      },
+      {
+        "id": "c2",
+        "text": "Contribution margin of an investment center, plus the imputed interest on the invested capital used by the center"
+      },
+      {
+        "id": "c3",
+        "text": "Income of an investment center, less the imputed interest on the invested capital used by the center"
+      },
+      {
+        "id": "c4",
+        "text": "Income of an investment center, plus the imputed interest on the invested capital used by the center"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Residual income is the income remaining after deducting a charge for the cost of capital used."
+  },
+  {
+    "id": "MS-0127",
+    "text": "If a division generates a positive residual income then the divisions",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Asset turnover was very high"
+      },
+      {
+        "id": "c2",
+        "text": "Profitability was greater than that of other divisions in the company"
+      },
+      {
+        "id": "c3",
+        "text": "Performance was above expectations"
+      },
+      {
+        "id": "c4",
+        "text": "Actual return on investment exceeds the divisions target return"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Positive residual income indicates that the division's ROI exceeds the required rate of return."
+  },
+  {
+    "id": "MS-0128",
+    "text": "Indirect costs should be allocated for all of the following reasons except to",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Motivate managers c. Motivate general administration"
+      },
+      {
+        "id": "c2",
+        "text": "Determine the full cost of a product d. Compare alternatives for decision making ROI Assert turnover Profit margin"
+      },
+      {
+        "id": "c3",
+        "text": "Increase Increase Increase"
+      },
+      {
+        "id": "c4",
+        "text": "Indeterminate Increase Decrease"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Allocating indirect costs is not primarily for motivating managers, as they typically cannot control these costs. Page 47"
+  },
+  {
+    "id": "MS-0129",
+    "text": "The criteria that are most often used to d ecide on allocation bases are? Benefits received Fairness Causal relationships",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Yes Yes No"
+      },
+      {
+        "id": "c2",
+        "text": "Yes Yes Yes"
+      },
+      {
+        "id": "c3",
+        "text": "No Yes Yes"
+      },
+      {
+        "id": "c4",
+        "text": "No No No"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Allocation bases should consider benefits received, fairness, and causal relationships."
+  },
+  {
+    "id": "MS-0130",
+    "text": "Which of the following is a reason for allocating service department costs and thereby motivating management?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Provides for cost recovery"
+      },
+      {
+        "id": "c2",
+        "text": "Provides relevant information in determining corporate -wide profits generated by alternative actions"
+      },
+      {
+        "id": "c3",
+        "text": "Meets regulations in some pricing instances"
+      },
+      {
+        "id": "c4",
+        "text": "Reflects usage of services on a fair and equitable basis"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Allocating service department costs based on usage promotes fair and equitable distribution of costs."
+  },
+  {
+    "id": "MS-0131",
+    "text": "A primary purpose of a balanced scorecard is to give",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Managers a way to judge past performance"
+      },
+      {
+        "id": "c2",
+        "text": "Stockholders a way to judge current performance"
+      },
+      {
+        "id": "c3",
+        "text": "Managers a way to forecast future performance"
+      },
+      {
+        "id": "c4",
+        "text": "Stockholders a way to tie strategy to profitability"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The balanced scorecard helps managers evaluate past performance across multiple dimensions."
+  },
+  {
+    "id": "MS-0132",
+    "text": "Customer measures on the balanced scorecard should be Internal External Monetary Non -monetary",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Yes No No Yes"
+      },
+      {
+        "id": "c2",
+        "text": "No Yes Yes No"
+      },
+      {
+        "id": "c3",
+        "text": "No Yes No Yes"
+      },
+      {
+        "id": "c4",
+        "text": "Yes Yes Yes Yes"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Customer measures should be external (customer-focused) and include both monetary and non-monetary aspects."
+  },
+  {
+    "id": "MS-0133",
+    "text": "As a general rule, the best transfer price to use to transfer the costs of a service center to an operating department is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The price charged by an outside company for the same service"
+      },
+      {
+        "id": "c2",
+        "text": "The price that encourages goal congruence"
+      },
+      {
+        "id": "c3",
+        "text": "One that is based on budgeted variable cost"
+      },
+      {
+        "id": "c4",
+        "text": "One that is based on budgeted total cost"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The best transfer price aligns divisional goals with overall company objectives."
+  },
+  {
+    "id": "MS-0134",
+    "text": "Which of the following is a consistently desirable characteristic in a transfer pricing system?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "System is very complex to be the most fair to the buying and selling units"
+      },
+      {
+        "id": "c2",
+        "text": "Effect on subunit performance measures is not easily determined"
+      },
+      {
+        "id": "c3",
+        "text": "System should reflect organizational goals"
+      },
+      {
+        "id": "c4",
+        "text": "Transfer price remains constant for a period of at least two years"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "A good transfer pricing system should support and reflect the organization's overall goals and objectives."
+  },
+  {
+    "id": "MS-0135",
+    "text": "In a decentralized company in which divisions may buy goods from one another, the transfer pricing system should be designed primarily to",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Minimize the degree of autonomy of division managers"
+      },
+      {
+        "id": "c2",
+        "text": "Aid in the appraisal and motivation of managerial performance"
+      },
+      {
+        "id": "c3",
+        "text": "Increase the consolidated value of inventory"
+      },
+      {
+        "id": "c4",
+        "text": "Discourage division managers from buying from outsiders"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Transfer pricing should help evaluate and motivate division managers while maintaining divisional autonomy."
+  },
+  {
+    "id": "MS-0136",
+    "text": "Market-based transfer prices are best for",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The company when the selling division is operating below capacity"
+      },
+      {
+        "id": "c2",
+        "text": "The company when the selling division is operating at capacity"
+      },
+      {
+        "id": "c3",
+        "text": "The buying division if it is operating at capacity"
+      },
+      {
+        "id": "c4",
+        "text": "The buying division"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Market-based prices are optimal when the selling division is at capacity as they reflect true opportunity costs."
+  },
+  {
+    "id": "MS-0137",
+    "text": "Given a competitive outside market for identical intermediate goods, what is the best transfer price, assuming all relevant information is readily available?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Average cost of production"
+      },
+      {
+        "id": "c2",
+        "text": "Average cost of production plus average production departments allocated profit"
+      },
+      {
+        "id": "c3",
+        "text": "Market price of the intermediate goods"
+      },
+      {
+        "id": "c4",
+        "text": "Market price of the intermediate goods less average production departments allocated profit"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "When a competitive market exists, market price is the best transfer price as it reflects true value and opportunity cost."
+  },
+  {
+    "id": "MS-0138",
+    "text": "Which of the following is the most valid reason for not using a cost-plus transfer price between decentralized units of a company? A cost-plus transfer price",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Does not reflect the excess capacity of the supplying unit"
+      },
+      {
+        "id": "c2",
+        "text": "Is typically more costly to implement"
+      },
+      {
+        "id": "c3",
+        "text": "Does not ensure the control of costs of a supplying unit"
+      },
+      {
+        "id": "c4",
+        "text": "Is not available unless market-based prices are available"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Cost-plus pricing may not provide sufficient incentive for the supplying unit to control its costs."
+  },
+  {
+    "id": "MS-0139",
+    "text": "The most valid reason for using something other than a full-cost-based transfer price between units of a company is because a full-cost price",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Is typically more costly to implement"
+      },
+      {
+        "id": "c2",
+        "text": "Does not ensure the control of costs of a supplying unit"
+      },
+      {
+        "id": "c3",
+        "text": "Is not available unless market-based prices are available"
+      },
+      {
+        "id": "c4",
+        "text": "Does not reflect the excess capacity of the supplying unit"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Full-cost pricing doesn't account for excess capacity, which can lead to suboptimal decisions."
+  },
+  {
+    "id": "MS-0140",
+    "text": "With two autonomous division managers, the price of goods transferred between the divisions needs to be approved by",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Corporate management"
+      },
+      {
+        "id": "c2",
+        "text": "Both divisional managers"
+      },
+      {
+        "id": "c3",
+        "text": "Both divisional managers and corporate management"
+      },
+      {
+        "id": "c4",
+        "text": "Corporate management and the manager of the buying division"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "In a decentralized system, both managers should agree on the transfer price to ensure fair treatment."
+  },
+  {
+    "id": "MS-0141",
+    "text": "The minimum potential transfer price is determined by",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Incremental costs in the selling division"
+      },
+      {
+        "id": "c2",
+        "text": "The lowest outside price for the good"
+      },
+      {
+        "id": "c3",
+        "text": "The extent of idle capacity in the buying division"
+      },
+      {
+        "id": "c4",
+        "text": "Negotiations between the buying and selling division"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The minimum transfer price should at least cover the incremental costs of the selling division."
+  },
+  {
+    "id": "MS-0142",
+    "text": "Which of the following is true about transfer prices for sales between divisions located in different countries?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "They should consider the tax structures in the two countries"
+      },
+      {
+        "id": "c2",
+        "text": "They are usually set by the governments of the two countries"
+      },
+      {
+        "id": "c3",
+        "text": "They cannot affect the total income of the company"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "International transfer prices must consider tax implications in both countries to optimize overall company results."
+  },
+  {
+    "id": "MS-0143",
+    "text": "Cost of capital is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The amount the company must pay for its plant assets"
+      },
+      {
+        "id": "c2",
+        "text": "The dividends a company must pay on its equity securities"
+      },
+      {
+        "id": "c3",
+        "text": "The cost the company must incur to obtain its capital resources"
+      },
+      {
+        "id": "c4",
+        "text": "The cost the company is charged by investment bankers who handle the issuance of equity or long-term debt securities"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Cost of capital represents the minimum return required by investors to provide capital to the company."
+  },
+  {
+    "id": "MS-0144",
+    "text": "The weighted average cost of capital WACC represents the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Cost of bonds, preferred stock, and common stock divided by the three sources"
+      },
+      {
+        "id": "c2",
+        "text": "Equivalent units of capital used by the organization"
+      },
+      {
+        "id": "c3",
+        "text": "Overall cost of capital from all organization financing sources"
+      },
+      {
+        "id": "c4",
+        "text": "Overall cost of dividends plus interest paid by the organization"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "WACC is the average rate of return required by all of a company's capital providers, weighted by their relative proportions."
+  },
+  {
+    "id": "MS-0145",
+    "text": "Which of the following statements is most correct?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The WACC is a measure of the before-tax cost of capital"
+      },
+      {
+        "id": "c2",
+        "text": "Typically the after-tax cost of debt financing exceeds the after-tax cost of equity financing"
+      },
+      {
+        "id": "c3",
+        "text": "The WACC measures the marginal after-tax cost of capital"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above are correct"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "WACC represents the marginal cost of raising additional capital after considering tax effects."
+  },
+  {
+    "id": "MS-0146",
+    "text": "Which of the following statements about the cost of capital is incorrect?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "A company's target capital structure affects its weighted average cost of capital"
+      },
+      {
+        "id": "c2",
+        "text": "Weighted average cost of capital calculations should be based on the after-tax costs of all the individual capital components"
+      },
+      {
+        "id": "c3",
+        "text": "If a company's tax rate increases, then, all else equal, its weighted average cost of capital will increase"
+      },
+      {
+        "id": "c4",
+        "text": "Flotation costs can increase the weighted average cost of capital"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "An increase in tax rate would actually decrease WACC because it reduces the after-tax cost of debt."
+  },
+  {
+    "id": "MS-0147",
+    "text": "An investor uses the capital asset pricing model CAPM to evaluate the risk-return relationship on a portfolio of stocks held as an investment. Which of the following would not be used to estimate the portfolio's expected rate of return?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Expected risk premium on the portfolio of stocks"
+      },
+      {
+        "id": "c2",
+        "text": "Interest rate for the safest possible investment"
+      },
+      {
+        "id": "c3",
+        "text": "Expected rate of return on the market portfolio"
+      },
+      {
+        "id": "c4",
+        "text": "Standard deviation of the market returns"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "While standard deviation measures risk, it is not directly used in the CAPM formula for calculating expected return."
+  },
+  {
+    "id": "MS-0148",
+    "text": "The company uses the CAPM to calculate the cost of equity capital. The company's capital structure consists of common stock, preferred stock, and debt. Which of the following events will reduce the company's WACC?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "A reduction in the market risk premium"
+      },
+      {
+        "id": "c2",
+        "text": "An increase in the flotation costs associated with issuing new common stock"
+      },
+      {
+        "id": "c3",
+        "text": "An increase in the company's beta"
+      },
+      {
+        "id": "c4",
+        "text": "An increase in expected inflation"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "A lower market risk premium reduces the cost of equity, which in turn reduces the overall WACC."
+  },
+  {
+    "id": "MS-0149",
+    "text": "Which of the following statements is most correct?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Since the money is readily available, the cost of retained earnings is usually a lot cheaper than the cost of debt financing."
+      },
+      {
+        "id": "c2",
+        "text": "When calculating the cost of preferred stock, a company needs to adjust for taxes, because preferred stock dividends are tax deductible"
+      },
+      {
+        "id": "c3",
+        "text": "When calculating the cost of debt, a company needs to adjust for taxes, because interest payments are tax deductible"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above are correct"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Interest payments on debt are tax-deductible, so the after-tax cost of debt is lower than the before-tax cost."
+  },
+  {
+    "id": "MS-0150",
+    "text": "A company has a current ratio of 2 to 1. The ratio will decrease if the company",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Receives a 5 stock dividend on one of its marketable securities"
+      },
+      {
+        "id": "c2",
+        "text": "Sells merchandise for more than cost and records the sale using the perpetual inventory method"
+      },
+      {
+        "id": "c3",
+        "text": "Pays a large account payable which had been a current liability"
+      },
+      {
+        "id": "c4",
+        "text": "Borrow cash on a six-month note"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Borrowing on a six-month note increases current liabilities without increasing current assets, thus decreasing the current ratio."
+  },
+  {
+    "id": "MS-0151",
+    "text": "How are financial ratios used in decision making?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "They can help identify the reasons for success and failure in business, but decision making requires information beyond the ratios"
+      },
+      {
+        "id": "c2",
+        "text": "They remove the uncertainty of the business environment"
+      },
+      {
+        "id": "c3",
+        "text": "They aren't useful because decision making is too complex"
+      },
+      {
+        "id": "c4",
+        "text": "They give clear signals about the appropriate action to take"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Ratios are tools that provide insights but must be used in conjunction with other information for effective decision making."
+  },
+  {
+    "id": "MS-0152",
+    "text": "A useful tool in financial statement analysis is the common-size financial statement. What does this tool enable the financial analyst to do?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Evaluate financial statements of companies within a given industry of approximately the same value"
+      },
+      {
+        "id": "c2",
+        "text": "Determine which companies in the same industry are at approximately the same stage of development"
+      },
+      {
+        "id": "c3",
+        "text": "Compare the mix of assets, liabilities, capital, revenue, and expenses within a company over time or between companies within a given industry without respect to relative size"
+      },
+      {
+        "id": "c4",
+        "text": "Ascertain the relative potential of companies of similar size in different industries"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Common-size statements express all items as percentages, allowing comparison regardless of company size."
+  },
+  {
+    "id": "MS-0153",
+    "text": "Vertical analysis is a technique which expresses each item within a financial statement",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "In pesos and cents"
+      },
+      {
+        "id": "c2",
+        "text": "In terms of a percentage of the item in the previous year"
+      },
+      {
+        "id": "c3",
+        "text": "In terms of a percent of a base amount"
+      },
+      {
+        "id": "c4",
+        "text": "Starting with the highest value down to the lowest value"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Vertical analysis converts each item to a percentage of a base amount (like total assets or sales)."
+  },
+  {
+    "id": "MS-0154",
+    "text": "The current ratio is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Calculated by dividing current liabilities by current assets"
+      },
+      {
+        "id": "c2",
+        "text": "Used to evaluate a company's liquidity and short-term debt paying ability"
+      },
+      {
+        "id": "c3",
+        "text": "Used to evaluate a company's solvency and long-term debt paying ability"
+      },
+      {
+        "id": "c4",
+        "text": "Calculated by subtracting current liabilities from current assets"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The current ratio measures a company's ability to pay short-term obligations with current assets."
+  },
+  {
+    "id": "MS-0155",
+    "text": "The acid-test quick ratio",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Is used to quickly determine a company's solvency and long-term debt paying ability"
+      },
+      {
+        "id": "c2",
+        "text": "Relates cash, short-term investments, and net receivables to current liabilities"
+      },
+      {
+        "id": "c3",
+        "text": "Is calculated by taking one item from the income statement and one item from the balance sheet"
+      },
+      {
+        "id": "c4",
+        "text": "Is the same as the current ratio except it is rounded to the nearest whole percent"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The acid-test ratio measures immediate liquidity using only the most liquid current assets."
+  },
+  {
+    "id": "MS-0156",
+    "text": "The debt to total assets ratio measures",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The company's profitability"
+      },
+      {
+        "id": "c2",
+        "text": "Whether interest can be paid on debt in the current year"
+      },
+      {
+        "id": "c3",
+        "text": "The proportion of interest paid relative to dividends paid"
+      },
+      {
+        "id": "c4",
+        "text": "The percentage of the total assets provided by creditors"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The debt to total assets ratio shows what portion of assets is financed by debt."
+  },
+  {
+    "id": "MS-0157",
+    "text": "A company has just converted a long-term note receivable into a short-term note receivable. The company's acid-test and current ratios are both greater than 1. This transaction will",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Increase the current ratio and decrease the acid-test ratio"
+      },
+      {
+        "id": "c2",
+        "text": "Increase the current ratio and increase the acid-test ratio"
+      },
+      {
+        "id": "c3",
+        "text": "Decrease the current ratio and increase the acid-test ratio"
+      },
+      {
+        "id": "c4",
+        "text": "Decrease the current ratio and decrease the acid-test ratio"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Converting to a short-term note increases current assets, improving both ratios."
+  },
+  {
+    "id": "MS-0158",
+    "text": "An investor has been given several financial ratios for an enterprise but none of the financial reports. Which combination of ratios can be used to derive return on equity?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Market-to-book-value ratio and total-debt-to-total-assets ratio"
+      },
+      {
+        "id": "c2",
+        "text": "Price-to-earnings ratio, earnings per share, and net profit margin"
+      },
+      {
+        "id": "c3",
+        "text": "Price-to-earnings ratio and return-on-assets ratio"
+      },
+      {
+        "id": "c4",
+        "text": "Net profit margin, total assets turnover, and equity multiplier"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "These three ratios can be used to calculate return on equity through the DuPont formula."
+  },
+  {
+    "id": "MS-0159",
+    "text": "Which of the following statements is most correct?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Working capital management involves both setting working capital policy and carrying out that policy in day-to-day operations"
+      },
+      {
+        "id": "c2",
+        "text": "The aging schedule is the cycle in which a firm purchases inventory, sells goods on credit, and then collects accounts receivable"
+      },
+      {
+        "id": "c3",
+        "text": "The best and most comprehensive picture of a firm's liquidity position is shown by its cash budget, which forecasts cash inflows and outflows"
+      },
+      {
+        "id": "c4",
+        "text": "Statements a and c are correct"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Working capital management involves both policy and operations, and cash budgets provide the best picture of liquidity."
+  },
+  {
+    "id": "MS-0160",
+    "text": "Which of the following statements is most correct?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The current ratio is calculated as net working capital divided by current liabilities"
+      },
+      {
+        "id": "c2",
+        "text": "Gross working capital represents current assets used in operations"
+      },
+      {
+        "id": "c3",
+        "text": "Net working capital is defined as current assets minus current liabilities"
+      },
+      {
+        "id": "c4",
+        "text": "Statements b and c are correct"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Net working capital is the difference between current assets and current liabilities."
+  },
+  {
+    "id": "MS-0161",
+    "text": "Which of the following actions are likely to reduce the length of a company's cash conversion cycle?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Adopting a new inventory system that reduces the inventory conversion period"
+      },
+      {
+        "id": "c2",
+        "text": "Reducing the average days sales outstanding (DSO) on its accounts receivable"
+      },
+      {
+        "id": "c3",
+        "text": "Reducing the amount of time the company takes to pay its suppliers"
+      },
+      {
+        "id": "c4",
+        "text": "Statements a and b are correct"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Reducing inventory conversion period and DSO both shorten the cash conversion cycle."
+  },
+  {
+    "id": "MS-0162",
+    "text": "Other things held constant, which of the following would tend to reduce the cash conversion cycle?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Carry a constant amount of receivables as sales decline"
+      },
+      {
+        "id": "c2",
+        "text": "Place larger orders for raw materials to take advantage of price breaks"
+      },
+      {
+        "id": "c3",
+        "text": "Take all discounts that are offered"
+      },
+      {
+        "id": "c4",
+        "text": "Continue to take all discounts that are offered and pay on the net date"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Taking discounts typically means paying earlier, which can reduce the cash conversion cycle."
+  },
+  {
+    "id": "MS-0163",
+    "text": "Which of the following actions would be likely to shorten the cash conversion cycle?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Adopt a new manufacturing process that speeds up the conversion of raw materials to finished goods from 20 days to 10 days"
+      },
+      {
+        "id": "c2",
+        "text": "Change the credit terms offered to customers from 3/10 net 30 to 1/10 net 50"
+      },
+      {
+        "id": "c3",
+        "text": "Begin to take discounts on inventory purchases we buy on terms of 2/10 net 30"
+      },
+      {
+        "id": "c4",
+        "text": "Adopt a new manufacturing process that saves some labor costs but slows down the conversion of raw materials to finished goods from 10 days to 20 days"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Faster conversion of inventory to finished goods reduces the cash conversion cycle."
+  },
+  {
+    "id": "MS-0164",
+    "text": "The following are desirable in cash management except",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Cash is collected at the earliest time possible"
+      },
+      {
+        "id": "c2",
+        "text": "Most sales are on cash basis and receivables are aged current"
+      },
+      {
+        "id": "c3",
+        "text": "Post-dated checks are not deposited on time upon maturity"
+      },
+      {
+        "id": "c4",
+        "text": "All sales are properly receipted and promptly deposited intact"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Post-dated checks should be deposited promptly upon maturity for effective cash management."
+  },
+  {
+    "id": "MS-0165",
+    "text": "A lockbox plan is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Used to protect cash, i.e., to keep it from being stolen"
+      },
+      {
+        "id": "c2",
+        "text": "Used to identify inventory safety stocks"
+      },
+      {
+        "id": "c3",
+        "text": "Used to slow down the collection of checks our firm writes"
+      },
+      {
+        "id": "c4",
+        "text": "Used to speed up the collection of checks received"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "A lockbox system accelerates the collection of receivables by having customers send payments to a local bank."
+  },
+  {
+    "id": "MS-0166",
+    "text": "Which of the following actions would not be consistent with good management?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Increased synchronization of cash flows"
+      },
+      {
+        "id": "c2",
+        "text": "Minimize the use of float"
+      },
+      {
+        "id": "c3",
+        "text": "Maintaining an average cash balance equal to that required as a compensating balance or that which minimizes total cost"
+      },
+      {
+        "id": "c4",
+        "text": "Use of checks and drafts in disbursing funds"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Float can be used strategically to manage cash flows, so minimizing it is not always good management."
+  },
+  {
+    "id": "MS-0167",
+    "text": "A high turnover of accounts receivable, which implies a very short days-sales outstanding, could indicate that the firm",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Has a relaxed lenient credit policy"
+      },
+      {
+        "id": "c2",
+        "text": "Offers small discounts"
+      },
+      {
+        "id": "c3",
+        "text": "Uses a lockbox system, synchronizes cash flows, and has short credit terms"
+      },
+      {
+        "id": "c4",
+        "text": "Has an inefficient credit and collection department"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "These practices typically lead to faster collection of receivables and higher turnover."
+  },
+  {
+    "id": "MS-0168",
+    "text": "Which of the following statements about current asset management is most correct?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "A positive net float means that a company has more cash available for its use than the amount shown in the company's books"
+      },
+      {
+        "id": "c2",
+        "text": "Use of a lockbox reduces the possibility that petty cash will be lost"
+      },
+      {
+        "id": "c3",
+        "text": "Depreciation has an impact on the cash budget"
+      },
+      {
+        "id": "c4",
+        "text": "Statements a and c are correct"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Both positive net float and depreciation affect cash management and budgeting."
+  },
+  {
+    "id": "MS-0169",
+    "text": "When managing cash and short-term investments, a corporate treasurer is primarily concerned with",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Maximizing rate of return"
+      },
+      {
+        "id": "c2",
+        "text": "Minimizing taxes"
+      },
+      {
+        "id": "c3",
+        "text": "Investing in Treasury bonds since they have no default risk"
+      },
+      {
+        "id": "c4",
+        "text": "Liquidity and safety"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "For cash and short-term investments, liquidity and safety are primary concerns over returns."
+  },
+  {
+    "id": "MS-0170",
+    "text": "Accounts receivable turnover will normally decrease as a result of",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The write-off of an uncollectible account (assume the use of the allowance for doubtful accounts method)"
+      },
+      {
+        "id": "c2",
+        "text": "A significant sales volume decrease near the end of the accounting period"
+      },
+      {
+        "id": "c3",
+        "text": "An increase in cash sales in proportion to credit sales"
+      },
+      {
+        "id": "c4",
+        "text": "A change in credit policy to lengthen the period for cash discounts"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Longer discount periods typically lead to slower collections and lower turnover."
+  },
+  {
+    "id": "MS-0171",
+    "text": "The level of accounts receivable will most likely increase as",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Cash sales increase and number of days sales"
+      },
+      {
+        "id": "c2",
+        "text": "Credit limits are expanded, credit sales increase, and credit terms remain the same"
+      },
+      {
+        "id": "c3",
+        "text": "Credit limits are expanded, cash sales increase, and aging of the receivables is improving"
+      },
+      {
+        "id": "c4",
+        "text": "Cash sales increase, current receivables ratio to past due increases, credit limits remain the same"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Expanded credit limits and increased credit sales will lead to higher accounts receivable."
+  },
+  {
+    "id": "MS-0172",
+    "text": "The Baumol Cash Management Model can be adapted in order for a firm to determine the optimal mix between cash and marketable securities. The model assumes all of the following except",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The cost of a transaction is independent of the peso amount of the transaction and interest rates are constant over the short run"
+      },
+      {
+        "id": "c2",
+        "text": "An opportunity cost is associated with holding cash, beginning with the first peso"
+      },
+      {
+        "id": "c3",
+        "text": "The total demand for cash is known with certainty"
+      },
+      {
+        "id": "c4",
+        "text": "Cash flow requirements are random"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The Baumol model assumes deterministic cash flows, not random ones."
+  },
+  {
+    "id": "MS-0173",
+    "text": "Inventory management requires the firm to balance the quantity of inventory on hand for operations with the investment in inventory. Two cost categories in inventory management are order costs and carrying costs. Which of the following is true?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The carrying costs include handling costs, interest on capital invested and obsolescence"
+      },
+      {
+        "id": "c2",
+        "text": "The order costs include quantity discounts lost, handling costs, and setup costs for a production run"
+      },
+      {
+        "id": "c3",
+        "text": "The carrying costs include purchasing costs, shipping costs, quantity discounts lost, and setup costs"
+      },
+      {
+        "id": "c4",
+        "text": "The order costs include insurance costs, shipping costs, and obsolescence"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Carrying costs include costs of holding inventory such as handling, interest, and obsolescence."
+  },
+  {
+    "id": "MS-0174",
+    "text": "The EOQ model is a deterministic model that calculates the ideal order quantity or production lot given specified periodic demand, the cost per order or production run, and the periodic carrying cost per unit. The EOQ model",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Minimizes the sum of inventory carrying costs and either ordering or production setup costs"
+      },
+      {
+        "id": "c2",
+        "text": "Minimize the sum of ordering costs and production setup costs"
+      },
+      {
+        "id": "c3",
+        "text": "Minimizes the sum of carrying costs and handling costs"
+      },
+      {
+        "id": "c4",
+        "text": "Minimizes the level of average inventory in units"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The EOQ model finds the order quantity that minimizes total inventory costs."
+  },
+  {
+    "id": "MS-0175",
+    "text": "Which of the following statements does not apply to decision tree analysis?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The sum of the probabilities of the events is less than one"
+      },
+      {
+        "id": "c2",
+        "text": "All of the events are mutually exclusive"
+      },
+      {
+        "id": "c3",
+        "text": "All of the events are included in the decision"
+      },
+      {
+        "id": "c4",
+        "text": "The branches emanate from a node from left to right"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "In decision tree analysis, the sum of probabilities for all possible events at any node must equal one."
+  },
+  {
+    "id": "MS-0176",
+    "text": "The expected value of perfect information is the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Same as the expected profit under certainty"
+      },
+      {
+        "id": "c2",
+        "text": "Sum of the conditional profit (loss) for the best event of each act times the probability of each events occurring"
+      },
+      {
+        "id": "c3",
+        "text": "Difference between the expected profit under certainty and the expected opportunity loss"
+      },
+      {
+        "id": "c4",
+        "text": "Difference between the expected profit under certainty and the expected monetary value of the best act under uncertainty"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "This is the standard definition of the expected value of perfect information - it measures how much more profit could be made with perfect information."
+  },
+  {
+    "id": "MS-0177",
+    "text": "In the PERT, slack is the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Uncertainty associated with time estimates"
+      },
+      {
+        "id": "c2",
+        "text": "Path that has the largest amount of time associated with it"
+      },
+      {
+        "id": "c3",
+        "text": "Excess time available in the completion of the project after crashing the critical path"
+      },
+      {
+        "id": "c4",
+        "text": "Number of days an activity can be delayed without forcing a delay for the entire project"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Slack represents the amount of time an activity can be delayed without affecting the project's completion date."
+  },
+  {
+    "id": "MS-0178",
+    "text": "The moving-average method of forecasting",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Is a cross-sectional forecasting method"
+      },
+      {
+        "id": "c2",
+        "text": "Regresses the variable of interest on a related variable to develop a forecast"
+      },
+      {
+        "id": "c3",
+        "text": "Derives final forecast by adjusting the initial forecast based on the smoothing constant"
+      },
+      {
+        "id": "c4",
+        "text": "Includes each new observation in the average as it becomes available and discards the oldest observation"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "This is the key characteristic of moving averages - they update by adding new data and removing old data."
+  }
+]

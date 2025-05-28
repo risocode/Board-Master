@@ -1,0 +1,21 @@
+{
+  "name": "Board Exam Review Questions",
+  "short_name": "BoardExam",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#eaf4fb",
+  "theme_color": "#eaf4fb",
+  "description": "Practice questions for various board exams in the Philippines",
+  "icons": [
+    {
+      "src": "/logo/berq.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo/berq.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 

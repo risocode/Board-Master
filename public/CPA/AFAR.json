@@ -1,0 +1,4130 @@
+[
+  {
+    "id": "AFAR-0001",
+    "text": "Which of the following is not an advantage of a partnership over a corporation?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Ease of formation"
+      },
+      {
+        "id": "c2",
+        "text": "Unlimited liability"
+      },
+      {
+        "id": "c3",
+        "text": "Less governmental regulations"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Unlimited liability is actually a disadvantage of partnerships, not an advantage. The other options (ease of formation and less governmental regulations) are advantages of partnerships over corporations."
+  },
+  {
+    "id": "AFAR-0002",
+    "text": "For financial accounting purposes, assets of an individual partner contributed to a partnership are recorded by the partnership at",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Historical cost"
+      },
+      {
+        "id": "c2",
+        "text": "Book value"
+      },
+      {
+        "id": "c3",
+        "text": "Fair market value"
+      },
+      {
+        "id": "c4",
+        "text": "Lower of cost or market"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "When a partner contributes assets to a partnership, these assets should be recorded at their fair market value at the time of contribution, as this represents the true economic value being brought into the partnership."
+  },
+  {
+    "id": "AFAR-0003",
+    "text": "On July 1, X and Y formed a partnership. X contributed cash. Y, previously a sole proprietor, contributed property other than cash, including realty subject to a mortgage, which the partnership assumed. Y's capital account on July 1, should be recorded at",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Y's capital account on July 1, should be recorded at"
+      },
+      {
+        "id": "c2",
+        "text": "Y's book value of the property on July 1"
+      },
+      {
+        "id": "c3",
+        "text": "Y's book value of the property less the mortgage payable on July 1"
+      },
+      {
+        "id": "c4",
+        "text": "The fair value of the property less the mortgage payable on July 1"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "When a partner contributes property subject to a mortgage, the capital account should be credited with the fair value of the property less the mortgage assumed by the partnership."
+  },
+  {
+    "id": "AFAR-0004",
+    "text": "Mr. A and Mr. B agreed to form a partnership. The fair values of the partners' net contribution vary however, the partners agreed to have equal capital credits. Cash settlement shall be made between them for the difference. Which of the following statements is correct?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The asset contributions of the partners shall be debited to equal amounts"
+      },
+      {
+        "id": "c2",
+        "text": "The cash settlement between the partners will either increase or decrease the total partnership capital"
+      },
+      {
+        "id": "c3",
+        "text": "The cash settlement between the partners will not be recorded in the partnership books"
+      },
+      {
+        "id": "c4",
+        "text": "Mr. A shall pay Mr. B to have their capital balances equal"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Cash settlements between partners for equalizing capital contributions are personal transactions and should not be recorded in the partnership books."
+  },
+  {
+    "id": "AFAR-0005",
+    "text": "How should the partners in a business partnership share in the profits or losses of the partnership?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Equally"
+      },
+      {
+        "id": "c2",
+        "text": "At whatever basis of allocation that the dominating partner deems reasonable"
+      },
+      {
+        "id": "c3",
+        "text": "In accordance with the partnership agreement"
+      },
+      {
+        "id": "c4",
+        "text": "None of the above"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "The sharing of profits and losses should be based on the partnership agreement, which is the legal document governing the partnership's operations."
+  },
+  {
+    "id": "AFAR-0006",
+    "text": "According to the Philippine Civil Code, if only the share of each partner in the profits has been agreed upon, the share of each in the losses shall be",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "In equal amounts"
+      },
+      {
+        "id": "c2",
+        "text": "In equal amounts, but excluding the industrial partner"
+      },
+      {
+        "id": "c3",
+        "text": "In proportion to the partners' contributions"
+      },
+      {
+        "id": "c4",
+        "text": "The same as the sharing in profits"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Under the Philippine Civil Code, when only profit sharing is specified, the loss sharing follows the same ratio as profit sharing."
+  },
+  {
+    "id": "AFAR-0007",
+    "text": "According to the Philippine Civil Code, in the absence of a stipulation on the sharing of profits or losses, partnership profits and losses shall be shared by the partners",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Equally"
+      },
+      {
+        "id": "c2",
+        "text": "In accordance with the partnership agreement"
+      },
+      {
+        "id": "c3",
+        "text": "In proportion to what the partners may have contributed"
+      },
+      {
+        "id": "c4",
+        "text": "In proportion to what the partners may have contributed, but the industrial partner shall not be liable for the losses"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "In the absence of any agreement, the Philippine Civil Code provides that profits and losses shall be shared equally among partners."
+  },
+  {
+    "id": "AFAR-0008",
+    "text": "Partners active in a partnership business should have their share of partnership profits based on the following",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "A combination of salaries plus interest based on average capital balances"
+      },
+      {
+        "id": "c2",
+        "text": "A combination of salaries and percentage of net income after salaries and any other allocation basis"
+      },
+      {
+        "id": "c3",
+        "text": "Salaries only"
+      },
+      {
+        "id": "c4",
+        "text": "Percentage of net income after salaries is paid to inactive partners"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Active partners typically receive a combination of salary and a percentage of remaining profits after all allocations, which recognizes both their service and investment in the partnership."
+  },
+  {
+    "id": "AFAR-0009",
+    "text": "Which of the following best describes the use of interest on invested capital as a means of allocating profits?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "If interest on invested capital is used, it must be used for all partners"
+      },
+      {
+        "id": "c2",
+        "text": "Interest is allocated only if there is partnership net profit"
+      },
+      {
+        "id": "c3",
+        "text": "Invested capital balances are never affected by drawings of the partnerships"
+      },
+      {
+        "id": "c4",
+        "text": "Use of beginning or ending measures of invested capital may be subject to manipulation that distorts the measure of invested capital"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Using only beginning or ending capital balances can be manipulated by partners through strategic timing of contributions or withdrawals, making it an imperfect measure for profit allocation."
+  },
+  {
+    "id": "AFAR-0010",
+    "text": "A partnership agreement calls for allocation of profits and losses by salary allocations, a bonus allocation, interest on capital, with any remainder to be allocated by preset ratios. If a partnership has a loss to allocate, generally which of the following procedures would be applied?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Any loss would be allocated equally to all partners"
+      },
+      {
+        "id": "c2",
+        "text": "Any salary allocation criteria would not be used"
+      },
+      {
+        "id": "c3",
+        "text": "The bonus criteria would not be used"
+      },
+      {
+        "id": "c4",
+        "text": "The loss would be allocated using the profit and loss ratios, only"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "When there is a loss, it is typically allocated using the profit and loss ratios only, as salary allocations and bonuses are not appropriate for loss allocation."
+  },
+  {
+    "id": "AFAR-0011",
+    "text": "Which of the following statements is true concerning the treatment of salaries in partnership accounting?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Partner salaries may be used to allocate profits and losses they are not considered expenses of the partnership"
+      },
+      {
+        "id": "c2",
+        "text": "Partner salaries are equal to the annual partner draw"
+      },
+      {
+        "id": "c3",
+        "text": "The salary of a partner is treated in the same manner as salaries of corporate employees"
+      },
+      {
+        "id": "c4",
+        "text": "Partner salaries are directly closed to the capital account"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Partner salaries are not actual expenses but rather a method of profit allocation, and they are not treated the same as employee salaries."
+  },
+  {
+    "id": "AFAR-0012",
+    "text": "Partnership drawings are",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Always maintained in a separate account from the partners' capital account"
+      },
+      {
+        "id": "c2",
+        "text": "Equal to partners' salaries"
+      },
+      {
+        "id": "c3",
+        "text": "Usually maintained in a separate draw account with any excess draws being debited directly to the capital account"
+      },
+      {
+        "id": "c4",
+        "text": "Not discussed in the specific contract provisions of the partnership"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Partnership drawings are typically tracked in a separate account, and any excess draws are charged against the partner's capital account."
+  },
+  {
+    "id": "AFAR-0013",
+    "text": "When a new partner is admitted into a partnership and the capital of the old partners decreases, which of the following explains the reason for the decrease? I. Undervalued liabilities were written up to their fair values. II. Undervalued assets were written up to their fair values.",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "I only"
+      },
+      {
+        "id": "c2",
+        "text": "II only"
+      },
+      {
+        "id": "c3",
+        "text": "Both I and II"
+      },
+      {
+        "id": "c4",
+        "text": "Neither I nor II"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Both writing up undervalued liabilities and assets to their fair values can result in a decrease in the old partners' capital accounts."
+  },
+  {
+    "id": "AFAR-0014",
+    "text": "Under the bonus method, any increase or decrease in the capital credit of a partner is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Deducted from or added to the capital credits of the other partners"
+      },
+      {
+        "id": "c2",
+        "text": "Recognized as goodwill"
+      },
+      {
+        "id": "c3",
+        "text": "Recognized as expense"
+      },
+      {
+        "id": "c4",
+        "text": "Deferred and amortized to profit or loss"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Under the bonus method, any adjustment to a partner's capital credit is offset by corresponding adjustments to the other partners' capital accounts."
+  },
+  {
+    "id": "AFAR-0015",
+    "text": "The admission of a new partner effected through purchase of interest from an existing partners is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Recorded in the partnership's books as a debit to cash or other asset and credit to the incoming partner's capital account"
+      },
+      {
+        "id": "c2",
+        "text": "Recorded in the partnership's books as a transfer within equity"
+      },
+      {
+        "id": "c3",
+        "text": "Recorded in the partnership's books as a transfer from equity to liability"
+      },
+      {
+        "id": "c4",
+        "text": "Not recorded in its entirety"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "When a new partner purchases an interest from existing partners, it is recorded as a transfer within equity, as it only affects the capital accounts."
+  },
+  {
+    "id": "AFAR-0016",
+    "text": "In XY Partnership, X and Y had a capital ratio of 3:1 and a profit and loss ratio of 2:1, respectively. The bonus method was used to record Z's admittance as a new partner. What ratio would be used to allocate, to X and Y, the excess of Z's contributions over the amount credited to Z's capital account?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "X and Y's new relative capital ratio"
+      },
+      {
+        "id": "c2",
+        "text": "X and Y's new relative capital profit and loss ratio"
+      },
+      {
+        "id": "c3",
+        "text": "X and Y's old capital ratio"
+      },
+      {
+        "id": "c4",
+        "text": "X and Y's old profit and loss ratio"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "When using the bonus method, any excess or deficiency is allocated to the existing partners using their old profit and loss ratio."
+  },
+  {
+    "id": "AFAR-0017",
+    "text": "When partner X retired, the partnership paid X an amount that was lower than the balance of his capital account. Which of the following statements is incorrect?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The partnership assets decreased as a result of the retirement"
+      },
+      {
+        "id": "c2",
+        "text": "The other partners' capital balances increased"
+      },
+      {
+        "id": "c3",
+        "text": "The partnership assets were not affected"
+      },
+      {
+        "id": "c4",
+        "text": "The number of capital accounts in the partnership chart of accounts decreased"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "When a partner retires and receives a payment, the partnership assets are affected as cash or other assets are used to make the payment."
+  },
+  {
+    "id": "AFAR-0018",
+    "text": "A bonus is recognized by existing partners at the date a new partner joins a partnership when which of the following relationships occur?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The new partner's contribution exceeds his/her percentage of total partnership capital after the investment is made"
+      },
+      {
+        "id": "c2",
+        "text": "The new partner's contribution is less than his/her percentage of total partnership capital after the investment is made"
+      },
+      {
+        "id": "c3",
+        "text": "The new partner's contribution is equal to his/her percentage of total partnership capital after the investment is made"
+      },
+      {
+        "id": "c4",
+        "text": "It is not possible to determine the answer to this question"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "A bonus to existing partners occurs when the new partner's contribution is less than the capital credit given, with the difference being allocated to the existing partners."
+  },
+  {
+    "id": "AFAR-0019",
+    "text": "Which of the following statements is true with regard to a withdrawing partner?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "A bonus must be paid to the retiring partner"
+      },
+      {
+        "id": "c2",
+        "text": "A bonus may be paid to the retiring partner"
+      },
+      {
+        "id": "c3",
+        "text": "A bonus must be paid to the retiring partner or to the remaining partners"
+      },
+      {
+        "id": "c4",
+        "text": "Recognizing a bonus is not appropriate when a partner retires"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "A bonus to the retiring partner is optional and depends on the terms of the partnership agreement and the circumstances of the retirement."
+  },
+  {
+    "id": "AFAR-0020",
+    "text": "A simple partnership liquidation requires",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Periodic payments to creditors and partners determined by a safe payments schedule"
+      },
+      {
+        "id": "c2",
+        "text": "Partnership assets to be converted into cash with full payment made to all outside creditors before remaining cash is distributed to partners in a lump sum payment"
+      },
+      {
+        "id": "c3",
+        "text": "Only creditors to be paid in an orderly manner"
+      },
+      {
+        "id": "c4",
+        "text": "Periodic payments to partners as cash becomes available"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "In a simple liquidation, all assets are converted to cash, creditors are paid in full, and then remaining cash is distributed to partners."
+  },
+  {
+    "id": "AFAR-0021",
+    "text": "The following is the priority sequence in which liquidation proceeds will be distributed for a partnership",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Partnership drawings, partnership liabilities, partnership loans, partnership capital balances"
+      },
+      {
+        "id": "c2",
+        "text": "Partnership liabilities, partnership loans, partnership capital balances"
+      },
+      {
+        "id": "c3",
+        "text": "Partnership liabilities, partnership loans, partnership drawings, partnership capital balances"
+      },
+      {
+        "id": "c4",
+        "text": "Partnership liabilities, partnership capital balances, partnership loans"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The correct order of distribution is: first to outside creditors (liabilities), then to partners' loans, and finally to partners' capital balances."
+  },
+  {
+    "id": "AFAR-0022",
+    "text": "What is the nature of liability of general partners as to partnership debts or obligations?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "They are liable equally up to the extent of their separate assets after the partnership assets are exhausted"
+      },
+      {
+        "id": "c2",
+        "text": "They are liable pro-rata up to the extent of their separate assets after the partnership assets are exhausted"
+      },
+      {
+        "id": "c3",
+        "text": "They are liable pro-rata up to the extent of their capital contribution only"
+      },
+      {
+        "id": "c4",
+        "text": "They are liable solidarily up to the extent of their separate assets after the partnership assets are exhausted"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "General partners have solidary (joint and several) liability, meaning each partner can be held liable for the full amount of partnership debts after partnership assets are exhausted."
+  },
+  {
+    "id": "AFAR-0023",
+    "text": "X and Y are partners of XY Partnership which is undergoing liquidation. After XY Partnership's assets were realized and its liabilities settled, X's capital account has a negative balance. Which of the following statements is correct?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Y shall absorb X's capital deficiency if X is solvent"
+      },
+      {
+        "id": "c2",
+        "text": "X shall make an additional contribution if X is insolvent"
+      },
+      {
+        "id": "c3",
+        "text": "X and Y shall make pro rata contributions to eliminate X's capital deficiency"
+      },
+      {
+        "id": "c4",
+        "text": "Y shall absorb X's capital deficiency if X is insolvent"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "If a partner with a capital deficiency is insolvent, the remaining partners must absorb the deficiency in their profit and loss ratio."
+  },
+  {
+    "id": "AFAR-0024",
+    "text": "If a partner with a debit capital balance during liquidation is personally solvent, the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Partner must invest additional assets in the partnership"
+      },
+      {
+        "id": "c2",
+        "text": "Partner's debit balance will be allocated to the other partners"
+      },
+      {
+        "id": "c3",
+        "text": "Other partners will give the partner enough cash to absorb the debit balance"
+      },
+      {
+        "id": "c4",
+        "text": "Partnership will loan the partner enough cash to absorb the debit balance"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "If a partner has a debit capital balance and is solvent, they must contribute additional assets to the partnership to cover their deficiency."
+  },
+  {
+    "id": "AFAR-0025",
+    "text": "In accounting for liquidation of partnership, cash payments to partners after all non-partner creditors' claims have been satisfied, but before the final cash distribution, should be according to",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The partners' relative profit and loss sharing ratios"
+      },
+      {
+        "id": "c2",
+        "text": "The final balances in partner capital accounts"
+      },
+      {
+        "id": "c3",
+        "text": "The partners' relative share of the gain or loss on liquidations"
+      },
+      {
+        "id": "c4",
+        "text": "Safe payments computations"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Safe payments computations are used to determine how much can be safely distributed to partners before all assets are liquidated, ensuring no partner receives more than their eventual share."
+  },
+  {
+    "id": "AFAR-0026",
+    "text": "If a partnership has only non-cash assets, all liabilities have been properly disbursed, and no additional liquidation expenses are expected, the maximum potential loss to the partnership in the liquidation process is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The fair market value of the non-cash assets"
+      },
+      {
+        "id": "c2",
+        "text": "The book value of the non-cash assets"
+      },
+      {
+        "id": "c3",
+        "text": "The estimated proceeds from the sale of the assets less the book value of the non-cash assets"
+      },
+      {
+        "id": "c4",
+        "text": "None of the above"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The maximum potential loss is the book value of the non-cash assets, as this represents the amount that could be lost if the assets were sold for nothing."
+  },
+  {
+    "id": "AFAR-0027",
+    "text": "In partnership liquidation, the last remaining cash distribution should be made according to the ratio of",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The individual partners' profit and loss agreement"
+      },
+      {
+        "id": "c2",
+        "text": "The individual partners' capital accounts, increased by partner loans to the partnership"
+      },
+      {
+        "id": "c3",
+        "text": "The individual partners' capital accounts, increased by partnership loans to the partners and decreased by partner loans to the partnership"
+      },
+      {
+        "id": "c4",
+        "text": "The individual partners' capital accounts, decreased by partnership loans to the partners and increased by partner loans to the partnership"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "The final distribution should consider both the capital accounts and any loans between partners and the partnership, with partnership loans to partners increasing the distribution and partner loans to the partnership decreasing it."
+  },
+  {
+    "id": "AFAR-0028",
+    "text": "If all partners are included in the first installment of an installment liquidation, then in future installments",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Cash will be distribution according to the residual profit and loss sharing ratio"
+      },
+      {
+        "id": "c2",
+        "text": "Cash should not be distributed until all non-cash assets are converted into cash"
+      },
+      {
+        "id": "c3",
+        "text": "A safe payments schedule must be prepared before each cash distribution to avoid excessive payments to partners"
+      },
+      {
+        "id": "c4",
+        "text": "A cash distribution plan must be prepared so that partners will know when they will be included in cash distributions"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Safe payments schedules are necessary for each distribution to ensure partners don't receive more than their eventual share of the partnership assets."
+  },
+  {
+    "id": "AFAR-0029",
+    "text": "Which partner is considered the most vulnerable as a result of a computation of vulnerability rankings?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The partner with the lowest vulnerability ranking, who also has the lowest loss absorption potential"
+      },
+      {
+        "id": "c2",
+        "text": "The partner with the lowest vulnerability ranking, who also has the highest loss absorption potential"
+      },
+      {
+        "id": "c3",
+        "text": "The partner with the highest vulnerability ratio, who also has the lowest loss absorption potential"
+      },
+      {
+        "id": "c4",
+        "text": "The partner with the highest vulnerability ranking, who also has the highest loss absorption potential"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "The most vulnerable partner is the one with the highest vulnerability ratio and lowest loss absorption potential, as they are most likely to receive less than their capital balance in liquidation."
+  },
+  {
+    "id": "AFAR-0030",
+    "text": "A partner's maximum loss absorbable is calculated by",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Dividing the partner's capital balance by his or her profit-and-loss-sharing percentage"
+      },
+      {
+        "id": "c2",
+        "text": "Multiplying the partner's capital balance by his or her profit-and-loss-sharing percentage"
+      },
+      {
+        "id": "c3",
+        "text": "Multiplying distributable assets by the partner's profit-sharing percentage"
+      },
+      {
+        "id": "c4",
+        "text": "Dividing the partner's capital balance by his or her percentage interest in capital"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Maximum loss absorbable is calculated by dividing the partner's capital balance by their profit-and-loss-sharing percentage, which shows how much loss the partner can absorb before their capital is eliminated."
+  },
+  {
+    "id": "AFAR-0031",
+    "text": "In a Statement of Financial Affairs, a company's assets should be valued at",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Historical cost"
+      },
+      {
+        "id": "c2",
+        "text": "Net realizable value, if lower than historical cost"
+      },
+      {
+        "id": "c3",
+        "text": "Replacement cost"
+      },
+      {
+        "id": "c4",
+        "text": "Net realizable value, whether higher or lower than historical cost"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "In a Statement of Financial Affairs, assets are valued at their net realizable value regardless of whether it's higher or lower than historical cost, as this represents the amount that could be realized from their sale."
+  },
+  {
+    "id": "AFAR-0032",
+    "text": "In a Statement of Financial Affairs, a company's liabilities should be valued at",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The present value of future cash flows"
+      },
+      {
+        "id": "c2",
+        "text": "Net realizable value"
+      },
+      {
+        "id": "c3",
+        "text": "The amount required for settlement"
+      },
+      {
+        "id": "c4",
+        "text": "Replacement cost"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Liabilities in a Statement of Financial Affairs should be valued at the amount required for settlement, as this represents the actual amount that will need to be paid to satisfy the obligations."
+  },
+  {
+    "id": "AFAR-0033",
+    "text": "In a Statement of Financial Affairs, a specific liability may be classified as",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Current or long-term"
+      },
+      {
+        "id": "c2",
+        "text": "Secured or unsecured"
+      },
+      {
+        "id": "c3",
+        "text": "Monetary or nonmonetary"
+      },
+      {
+        "id": "c4",
+        "text": "Direct or indirect"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "In a Statement of Financial Affairs, liabilities are primarily classified as secured or unsecured, as this classification is crucial for determining the order of payment in liquidation."
+  },
+  {
+    "id": "AFAR-0034",
+    "text": "A Statement of Financial Affairs of a corporation in financial difficulty indicates that unsecured creditors would receive a percentage of their claims. Which one of the following assets is most likely to realize the smallest percentage of its book value?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Accounts receivable"
+      },
+      {
+        "id": "c2",
+        "text": "Inventories"
+      },
+      {
+        "id": "c3",
+        "text": "Plant and equipment"
+      },
+      {
+        "id": "c4",
+        "text": "Goodwill"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Goodwill is most likely to realize the smallest percentage of its book value because it has no physical substance and its value is highly dependent on the going concern value of the business, which is typically minimal in liquidation."
+  },
+  {
+    "id": "AFAR-0035",
+    "text": "The estimated deficiency to unsecured creditors without priority is computed as",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Net free assets less total unsecured liabilities without priority"
+      },
+      {
+        "id": "c2",
+        "text": "Net free assets divided by total unsecured liabilities without priority"
+      },
+      {
+        "id": "c3",
+        "text": "Total assets at realizable values less total liabilities at expected net settlement amounts"
+      },
+      {
+        "id": "c4",
+        "text": "A or C"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The estimated deficiency can be computed either as net free assets less total unsecured liabilities without priority, or as total assets at realizable values less total liabilities at expected net settlement amounts."
+  },
+  {
+    "id": "AFAR-0036",
+    "text": "In a Statement of Affairs",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Assets pledged with partially secured creditors are shown on the asset side of the statement and as a deduction on the liability side of the statement"
+      },
+      {
+        "id": "c2",
+        "text": "Assets pledged with fully secured creditors are shown only on the liability side of the statement"
+      },
+      {
+        "id": "c3",
+        "text": "Liabilities owed to fully secured creditors are shown only on the asset side of the statement"
+      },
+      {
+        "id": "c4",
+        "text": "Liabilities owed to partially secured creditors are shown on the asset side of the balance sheet and as a deduction on the liability side of the statement"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "In a Statement of Affairs, assets pledged with partially secured creditors are shown on both sides of the statement to properly reflect their dual role in the liquidation process."
+  },
+  {
+    "id": "AFAR-0037",
+    "text": "The recovery percentage is calculated by which of the following formulas?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Estimated amount available for unsecured creditors with/without priority divided by total claims of unsecured creditors with/without priority"
+      },
+      {
+        "id": "c2",
+        "text": "Estimated realizable value of all debtor assets divided by book value of debtor assets"
+      },
+      {
+        "id": "c3",
+        "text": "Estimated gain/loss on liquidation divided by total estimated net realizable value of debtor assets"
+      },
+      {
+        "id": "c4",
+        "text": "Net estimated proceeds available to unsecured creditors divided by total claims of unsecured creditors"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The recovery percentage is calculated by dividing the net estimated proceeds available to unsecured creditors by their total claims, which shows what percentage of their claims they can expect to recover."
+  },
+  {
+    "id": "AFAR-0038",
+    "text": "A corporation's Statement of Affairs shows a recovery percentage of 115. This means",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Secured creditors will receive an amount in excess of the book value of their claims"
+      },
+      {
+        "id": "c2",
+        "text": "Unsecured creditors will receive an amount in excess of the book value of their claims"
+      },
+      {
+        "id": "c3",
+        "text": "Stockholders may expect some return on their interests"
+      },
+      {
+        "id": "c4",
+        "text": "An error was made in the preparation of the statement"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "A recovery percentage of 115% means unsecured creditors will receive 115% of their claims, indicating they will receive more than the book value of their claims."
+  },
+  {
+    "id": "AFAR-0039",
+    "text": "What are free assets?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Assets for which net realizable value is greater than historical cost"
+      },
+      {
+        "id": "c2",
+        "text": "Assets for which no market exists"
+      },
+      {
+        "id": "c3",
+        "text": "Assets for which replacement cost is greater than historical cost"
+      },
+      {
+        "id": "c4",
+        "text": "Assets available to be distributed for liabilities with priority and other unsecured obligations"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Free assets are those that are not pledged as security for any liabilities and are available for distribution to satisfy claims of creditors with priority and other unsecured obligations."
+  },
+  {
+    "id": "AFAR-0040",
+    "text": "All of the following items are liabilities with priority except",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Obligations arising between the date an order of relief is issued and the date of final realization of assets"
+      },
+      {
+        "id": "c2",
+        "text": "Employee claims for contributions to benefit plans earned more than 180 days preceding the filing of a petition"
+      },
+      {
+        "id": "c3",
+        "text": "Government claims for unpaid taxes"
+      },
+      {
+        "id": "c4",
+        "text": "Claims for the return of deposits made by customers to acquire property or services, which were never delivered or provided by the debtor"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Employee claims for contributions to benefit plans earned more than 180 days before the filing of a petition are not considered priority claims, as they fall outside the priority period."
+  },
+  {
+    "id": "AFAR-0041",
+    "text": "The Investment in Branch and Home Office accounts are best described as",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Contra accounts"
+      },
+      {
+        "id": "c2",
+        "text": "Adjunct accounts"
+      },
+      {
+        "id": "c3",
+        "text": "Reciprocal accounts"
+      },
+      {
+        "id": "c4",
+        "text": "Investment accounts"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "The Investment in Branch and Home Office accounts are reciprocal accounts because they represent the same relationship from different perspectives - the home office's investment in the branch and the branch's obligation to the home office."
+  },
+  {
+    "id": "AFAR-0042",
+    "text": "The Home Office ledger account in the accounting records of a branch is best compared to",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "An equity account"
+      },
+      {
+        "id": "c2",
+        "text": "A revenue account"
+      },
+      {
+        "id": "c3",
+        "text": "A liability account"
+      },
+      {
+        "id": "c4",
+        "text": "A deferred revenue account"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The Home Office account in the branch's books is similar to an equity account because it represents the branch's net investment in the home office, similar to how equity represents ownership interest."
+  },
+  {
+    "id": "AFAR-0043",
+    "text": "For external reporting, the individual financial statements of the home office and branch are combined",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "By using complex consolidation procedures"
+      },
+      {
+        "id": "c2",
+        "text": "By recognizing the home office's own assets, liabilities, income and expenses plus its share in the branch's assets, liabilities, income and expenses"
+      },
+      {
+        "id": "c3",
+        "text": "By adding together similar items of assets, liabilities, income and expenses"
+      },
+      {
+        "id": "c4",
+        "text": "By adding together similar items of assets, liabilities, income and expenses and eliminating reciprocal accounts"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "When combining financial statements, similar items are added together while reciprocal accounts (like Investment in Branch and Home Office) are eliminated to avoid double counting."
+  },
+  {
+    "id": "AFAR-0044",
+    "text": "In preparing the combined financial statements of the home office and its various branches",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Both reciprocal and non-reciprocal accounts are combined"
+      },
+      {
+        "id": "c2",
+        "text": "Both reciprocal and non-reciprocal accounts are eliminated"
+      },
+      {
+        "id": "c3",
+        "text": "Reciprocal accounts are eliminated but non-reciprocal accounts are combined"
+      },
+      {
+        "id": "c4",
+        "text": "Reciprocal accounts are combined but non-reciprocal accounts are eliminated"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "In combined financial statements, reciprocal accounts are eliminated to avoid double counting, while non-reciprocal accounts are combined to show the total financial position of the entire organization."
+  },
+  {
+    "id": "AFAR-0045",
+    "text": "Which of the following accounts would be shown in the combined financial statements of the home office and branch",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Investment in branch account"
+      },
+      {
+        "id": "c2",
+        "text": "Allowance for unrealized gross margin in branch inventory"
+      },
+      {
+        "id": "c3",
+        "text": "Home office account"
+      },
+      {
+        "id": "c4",
+        "text": "None of the above"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "None of these accounts would appear in the combined financial statements because they are all reciprocal accounts that are eliminated in the combination process."
+  },
+  {
+    "id": "AFAR-0046",
+    "text": "The main difference between the net income reported in the separate income statement of the branch and the net income reported by the home office for the branch's operation is the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Overstatement of beginning and ending inventory reported by the branch"
+      },
+      {
+        "id": "c2",
+        "text": "Overstatement of total goods available for sale reported by the branch"
+      },
+      {
+        "id": "c3",
+        "text": "Overstatement of costs of goods sold reported by the branch"
+      },
+      {
+        "id": "c4",
+        "text": "Overstatement of shipment from home office reported by the branch"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "The branch's income statement typically overstates cost of goods sold because it includes the transfer price markup from the home office, while the home office's records for the branch reflect the actual cost."
+  },
+  {
+    "id": "AFAR-0047",
+    "text": "Which represents the proper journal entry for a periodic inventory system that should be made on the books of the home office when goods that cost the home office P100,000 to manufacture are shipped to a branch at a transfer price of P125,000 and the billed price is not recorded in the shipments to branch account?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Investment in Branch Shipments to branch P100,000 P100,000"
+      },
+      {
+        "id": "c2",
+        "text": "Investment in Branch Shipments to branch P125,000 P125,000"
+      },
+      {
+        "id": "c3",
+        "text": "Investment in Branch Shipments to branch Unrealized profit P125,000 P100,000 25,000"
+      },
+      {
+        "id": "c4",
+        "text": "Shipment to branch Unrealized profit Shipments from home office P100,000 25,000 P125,000"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "This entry properly records the transfer of goods at cost (P100,000) to the shipments account, recognizes the markup (P25,000) as unrealized profit, and debits the investment in branch account for the total transfer price (P125,000)."
+  },
+  {
+    "id": "AFAR-0048",
+    "text": "Which of the following statements is/are true regarding sales agency and branch? I. A sales agency is not a self-contained business but rather acts only on behalf of the home office II. A branch is a self-contained business which acts independently, but within the bounds of the company policy and subject to the control of the home office",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "I only"
+      },
+      {
+        "id": "c2",
+        "text": "II only"
+      },
+      {
+        "id": "c3",
+        "text": "I and II"
+      },
+      {
+        "id": "c4",
+        "text": "Neither I nor II"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Both statements are true. A sales agency is an extension of the home office that acts on its behalf, while a branch is a more independent unit that maintains its own accounting records but operates under home office control."
+  },
+  {
+    "id": "AFAR-0049",
+    "text": "The two basic types of cost accounting systems are",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Job order and job accumulation systems"
+      },
+      {
+        "id": "c2",
+        "text": "Job order and process cost systems"
+      },
+      {
+        "id": "c3",
+        "text": "Process cost and batch systems"
+      },
+      {
+        "id": "c4",
+        "text": "Job order and batch systems"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Job order and process cost systems are the two fundamental types of cost accounting systems, with job order used for unique products and process costing used for mass-produced identical items."
+  },
+  {
+    "id": "AFAR-0050",
+    "text": "Two basic costing systems for assigning costs to products or services are job order and process costing. These two costing systems are usually viewed as being on opposite ends of a spectrum. The fundamental criterion employed to determine whether job costing or process costing should be employed is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Proportion of direct traceable costs expended to produce the product or service"
+      },
+      {
+        "id": "c2",
+        "text": "Number of cost pools employed to allocate the indirect costs to the product or service"
+      },
+      {
+        "id": "c3",
+        "text": "Type of bases used in allocating the indirect cost pools to the product or service"
+      },
+      {
+        "id": "c4",
+        "text": "The nature and amount of the product or service brought to the marketplace for customer consumption"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The choice between job order and process costing depends primarily on the nature of the product or service and the production process, not on cost allocation methods or cost pools."
+  },
+  {
+    "id": "AFAR-0051",
+    "text": "Job order costing and process costing have which of the following characteristics? Job Order Costing Process Costing",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Homogeneous products Heterogeneous products and large quantities and small quantities"
+      },
+      {
+        "id": "c2",
+        "text": "Homogeneous products Heterogeneous products and small quantities and large quantities"
+      },
+      {
+        "id": "c3",
+        "text": "Heterogeneous products Homogeneous products and large quantities and small quantities"
+      },
+      {
+        "id": "c4",
+        "text": "Heterogeneous products Homogeneous products and small quantities and large quantities"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Job order costing is used for heterogeneous products produced in small quantities, while process costing is used for homogeneous products produced in large quantities."
+  },
+  {
+    "id": "AFAR-0052",
+    "text": "Which of the following would be accounted for using a job order cost system?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The production of personal computers"
+      },
+      {
+        "id": "c2",
+        "text": "The production of automobiles"
+      },
+      {
+        "id": "c3",
+        "text": "The refining of petroleum"
+      },
+      {
+        "id": "c4",
+        "text": "The construction of a new campus building"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Job order costing is most appropriate for unique, custom projects like building construction, while the other options involve mass production of identical items which would use process costing."
+  },
+  {
+    "id": "AFAR-0053",
+    "text": "In a job cost system, the application of factory overhead is usually reflected in the general ledger as an increase in",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Factory overhead control"
+      },
+      {
+        "id": "c2",
+        "text": "Finished goods control"
+      },
+      {
+        "id": "c3",
+        "text": "Work in process control"
+      },
+      {
+        "id": "c4",
+        "text": "Cost of goods sold"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "When factory overhead is applied in a job cost system, it is debited to Work in Process Control as it represents costs being added to the production process."
+  },
+  {
+    "id": "AFAR-0054",
+    "text": "When a job is completed and all costs have been accumulated on a job cost sheet, the journal entry that should be made is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Finished Goods Inventory Direct Materials Direct Labor Manufacturing Overhead"
+      },
+      {
+        "id": "c2",
+        "text": "Work In Process Inventory Direct Materials Direct Labor Manufacturing Overhead"
+      },
+      {
+        "id": "c3",
+        "text": "Raw Materials Inventory Work in Process Inventory"
+      },
+      {
+        "id": "c4",
+        "text": "Finished Goods Inventory Work in Process Inventory"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "When a job is completed, the costs are transferred from Work in Process Inventory to Finished Goods Inventory, as the product is now complete and ready for sale."
+  },
+  {
+    "id": "AFAR-0055",
+    "text": "Spoiled units are",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Units that cannot be economically reworked to bring them up to standard"
+      },
+      {
+        "id": "c2",
+        "text": "Units that can be economically reworked to bring them up to standard"
+      },
+      {
+        "id": "c3",
+        "text": "The same as defective units"
+      },
+      {
+        "id": "c4",
+        "text": "Considered abnormal losses"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Spoiled units are those that cannot be economically reworked to meet quality standards, unlike defective units which can be reworked."
+  },
+  {
+    "id": "AFAR-0056",
+    "text": "Normal spoilage is defined as unacceptable production that",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Arises because of a special job or process"
+      },
+      {
+        "id": "c2",
+        "text": "Occurs in on-going operations"
+      },
+      {
+        "id": "c3",
+        "text": "Is caused specifically by human error"
+      },
+      {
+        "id": "c4",
+        "text": "Is in excess of that which is expected"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Normal spoilage is the expected, unavoidable waste that occurs during normal production operations, as opposed to abnormal spoilage which is unexpected or avoidable."
+  },
+  {
+    "id": "AFAR-0057",
+    "text": "Abnormal spoilage is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Spoilage that is forecasted or planned"
+      },
+      {
+        "id": "c2",
+        "text": "Spoilage that is in excess of planned"
+      },
+      {
+        "id": "c3",
+        "text": "Accounted for as a product cost"
+      },
+      {
+        "id": "c4",
+        "text": "Debited to Cost of Goods Sold"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Abnormal spoilage is waste that exceeds the expected or normal level of spoilage and is typically treated as a period cost rather than a product cost."
+  },
+  {
+    "id": "AFAR-0058",
+    "text": "Which of the following statements concerning spoilage in a job-order costing is correct?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The cost of abnormal spoilage is recorded as period cost or expense"
+      },
+      {
+        "id": "c2",
+        "text": "When normal spoilage occurs because of the specification of a particular job, cost of normal loss shall be capitalized to that specific job reduced by the current disposal value/net realizable value of the spoiled units"
+      },
+      {
+        "id": "c3",
+        "text": "When normal spoilage is a characteristic of a given production cycle, the cost of normal loss is not charged to a specific job but will be closed to manufacturing overhead control account"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "All statements are correct regarding the treatment of spoilage in job-order costing, including the treatment of abnormal spoilage as a period cost and the different ways normal spoilage can be accounted for depending on the circumstances."
+  },
+  {
+    "id": "AFAR-0059",
+    "text": "Which of the following statements concerning rework costs in a job-order costing is correct?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "If the normal rework cost is attributable to a specific job, it shall be capitalized to that particular job"
+      },
+      {
+        "id": "c2",
+        "text": "If the normal rework cost is common to all jobs, it shall be debited to manufacturing overhead control account"
+      },
+      {
+        "id": "c3",
+        "text": "If the rework cost is abnormal, it shall be recorded as a period cost or expense"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "All statements are correct regarding the treatment of rework costs in job-order costing, including the capitalization of job-specific rework costs and the treatment of abnormal rework as a period cost."
+  },
+  {
+    "id": "AFAR-0060",
+    "text": "When the amount of overapplied factory overhead is significant, the entry to close overapplied factory overhead will most likely require",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "A debit to cost of goods sold"
+      },
+      {
+        "id": "c2",
+        "text": "Debits to cost of goods sold, finished goods inventory, and work in process inventory"
+      },
+      {
+        "id": "c3",
+        "text": "A credit to cost of goods sold"
+      },
+      {
+        "id": "c4",
+        "text": "Credits to cost of goods sold, finished goods inventory and work in process inventory"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "When overapplied overhead is significant, it should be allocated proportionally to all accounts that contain overhead costs, which includes work in process, finished goods, and cost of goods sold."
+  },
+  {
+    "id": "AFAR-0061",
+    "text": "What is the best cost accumulation procedure to use when a single product is manufactured in a continuous process?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Process"
+      },
+      {
+        "id": "c2",
+        "text": "Job order"
+      },
+      {
+        "id": "c3",
+        "text": "Standard"
+      },
+      {
+        "id": "c4",
+        "text": "Actual"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Process costing is the most appropriate method for continuous production of a single product, as it allows for the accumulation of costs across production departments over time."
+  },
+  {
+    "id": "AFAR-0062",
+    "text": "Process costing is used in companies that",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Engage in road and bridge construction"
+      },
+      {
+        "id": "c2",
+        "text": "Produce sailboats made to customer specifications"
+      },
+      {
+        "id": "c3",
+        "text": "Produce hollow blocks for sale to the public"
+      },
+      {
+        "id": "c4",
+        "text": "Construct houses according to customer plans"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Process costing is used for mass production of identical units, like hollow blocks, while job order costing would be used for the other options which involve unique, custom products."
+  },
+  {
+    "id": "AFAR-0063",
+    "text": "The FIFO method of process costing differs from the average method in that the FIFO method",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Considers the stage of completion of beginning work in process inventory in computing equivalent units of production, but the average method does not"
+      },
+      {
+        "id": "c2",
+        "text": "Does not consider the stage of completion of beginning work in process inventory in computing equivalent units of production, but the average method does"
+      },
+      {
+        "id": "c3",
+        "text": "Is applicable only to those companies using the FIFO inventory pricing method, but the average method may be used with any inventory pricing method"
+      },
+      {
+        "id": "c4",
+        "text": "Allocates costs based on whole units, but the average method uses equivalent units"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The FIFO method specifically accounts for the completion status of beginning WIP inventory when calculating equivalent units, while the average method combines beginning and current period costs without considering the stage of completion."
+  },
+  {
+    "id": "AFAR-0064",
+    "text": "The average and FIFO process costing methods differ in that the average method",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Can be used under any cost flow assumption"
+      },
+      {
+        "id": "c2",
+        "text": "Is much more difficult to apply than the FIFO method"
+      },
+      {
+        "id": "c3",
+        "text": "Requires that ending work in process inventory be stated in terms of equivalent units of production"
+      },
+      {
+        "id": "c4",
+        "text": "Does not consider the degree of completion of beginning work in process inventory when computing equivalent units of production"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The average method combines beginning and current period costs without considering the stage of completion of beginning WIP inventory, while FIFO does consider this factor."
+  },
+  {
+    "id": "AFAR-0065",
+    "text": "Current periods cost per equivalent unit under FIFO process costing considers current period costs",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Only"
+      },
+      {
+        "id": "c2",
+        "text": "Plus cost of beginning WIP"
+      },
+      {
+        "id": "c3",
+        "text": "Less cost of beginning WIP"
+      },
+      {
+        "id": "c4",
+        "text": "Plus cost of ending WIP"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Under FIFO process costing, the cost per equivalent unit is calculated using only current period costs, as beginning WIP costs are accounted for separately."
+  },
+  {
+    "id": "AFAR-0066",
+    "text": "Equivalent units of production are equal to the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Units completed by a production department in the period"
+      },
+      {
+        "id": "c2",
+        "text": "Number of units worked on during the period by a production department"
+      },
+      {
+        "id": "c3",
+        "text": "Number of whole units that could have been completed if all work of the period had been used to produce whole units"
+      },
+      {
+        "id": "c4",
+        "text": "Identifiable units existing at the end of the period in a production department"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Equivalent units of production represent the number of complete units that could have been produced given the total work performed during the period, accounting for partially completed units."
+  },
+  {
+    "id": "AFAR-0067",
+    "text": "In a process costing system using the weighted average method, cost per equivalent unit for a given cost component is found by dividing which of the following by EUP?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Only current period cost"
+      },
+      {
+        "id": "c2",
+        "text": "Current period cost plus the cost of beginning inventory"
+      },
+      {
+        "id": "c3",
+        "text": "Current period cost less the cost of beginning inventory"
+      },
+      {
+        "id": "c4",
+        "text": "Current period cost plus the cost of ending inventory"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The weighted average method combines current period costs with beginning inventory costs when calculating the cost per equivalent unit."
+  },
+  {
+    "id": "AFAR-0068",
+    "text": "In a cost of production report using process costing, transferred-in costs are similar to the",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Cost of material added at the beginning of production"
+      },
+      {
+        "id": "c2",
+        "text": "Conversion cost added during the period"
+      },
+      {
+        "id": "c3",
+        "text": "Cost transferred out to the next department"
+      },
+      {
+        "id": "c4",
+        "text": "Cost included in beginning inventory"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Transferred-in costs are similar to materials added at the beginning of production because they are both costs that are added at the start of a department's processing."
+  },
+  {
+    "id": "AFAR-0069",
+    "text": "A continuous loss",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Occurs unevenly throughout a process"
+      },
+      {
+        "id": "c2",
+        "text": "Never occurs during the production process"
+      },
+      {
+        "id": "c3",
+        "text": "Always occurs at the same place in a production process"
+      },
+      {
+        "id": "c4",
+        "text": "Occurs evenly throughout the production process"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "A continuous loss is one that occurs uniformly throughout the production process, as opposed to discrete losses which occur at specific points."
+  },
+  {
+    "id": "AFAR-0070",
+    "text": "The method of neglect handles spoilage that is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Discrete and abnormal"
+      },
+      {
+        "id": "c2",
+        "text": "Discrete and normal"
+      },
+      {
+        "id": "c3",
+        "text": "Continuous and abnormal"
+      },
+      {
+        "id": "c4",
+        "text": "Continuous and normal"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The method of neglect is used for normal continuous spoilage, where the cost of spoiled units is automatically absorbed by the good units produced."
+  },
+  {
+    "id": "AFAR-0071",
+    "text": "The cost of normal discrete losses is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Absorbed by all units past the inspection point on an equivalent unit basis"
+      },
+      {
+        "id": "c2",
+        "text": "Absorbed by all units in ending inventory"
+      },
+      {
+        "id": "c3",
+        "text": "Considered a period cost"
+      },
+      {
+        "id": "c4",
+        "text": "Written off as a loss on an equivalent unit basis"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Normal discrete losses are allocated to the good units that have passed the inspection point, as these units benefit from the production process that resulted in the spoilage."
+  },
+  {
+    "id": "AFAR-0072",
+    "text": "The cost of abnormal continuous losses is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Considered a product cost"
+      },
+      {
+        "id": "c2",
+        "text": "Absorbed by all units in ending inventory and transferred out on an equivalent unit basis"
+      },
+      {
+        "id": "c3",
+        "text": "Written off as a loss on an equivalent unit basis"
+      },
+      {
+        "id": "c4",
+        "text": "Absorbed by all units past the inspection point"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Abnormal continuous losses are treated as period costs and written off as losses, as they represent unexpected waste that should not be included in product costs."
+  },
+  {
+    "id": "AFAR-0073",
+    "text": "Normal spoilage units resulting from a continuous process",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Are extended to the EUP schedule"
+      },
+      {
+        "id": "c2",
+        "text": "Result in a higher unit cost for the good units produced"
+      },
+      {
+        "id": "c3",
+        "text": "Result in a loss being incurred"
+      },
+      {
+        "id": "c4",
+        "text": "Cause estimated overhead to increase"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Normal spoilage costs are absorbed by the good units produced, which increases their unit cost since the total costs are spread over fewer good units."
+  },
+  {
+    "id": "AFAR-0074",
+    "text": "If normal spoilage is detected at an inspection point within the process rather than at the end, the cost of that spoilage should be",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Included with the cost of the units sold during the period"
+      },
+      {
+        "id": "c2",
+        "text": "Included with the cost of the units completed in that department during the period"
+      },
+      {
+        "id": "c3",
+        "text": "Allocated to ending work in process units and units transferred out based on their relative values"
+      },
+      {
+        "id": "c4",
+        "text": "Allocated to the good units that have passed the inspection point"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "When normal spoilage is detected at an inspection point, its cost should be allocated to the good units that have passed that point, as these units have benefited from the production process up to that stage."
+  },
+  {
+    "id": "AFAR-0075",
+    "text": "Joint costs are useful for",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Setting the selling price of a product"
+      },
+      {
+        "id": "c2",
+        "text": "Determining whether to continue producing an item"
+      },
+      {
+        "id": "c3",
+        "text": "Evaluating management by means of a responsibility reporting system"
+      },
+      {
+        "id": "c4",
+        "text": "Determining inventory cost for accounting purposes"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Joint costs are primarily used for inventory valuation and financial reporting purposes, as they help allocate costs to products for balance sheet and income statement presentation."
+  },
+  {
+    "id": "AFAR-0076",
+    "text": "This method of allocating joint manufacturing costs to main joint products allocates joint costs on the basis of estimated sales value at split off of a given joint product relative to the sales value at split off of total joint production?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Market value at split-off approach"
+      },
+      {
+        "id": "c2",
+        "text": "Hypothetical market value or approximated net realizable value approach"
+      },
+      {
+        "id": "c3",
+        "text": "Average unit or production output method"
+      },
+      {
+        "id": "c4",
+        "text": "Weighted average method"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The market value at split-off approach allocates joint costs based on the relative sales values of products at the split-off point, which is where products become separately identifiable."
+  },
+  {
+    "id": "AFAR-0077",
+    "text": "For products that need further processing, this method is more suitable because it takes into account the additional costs needed to further process and sell the joint products. Under this method of allocating manufacturing costs to main products, joint cost is allocated to products using the following the net realizable value ratio of the products",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Market value at split-off approach"
+      },
+      {
+        "id": "c2",
+        "text": "Hypothetical market value or approximated net realizable value approach"
+      },
+      {
+        "id": "c3",
+        "text": "Average unit or production output method"
+      },
+      {
+        "id": "c4",
+        "text": "Weighted average method"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The approximated net realizable value approach is most appropriate for products requiring further processing because it considers both the final selling price and the additional processing costs."
+  },
+  {
+    "id": "AFAR-0078",
+    "text": "Approximated net realizable value for joint products is computed as",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Selling price at split-off minus further processing and disposal costs"
+      },
+      {
+        "id": "c2",
+        "text": "Final selling price minus further processing and disposal costs"
+      },
+      {
+        "id": "c3",
+        "text": "Selling price at split-off minus allocated joint processing costs"
+      },
+      {
+        "id": "c4",
+        "text": "Final selling price minus a normal profit margin"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The approximated net realizable value is calculated by taking the final selling price and subtracting all costs required to complete and sell the product, including further processing and disposal costs."
+  },
+  {
+    "id": "AFAR-0079",
+    "text": "In a joint production process, a by-product is also described as",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "A simultaneously produced product of relatively low value"
+      },
+      {
+        "id": "c2",
+        "text": "A form of main product with controllable production proportions"
+      },
+      {
+        "id": "c3",
+        "text": "Waste"
+      },
+      {
+        "id": "c4",
+        "text": "Products of low value recovered at the end of a production process"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "A by-product is a secondary product that is produced along with the main product(s) in a joint production process, but has a relatively low sales value compared to the main products."
+  },
+  {
+    "id": "AFAR-0080",
+    "text": "If the net realizable value of the by-product of a joint production process is significant, how shall it be accounted for?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The net realizable value of the by-product shall be recorded as deduction from the total joint manufacturing cost thereby reducing the cost of the main products also known as replacement cost method"
+      },
+      {
+        "id": "c2",
+        "text": "The net realizable value of the by-product shall be recorded as deduction from the net sales of the main product"
+      },
+      {
+        "id": "c3",
+        "text": "The net realizable value of the by-product shall be recorded as deduction from the cost of sales of the main product"
+      },
+      {
+        "id": "c4",
+        "text": "The net realizable value of the by-product shall be recorded as other income"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "When a by-product has significant value, its net realizable value is treated as a reduction of the joint costs, which effectively reduces the cost allocated to the main products."
+  },
+  {
+    "id": "AFAR-0081",
+    "text": "The net realizable value approach is normally used when the NRV of the by-product is expected to be Insignificant Significant Insignificant Significant",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Yes Yes"
+      },
+      {
+        "id": "c2",
+        "text": "No Yes"
+      },
+      {
+        "id": "c3",
+        "text": "No No"
+      },
+      {
+        "id": "c4",
+        "text": "Yes No"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The net realizable value approach is typically used when the by-product has significant value, as it provides a more accurate allocation of costs between main products and by-products."
+  },
+  {
+    "id": "AFAR-0082",
+    "text": "Just-in-time (JIT) inventory systems",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Result in a greater number of suppliers for each production process"
+      },
+      {
+        "id": "c2",
+        "text": "Focus on a push type of production system"
+      },
+      {
+        "id": "c3",
+        "text": "Can only be used with automated production processes"
+      },
+      {
+        "id": "c4",
+        "text": "Result in inventories being either greatly reduced or eliminated"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "JIT inventory systems aim to minimize or eliminate inventory by having materials arrive just when they are needed in the production process, rather than maintaining large stockpiles."
+  },
+  {
+    "id": "AFAR-0083",
+    "text": "It is a product costing system generally used in just-in-time inventory environment. This costing system delays the costing process until the production of goods is completed by eliminating the detailed tracking of cost throughout the production system and preparing journal entries only at trigger points",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Backflush costing"
+      },
+      {
+        "id": "c2",
+        "text": "Standard costing"
+      },
+      {
+        "id": "c3",
+        "text": "Normal costing"
+      },
+      {
+        "id": "c4",
+        "text": "Traditional costing"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Backflush costing is designed for JIT environments where it simplifies the accounting process by recording costs only at the end of the production process, rather than tracking costs throughout the production cycle."
+  },
+  {
+    "id": "AFAR-0084",
+    "text": "An accounting system that collects financial and operating data on the basis of the underlying nature and extent of the cost drivers is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Direct costing"
+      },
+      {
+        "id": "c2",
+        "text": "Activity-based costing"
+      },
+      {
+        "id": "c3",
+        "text": "Cycle-time costing"
+      },
+      {
+        "id": "c4",
+        "text": "Variable costing"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Activity-based costing (ABC) is a costing method that identifies activities in an organization and assigns the cost of each activity to all products and services according to the actual consumption by each."
+  },
+  {
+    "id": "AFAR-0085",
+    "text": "Design of an ABC system requires",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "That the job bid process be redesigned"
+      },
+      {
+        "id": "c2",
+        "text": "That a cause-and-effect relationship exists between resource costs and individual activities"
+      },
+      {
+        "id": "c3",
+        "text": "An adjustment to product mix"
+      },
+      {
+        "id": "c4",
+        "text": "Both b and c"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "ABC system design requires establishing clear cause-and-effect relationships between activities and costs to ensure accurate cost allocation."
+  },
+  {
+    "id": "AFAR-0086",
+    "text": "Of the following, which is the best reason for using activity-based costing?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Keep better track of overhead costs"
+      },
+      {
+        "id": "c2",
+        "text": "To more accurately assign overhead costs to cost pools so that these costs are better controlled"
+      },
+      {
+        "id": "c3",
+        "text": "To better assign overhead costs to products"
+      },
+      {
+        "id": "c4",
+        "text": "To assign indirect service overhead costs to direct overhead cost pools"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "The primary purpose of ABC is to provide more accurate product costing by better assigning overhead costs to products based on their actual consumption of activities."
+  },
+  {
+    "id": "AFAR-0087",
+    "text": "An objective of activity-based management is to",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Eliminate the majority of centralized activities in an organization"
+      },
+      {
+        "id": "c2",
+        "text": "Reduce or eliminate non-value-added activities incurred to make a product or provide a service"
+      },
+      {
+        "id": "c3",
+        "text": "Institute responsibility accounting systems in decentralized organizations"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Activity-based management focuses on improving efficiency by identifying and eliminating non-value-added activities that don't contribute to customer value."
+  },
+  {
+    "id": "AFAR-0088",
+    "text": "Activity-based management (ABM) is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "A costing system in which multiple overhead cost pools are allocated using bases that include one or more nonvolume-related factors"
+      },
+      {
+        "id": "c2",
+        "text": "A base used to allocate the cost of a resource to the different activities using it"
+      },
+      {
+        "id": "c3",
+        "text": "The use of information obtained from ABC to make improvements in the firm"
+      },
+      {
+        "id": "c4",
+        "text": "A base used to allocate the cost of an activity to products and customers"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "ABM is the application of ABC information to improve business processes and make better decisions about products, services, and customers."
+  },
+  {
+    "id": "AFAR-0089",
+    "text": "An _______________ method first traces costs to activities and then to products",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Direct costing"
+      },
+      {
+        "id": "c2",
+        "text": "Absorption costing"
+      },
+      {
+        "id": "c3",
+        "text": "Traditional costing"
+      },
+      {
+        "id": "c4",
+        "text": "Activity-based costing"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "ABC first identifies activities and their costs, then traces these costs to products based on the products' consumption of activities."
+  },
+  {
+    "id": "AFAR-0090",
+    "text": "An _______________ method first traces costs to a department and then to products",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Direct costing"
+      },
+      {
+        "id": "c2",
+        "text": "Absorption costing"
+      },
+      {
+        "id": "c3",
+        "text": "Traditional costing"
+      },
+      {
+        "id": "c4",
+        "text": "Activity-based costing"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Traditional costing systems first accumulate costs by department and then allocate these costs to products, typically using a single cost driver like direct labor hours."
+  },
+  {
+    "id": "AFAR-0091",
+    "text": "A basic assumption of activity-based costing (ABC) is that",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "All manufacturing costs vary directly with units of production"
+      },
+      {
+        "id": "c2",
+        "text": "Products or services require the performance of activities, and activities consume resources"
+      },
+      {
+        "id": "c3",
+        "text": "Only costs that respond to unit-level drivers are product costs"
+      },
+      {
+        "id": "c4",
+        "text": "Only variable costs are included in activity-cost pools"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "ABC is based on the fundamental assumption that products consume activities, and activities consume resources, creating a chain of cost causation."
+  },
+  {
+    "id": "AFAR-0092",
+    "text": "Which of the following is not typical of traditional costing systems?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Use of a single predetermined overhead rate"
+      },
+      {
+        "id": "c2",
+        "text": "Use of direct labor hours or direct labor cost to assign overhead"
+      },
+      {
+        "id": "c3",
+        "text": "Assumption of correlation between direct labor and incurrence of overhead cost"
+      },
+      {
+        "id": "c4",
+        "text": "Use of multiple cost drivers to allocate overhead"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Traditional costing systems typically use a single cost driver (like direct labor hours) to allocate overhead, while ABC uses multiple cost drivers."
+  },
+  {
+    "id": "AFAR-0093",
+    "text": "Traditional overhead allocations result in which of the following situations?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Overhead costs are assigned as period costs to manufacturing operations"
+      },
+      {
+        "id": "c2",
+        "text": "High-volume products are assigned too much overhead, and low-volume products are assigned too little overhead"
+      },
+      {
+        "id": "c3",
+        "text": "Low-volume products are assigned too much, and high-volume products are assigned too little overhead"
+      },
+      {
+        "id": "c4",
+        "text": "The resulting allocations cannot be used for financial reports"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Traditional costing tends to overcost high-volume products and undercost low-volume products because it doesn't account for the complexity of activities required by different products."
+  },
+  {
+    "id": "AFAR-0094",
+    "text": "Cost allocation bases in activity-based costing should be",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Cost drivers"
+      },
+      {
+        "id": "c2",
+        "text": "Value-added activities"
+      },
+      {
+        "id": "c3",
+        "text": "Activity centers"
+      },
+      {
+        "id": "c4",
+        "text": "Processes"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Cost drivers are the factors that cause costs to be incurred and are used as the basis for allocating costs in ABC systems."
+  },
+  {
+    "id": "AFAR-0095",
+    "text": "A cost pool is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "All of the costs of a particular department"
+      },
+      {
+        "id": "c2",
+        "text": "All costs in a group such as variable costs or discretionary fixed costs"
+      },
+      {
+        "id": "c3",
+        "text": "All costs related to a product or product line"
+      },
+      {
+        "id": "c4",
+        "text": "All costs that have the same driver"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "A cost pool is a grouping of individual costs that are allocated using the same cost driver."
+  },
+  {
+    "id": "AFAR-0096",
+    "text": "Value-added activities",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Increase the worth of a product or service to customers"
+      },
+      {
+        "id": "c2",
+        "text": "Involve resource usage and related costs that customers are willing to pay for"
+      },
+      {
+        "id": "c3",
+        "text": "Are the activities of actually manufacturing a product or performing a service"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Value-added activities are those that enhance the product or service in ways that customers are willing to pay for, including manufacturing and service delivery activities."
+  },
+  {
+    "id": "AFAR-0097",
+    "text": "Which of the following is a value-added activity?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Inventory storage"
+      },
+      {
+        "id": "c2",
+        "text": "Machining"
+      },
+      {
+        "id": "c3",
+        "text": "Building maintenance"
+      },
+      {
+        "id": "c4",
+        "text": "Bookkeeping"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Machining is a value-added activity because it directly transforms materials into finished products that customers are willing to pay for."
+  },
+  {
+    "id": "AFAR-0098",
+    "text": "Which of the following is a value-added activity?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Inventory control"
+      },
+      {
+        "id": "c2",
+        "text": "Inspections"
+      },
+      {
+        "id": "c3",
+        "text": "Packaging"
+      },
+      {
+        "id": "c4",
+        "text": "Repair of machines"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Packaging is a value-added activity because it protects the product and makes it ready for customer use, adding value that customers are willing to pay for."
+  },
+  {
+    "id": "AFAR-0099",
+    "text": "Which of the following is a non-value-added activity?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Inventory control"
+      },
+      {
+        "id": "c2",
+        "text": "Machining"
+      },
+      {
+        "id": "c3",
+        "text": "Assembly"
+      },
+      {
+        "id": "c4",
+        "text": "Painting"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Inventory control is a non-value-added activity because it doesn't directly contribute to the product's value from the customer's perspective."
+  },
+  {
+    "id": "AFAR-0100",
+    "text": "Which of the following is a non-value-added activity?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Painting"
+      },
+      {
+        "id": "c2",
+        "text": "Finishing"
+      },
+      {
+        "id": "c3",
+        "text": "Packaging"
+      },
+      {
+        "id": "c4",
+        "text": "Building maintenance"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Building maintenance is a non-value-added activity as it doesn't directly contribute to the product's value from the customer's perspective."
+  },
+  {
+    "id": "AFAR-0101",
+    "text": "The cost of processing customer complaints is an",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Appraisal cost"
+      },
+      {
+        "id": "c2",
+        "text": "External failure cost"
+      },
+      {
+        "id": "c3",
+        "text": "Internal failure cost"
+      },
+      {
+        "id": "c4",
+        "text": "Prevention cost"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Processing customer complaints is an external failure cost because it occurs after the product has reached the customer and represents a failure to meet customer expectations."
+  },
+  {
+    "id": "AFAR-0102",
+    "text": "Worker training is an",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Appraisal cost"
+      },
+      {
+        "id": "c2",
+        "text": "External failure cost"
+      },
+      {
+        "id": "c3",
+        "text": "Internal failure cost"
+      },
+      {
+        "id": "c4",
+        "text": "Prevention cost"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Worker training is a prevention cost because it helps prevent quality problems from occurring in the first place."
+  },
+  {
+    "id": "AFAR-0103",
+    "text": "____________ are those performed each time a unit is produced or sold",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Batch-level activities"
+      },
+      {
+        "id": "c2",
+        "text": "Facility-sustaining activities"
+      },
+      {
+        "id": "c3",
+        "text": "Sustaining activities"
+      },
+      {
+        "id": "c4",
+        "text": "Unit-level activities"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Unit-level activities are performed for each individual unit of product or service."
+  },
+  {
+    "id": "AFAR-0104",
+    "text": "Costs that are common to many different activities within an organization are known as ____________ costs",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Product-or process-level"
+      },
+      {
+        "id": "c2",
+        "text": "Organizational level"
+      },
+      {
+        "id": "c3",
+        "text": "Batch-level"
+      },
+      {
+        "id": "c4",
+        "text": "Unit-level"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Organizational-level costs are those that support the entire organization and are common to many different activities."
+  },
+  {
+    "id": "AFAR-0105",
+    "text": "____________ are those that a company performs when it makes a group of units",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Batch-level activities"
+      },
+      {
+        "id": "c2",
+        "text": "Facility-sustaining activities"
+      },
+      {
+        "id": "c3",
+        "text": "Sustaining activities"
+      },
+      {
+        "id": "c4",
+        "text": "Unit-level activities"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Batch-level activities are performed for each batch or group of units, regardless of the number of units in the batch."
+  },
+  {
+    "id": "AFAR-0106",
+    "text": "____________ relate to an entire plant as a whole",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Batch-level activities"
+      },
+      {
+        "id": "c2",
+        "text": "Facility-sustaining activities"
+      },
+      {
+        "id": "c3",
+        "text": "Sustaining activities"
+      },
+      {
+        "id": "c4",
+        "text": "Unit-level activities"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Facility-sustaining activities support the entire plant or facility and are not related to specific products or batches."
+  },
+  {
+    "id": "AFAR-0107",
+    "text": "Examples of activities at the unit level of costs include",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Cutting, painting, and packaging"
+      },
+      {
+        "id": "c2",
+        "text": "Scheduling, setting up, and moving"
+      },
+      {
+        "id": "c3",
+        "text": "Designing, changing, and advertising"
+      },
+      {
+        "id": "c4",
+        "text": "Heating, lighting, and security"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Unit-level activities are performed for each individual unit and include direct manufacturing activities like cutting, painting, and packaging."
+  },
+  {
+    "id": "AFAR-0108",
+    "text": "Examples of activities at the product level of costs include",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Cutting, painting, and packaging"
+      },
+      {
+        "id": "c2",
+        "text": "Scheduling, setting up, and moving"
+      },
+      {
+        "id": "c3",
+        "text": "Designing, changing, and advertising"
+      },
+      {
+        "id": "c4",
+        "text": "Heating, lighting, and security"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Product-level activities support specific product lines and include activities like product design, engineering changes, and product-specific advertising."
+  },
+  {
+    "id": "AFAR-0109",
+    "text": "Examples of activities at the batch level of costs include",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Cutting, painting, and packaging"
+      },
+      {
+        "id": "c2",
+        "text": "Scheduling, setting up, and moving"
+      },
+      {
+        "id": "c3",
+        "text": "Designing, changing, and advertising"
+      },
+      {
+        "id": "c4",
+        "text": "Heating, lighting, and security"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Batch-level activities are performed for each batch of products and include activities like production scheduling, machine setup, and material movement."
+  },
+  {
+    "id": "AFAR-0110",
+    "text": "Examples of activities at the plant level of costs include",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Cutting, painting, and packaging"
+      },
+      {
+        "id": "c2",
+        "text": "Scheduling, setting up, and moving"
+      },
+      {
+        "id": "c3",
+        "text": "Designing, changing, and advertising"
+      },
+      {
+        "id": "c4",
+        "text": "Heating, lighting, and security"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Plant-level activities support the entire facility and include activities like building maintenance, utilities, and security services."
+  },
+  {
+    "id": "AFAR-0111",
+    "text": "A foreign currency transaction includes which of the following?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Purchase and sale of goods whose price is denominated in a foreign currency"
+      },
+      {
+        "id": "c2",
+        "text": "Borrowing and lending of funds when the amounts payable or receivable are denominated in a foreign currency"
+      },
+      {
+        "id": "c3",
+        "text": "Incurrence and settlement of liabilities denominated in foreign currency"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Foreign currency transactions include all transactions denominated in a currency other than the entity's functional currency, including purchases, sales, borrowing, lending, and liability transactions."
+  },
+  {
+    "id": "AFAR-0112",
+    "text": "What is a company's functional currency?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The currency of the primary economic environment in which it operates"
+      },
+      {
+        "id": "c2",
+        "text": "The currency of the country where it has its headquarters"
+      },
+      {
+        "id": "c3",
+        "text": "The currency in which it prepares its financial statements"
+      },
+      {
+        "id": "c4",
+        "text": "The reporting currency of its parent for a subsidiary"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The functional currency is the currency of the primary economic environment in which the entity operates, not necessarily the currency of the country where it is headquartered or the currency used for reporting."
+  },
+  {
+    "id": "AFAR-0113",
+    "text": "In accounting, the term translation refers to",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The calculation of gains or losses from hedging transactions"
+      },
+      {
+        "id": "c2",
+        "text": "The calculation of exchange rate gains or losses on individual transactions in foreign currencies"
+      },
+      {
+        "id": "c3",
+        "text": "The procedure required to identify a company's functional currency"
+      },
+      {
+        "id": "c4",
+        "text": "A procedure to prepare a foreign subsidiary's financial statements for consolidation"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Translation is the process of converting a foreign subsidiary's financial statements from its functional currency to the parent company's reporting currency for consolidation purposes."
+  },
+  {
+    "id": "AFAR-0114",
+    "text": "For a foreign subsidiary that uses the US dollar as its functional currency, what translation method is required?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Current/Noncurrent Method"
+      },
+      {
+        "id": "c2",
+        "text": "Monetary/Nonmonetary Method"
+      },
+      {
+        "id": "c3",
+        "text": "Current Rate Method"
+      },
+      {
+        "id": "c4",
+        "text": "Temporal Method"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "When a foreign subsidiary uses the US dollar as its functional currency, the temporal method is required for translation, as it maintains the measurement basis of the original transactions."
+  },
+  {
+    "id": "AFAR-0115",
+    "text": "According to PAS 21, which method is usually required for translating a foreign subsidiary's financial statements into the parent's reporting currency?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The temporal method"
+      },
+      {
+        "id": "c2",
+        "text": "The current rate method"
+      },
+      {
+        "id": "c3",
+        "text": "The current/noncurrent method"
+      },
+      {
+        "id": "c4",
+        "text": "The monetary/nonmonetary method"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "PAS 21 generally requires the current rate method for translating foreign subsidiary financial statements when the subsidiary's functional currency is different from the parent's reporting currency."
+  },
+  {
+    "id": "AFAR-0116",
+    "text": "Which accounts are remeasured using current exchange rates?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "All revenues and expenses"
+      },
+      {
+        "id": "c2",
+        "text": "All assets and liabilities"
+      },
+      {
+        "id": "c3",
+        "text": "All monetary assets and liabilities"
+      },
+      {
+        "id": "c4",
+        "text": "All current assets and liabilities"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Under the temporal method, monetary assets and liabilities are remeasured using current exchange rates, while nonmonetary items are remeasured using historical rates."
+  },
+  {
+    "id": "AFAR-0117",
+    "text": "In translating a foreign subsidiary's financial statements, which exchange rate does the current method require for the subsidiary's assets and liabilities?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The exchange rate in effect when each asset or liability was acquired"
+      },
+      {
+        "id": "c2",
+        "text": "The average exchange rate for the current year"
+      },
+      {
+        "id": "c3",
+        "text": "A calculated exchange rate based on market value"
+      },
+      {
+        "id": "c4",
+        "text": "The exchange rate in effect as of the balance sheet date"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The current rate method requires using the exchange rate in effect at the balance sheet date for translating assets and liabilities."
+  },
+  {
+    "id": "AFAR-0118",
+    "text": "The translation adjustment from translating a foreign subsidiary's financial statements should be shown as",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "An asset or liability depending on the balance on the consolidated balance sheet"
+      },
+      {
+        "id": "c2",
+        "text": "A revenue or expense depending on the balance on the consolidated income statement"
+      },
+      {
+        "id": "c3",
+        "text": "A component of stockholders' equity on the consolidated balance sheet"
+      },
+      {
+        "id": "c4",
+        "text": "A component of cash flows from financing activities on the consolidated statement of cash flows"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Translation adjustments are reported as a separate component of stockholders' equity in the consolidated balance sheet, not as income or expense."
+  },
+  {
+    "id": "AFAR-0119",
+    "text": "Which of the following statements is incorrect?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Foreign currency is a currency other than the functional currency of the entity"
+      },
+      {
+        "id": "c2",
+        "text": "Functional currency is the currency of the primary economic environment in which the entity operates"
+      },
+      {
+        "id": "c3",
+        "text": "An entity is required to present the financial statements using the functional currency"
+      },
+      {
+        "id": "c4",
+        "text": "Presentation currency is the currency in which the financial statements are presented"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "While an entity must measure its financial statements in its functional currency, it is not required to present them in that currency. The presentation currency can be different from the functional currency."
+  },
+  {
+    "id": "AFAR-0120",
+    "text": "How is the disposition of the translated gain or loss reported on the parent company's financial statements?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Net income/loss on the income statement"
+      },
+      {
+        "id": "c2",
+        "text": "Cumulative translation adjustment as a deferred asset"
+      },
+      {
+        "id": "c3",
+        "text": "Cumulative translation adjustment as a deferred liability"
+      },
+      {
+        "id": "c4",
+        "text": "Other comprehensive income"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "According to PAS 21, upon disposition of a foreign operation, the foreign currency translation gain or loss in other comprehensive income shall be subsequently reclassified into profit or loss."
+  },
+  {
+    "id": "AFAR-0121",
+    "text": "It is a financial instrument that derives its value from an underlying such as a share price, exchange rate or interest rate",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Derivative"
+      },
+      {
+        "id": "c2",
+        "text": "Financial asset"
+      },
+      {
+        "id": "c3",
+        "text": "Financial liability"
+      },
+      {
+        "id": "c4",
+        "text": "Equity instrument"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "A derivative is a financial instrument whose value is derived from an underlying asset, index, or reference rate, such as share prices, exchange rates, or interest rates."
+  },
+  {
+    "id": "AFAR-0122",
+    "text": "The basic purpose of derivative financial instruments is to manage some kind of risk such as all of the following, except",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Currency fluctuation"
+      },
+      {
+        "id": "c2",
+        "text": "Interest rate variation"
+      },
+      {
+        "id": "c3",
+        "text": "Stock price movement"
+      },
+      {
+        "id": "c4",
+        "text": "Uncollectibility of accounts receivable"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Derivatives are used to manage market risks like currency fluctuations, interest rate variations, and stock price movements, but not credit risks like uncollectible accounts."
+  },
+  {
+    "id": "AFAR-0123",
+    "text": "All of the following are characteristics of a derivative, except",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "It is settled at a future date"
+      },
+      {
+        "id": "c2",
+        "text": "It requires no initial investment or an initial small net investment"
+      },
+      {
+        "id": "c3",
+        "text": "Its value changes in response to the change in a specified underlying"
+      },
+      {
+        "id": "c4",
+        "text": "It is acquired for the purpose of generating a profit from short-term fluctuations"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "While derivatives can be used for speculation, this is not a defining characteristic. The key characteristics are future settlement, minimal initial investment, and value changes based on an underlying."
+  },
+  {
+    "id": "AFAR-0124",
+    "text": "Entities that attempt to exploit inefficiencies in various derivative markets by attempting to lock in profits by simultaneously entering into transactions in two or more markets are called",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Arbitrageurs"
+      },
+      {
+        "id": "c2",
+        "text": "Gamblers"
+      },
+      {
+        "id": "c3",
+        "text": "Hedgers"
+      },
+      {
+        "id": "c4",
+        "text": "Speculators"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Arbitrageurs are market participants who attempt to profit from price differences in different markets by simultaneously buying and selling the same or similar instruments."
+  },
+  {
+    "id": "AFAR-0125",
+    "text": "Any financial or physical variable that has either observable changes or objectively verifiable changes qualifies as",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Notional amount"
+      },
+      {
+        "id": "c2",
+        "text": "Hedge"
+      },
+      {
+        "id": "c3",
+        "text": "Financial instrument"
+      },
+      {
+        "id": "c4",
+        "text": "Underlying"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "An underlying is any variable (financial or physical) that has observable or objectively verifiable changes, which is used to determine the value of a derivative instrument."
+  },
+  {
+    "id": "AFAR-0126",
+    "text": "Which of the following is an underlying?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "A credit rating"
+      },
+      {
+        "id": "c2",
+        "text": "A security price"
+      },
+      {
+        "id": "c3",
+        "text": "An average daily temperature"
+      },
+      {
+        "id": "c4",
+        "text": "All of these could be underlyings"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "All of these variables (credit rating, security price, and temperature) can serve as underlyings for derivative instruments as they have observable or verifiable changes."
+  },
+  {
+    "id": "AFAR-0127",
+    "text": "An example of a notional amount is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Currency swap"
+      },
+      {
+        "id": "c2",
+        "text": "Interest rate"
+      },
+      {
+        "id": "c3",
+        "text": "Number of barrels of oil"
+      },
+      {
+        "id": "c4",
+        "text": "Stock price"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "The notional amount is the quantity of the underlying item in a derivative contract, such as the number of barrels of oil in an oil futures contract."
+  },
+  {
+    "id": "AFAR-0128",
+    "text": "Which of the following instruments is not considered a derivative financial instrument?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Currency futures"
+      },
+      {
+        "id": "c2",
+        "text": "Stock index option"
+      },
+      {
+        "id": "c3",
+        "text": "Bank certificate of deposit"
+      },
+      {
+        "id": "c4",
+        "text": "Interest rate swap"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "A bank certificate of deposit is a traditional financial instrument, not a derivative. The other options (futures, options, and swaps) are all types of derivatives."
+  },
+  {
+    "id": "AFAR-0129",
+    "text": "It is a commitment to purchase a specified commodity on a future date at a specified price through a futures exchange market",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Forward contract"
+      },
+      {
+        "id": "c2",
+        "text": "Futures contract"
+      },
+      {
+        "id": "c3",
+        "text": "Call option"
+      },
+      {
+        "id": "c4",
+        "text": "Put option"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "A futures contract is a standardized agreement to buy or sell a specific commodity at a predetermined price on a future date, traded on an organized exchange."
+  },
+  {
+    "id": "AFAR-0130",
+    "text": "A call option is",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Not recognized in the financial statements but only disclosed"
+      },
+      {
+        "id": "c2",
+        "text": "Recognized and classified as current asset"
+      },
+      {
+        "id": "c3",
+        "text": "Recognized and classified as noncurrent asset"
+      },
+      {
+        "id": "c4",
+        "text": "Recognized as expense immediately"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "A call option is recognized as a current asset in the financial statements, as it represents a right to purchase an asset at a specified price within a short period."
+  },
+  {
+    "id": "AFAR-0131",
+    "text": "Which of the following provides the holder the right to sell at an exercise or strike price anytime during a specified period, where a gain accrues to the holder as the market price of the underlying falls below the strike price?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Forward contract"
+      },
+      {
+        "id": "c2",
+        "text": "Put option"
+      },
+      {
+        "id": "c3",
+        "text": "Swaption"
+      },
+      {
+        "id": "c4",
+        "text": "Call option"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "A put option gives the holder the right to sell the underlying asset at a specified price (strike price) during a specific period, with gains occurring when the market price falls below the strike price."
+  },
+  {
+    "id": "AFAR-0132",
+    "text": "Which is incorrect concerning an option?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "A call option is the right to purchase an asset at a specified price during a definite period at some future time"
+      },
+      {
+        "id": "c2",
+        "text": "A put option is the right to sell an asset at a specified price during a definite period at some future time"
+      },
+      {
+        "id": "c3",
+        "text": "An option is a right and not an obligation to purchase or sell an asset"
+      },
+      {
+        "id": "c4",
+        "text": "An option requires no initial payment"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Options do require an initial payment (premium) to be made by the buyer to the seller in exchange for the right to buy or sell the underlying asset."
+  },
+  {
+    "id": "AFAR-0133",
+    "text": "It is an agreement whereby one party will receive a swap payment from another party if the interest rate is more than the underlying interest rate and will make a swap payment to the other party if the interest rate is lower than the underlying interest rate",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Receive fixed interest rate swap"
+      },
+      {
+        "id": "c2",
+        "text": "Receive variable, pay interest rate swap"
+      },
+      {
+        "id": "c3",
+        "text": "Receive fixed, pay variable interest rate swap"
+      },
+      {
+        "id": "c4",
+        "text": "Receive variable interest rate swap"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "In a receive fixed, pay variable interest rate swap, one party receives fixed interest payments and makes variable interest payments based on the underlying interest rate."
+  },
+  {
+    "id": "AFAR-0134",
+    "text": "A derivative may be",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "An asset account"
+      },
+      {
+        "id": "c2",
+        "text": "A liability account"
+      },
+      {
+        "id": "c3",
+        "text": "An owner's equity account"
+      },
+      {
+        "id": "c4",
+        "text": "Either an asset or a liability account"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "A derivative can be either an asset or a liability depending on whether it has a positive or negative fair value at the reporting date."
+  },
+  {
+    "id": "AFAR-0135",
+    "text": "Derivatives are measured at",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Fair value"
+      },
+      {
+        "id": "c2",
+        "text": "Cost"
+      },
+      {
+        "id": "c3",
+        "text": "Fair value less cost to sell"
+      },
+      {
+        "id": "c4",
+        "text": "Higher between fair value and cost"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Derivatives are always measured at fair value, with changes in fair value recognized in profit or loss unless the derivative is designated as a hedging instrument."
+  },
+  {
+    "id": "AFAR-0136",
+    "text": "Change in fair value of a derivative financial instrument that is determined to be an effective cash flow hedge shall",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Be recognized in profit or loss"
+      },
+      {
+        "id": "c2",
+        "text": "Be recognized directly in equity"
+      },
+      {
+        "id": "c3",
+        "text": "Be included in retained earnings"
+      },
+      {
+        "id": "c4",
+        "text": "Not be recognized"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "For an effective cash flow hedge, the change in fair value of the hedging instrument is recognized directly in equity (other comprehensive income) until the hedged item affects profit or loss."
+  },
+  {
+    "id": "AFAR-0137",
+    "text": "PFRS 3 defines it as a transaction or event in which an acquirer obtains control of one or more businesses",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Business combination"
+      },
+      {
+        "id": "c2",
+        "text": "Consolidation"
+      },
+      {
+        "id": "c3",
+        "text": "Merger"
+      },
+      {
+        "id": "c4",
+        "text": "Acquisition of net assets"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "According to PFRS 3, a business combination is defined as a transaction or event in which an acquirer obtains control of one or more businesses."
+  },
+  {
+    "id": "AFAR-0138",
+    "text": "A business combination whereby the company taking over the properties of other companies retains its identity and continues operations as a larger unit and the other companies are dissolved is known as a",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Consolidation"
+      },
+      {
+        "id": "c2",
+        "text": "Merger"
+      },
+      {
+        "id": "c3",
+        "text": "Pooling of interests"
+      },
+      {
+        "id": "c4",
+        "text": "Quasi-reorganization"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "A merger occurs when one company (the surviving company) takes over the properties of other companies, retains its identity, and continues operations as a larger unit, while the other companies are dissolved."
+  },
+  {
+    "id": "AFAR-0139",
+    "text": "A business combination in which a new corporation is created, and two or more existing corporations are combined into the newly created corporation is called a",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Merger"
+      },
+      {
+        "id": "c2",
+        "text": "Purchase transaction"
+      },
+      {
+        "id": "c3",
+        "text": "Pooling-of-interests"
+      },
+      {
+        "id": "c4",
+        "text": "Consolidation"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "A consolidation is a business combination where a new corporation is created to combine two or more existing corporations, with the original corporations being dissolved."
+  },
+  {
+    "id": "AFAR-0140",
+    "text": "Under PFRS 3, how should an entity acquirer account for each business combination?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Pooling of interest method"
+      },
+      {
+        "id": "c2",
+        "text": "Proportionate consolidation method"
+      },
+      {
+        "id": "c3",
+        "text": "Acquisition method"
+      },
+      {
+        "id": "c4",
+        "text": "Equity method"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "PFRS 3 requires the acquisition method for accounting for business combinations, which involves identifying the acquirer, determining the acquisition date, and measuring the consideration transferred."
+  },
+  {
+    "id": "AFAR-0141",
+    "text": "It refers to the date on which the acquirer obtains control of the acquiree",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Business combination date"
+      },
+      {
+        "id": "c2",
+        "text": "Acquisition date"
+      },
+      {
+        "id": "c3",
+        "text": "Control date"
+      },
+      {
+        "id": "c4",
+        "text": "Consolidation date"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The acquisition date is the date on which the acquirer obtains control of the acquiree, which is when the business combination is consummated."
+  },
+  {
+    "id": "AFAR-0142",
+    "text": "The acquisition method of accounting for a business combination requires all of the following, except",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Identifying the acquirer"
+      },
+      {
+        "id": "c2",
+        "text": "Determining the acquisition date"
+      },
+      {
+        "id": "c3",
+        "text": "Recognizing and measuring the identifiable assets acquired, the liabilities assumed and the noncontrolling interest in the acquiree at carrying amount"
+      },
+      {
+        "id": "c4",
+        "text": "Recognizing goodwill or gain from bargain purchase"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Under the acquisition method, identifiable assets and liabilities are measured at fair value, not carrying amount, and noncontrolling interest is measured at fair value or proportionate share of net assets."
+  },
+  {
+    "id": "AFAR-0143",
+    "text": "In a business combination, goodwill is measured as the excess of",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The consideration transferred over the identifiable net assets acquired"
+      },
+      {
+        "id": "c2",
+        "text": "The total of the consideration transferred and the amount of any non-controlling interest in the acquiree over the identifiable assets acquired"
+      },
+      {
+        "id": "c3",
+        "text": "The total of the consideration received and the fair value of the previously held interest in the acquiree over the identifiable net assets acquired"
+      },
+      {
+        "id": "c4",
+        "text": "The total of the consideration transferred, the amount of any non-controlling interest in the acquiree and the fair value of previously held interest in the acquiree over the identifiable net assets acquired"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Goodwill is measured as the excess of the total consideration (including non-controlling interest and previously held interest) over the fair value of identifiable net assets acquired."
+  },
+  {
+    "id": "AFAR-0144",
+    "text": "Under PFRS 10, an investor controls an investee if the investor has all of the following, except",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The power over the investee"
+      },
+      {
+        "id": "c2",
+        "text": "Exposure or rights to variable returns from the involvement with the investee"
+      },
+      {
+        "id": "c3",
+        "text": "The ability to use the power over the investee to affect the amount of the investor's returns"
+      },
+      {
+        "id": "c4",
+        "text": "All of these indicate control"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "All of these elements (power, returns, and ability to affect returns) are required for control under PFRS 10. The question asks for the exception, but there is none as all elements are necessary."
+  },
+  {
+    "id": "AFAR-0145",
+    "text": "Control is presumed to exist when the parent owns directly or indirectly through subsidiaries",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "More than half of the equity of the entity"
+      },
+      {
+        "id": "c2",
+        "text": "More than half of the ordinary shares of an entity"
+      },
+      {
+        "id": "c3",
+        "text": "More than half of the preference and ordinary shares of an entity"
+      },
+      {
+        "id": "c4",
+        "text": "More than half of the voting power of an entity"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Control is presumed to exist when the parent owns more than half of the voting power of an entity, as this gives the parent the power to govern the financial and operating policies of the entity."
+  },
+  {
+    "id": "AFAR-0146",
+    "text": "Which of the following statements is/are correct according to PFRS 10?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Consolidated financial statements are the financial statements of a group in which the assets, liabilities, equity, income, expenses and cash flows of the parent and its subsidiaries are presented as those of a single economic entity"
+      },
+      {
+        "id": "c2",
+        "text": "Separate financial statements are the financial statements by a parent in which the investments are accounted for on the basis of the direct equity interest"
+      },
+      {
+        "id": "c3",
+        "text": "Noncontrolling interest is that portion of the profit or loss and net assets of a subsidiary attributable to equity interests that are not owned directly or indirectly through subsidiaries by the parent"
+      },
+      {
+        "id": "c4",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "All statements are correct according to PFRS 10, which defines consolidated financial statements, separate financial statements, and noncontrolling interest in these terms."
+  },
+  {
+    "id": "AFAR-0147",
+    "text": "How shall the parent corporation present the Noncontrolling Interest (NCI) in the Consolidated Statement of Financial Position?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "It shall be presented within Consolidated Stockholders' Equity, separately from the equity of the owners of the parent"
+      },
+      {
+        "id": "c2",
+        "text": "It shall be presented as non-current liability"
+      },
+      {
+        "id": "c3",
+        "text": "It shall be presented as non-current assets"
+      },
+      {
+        "id": "c4",
+        "text": "It shall be presented as contra-equity account like treasury shares and subscription receivable"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Noncontrolling interest represents the equity in a subsidiary not attributable to the parent and should be presented as a separate component of equity in the consolidated financial statements."
+  },
+  {
+    "id": "AFAR-0148",
+    "text": "It is characterized by a contractual arrangement whereby two or more parties have joint control of the arrangement",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Joint arrangement"
+      },
+      {
+        "id": "c2",
+        "text": "Joint operation"
+      },
+      {
+        "id": "c3",
+        "text": "Joint venture"
+      },
+      {
+        "id": "c4",
+        "text": "Jointly controlled asset"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "A joint arrangement is defined by PFRS 11 as an arrangement of which two or more parties have joint control, established through a contractual agreement."
+  },
+  {
+    "id": "AFAR-0149",
+    "text": "It is contractually agreed sharing of control of an arrangement which exists only when decisions about relevant activities required unanimous consent of the parties sharing control",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Control"
+      },
+      {
+        "id": "c2",
+        "text": "Significant influence"
+      },
+      {
+        "id": "c3",
+        "text": "Joint control"
+      },
+      {
+        "id": "c4",
+        "text": "Solidary control"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Joint control is the contractually agreed sharing of control of an arrangement, which exists only when decisions about the relevant activities require the unanimous consent of the parties sharing control."
+  },
+  {
+    "id": "AFAR-0150",
+    "text": "It is a type of joint arrangement whereby the parties that have joint control of the arrangement have right to the total assets and obligations for the total liabilities relating to the arrangement",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Joint venture"
+      },
+      {
+        "id": "c2",
+        "text": "Jointly controlled asset"
+      },
+      {
+        "id": "c3",
+        "text": "Joint operation"
+      },
+      {
+        "id": "c4",
+        "text": "Joint business"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "A joint operation is a joint arrangement whereby the parties that have joint control of the arrangement have rights to the assets and obligations for the liabilities relating to the arrangement."
+  },
+  {
+    "id": "AFAR-0151",
+    "text": "It is a type of joint arrangement whereby the parties that have joint control of the arrangement have rights to the net assets of the arrangement",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Joint venture"
+      },
+      {
+        "id": "c2",
+        "text": "Jointly controlled asset"
+      },
+      {
+        "id": "c3",
+        "text": "Joint operation"
+      },
+      {
+        "id": "c4",
+        "text": "Joint business"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "A joint venture is a joint arrangement whereby the parties that have joint control of the arrangement have rights to the net assets of the arrangement."
+  },
+  {
+    "id": "AFAR-0152",
+    "text": "What is the classification of the joint arrangement when the assets and liabilities relating to the arrangement are held by a separate vehicle or when the arrangement is established with a separate vehicle?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "It shall be classified as joint venture"
+      },
+      {
+        "id": "c2",
+        "text": "It shall be classified as joint operation"
+      },
+      {
+        "id": "c3",
+        "text": "Neither joint venture nor joint operation"
+      },
+      {
+        "id": "c4",
+        "text": "It can be either a joint operation or joint venture depending on the legal form of the separate vehicle, terms of the contractual arrangement or other relevant facts and circumstances"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The classification of a joint arrangement with a separate vehicle depends on the legal form of the vehicle, the terms of the contractual arrangement, and other relevant facts and circumstances."
+  },
+  {
+    "id": "AFAR-0153",
+    "text": "Under PFRS 11, how shall the joint venturer account for its Investment in Joint Venture?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Equity method"
+      },
+      {
+        "id": "c2",
+        "text": "Cost method"
+      },
+      {
+        "id": "c3",
+        "text": "Fair value method under IFRS 9"
+      },
+      {
+        "id": "c4",
+        "text": "Proportionate consolidation"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Under PFRS 11, a joint venturer shall account for its investment in a joint venture using the equity method as prescribed in PAS 28."
+  },
+  {
+    "id": "AFAR-0154",
+    "text": "Under PFRS 11, how shall the joint operator account for its interest in a joint operation?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "The joint operator shall account for its interest under Equity Method"
+      },
+      {
+        "id": "c2",
+        "text": "The joint operator shall account for its interest under Cost Method"
+      },
+      {
+        "id": "c3",
+        "text": "The joint operator shall account for its interest using proportionate consolidation"
+      },
+      {
+        "id": "c4",
+        "text": "The joint operator shall account for its interest by recognizing its assets, liabilities, revenues, expenses and shares in the jointly controlled assets, jointly incurred liabilities, jointly earned revenue and jointly incurred expenses in accordance with the contractual agreement"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "A joint operator shall account for its interest in a joint operation by recognizing its share of the assets, liabilities, revenues, and expenses in accordance with the contractual arrangement."
+  },
+  {
+    "id": "AFAR-0155",
+    "text": "It encompasses the processes of analyzing, recording, classifying, summarizing and communicating all transactions involving the receipt and disposition of government funds and property, interpreting the results thereof",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Government auditing"
+      },
+      {
+        "id": "c2",
+        "text": "Government reporting"
+      },
+      {
+        "id": "c3",
+        "text": "Government accounting"
+      },
+      {
+        "id": "c4",
+        "text": "Government analyzing"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Government accounting involves the systematic process of recording, classifying, summarizing, and communicating all transactions involving government funds and property."
+  },
+  {
+    "id": "AFAR-0156",
+    "text": "What is the title of the revised government accounting system for national government agencies which will be effective January 1, 2016?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Government Accounting Manual (GAM)"
+      },
+      {
+        "id": "c2",
+        "text": "New Government Accounting System (NGAS)"
+      },
+      {
+        "id": "c3",
+        "text": "Philippine Government Accounting System (PGAS)"
+      },
+      {
+        "id": "c4",
+        "text": "National Government Accounting Manual (NGAM)"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The Government Accounting Manual (GAM) is the revised accounting system for national government agencies effective January 1, 2016."
+  },
+  {
+    "id": "AFAR-0157",
+    "text": "Which government body keeps the general account of government, promulgates accounting rules and regulation, and submits to the President and Congress an annual financial report of the government?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Commission on Audit"
+      },
+      {
+        "id": "c2",
+        "text": "Department of Budget and Management"
+      },
+      {
+        "id": "c3",
+        "text": "Bureau of Treasury"
+      },
+      {
+        "id": "c4",
+        "text": "Department of Finance"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The Commission on Audit (COA) is responsible for keeping the general account of government, promulgating accounting rules, and submitting annual financial reports."
+  },
+  {
+    "id": "AFAR-0158",
+    "text": "Which is responsible for the design, preparation and approval of accounting systems of government agencies?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Department of Budget and Management"
+      },
+      {
+        "id": "c2",
+        "text": "Bureau of Treasury"
+      },
+      {
+        "id": "c3",
+        "text": "Commission on Audit"
+      },
+      {
+        "id": "c4",
+        "text": "The government agency concerned"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "The Commission on Audit (COA) is responsible for the design, preparation, and approval of accounting systems of government agencies."
+  },
+  {
+    "id": "AFAR-0159",
+    "text": "No money shall be paid out of the National Treasury except in pursuance of",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Appropriation"
+      },
+      {
+        "id": "c2",
+        "text": "Allotment"
+      },
+      {
+        "id": "c3",
+        "text": "Obligation"
+      },
+      {
+        "id": "c4",
+        "text": "Special executive order"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The Constitution provides that no money shall be paid out of the National Treasury except in pursuance of an appropriation made by law."
+  },
+  {
+    "id": "AFAR-0160",
+    "text": "It is the authorization from the Department of Budget and Management to any agency to incur obligation up to a specified amount that must be within the legislative appropriation",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Obligation"
+      },
+      {
+        "id": "c2",
+        "text": "Appropriation"
+      },
+      {
+        "id": "c3",
+        "text": "Allotment"
+      },
+      {
+        "id": "c4",
+        "text": "Fund release"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "An allotment is the authorization from the DBM to an agency to incur obligations up to a specified amount within the legislative appropriation."
+  },
+  {
+    "id": "AFAR-0161",
+    "text": "What is the role of the Bureau of Treasury in relation to government accounting responsibility?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "To receive and keep national funds and manage or control disbursements thereof"
+      },
+      {
+        "id": "c2",
+        "text": "To design, prepare, and approve the accounting systems of government agencies"
+      },
+      {
+        "id": "c3",
+        "text": "To keep the general accounts of the national government"
+      },
+      {
+        "id": "c4",
+        "text": "To prepare the annual financial report of the national government, its instrumentalities and government-owned or controlled corporations"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The Bureau of Treasury is responsible for receiving, keeping, and managing national funds and controlling their disbursement."
+  },
+  {
+    "id": "AFAR-0162",
+    "text": "It refers to the first step in the government budgetary process wherein the President, through the assistance of the Department of Budget and Management, shall prepare and submit to the Congress within 30 days from the opening of regular session of Congress a budget of expenditures and sources of financing, including receipts from existing and proposed revenue measures",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Budget Preparation"
+      },
+      {
+        "id": "c2",
+        "text": "Budget Legislation"
+      },
+      {
+        "id": "c3",
+        "text": "Budget Execution"
+      },
+      {
+        "id": "c4",
+        "text": "Budget Accountability"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "Budget preparation is the first step in the government budgetary process, involving the preparation and submission of the budget by the President."
+  },
+  {
+    "id": "AFAR-0163",
+    "text": "It refers to the second step in the government budgetary process which involves the enactment by the Congress of the General Appropriation Act (GAA) based on the budget submitted by the President which cannot be increased by the Congress. The initiative for the enactment of the appropriation law shall come from the House of Representatives",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Budget Preparation"
+      },
+      {
+        "id": "c2",
+        "text": "Budget Legislation"
+      },
+      {
+        "id": "c3",
+        "text": "Budget Execution"
+      },
+      {
+        "id": "c4",
+        "text": "Budget Accountability"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "Budget legislation is the second step, involving the enactment of the General Appropriation Act by Congress."
+  },
+  {
+    "id": "AFAR-0164",
+    "text": "It refers to the third step in the government budgetary process which involves the implementation of the general appropriation act which includes the release of revenue allotment under the supervision of Department of Budget and Management",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Budget Preparation"
+      },
+      {
+        "id": "c2",
+        "text": "Budget Legislation"
+      },
+      {
+        "id": "c3",
+        "text": "Budget Execution"
+      },
+      {
+        "id": "c4",
+        "text": "Budget Accountability"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Budget execution is the third step, involving the implementation of the General Appropriation Act and the release of allotments."
+  },
+  {
+    "id": "AFAR-0165",
+    "text": "It refers to the final step in the government budgetary process which involves the submission of property documentary reports by responsible officer, liquidation of expenditures and audit conducted by Commission on Audit to ensure the public funds are spent in accordance with the appropriation act",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Budget Preparation"
+      },
+      {
+        "id": "c2",
+        "text": "Budget Legislation"
+      },
+      {
+        "id": "c3",
+        "text": "Budget Execution"
+      },
+      {
+        "id": "c4",
+        "text": "Budget Accountability"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "Budget accountability is the final step, involving reporting, liquidation, and audit to ensure proper use of public funds."
+  },
+  {
+    "id": "AFAR-0166",
+    "text": "The books of accounts of National Government Agencies under the GAM shall consist of the following, except",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "General Journal"
+      },
+      {
+        "id": "c2",
+        "text": "Cash Receipts Journal"
+      },
+      {
+        "id": "c3",
+        "text": "Cash Disbursement Journal"
+      },
+      {
+        "id": "c4",
+        "text": "Check Disbursements Journal e. General Ledgers f. Subsidiary Ledgers g. Regular Agency and National Government Books"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "The books of accounts under the GAM do not include \"Regular Agency and National Government Books\" as a specific book."
+  },
+  {
+    "id": "AFAR-0167",
+    "text": "The registries of National Government Agencies under the GAM shall consist of the following, except",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Registries of Revenue and Other Receipts (RROR)"
+      },
+      {
+        "id": "c2",
+        "text": "Registry of Appropriation and Allotments (RAPAL)"
+      },
+      {
+        "id": "c3",
+        "text": "Registries of Allotments, Obligations and Disbursements (RAOD)"
+      },
+      {
+        "id": "c4",
+        "text": "Registries of Budget, Utilization and Disbursements (RBUD) e. Registries of Priority Development Assistant Program (RPDAP)"
+      }
+    ],
+    "correctAnswerId": "c1",
+    "explanation": "RPDAP is not a required registry under the GAM for National Government Agencies."
+  },
+  {
+    "id": "AFAR-0168",
+    "text": "The following are the classifications of different RAPAL, RAOD and RBUD, except",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "RAPAL/RAOD/RBUD Personal Services"
+      },
+      {
+        "id": "c2",
+        "text": "RAPAL/RAOD/RBUD Maintenance and Other Operating Expenses"
+      },
+      {
+        "id": "c3",
+        "text": "RAPAL/RAOD/RBUD Financial Expenses"
+      },
+      {
+        "id": "c4",
+        "text": "RAPAL/RAOD/RBUD Capital Outlays e. RAPAL/RAOD/RBUD Noncash Expenses"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "Noncash expenses are not a classification for RAPAL, RAOD, or RBUD."
+  },
+  {
+    "id": "AFAR-0169",
+    "text": "On January 1, 2020, the collecting officer of Bureau of Customs collected P450,000 import duties plus fines of P50,000 on the goods of an importer. On February 1, 2020, the Bureau of Customs remitted the P500,000 to the Bureau of Treasury. Question 1: What is the journal entry to record the collecting of the import duties and fines?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Debit Cash - Treasury/Agency Deposit, Regular P500,000 and Credit Cash - Collecting Officer P500,000"
+      },
+      {
+        "id": "c2",
+        "text": "Debit Cash - Collecting Officer P500,000 and Credit Import Duties P450,000 and Fines/Penalties P50,000"
+      },
+      {
+        "id": "c3",
+        "text": "Debit Cash - Treasury/Agency Deposit, Regular P500,000 and Credit Import Duties P450,000 and Fines/Penalties P50,000"
+      },
+      {
+        "id": "c4",
+        "text": "None of the above"
+      }
+    ],
+    "correctAnswerId": "c2",
+    "explanation": "The correct entry records the collection by the collecting officer, recognizing the cash received and the corresponding revenue accounts. Question 2: Using the same data, but assuming the importer directly deposited the P450,000 import duties and P50,000 fines through Authorized Agent Banks instead of collection by a customer collecting officer, what is the journal entry to record the collection/remittance of import duties to Bureau of Treasury? a. Debit Cash - Treasury/Agency Deposit, Regular P500,000 and Credit Cash - Collecting Officer P500,000 b. Debit Cash - Treasury/Agency Deposit, Regular P500,000 and Credit Import Duties P450,000 and Fines/Penalties P50,000 c. Debit Cash - Collecting Officer P500,000 and Credit Import Duties P450,000 and Fines/Penalties P50,000 d. None of the above Answer: ✅ b. Debit Cash - Treasury/Agency Deposit, Regular P500,000 and Credit Import Duties P450,000 and Fines/Penalties P50,000 Explanation: When the importer deposits directly through the bank, the agency recognizes the cash in the Treasury/Agency Deposit and credits the revenue accounts."
+  },
+  {
+    "id": "AFAR-0170",
+    "text": "On December 31, 2019, the Department of Finance billed its lessee on one of its buildings in the amount of P100,000. On January 31, 2020, the Department of Finance collected all of the accounts receivable. On February 28, 2020, the Department of Finance remitted the entire collected amount to the Bureau of Treasury. What is the journal entry to record the remittance by the Department of Finance to the Bureau of Treasury?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Debit Accounts Receivable P100,000 and Credit Rent Income P100,000"
+      },
+      {
+        "id": "c2",
+        "text": "Debit Cash - Collecting Officers P100,000 and Credit Accounts Receivable P100,000"
+      },
+      {
+        "id": "c3",
+        "text": "Debit Cash - Treasury/Agency Deposit, Regular P100,000 and Credit Cash - Collecting Officer P100,000"
+      },
+      {
+        "id": "c4",
+        "text": "Debit Accounts Receivable P100,000 and Credit Retained Earnings P100,000"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "The correct entry records the remittance of collected funds from the collecting officer to the Treasury/Agency Deposit."
+  },
+  {
+    "id": "AFAR-0171",
+    "text": "Department of Health (DOH) received Notice of Cash Allocation in the amount of P200,000 from Department of Budget and Management. DOH made total cash disbursements in the amount of P195,000. What is the journal entry to recognize reversion of unused Notice of Cash Allocation by DOH in its books?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Debit Expenses P5,000 and credit Cash - MDS, Regular P5,000"
+      },
+      {
+        "id": "c2",
+        "text": "Debit Investment P5,000 and credit Cash - MDS, Regular P5,000"
+      },
+      {
+        "id": "c3",
+        "text": "Debit Retained Earnings P5,000 and credit Cash - MDS, Regular P5,000"
+      },
+      {
+        "id": "c4",
+        "text": "Debit Subsidy from National Government P5,000 and credit Cash - MDS, Regular P5,000"
+      }
+    ],
+    "correctAnswerId": "c4",
+    "explanation": "The reversion of unused NCA is recognized by debiting Subsidy from National Government and crediting Cash - MDS, Regular."
+  },
+  {
+    "id": "AFAR-0172",
+    "text": "The Bureau of Treasury received P100,000 cash remittance from Department of Agrarian Reform (DAR) from its miscellaneous income. What is the journal entry of the Bureau of Treasury in its accounting books to record the receipt of cash remittance from the income of a national government agency?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Debit Cash in Bank, Local Bank P100,000 and Credit Miscellaneous Income of DA P100,000"
+      },
+      {
+        "id": "c2",
+        "text": "Debit Cash in Bank, Local Bank P100,000 and Credit Savings of DA, Regular P100,000"
+      },
+      {
+        "id": "c3",
+        "text": "Debit Cash in Bank, Local Bank P100,000 and Credit Cash - Treasury/Agency Deposit, Regular P100,000"
+      },
+      {
+        "id": "c4",
+        "text": "Debit Cash in Bank, Local Bank P100,000 and Credit Cash - Collecting Officer, DA P100,000"
+      }
+    ],
+    "correctAnswerId": "c3",
+    "explanation": "The Bureau of Treasury records the receipt of cash remittance from a national government agency by debiting Cash in Bank and crediting the Treasury/Agency Deposit account."
+  }
+]
