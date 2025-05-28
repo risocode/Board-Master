@@ -16,8 +16,7 @@ const MaintenanceModal: React.FC<MaintenanceModalProps> = ({ open, onClose, cour
   return (
     <ModalOverlay onClick={onClose}>
       <ModalContent onClick={e => e.stopPropagation()}>
-        <Card courseName={courseName} onChangeCourse={onChangeCourse} />
-        <CloseButton onClick={onClose}>&times;</CloseButton>
+        <Card courseName={courseName} onChangeCourse={onChangeCourse} onClose={onClose} />
       </ModalContent>
     </ModalOverlay>
   );
@@ -37,26 +36,11 @@ const ModalContent = styled.div`
   position: relative;
 `;
 
-const CloseButton = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 10;
-  transition: color 0.2s;
-  &:hover {
-    color: #f87171;
-  }
-`;
-
-const Card: React.FC<{ courseName?: string; onChangeCourse?: () => void }> = ({ courseName, onChangeCourse }) => {
+const Card: React.FC<{ courseName?: string; onChangeCourse?: () => void; onClose?: () => void }> = ({ courseName, onChangeCourse, onClose }) => {
   return (
     <StyledWrapper>
       <div className="card">
+        <button className="close-btn" onClick={onClose}>&times;</button>
         <div className="stars-bg">
           <div className="star" />
           <div className="star" />
@@ -73,7 +57,6 @@ const Card: React.FC<{ courseName?: string; onChangeCourse?: () => void }> = ({ 
           <div className="star" />
           <div className="star" />
           <div className="star" />
-
         </div>
         <Image
           src="https://uiverse.io/astronaut.png"
@@ -110,11 +93,12 @@ const StyledWrapper = styled.div`
     color: white;
     font-family: Montserrat;
     font-weight: bold;
-    padding: 1em 2em 1em 1em;
+    padding: 1em 2em 1em 2.5em;
     border-radius: 20px;
     overflow: hidden;
     z-index: 1;
     row-gap: 1em;
+    text-align: center;
   }
   .card .image {
     width: 12em !important;
@@ -256,6 +240,21 @@ const StyledWrapper = styled.div`
   @keyframes twinkle {
     0% { opacity: 0.8; }
     100% { opacity: 0.2; }
+  }
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.2s;
+  }
+  .close-btn:hover {
+    color: #f87171;
   }
 `;
 
