@@ -71,12 +71,12 @@ const nextConfig = withPWA({
             key: 'Content-Security-Policy',
             value: `
               default-src 'self';
-              script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.clerk.accounts.dev https://*.clerk.com https://clerk.boardmaster.site https://pagead2.googlesyndication.com;
-              style-src 'self' 'unsafe-inline' https://*.clerk.accounts.dev https://*.clerk.com;
-              img-src 'self' blob: data: https://*.clerk.accounts.dev https://*.clerk.com https://pagead2.googlesyndication.com;
-              font-src 'self' data:;
-              connect-src 'self' https://*.clerk.accounts.dev https://*.clerk.com https://clerk.boardmaster.site wss://*.clerk.accounts.dev;
-              frame-src 'self' https://*.clerk.accounts.dev https://*.clerk.com https://pagead2.googlesyndication.com;
+              script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.clerk.accounts.dev https://*.clerk.com https://clerk.boardmaster.site https://pagead2.googlesyndication.com https://*.google.com https://*.googleapis.com https://*.gstatic.com;
+              style-src 'self' 'unsafe-inline' https://*.clerk.accounts.dev https://*.clerk.com https://*.googleapis.com;
+              img-src 'self' blob: data: https://*.clerk.accounts.dev https://*.clerk.com https://pagead2.googlesyndication.com https://*.google.com https://*.googleapis.com https://*.gstatic.com;
+              font-src 'self' data: https://*.googleapis.com https://*.gstatic.com;
+              connect-src 'self' https://*.clerk.accounts.dev https://*.clerk.com https://clerk.boardmaster.site wss://*.clerk.accounts.dev https://*.google.com https://*.googleapis.com https://*.gstatic.com https://*.doubleclick.net https://*.googlesyndication.com https://ep1.adtrafficquality.google;
+              frame-src 'self' https://*.clerk.accounts.dev https://*.clerk.com https://pagead2.googlesyndication.com https://*.google.com https://*.doubleclick.net https://*.googlesyndication.com;
               worker-src 'self' blob:;
               object-src 'none';
               base-uri 'self';
