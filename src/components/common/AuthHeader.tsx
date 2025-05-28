@@ -4,6 +4,8 @@ import {
   SignInButton,
   SignUpButton,
   SignedOut,
+  SignedIn,
+  UserButton,
 } from "@clerk/nextjs";
 
 export default function AuthHeader() {
@@ -15,6 +17,9 @@ export default function AuthHeader() {
   ) return null;
   return (
     <header>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
       <SignedOut>
         <SignInButton />
         <SignUpButton />

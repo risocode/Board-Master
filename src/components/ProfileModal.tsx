@@ -62,6 +62,10 @@ const ProfileModal: React.FC<ProfileModalProps> = ({
     return parts.join(' ');
   };
 
+  // Helper to get display name
+  const displayName = user?.fullName || [firstName, middleName, lastName].filter(Boolean).join(' ');
+  const displayEmail = user?.primaryEmailAddress?.emailAddress || '';
+
   const handleSave = async () => {
     try {
       const formattedFirst = formatNamePart(firstName);
@@ -102,7 +106,10 @@ const ProfileModal: React.FC<ProfileModalProps> = ({
           )}
           {/* Name directly below the image */}
           {!isEditing && (
-            <div className="font-bold text-xl text-blue-900 text-center">{formatFullName()}</div>
+            <>
+              <div className="font-bold text-xl text-blue-900 text-center">{displayName}</div>
+              {displayEmail && <div className="text-sm text-gray-600 text-center">{displayEmail}</div>}
+            </>
           )}
         </div>
         {isEditing ? (

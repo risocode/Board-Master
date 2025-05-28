@@ -21,6 +21,7 @@ import { motion } from 'framer-motion';
 import { PointCalculator } from '@/lib/pointCalculator';
 import { Dialog } from '@headlessui/react';
 import ProfileModal from '@/components/ProfileModal';
+import { useUser } from "@clerk/nextjs";
 
 const subjects = [
   { abbreviation: 'FAR', fullName: 'Financial Accounting and Reporting' },
@@ -369,6 +370,13 @@ export default function DynamicCoursePage() {
       setLastName(l);
     }
   }, []);
+
+  const { isSignedIn } = useUser();
+  useEffect(() => {
+    if (!isSignedIn) {
+      window.location.href = "/";
+    }
+  }, [isSignedIn]);
 
   if (!mounted) {
     // Optionally, return a skeleton or just null
