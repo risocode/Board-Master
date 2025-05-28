@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { ThemeProvider, useTheme } from '@/components/common/ThemeContext';
@@ -24,6 +24,7 @@ import ProfileModal from '@/components/ProfileModal';
 import SpaceButton from '@/components/common/SpaceButton';
 import { getProfessionalTitleAndWelcome } from '@/data/professionalTitles';
 import MaintenanceModal from '@/components/common/MaintenanceModal';
+import Loader from '@/components/Loader';
 
 
 const subjects = [
@@ -131,6 +132,8 @@ export default function DynamicCoursePage() {
   });
   const [showMaintenance, setShowMaintenance] = useState(false);
   const [maintenanceMessage, setMaintenanceMessage] = useState<string | undefined>(undefined);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Add a helper to check if the course is CPA/BSA
   const isCPAorBSA = courseType === 'CPA' || courseType === 'BSA';
@@ -378,9 +381,18 @@ export default function DynamicCoursePage() {
     }
   }, []);
 
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowDropdown(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   if (!mounted) {
-    // Optionally, return a skeleton or just null
-    return null;
+    return <Loader />;
   }
 
   const currentQuestionForQuiz = questions ? questions[currentQuestionIndex] : null;
@@ -482,18 +494,52 @@ export default function DynamicCoursePage() {
       {/* Top right: Theme/Profile */}
       <div className="absolute top-4 right-4 z-10 flex items-center gap-2">
         <Switch checked={theme === 'dark'} onChange={toggleTheme} />
-        <button
-          onClick={() => setShowProfileModal(true)}
-          className="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-200 hover:border-blue-400 transition-all"
-        >
-         <Image
-          src='/Icons/profile.png'
-          alt="Profile"
-          width={40}
-          height={40}
-          className="w-10 h-10 rounded-full object-cover"
-        />
+        <div className="relative" ref={dropdownRef}>
+          <button
+            onClick={() => setShowDropdown((v) => !v)}
+            className="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-200 hover:border-blue-400 transition-all"
+          >
+            <Image
+              src="/Icons/profile.png"
+              alt="Profile"
+              width={40}
+              height={40}
+              className="w-10 h-10 rounded-full object-cover"
+            />
         </button>
+          {showDropdown && (
+            <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-200 py-3 z-50 flex flex-col items-stretch animate-fade-in">
+              <div className="flex flex-col items-center px-4 pb-3 border-b border-gray-100">
+                <Image
+                  src="/Icons/profile.png"
+                  alt="Profile"
+                  width={48}
+                  height={48}
+                  className="rounded-full mb-2"
+                />
+                <span className="font-bold text-gray-900 text-base truncate w-full text-center">{firstName} {middleName} {lastName}</span>
+      </div>
+              <button
+                className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+                onClick={() => {
+                  setShowDropdown(false);
+                  setShowProfileModal(true);
+                }}
+              >
+                Edit Profile
+              </button>
+              <button
+                className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+                onClick={() => {
+                  setShowDropdown(false);
+                  // Add logout logic here if needed
+                }}
+              >
+                Logout
+              </button>
+            </div>
+          )}
+        </div>
       </div>
       {/* Logo at the top, centered */}
       <div className="flex flex-col items-center mt-2 mb-2">
@@ -512,31 +558,45 @@ export default function DynamicCoursePage() {
         <div className="text-center font-extrabold text-4xl md:text-5xl mb-4 bg-gradient-to-r from-yellow-400 via-pink-500 to-blue-500 text-transparent bg-clip-text drop-shadow-lg tracking-wide select-none transition-all duration-300 w-full">
           WELCOME
         </div>
+        <div className="w-full max-w-md mx-auto mb-2 flex justify-center items-center">
         {!hasEditedProfile ? (
-            <SpaceButton
+          <SpaceButton
             label="Edit Profile"
-            onClick={() => {
-              setShowProfileModal(true);
-            }}
-            />
-          ) : (
-            <SpaceButton
+            onClick={() => setShowProfileModal(true)}
+          />
+        ) : (
+          <SpaceButton
             label={(() => {
               const name = [firstName, middleName, lastName].filter(Boolean).join(' ');
               const { title } = getProfessionalTitleAndWelcome(courseType);
-              if (!title) return name;
-              // If title ends with a period, use as prefix (e.g., 'Atty. ')
-              if (title.endsWith('.')) {
-                return `${title} ${name}`;
-              } else {
-                return `${name}, ${title}`;
-              }
+              let displayName = '';
+              if (!title) displayName = name;
+              else if (title.endsWith('.')) displayName = `${title} ${name}`;
+              else displayName = `${name}${title ? ', ' + title : ''}`;
+              const length = displayName.length;
+              return (
+                <span
+                  style={{
+                    fontSize:
+                      length > 24 ? '1.1rem' : length > 16 ? '1.3rem' : '1.5rem',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap',
+                    display: 'block',
+                    maxWidth: '100%',
+                    textAlign: 'center',
+                  }}
+                  title={displayName}
+                >
+                  {displayName}
+                </span>
+              );
             })()}
             disabled
           />
         )}
-        <div className="flex justify-center w-full mb-2"></div>
         </div>
+      </div>
       {/* Main Action Buttons */}
       <div className="flex flex-col items-center w-full max-w-md mx-auto gap-4 mb-6">
       <Button
@@ -673,12 +733,8 @@ export default function DynamicCoursePage() {
       case 'quiz':
         if (isLoading) {
           return (
-            <div className="flex flex-col items-center space-y-4">
-              <Skeleton className="h-12 w-3/4 mb-4" />
-              <Skeleton className="h-8 w-full mb-2" />
-              <Skeleton className="h-8 w-full mb-2" />
-              <Skeleton className="h-8 w-full mb-2" />
-              <Skeleton className="h-10 w-1/3 mt-4" />
+            <div className="flex flex-col items-center justify-center min-h-[60vh]">
+              <Loader />
             </div>
           );
         }
@@ -772,13 +828,9 @@ export default function DynamicCoursePage() {
         );
         case 'dashboard':
           if (isLoading || !selectedSubject || questions === null) {
-            // Show a loading spinner or skeleton while loading or waiting for data
             return (
-              <div className="flex flex-col items-center space-y-4">
-                <Skeleton className="h-10 w-[300px] mb-6" />
-                <Skeleton className="h-24 w-full max-w-md mb-4" />
-                <Skeleton className="h-24 w-full max-w-md mb-4" />
-                <Skeleton className="h-10 w-48" />
+              <div className="flex flex-col items-center justify-center min-h-[60vh]">
+                <Loader />
               </div>
             );
           }
