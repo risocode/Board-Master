@@ -1,13 +1,10 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/common/ThemeContext';
-import { LoadingProvider } from '@/components/common/LoadingContext';
 import ErrorBoundary from '@/components/common/ErrorBoundary';
 import { Analytics } from "@vercel/analytics/next";
 import './global.css';
 import PWAInstallPrompt from '@/components/common/PWAInstallPrompt';
-import CookieConsent from '@/components/common/CookieConsent';
-import HeaderAd from '@/components/common/HeaderAd';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -66,11 +63,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ErrorBoundary>
           <ThemeProvider>
-            <LoadingProvider>
-              <HeaderAd />
-              {children}
-              <CookieConsent />
-            </LoadingProvider>
+            {children}
           </ThemeProvider>
         </ErrorBoundary>
         <PWAInstallPrompt />

@@ -24,9 +24,6 @@ import SpaceButton from '@/components/common/SpaceButton';
 import { getProfessionalTitleAndWelcome } from '@/data/professionalTitles';
 import MaintenanceModal from '@/components/common/MaintenanceModal';
 import Loader from '@/components/Loader';
-import HeaderAd from '@/components/common/HeaderAd';
-import { useLoadingState } from '@/components/common/LoadingContext';
-import { useNavigationLoading } from '@/hooks/useNavigationLoading';
 
 
 const subjects = [
@@ -73,6 +70,7 @@ export default function DynamicCoursePage() {
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [quizMode, setQuizMode] = useState<'quiz' | 'review'>('quiz');
+  const [isLoading, setIsLoading] = useState(false);
   const [currentView, setCurrentView] = useState<'mainDashboard' | 'subjects' | 'quiz' | 'dashboard' | 'review' | 'overallDashboard'>('mainDashboard');
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
   const [showQuizSubjectModal, setShowQuizSubjectModal] = useState(false);
@@ -370,7 +368,7 @@ export default function DynamicCoursePage() {
         })();
       }
     }
-  }, [currentView, selectedSubject, questions, course]);
+  }, [currentView, selectedSubject, questions, courseType]);
 
   // On mount, always load and format names from localStorage
   useEffect(() => {
@@ -395,7 +393,7 @@ export default function DynamicCoursePage() {
   }, []);
 
   if (!mounted) {
-    return <Loader loading={isLoading} />;
+    return <Loader />;
   }
 
   const currentQuestionForQuiz = questions ? questions[currentQuestionIndex] : null;
@@ -556,7 +554,6 @@ export default function DynamicCoursePage() {
           className="mb-2"
         />
       </div>
-      <HeaderAd />
       {/* Welcome and Edit Profile */}
       <div className="flex flex-col items-center mb-4 w-full">
         <div className="text-center font-extrabold text-4xl md:text-5xl mb-4 bg-gradient-to-r from-yellow-400 via-pink-500 to-blue-500 text-transparent bg-clip-text drop-shadow-lg tracking-wide select-none transition-all duration-300 w-full">
@@ -572,7 +569,7 @@ export default function DynamicCoursePage() {
           <SpaceButton
             label={(() => {
               const name = [firstName, middleName, lastName].filter(Boolean).join(' ');
-              const { title } = getProfessionalTitleAndWelcome(course);
+              const { title } = getProfessionalTitleAndWelcome(courseType);
               let displayName = '';
               if (!title) displayName = name;
               else if (title.endsWith('.')) displayName = `${title} ${name}`;
@@ -720,14 +717,11 @@ export default function DynamicCoursePage() {
       <MaintenanceModal
         open={showMaintenance}
         onClose={() => setShowMaintenance(false)}
-        courseName={course}
+        courseName={courseType}
         message={maintenanceMessage}
         onChangeCourse={() => {
-          setIsLoading(true);
           setShowMaintenance(false);
-          setTimeout(() => {
-            window.location.href = '/';
-          }, 1500);
+          window.location.href = '/';
         }}
       />
     </div>
@@ -741,7 +735,7 @@ export default function DynamicCoursePage() {
         if (isLoading) {
           return (
             <div className="flex flex-col items-center justify-center min-h-[60vh]">
-              <Loader loading={isLoading} />
+              <Loader />
             </div>
           );
         }
@@ -837,7 +831,7 @@ export default function DynamicCoursePage() {
           if (isLoading || !selectedSubject || questions === null) {
             return (
               <div className="flex flex-col items-center justify-center min-h-[60vh]">
-                <Loader loading={isLoading} />
+                <Loader />
               </div>
             );
           }
@@ -1113,7 +1107,7 @@ export default function DynamicCoursePage() {
       {/* Daily Check-In Modal */}
       <Dialog open={checkInModalOpen} onClose={() => setCheckInModalOpen(false)} className="fixed z-50 inset-0 flex items-center justify-center">
         {/* Overlay */}
-        <div className="fixed inset-0 bg-black/60" inert />
+        <div className="fixed inset-0 bg-black/60" aria-hidden="true" />
         {/* Modal Content */}
         <div className="relative bg-[#181c24] rounded-2xl p-6 max-w-sm w-full flex flex-col items-center border-2 border-green-700 animate-fade-in shadow-xl">
           <h2 className="text-2xl font-bold text-white mb-1 text-center">Daily Check In</h2>
@@ -1303,7 +1297,7 @@ export default function DynamicCoursePage() {
         <ProfileModal
           isOpen={showProfileModal}
           onClose={() => setShowProfileModal(false)}
-          courseType={course}
+          courseType={courseType}
           middleName={middleName}
           setMiddleName={setMiddleName}
           firstName={firstName}

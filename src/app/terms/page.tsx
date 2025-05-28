@@ -96,7 +96,6 @@ export default function TermsPage() {
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
                 <p className="text-lg leading-relaxed">No server-side accounts are created. Your profile and quiz data are stored locally in your browser. You are responsible for your own device and browser data.</p>
-                <p className="text-lg leading-relaxed">By using our service, you agree to receive advertisements through Google&apos;s AdSense. These ads may be personalized based on your browsing history and preferences.</p>
               </div>
             </motion.section>
 
@@ -111,13 +110,7 @@ export default function TermsPage() {
                 <span className="text-3xl">📢</span> 4. Advertising
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">Our website displays advertisements provided by Google&apos;s AdSense. By using our service, you acknowledge and agree that:</p>
-                <ul className="list-disc list-inside space-y-3 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 p-6 rounded-xl">
-                  <li>We may display advertisements on our website</li>
-                  <li>These ads may be personalized based on your browsing history</li>
-                  <li>Google&apos;s AdSense may use cookies to serve relevant ads</li>
-                  <li>You can opt out of personalized advertising through Google&apos;s Ads Settings</li>
-                </ul>
+                <p className="text-lg leading-relaxed">The app is provided &quot;as is&quot; without warranties. Quiz content is for educational purposes only.</p>
               </div>
             </motion.section>
 
@@ -132,7 +125,7 @@ export default function TermsPage() {
                 <span className="text-3xl">⚠️</span> 5. Disclaimer
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">The app is provided &quot;as is&quot; without warranties. Quiz content is for educational purposes only. We are not responsible for the content of advertisements displayed on our website.</p>
+                <p className="text-lg leading-relaxed">The app creators are not liable for any damages or data loss. Use at your own risk.</p>
               </div>
             </motion.section>
 
@@ -147,7 +140,7 @@ export default function TermsPage() {
                 <span className="text-3xl">⚖️</span> 6. Limitations
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">The app creators are not liable for any damages or data loss. Use at your own risk.</p>
+                <p className="text-lg leading-relaxed">These terms may be updated at any time. Changes will be posted on this page.</p>
               </div>
             </motion.section>
 

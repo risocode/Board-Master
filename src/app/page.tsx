@@ -6,8 +6,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import SpaceButton from '../components/common/SpaceButton';
 import { ThemeProvider, useTheme } from '../components/common/ThemeContext';
-import { useLoadingState } from '../components/common/LoadingContext';
-import { useNavigationLoading } from '@/hooks/useNavigationLoading';
 import MaintenanceModal from '../components/common/MaintenanceModal';
 import { getProfessionalTitleAndWelcome } from '@/data/professionalTitles';
 
@@ -107,8 +105,6 @@ function slugify(str: string) {
 function HomePage() {
   const router = useRouter();
   const { theme } = useTheme();
-  const { setIsLoading } = useLoadingState();
-  useNavigationLoading();
   const [selectedFieldIdx, setSelectedFieldIdx] = useState<number | null>(null);
   const [selectedCourseIdx, setSelectedCourseIdx] = useState<number | null>(null);
   const [showMaintenance, setShowMaintenance] = useState(false);
@@ -129,14 +125,9 @@ function HomePage() {
     if (selectedFieldIdx === null || selectedCourseIdx === null) return;
     const selectedField = FIELDS[selectedFieldIdx];
     const selectedCourse = selectedField.courses[selectedCourseIdx];
-    const courseAbbr = selectedCourse.abbr.split('/')[0];
-    const { title } = getProfessionalTitleAndWelcome(courseAbbr);
-    // Slugify all parts for the URL
-    const redirectUrl = `/${slugify(selectedField.name)}/${slugify(courseAbbr)}/${slugify(title)}`;
-    setIsLoading(true);
-    setTimeout(() => {
-      router.push(redirectUrl);
-    }, 1500);
+    const courseType = selectedCourse.abbr.split('/')[0];
+    const redirectUrl = `/course/${courseType}`;
+    router.push(redirectUrl);
   };
 
   return (

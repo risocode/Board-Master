@@ -100,8 +100,7 @@ export default function PrivacyPage() {
                 <span className="text-3xl">🤝</span> 4. Third-Party Services
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">We use Google AdSense to display advertisements on our website. Google AdSense uses cookies to serve ads based on your prior visits to our website and other sites. You can opt out of personalized advertising by visiting Google&apos;s Ads Settings page.</p>
-                <p className="text-lg leading-relaxed">Google AdSense may collect and process data according to their own privacy policy. We recommend reviewing Google&apos;s privacy policy for more information about how they handle your data.</p>
+                <p className="text-lg leading-relaxed">All data is stored in your browser&apos;s localStorage. No data is transmitted to any server. If you clear your browser data, your profile and progress will be lost.</p>
               </div>
             </motion.section>
 
@@ -116,13 +115,7 @@ export default function PrivacyPage() {
                 <span className="text-3xl">🍪</span> 5. Cookies and Advertising
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">We use cookies for the following purposes:</p>
-                <ul className="list-disc list-inside space-y-3 bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20 p-6 rounded-xl">
-                  <li>Essential cookies for app functionality</li>
-                  <li>Advertising cookies used by Google AdSense</li>
-                  <li>Analytics cookies to improve our service</li>
-                </ul>
-                <p className="text-lg leading-relaxed">You can control cookie preferences through your browser settings. However, disabling certain cookies may affect the functionality of our website and the display of advertisements.</p>
+                <p className="text-lg leading-relaxed">No third-party analytics, ads, or authentication are used. No information is shared with any external service.</p>
               </div>
             </motion.section>
 
@@ -137,13 +130,7 @@ export default function PrivacyPage() {
                 <span className="text-3xl">👤</span> 6. Your Rights
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">You have the right to:</p>
-                <ul className="list-disc list-inside space-y-3 bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20 p-6 rounded-xl">
-                  <li>Edit or delete your profile at any time</li>
-                  <li>Clear your browser data to remove all stored information</li>
-                  <li>Opt out of personalized advertising through Google&apos;s Ads Settings</li>
-                  <li>Control cookie preferences through your browser settings</li>
-                </ul>
+                <p className="text-lg leading-relaxed">You can edit or delete your profile at any time. You can clear your browser data to remove all stored information.</p>
               </div>
             </motion.section>
 
@@ -158,7 +145,7 @@ export default function PrivacyPage() {
                 <span className="text-3xl">📝</span> 7. Changes to This Policy
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
-                <p className="text-lg leading-relaxed">This policy may be updated. Changes will be posted on this page.</p>
+                <p className="text-lg leading-relaxed">No cookies are used. All data is stored in localStorage.</p>
               </div>
             </motion.section>
 
@@ -170,6 +157,21 @@ export default function PrivacyPage() {
             >
               <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-green-500 to-teal-500 rounded-full" />
               <h2 className="text-2xl font-semibold mb-6 text-green-600 dark:text-green-400 flex items-center gap-3">
+                <span className="text-3xl">📝</span> 7. Changes to This Policy
+              </h2>
+              <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
+                <p className="text-lg leading-relaxed">This policy may be updated. Changes will be posted on this page.</p>
+              </div>
+            </motion.section>
+
+            <motion.section 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.9 }}
+              className="relative"
+            >
+              <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-teal-500 to-green-500 rounded-full" />
+              <h2 className="text-2xl font-semibold mb-6 text-teal-600 dark:text-teal-400 flex items-center gap-3">
                 <span className="text-3xl">📧</span> 8. Contact Us
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 pl-4">
