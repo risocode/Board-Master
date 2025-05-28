@@ -1,17 +1,20 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import SpaceButton from '../components/common/SpaceButton';
-import { ThemeProvider } from '../components/common/ThemeContext';
+import { ThemeProvider, useTheme } from '../components/common/ThemeContext';
+import { useLoadingState } from '../components/common/LoadingContext';
+import { useNavigationLoading } from '@/hooks/useNavigationLoading';
 import MaintenanceModal from '../components/common/MaintenanceModal';
+import { getProfessionalTitleAndWelcome } from '@/data/professionalTitles';
 
 const FIELDS = [
   {
     icon: '🩺',
-    name: 'Health & Allied Sciences',
+    name: 'Health And Allied Sciences',
     courses: [
       { abbr: 'BSN', name: 'Bachelor of Science in Nursing' },
       { abbr: 'BSP', name: 'Bachelor of Science in Pharmacy' },
@@ -29,7 +32,7 @@ const FIELDS = [
   },
   {
     icon: '⚖️',
-    name: 'Law & Criminology',
+    name: 'Law And Criminology',
     courses: [
       { abbr: 'JD/LLB', name: 'Juris Doctor / Bachelor of Laws' },
       { abbr: 'BSCrim', name: 'Bachelor of Science in Criminology' },
@@ -67,7 +70,7 @@ const FIELDS = [
   },
   {
     icon: '📊',
-    name: 'Business & Accountancy',
+    name: 'Business And Accountancy',
     courses: [
       { abbr: 'BSA', name: 'Accountancy' },
       { abbr: 'BSCA', name: 'Customs Administration' },
@@ -76,7 +79,7 @@ const FIELDS = [
   },
   {
     icon: '🛠️',
-    name: 'Architecture & Design',
+    name: 'Architecture And Design',
     courses: [
       { abbr: 'BSA', name: 'Architecture' },
       { abbr: 'BSID', name: 'Interior Design' },
@@ -96,11 +99,20 @@ const FIELDS = [
   },
 ];
 
+// Utility functions for slugification
+function slugify(str: string) {
+  return str.replace(/\s+/g, '-');
+}
+
 function HomePage() {
   const router = useRouter();
+  const { theme } = useTheme();
+  const { setIsLoading } = useLoadingState();
+  useNavigationLoading();
   const [selectedFieldIdx, setSelectedFieldIdx] = useState<number | null>(null);
   const [selectedCourseIdx, setSelectedCourseIdx] = useState<number | null>(null);
   const [showMaintenance, setShowMaintenance] = useState(false);
+  const [showGcashModal, setShowGcashModal] = useState(false);
 
   // Get the selected course name for the modal
   let selectedCourseName: string | undefined = undefined;
@@ -117,32 +129,45 @@ function HomePage() {
     if (selectedFieldIdx === null || selectedCourseIdx === null) return;
     const selectedField = FIELDS[selectedFieldIdx];
     const selectedCourse = selectedField.courses[selectedCourseIdx];
-    // Route to the dynamic course page using the course abbreviation (use only the first part if abbr has a slash)
-    const courseType = selectedCourse.abbr.split('/')[0];
-    
-    // Check if the course is CPA or BSA
-    if (courseType === 'CPA' || courseType === 'BSA') {
-      router.push(`/course/${courseType}`);
-    } else {
-      setShowMaintenance(true);
-    }
+    const courseAbbr = selectedCourse.abbr.split('/')[0];
+    const { title } = getProfessionalTitleAndWelcome(courseAbbr);
+    // Slugify all parts for the URL
+    const redirectUrl = `/${slugify(selectedField.name)}/${slugify(courseAbbr)}/${slugify(title)}`;
+    setIsLoading(true);
+    setTimeout(() => {
+      router.push(redirectUrl);
+    }, 1500);
   };
 
   return (
     <div className="min-h-screen w-full bg-[#eaf4fb] text-[#181c24] flex flex-col items-center justify-center">
-      <MaintenanceModal open={showMaintenance} onClose={() => setShowMaintenance(false)} courseName={selectedCourseName} />
+      <MaintenanceModal
+        open={showMaintenance}
+        onClose={() => setShowMaintenance(false)}
+        courseName={selectedCourseName}
+        message={
+          selectedCourseName
+            ? `${selectedCourseName} is under construction.`
+            : 'This course is under construction.'
+        }
+        onChangeCourse={() => {
+          setShowMaintenance(false);
+          setSelectedFieldIdx(null);
+          setSelectedCourseIdx(null);
+        }}
+      />
       <div className="flex flex-col items-center mb-6 mt-2">
         <Image
-          src="/logo/berq.png"
+          src={theme === 'dark' ? '/logo/berq-g.png' : '/logo/berq-b.png'}
           alt="Board Exam Review Questions Logo"
-          width={220}
+          width={340}
           height={100}
           priority
           className="mb-2"
-          style={{ width: 'auto', height: 'auto' }}
+          style={{ width: "100%", height: "auto" }}
         />
       </div>
-      <div className="w-full max-w-xs mb-4">
+      <div className="w-full max-w-xs mb-3">
         <label className="block text-sm font-semibold text-blue-800 mb-1">Please select a field to begin</label>
         <select
           className="w-full rounded-lg border-2 border-blue-200 px-4 py-2 text-base focus:outline-none focus:ring-2 focus:ring-blue-400 shadow bg-[#eaf4fb] text-blue-900 transition"
@@ -175,12 +200,33 @@ function HomePage() {
         onClick={handleProceed}
         disabled={selectedFieldIdx === null || selectedCourseIdx === null}
       />
-      {/* Footer container */}
-      <div className="w-full max-w-xs flex flex-col items-center mt-8 border-t border-gray-200 pt-4 gap-2">
-        <button className="text-yellow-800 font-bold bg-yellow-100 border border-yellow-300 rounded-lg px-4 py-2 shadow hover:bg-yellow-200 hover:scale-105 transition-all duration-150 flex items-center gap-2">
-          <span className="text-2xl">☕</span> Buy Me a Coffee
+      {showGcashModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+          <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-xs w-full flex flex-col items-center relative animate-fade-in border-2 border-yellow-200">
+            <button onClick={() => setShowGcashModal(false)} className="absolute top-3 right-4 text-gray-400 hover:text-gray-700 text-3xl font-bold">&times;</button>
+            <div className="flex flex-col items-center mb-2">
+              <span className="text-4xl mb-2 animate-bounce">☕❤️</span>
+              <h2 className="text-2xl font-extrabold text-yellow-800 mb-1 text-center">Support the App!</h2>
+              <p className="text-base text-gray-700 mb-2 text-center">If you find this app helpful, you can buy me a coffee and help keep it free for everyone. Your support means a lot! 🙏</p>
+            </div>
+            <div className="bg-yellow-50 border-4 border-yellow-300 rounded-2xl shadow-lg p-2 mb-4 flex flex-col items-center">
+              <Image src="/Gcash/gcash.jpg" alt="GCash QR Code" width={192} height={192} className="w-48 h-48 object-contain rounded-xl" />
+              <span className="text-xs text-gray-500 mt-2">Scan with your GCash app</span>
+            </div>
+            <p className="text-center text-yellow-900 text-sm font-semibold">Thank you for your generosity and for supporting Filipino board exam takers! 💙</p>
+          </div>
+        </div>
+      )}
+      <div className="flex flex-col items-center w-full mt-2">
+        <button
+          onClick={() => setShowGcashModal(true)}
+          className="bg-yellow-100 border border-yellow-300 rounded-xl shadow flex items-center justify-center px-4 py-3 my-3 transition hover:bg-yellow-200 cursor-pointer hover:scale-105 mx-auto"
+          style={{ maxWidth: 320 }}
+        >
+          <span className="text-2xl mr-2 animate-bounce">☕</span>
+          <span className="font-bold text-yellow-900 text-lg sm:text-xl">Buy Me a Coffee</span>
         </button>
-        <div className="flex flex-row items-center justify-center gap-x-8 w-full mt-2 whitespace-nowrap">
+        <div className="flex flex-row items-center justify-center gap-x-8 w-full whitespace-nowrap">
           <Link href="/privacy" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
             <span>🔒</span> Privacy Policy
           </Link>
@@ -191,9 +237,9 @@ function HomePage() {
             <span>✉️</span> Contact
           </Link>
         </div>
-        <div className="w-full text-center text-xs text-gray-500 mt-2">
-          All rights reserved Risoca © {new Date().getFullYear()}
-        </div>
+      </div>
+      <div className="w-full text-center text-xs text-gray-500 mt-2">
+        All rights reserved Risoca © {new Date().getFullYear()}
       </div>
     </div>
   );
@@ -201,8 +247,10 @@ function HomePage() {
 
 export default function HomePageWrapper() {
   return (
-    <ThemeProvider>
-      <HomePage />
-    </ThemeProvider>
+    <Suspense fallback={<div>Loading...</div>}>
+      <ThemeProvider>
+        <HomePage />
+      </ThemeProvider>
+    </Suspense>
   );
 } 

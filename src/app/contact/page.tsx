@@ -61,7 +61,7 @@ export default function ContactPage() {
           </button>
         </form>
         {submitted && (
-          <div className="mt-4 text-green-600 font-medium">Thank you for contacting us! We'll get back to you soon.</div>
+          <div className="mt-4 text-green-600 font-medium">Thank you for contacting us! We&apos;ll get back to you soon.</div>
         )}
       </div>
     </div>

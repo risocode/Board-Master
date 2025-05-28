@@ -1,305 +1,241 @@
+"use client";
+
 import React from 'react';
 import styled from 'styled-components';
 
-const Loader = () => {
+interface LoaderProps {
+  loading: boolean;
+}
+
+const Loader: React.FC<LoaderProps> = ({ loading }) => {
+  if (!loading) return null;
+
   return (
     <StyledWrapper>
-      <div className="typewriter">
-        <div className="slide"><i /></div>
-        <div className="paper" />
-        <div className="keyboard" />
-      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" height="200px" width="200px" viewBox="0 0 200 200" className="pencil">
+        <defs>
+          <clipPath id="pencil-eraser">
+            <rect height={30} width={30} ry={5} rx={5} />
+          </clipPath>
+        </defs>
+        <circle transform="rotate(-113,100,100)" strokeLinecap="round" strokeDashoffset="439.82" strokeDasharray="439.82 439.82" strokeWidth={2} stroke="currentColor" fill="none" r={70} className="pencil__stroke" />
+        <g transform="translate(100,100)" className="pencil__rotate">
+          <g fill="none">
+            <circle transform="rotate(-90)" strokeDashoffset={402} strokeDasharray="402.12 402.12" strokeWidth={30} stroke="hsl(223,90%,50%)" r={64} className="pencil__body1" />
+            <circle transform="rotate(-90)" strokeDashoffset={465} strokeDasharray="464.96 464.96" strokeWidth={10} stroke="hsl(223,90%,60%)" r={74} className="pencil__body2" />
+            <circle transform="rotate(-90)" strokeDashoffset={339} strokeDasharray="339.29 339.29" strokeWidth={10} stroke="hsl(223,90%,40%)" r={54} className="pencil__body3" />
+          </g>
+          <g transform="rotate(-90) translate(49,0)" className="pencil__eraser">
+            <g className="pencil__eraser-skew">
+              <rect height={30} width={30} ry={5} rx={5} fill="hsl(223,90%,70%)" />
+              <rect clipPath="url(#pencil-eraser)" height={30} width={5} fill="hsl(223,90%,60%)" />
+              <rect height={20} width={30} fill="hsl(223,10%,90%)" />
+              <rect height={20} width={15} fill="hsl(223,10%,70%)" />
+              <rect height={20} width={5} fill="hsl(223,10%,80%)" />
+              <rect height={2} width={30} y={6} fill="hsla(223,10%,10%,0.2)" />
+              <rect height={2} width={30} y={13} fill="hsla(223,10%,10%,0.2)" />
+            </g>
+          </g>
+          <g transform="rotate(-90) translate(49,-30)" className="pencil__point">
+            <polygon points="15 0,30 30,0 30" fill="hsl(33,90%,70%)" />
+            <polygon points="15 0,6 30,0 30" fill="hsl(33,90%,50%)" />
+            <polygon points="15 0,20 10,10 10" fill="hsl(223,10%,10%)" />
+          </g>
+        </g>
+      </svg>
     </StyledWrapper>
   );
 }
 
 const StyledWrapper = styled.div`
-  .typewriter {
-    --blue: #5cbbff;
-    --blue-dark: #162d72;
-    --key: #fff;
-    --paper: #eef0fd;
-    --text: #00000049;
-    --tool: #ffbb00;
-    --duration: 2s;
-    position: relative;
-    -webkit-animation: bounce05 var(--duration) linear infinite;
-    animation: bounce05 var(--duration) linear infinite;
-    transform: scale(0.6);
-  }
-
-  .typewriter .slide {
-    width: 92px;
-    height: 20px;
-    border-radius: 3px;
-    margin-left: 14px;
-    transform: translateX(14px);
-    background: linear-gradient(var(--blue), var(--blue-dark));
-    -webkit-animation: slide05 var(--duration) ease infinite;
-    animation: slide05 var(--duration) ease infinite;
-  }
-
-  .typewriter .slide:before,
-  .typewriter .slide:after,
-  .typewriter .slide i:before {
-    content: "";
-    position: absolute;
-    background: var(--tool);
-  }
-
-  .typewriter .slide:before {
-    width: 2px;
-    height: 8px;
-    top: 6px;
-    left: 100%;
-  }
-
-  .typewriter .slide:after {
-    left: 94px;
-    top: 3px;
-    height: 14px;
-    width: 6px;
-    border-radius: 3px;
-  }
-
-  .typewriter .slide i {
+  .pencil {
     display: block;
-    position: absolute;
-    right: 100%;
-    width: 6px;
-    height: 4px;
-    top: 4px;
-    background: var(--tool);
+    width: 10em;
+    height: 10em;
   }
 
-  .typewriter .slide i:before {
-    right: 100%;
-    top: -2px;
-    width: 4px;
-    border-radius: 2px;
-    height: 14px;
+  /* Hide the SVG if parent overlay is fading out */
+  [data-fadeout='true'] & {
+    display: none !important;
   }
 
-  .typewriter .paper {
-    position: absolute;
-    left: 24px;
-    top: -26px;
-    width: 40px;
-    height: 46px;
-    border-radius: 5px;
-    background: var(--paper);
-    transform: translateY(46px);
-    -webkit-animation: paper05 var(--duration) linear infinite;
-    animation: paper05 var(--duration) linear infinite;
+  .pencil__body1,
+  .pencil__body2,
+  .pencil__body3,
+  .pencil__eraser,
+  .pencil__eraser-skew,
+  .pencil__point,
+  .pencil__rotate,
+  .pencil__stroke {
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
 
-  .typewriter .paper:before {
-    content: "";
-    position: absolute;
-    left: 6px;
-    right: 6px;
-    top: 7px;
-    border-radius: 2px;
-    height: 4px;
-    transform: scaleY(0.8);
-    background: var(--text);
-    box-shadow: 0 12px 0 var(--text), 0 24px 0 var(--text), 0 36px 0 var(--text);
+  .pencil__body1,
+  .pencil__body2,
+  .pencil__body3 {
+    transform: rotate(-90deg);
   }
 
-  .typewriter .keyboard {
-    width: 120px;
-    height: 56px;
-    margin-top: -10px;
-    z-index: 1;
-    position: relative;
+  .pencil__body1 {
+    animation-name: pencilBody1;
   }
 
-  .typewriter .keyboard:before,
-  .typewriter .keyboard:after {
-    content: "";
-    position: absolute;
+  .pencil__body2 {
+    animation-name: pencilBody2;
   }
 
-  .typewriter .keyboard:before {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 7px;
-    background: linear-gradient(135deg, var(--blue), var(--blue-dark));
-    transform: perspective(10px) rotateX(2deg);
-    transform-origin: 50% 100%;
+  .pencil__body3 {
+    animation-name: pencilBody3;
   }
 
-  .typewriter .keyboard:after {
-    left: 2px;
-    top: 25px;
-    width: 11px;
-    height: 4px;
-    border-radius: 2px;
-    box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
-      60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
-      22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
-      60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
-    -webkit-animation: keyboard05 var(--duration) linear infinite;
-    animation: keyboard05 var(--duration) linear infinite;
+  .pencil__eraser {
+    animation-name: pencilEraser;
+    transform: rotate(-90deg) translate(49px,0);
   }
 
-  @keyframes bounce05 {
-    85%,
-    92%,
-    100% {
-      transform: translateY(0);
+  .pencil__eraser-skew {
+    animation-name: pencilEraserSkew;
+    animation-timing-function: ease-in-out;
+  }
+
+  .pencil__point {
+    animation-name: pencilPoint;
+    transform: rotate(-90deg) translate(49px,-30px);
+  }
+
+  .pencil__rotate {
+    animation-name: pencilRotate;
+  }
+
+  .pencil__stroke {
+    animation-name: pencilStroke;
+    transform: translate(100px,100px) rotate(-113deg);
+  }
+
+  /* Animations */
+  @keyframes pencilBody1 {
+    from,
+  	to {
+      stroke-dashoffset: 351.86;
+      transform: rotate(-90deg);
     }
 
-    89% {
-      transform: translateY(-4px);
-    }
-
-    95% {
-      transform: translateY(2px);
+    50% {
+      stroke-dashoffset: 150.8;
+   /* 3/8 of diameter */
+      transform: rotate(-225deg);
     }
   }
 
-  @keyframes slide05 {
-    5% {
-      transform: translateX(14px);
+  @keyframes pencilBody2 {
+    from,
+  	to {
+      stroke-dashoffset: 406.84;
+      transform: rotate(-90deg);
     }
 
-    15%,
-    30% {
-      transform: translateX(6px);
+    50% {
+      stroke-dashoffset: 174.36;
+      transform: rotate(-225deg);
+    }
+  }
+
+  @keyframes pencilBody3 {
+    from,
+  	to {
+      stroke-dashoffset: 296.88;
+      transform: rotate(-90deg);
+    }
+
+    50% {
+      stroke-dashoffset: 127.23;
+      transform: rotate(-225deg);
+    }
+  }
+
+  @keyframes pencilEraser {
+    from,
+  	to {
+      transform: rotate(-45deg) translate(49px,0);
+    }
+
+    50% {
+      transform: rotate(0deg) translate(49px,0);
+    }
+  }
+
+  @keyframes pencilEraserSkew {
+    from,
+  	32.5%,
+  	67.5%,
+  	to {
+      transform: skewX(0);
+    }
+
+    35%,
+  	65% {
+      transform: skewX(-4deg);
+    }
+
+    37.5%, 
+  	62.5% {
+      transform: skewX(8deg);
     }
 
     40%,
-    55% {
-      transform: translateX(0);
+  	45%,
+  	50%,
+  	55%,
+  	60% {
+      transform: skewX(-15deg);
     }
 
-    65%,
-    70% {
-      transform: translateX(-4px);
-    }
-
-    80%,
-    89% {
-      transform: translateX(-12px);
-    }
-
-    100% {
-      transform: translateX(14px);
+    42.5%,
+  	47.5%,
+  	52.5%,
+  	57.5% {
+      transform: skewX(15deg);
     }
   }
 
-  @keyframes paper05 {
-    5% {
-      transform: translateY(46px);
+  @keyframes pencilPoint {
+    from,
+  	to {
+      transform: rotate(-90deg) translate(49px,-30px);
     }
 
-    20%,
-    30% {
-      transform: translateY(34px);
-    }
-
-    40%,
-    55% {
-      transform: translateY(22px);
-    }
-
-    65%,
-    70% {
-      transform: translateY(10px);
-    }
-
-    80%,
-    85% {
-      transform: translateY(0);
-    }
-
-    92%,
-    100% {
-      transform: translateY(46px);
+    50% {
+      transform: rotate(-225deg) translate(49px,-30px);
     }
   }
 
-  @keyframes keyboard05 {
-    5%,
-    12%,
-    21%,
-    30%,
-    39%,
-    48%,
-    57%,
-    66%,
+  @keyframes pencilRotate {
+    from {
+      transform: translate(100px,100px) rotate(0);
+    }
+
+    to {
+      transform: translate(100px,100px) rotate(720deg);
+    }
+  }
+
+  @keyframes pencilStroke {
+    from {
+      stroke-dashoffset: 439.82;
+      transform: translate(100px,100px) rotate(-113deg);
+    }
+
+    50% {
+      stroke-dashoffset: 164.93;
+      transform: translate(100px,100px) rotate(-113deg);
+    }
+
     75%,
-    84% {
-      box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
-        60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
-        22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
-        60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
-    }
-
-    9% {
-      box-shadow: 15px 2px 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
-        60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
-        22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
-        60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
-    }
-
-    18% {
-      box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
-        60px 2px 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
-        22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
-        60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
-    }
-
-    27% {
-      box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
-        60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
-        22px 12px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
-        60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
-    }
-
-    36% {
-      box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
-        60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
-        22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 12px 0 var(--key),
-        60px 12px 0 var(--key), 68px 12px 0 var(--key), 83px 10px 0 var(--key);
-    }
-
-    45% {
-      box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
-        60px 0 0 var(--key), 75px 0 0 var(--key), 90px 2px 0 var(--key),
-        22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
-        60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
-    }
-
-    54% {
-      box-shadow: 15px 0 0 var(--key), 30px 2px 0 var(--key), 45px 0 0 var(--key),
-        60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
-        22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
-        60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
-    }
-
-    63% {
-      box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
-        60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
-        22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
-        60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 12px 0 var(--key);
-    }
-
-    72% {
-      box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 2px 0 var(--key),
-        60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
-        22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key),
-        60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
-    }
-
-    81% {
-      box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key),
-        60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key),
-        22px 10px 0 var(--key), 37px 12px 0 var(--key), 52px 10px 0 var(--key),
-        60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+  	to {
+      stroke-dashoffset: 439.82;
+      transform: translate(100px,100px) rotate(112deg);
     }
   }`;
 

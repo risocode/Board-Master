@@ -1,9 +1,7 @@
 "use client";
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams } from 'next/navigation';
-import { getProfessionalTitleAndWelcome } from '@/data/professionalTitles';
-import SpaceButton from '@/components/common/SpaceButton';
 import { Button } from '@/components/ui/button';
 import { ThemeProvider, useTheme } from '@/components/common/ThemeContext';
 import Switch from '@/components/Switch';
@@ -11,14 +9,25 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Toaster } from "@/components/ui/toaster";
 import { useToast } from "@/hooks/use-toast";
-import { Skeleton } from "@/components/ui/skeleton";
 import QuizDisplay from '@/components/quiz/QuizDisplay';
 import ReviewMode from '@/components/quiz/ReviewMode';
 import SubjectDashboard from '@/components/SubjectDashboard';
 import type { Question, UserAnswer } from '@/types/quiz';
+import type { UserPoints } from '@/types/points';
 import { parseJsonQuestions } from '@/lib/parser';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, LineChart, CartesianGrid, Line } from 'recharts';
 import { motion } from 'framer-motion';
+import { PointCalculator } from '@/lib/pointCalculator';
+import { Dialog } from '@headlessui/react';
+import ProfileModal from '@/components/ProfileModal';
+import SpaceButton from '@/components/common/SpaceButton';
+import { getProfessionalTitleAndWelcome } from '@/data/professionalTitles';
+import MaintenanceModal from '@/components/common/MaintenanceModal';
+import Loader from '@/components/Loader';
+import HeaderAd from '@/components/common/HeaderAd';
+import { useLoadingState } from '@/components/common/LoadingContext';
+import { useNavigationLoading } from '@/hooks/useNavigationLoading';
+
 
 const subjects = [
   { abbreviation: 'FAR', fullName: 'Financial Accounting and Reporting' },
@@ -53,8 +62,10 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 
 export default function DynamicCoursePage() {
   // All hooks at the top, before any early returns
+  useNavigationLoading();
+  const { isLoading, setIsLoading } = useLoadingState();
   const params = useParams() || {};
-  const courseType = typeof params.type === 'string' ? params.type : Array.isArray(params.type) ? params.type[0] : '';
+  const course = typeof params.course === 'string' ? params.course : Array.isArray(params.course) ? params.course[0] : '';
   const { theme, toggleTheme } = useTheme();
   const { toast } = useToast();
   const [mounted, setMounted] = useState(false);
@@ -62,27 +73,73 @@ export default function DynamicCoursePage() {
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [quizMode, setQuizMode] = useState<'quiz' | 'review'>('quiz');
-  const [isLoading, setIsLoading] = useState(false);
-  const [currentView, setCurrentView] = useState<'mainDashboard' | 'subjects' | 'quiz' | 'dashboard' | 'review' | 'overallDashboard'>(
-    courseType === 'CPA' || courseType === 'BSA' ? 'mainDashboard' : 'subjects'
-  );
+  const [currentView, setCurrentView] = useState<'mainDashboard' | 'subjects' | 'quiz' | 'dashboard' | 'review' | 'overallDashboard'>('mainDashboard');
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
   const [showQuizSubjectModal, setShowQuizSubjectModal] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [showGcashModal, setShowGcashModal] = useState(false);
-  const [profile, setProfile] = useState(() => {
+  const [userPoints, setUserPoints] = useState<UserPoints>(() => {
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('userProfile');
+      const saved = localStorage.getItem('userPoints');
       if (saved) return JSON.parse(saved);
     }
-    return { firstName: '', middleName: '', lastName: '', age: '', birthdate: '', address: '' };
+    return {
+      userId: 'user-id', // Replace with actual user id
+      totalPoints: 0,
+      levelPoints: 0,
+      correctAnswers: 0,
+      perfectAnswers: 0,
+      transactions: [],
+    };
   });
-
-  // Professional title and welcome message
-  const { title } = getProfessionalTitleAndWelcome(courseType);
+  const [checkInModalOpen, setCheckInModalOpen] = useState(false);
+  const [checkInReward, setCheckInReward] = useState<number | null>(null);
+  const [checkInDay, setCheckInDay] = useState(1);
+  const [lastCheckInDate, setLastCheckInDate] = useState<string | null>(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('lastCheckInDate');
+    }
+    return null;
+  });
+  const [streak, setStreak] = useState<number>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('checkInStreak');
+      return saved ? parseInt(saved, 10) : 1;
+    }
+    return 1;
+  });
+  const [showCheckInReward, setShowCheckInReward] = useState(false);
+  const [firstName, setFirstName] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('userFirstName') || '';
+    }
+    return '';
+  });
+  const [middleName, setMiddleName] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('userMiddleName') || '';
+    }
+    return '';
+  });
+  const [lastName, setLastName] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('userLastName') || '';
+    }
+    return '';
+  });
+  const [hasEditedProfile, setHasEditedProfile] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('hasEditedProfile') === '1';
+    }
+    return false;
+  });
+  const [showMaintenance, setShowMaintenance] = useState(false);
+  const [maintenanceMessage, setMaintenanceMessage] = useState<string | undefined>(undefined);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Add a helper to check if the course is CPA/BSA
-  const isCPAorBSA = courseType === 'CPA' || courseType === 'BSA';
+  const isCPAorBSA = course === 'CPA' || course === 'BSA';
 
   // Add a state to track the next view after subject selection
   const [nextViewAfterSubjectSelection, setNextViewAfterSubjectSelection] = useState<'quiz' | 'dashboard' | null>(null);
@@ -92,6 +149,63 @@ export default function DynamicCoursePage() {
 
   // Add a state to track the subject chart view
   const [subjectChartView, setSubjectChartView] = useState<'daily' | 'monthly'>('daily');
+
+  // Level/progress calculation
+  const level = PointCalculator.getLevelFromPoints(userPoints.levelPoints);
+  const pointsForNextLevel = PointCalculator.getPointsForNextLevel(level);
+  const pointsForCurrentLevel = PointCalculator.getPointsForNextLevel(level - 1) || 0;
+  const progress = Math.min(1, (userPoints.levelPoints - pointsForCurrentLevel) / (pointsForNextLevel - pointsForCurrentLevel));
+
+  // Daily check-in logic
+  const today = new Date().toDateString();
+  const canCheckIn = PointCalculator.isCheckInAvailable(lastCheckInDate);
+  const handleDailyCheckIn = () => {
+    let newStreak = streak;
+    let newDay = streak;
+    if (lastCheckInDate) {
+      const last = new Date(lastCheckInDate);
+      const now = new Date();
+      const diffDays = Math.floor((now.getTime() - last.getTime()) / (1000 * 60 * 60 * 24));
+      if (diffDays === 1) {
+        newStreak = streak + 1;
+        newDay = newStreak > 7 ? 7 : newStreak;
+      } else if (diffDays > 1) {
+        newDay = 1;
+        newStreak = streak;
+      }
+    }
+    const reward = PointCalculator.getCheckInReward(newDay);
+    setCheckInReward(reward);
+    setCheckInDay(newDay);
+    setShowCheckInReward(true);
+    setCheckInModalOpen(true);
+    setUserPoints(prev => {
+      const updated = {
+        ...prev,
+        totalPoints: prev.totalPoints + reward,
+        transactions: [
+          ...prev.transactions,
+          {
+            id: crypto.randomUUID(),
+            userId: prev.userId,
+            points: reward,
+            type: 'DAILY_CHECKIN' as const,
+            timestamp: new Date().toISOString(),
+          },
+        ],
+      };
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('userPoints', JSON.stringify(updated));
+      }
+      return updated;
+    });
+    setLastCheckInDate(today);
+    setStreak(newStreak);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('lastCheckInDate', today);
+      localStorage.setItem('checkInStreak', newStreak.toString());
+    }
+  };
 
   // Define handleSubjectSelected with useCallback at the top with other hooks
   const handleSubjectSelected = useCallback(async (subjectAbbreviation: string) => {
@@ -112,7 +226,7 @@ export default function DynamicCoursePage() {
       const importedQuestions = parseJsonQuestions(JSON.stringify(data));
       // Shuffle the questions before storing and setting
       const shuffledQuestions = shuffleArray(importedQuestions);
-      localStorage.setItem(`${courseType}_questions_${subjectAbbreviation}`, JSON.stringify(shuffledQuestions));
+      localStorage.setItem(`${course}_questions_${subjectAbbreviation}`, JSON.stringify(shuffledQuestions));
       // Clear previous answers for this subject
       //setUserAnswers(prev => prev.filter(ua => !subjectQuestionIds.includes(ua.questionId)));
       setQuestions(shuffledQuestions);
@@ -129,17 +243,17 @@ export default function DynamicCoursePage() {
     } finally {
       setIsLoading(false);
     }
-  }, [courseType, isCPAorBSA, toast, nextViewAfterSubjectSelection]);
+  }, [course, isCPAorBSA, toast, nextViewAfterSubjectSelection, setIsLoading]);
 
   // Restore state from localStorage
   useEffect(() => {
     try {
-      const savedQuestions = localStorage.getItem(`${courseType}_questions`);
-      const savedUserAnswers = localStorage.getItem(`${courseType}_userAnswers`);
-      const savedCurrentQuestionIndex = localStorage.getItem(`${courseType}_currentQuestionIndex`);
-      let savedQuizMode = localStorage.getItem(`${courseType}_quizMode`);
-      const savedCurrentView = localStorage.getItem(`${courseType}_currentView`);
-      const savedSelectedSubject = localStorage.getItem(`${courseType}_selectedSubject`);
+      const savedQuestions = localStorage.getItem(`${course}_questions`);
+      const savedUserAnswers = localStorage.getItem(`${course}_userAnswers`);
+      const savedCurrentQuestionIndex = localStorage.getItem(`${course}_currentQuestionIndex`);
+      let savedQuizMode = localStorage.getItem(`${course}_quizMode`);
+      const savedCurrentView = localStorage.getItem(`${course}_currentView`);
+      const savedSelectedSubject = localStorage.getItem(`${course}_selectedSubject`);
       
       if (savedQuestions) setQuestions(JSON.parse(savedQuestions));
       if (savedUserAnswers) setUserAnswers(JSON.parse(savedUserAnswers));
@@ -148,7 +262,7 @@ export default function DynamicCoursePage() {
       setQuizMode(savedQuizMode as 'quiz' | 'review');
       if (savedSelectedSubject) setSelectedSubject(savedSelectedSubject);
 
-      // Only restore currentView if it makes sense, otherwise default to mainDashboard/subjects
+      // Only restore currentView if it makes sense, otherwise default to mainDashboard
       if (
         savedCurrentView &&
         (
@@ -158,31 +272,29 @@ export default function DynamicCoursePage() {
         )
       ) {
         setCurrentView(savedCurrentView as typeof currentView);
-      } else if (courseType === 'CPA' || courseType === 'BSA') {
-        setCurrentView('mainDashboard');
       } else {
-        setCurrentView('subjects');
+        setCurrentView('mainDashboard');
       }
     } catch {
-      setCurrentView(courseType === 'CPA' || courseType === 'BSA' ? 'mainDashboard' : 'subjects');
+      setCurrentView('mainDashboard');
       setQuizMode('quiz');
     }
-  }, [courseType]);
+  }, [course]);
 
   // Persist state to localStorage
   useEffect(() => {
     try {
-      if (questions !== null) localStorage.setItem(`${courseType}_questions`, JSON.stringify(questions));
-      else localStorage.removeItem(`${courseType}_questions`);
-      localStorage.setItem(`${courseType}_userAnswers`, JSON.stringify(userAnswers));
-      localStorage.setItem(`${courseType}_currentQuestionIndex`, currentQuestionIndex.toString());
-      localStorage.setItem(`${courseType}_quizMode`, quizMode);
-      localStorage.setItem(`${courseType}_currentView`, currentView);
-      if (selectedSubject) localStorage.setItem(`${courseType}_selectedSubject`, selectedSubject);
-      else localStorage.removeItem(`${courseType}_selectedSubject`);
+      if (questions !== null) localStorage.setItem(`${course}_questions`, JSON.stringify(questions));
+      else localStorage.removeItem(`${course}_questions`);
+      localStorage.setItem(`${course}_userAnswers`, JSON.stringify(userAnswers));
+      localStorage.setItem(`${course}_currentQuestionIndex`, currentQuestionIndex.toString());
+      localStorage.setItem(`${course}_quizMode`, quizMode);
+      localStorage.setItem(`${course}_currentView`, currentView);
+      if (selectedSubject) localStorage.setItem(`${course}_selectedSubject`, selectedSubject);
+      else localStorage.removeItem(`${course}_selectedSubject`);
     } catch {
     }
-  }, [questions, userAnswers, currentQuestionIndex, quizMode, currentView, selectedSubject, courseType]);
+  }, [questions, userAnswers, currentQuestionIndex, quizMode, currentView, selectedSubject, course]);
 
   useEffect(() => {
     setMounted(true);
@@ -230,7 +342,7 @@ export default function DynamicCoursePage() {
       // If subject is selected but questions are missing, try to load from localStorage or fetch
       if (selectedSubject && (!questions || questions.length === 0)) {
         // Try localStorage first
-        const local = localStorage.getItem(`${courseType}_questions_${selectedSubject}`);
+        const local = localStorage.getItem(`${course}_questions_${selectedSubject}`);
         if (local) {
           try {
             const parsed = JSON.parse(local);
@@ -250,7 +362,7 @@ export default function DynamicCoursePage() {
               const importedQuestions = parseJsonQuestions(JSON.stringify(data));
               if (importedQuestions.length > 0) {
                 setQuestions(importedQuestions);
-                localStorage.setItem(`${courseType}_questions_${selectedSubject}`, JSON.stringify(importedQuestions));
+                localStorage.setItem(`${course}_questions_${selectedSubject}`, JSON.stringify(importedQuestions));
               }
             }
           } catch {
@@ -258,11 +370,32 @@ export default function DynamicCoursePage() {
         })();
       }
     }
-  }, [currentView, selectedSubject, questions, courseType]);
+  }, [currentView, selectedSubject, questions, course]);
+
+  // On mount, always load and format names from localStorage
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const f = localStorage.getItem('userFirstName') || '';
+      const m = localStorage.getItem('userMiddleName') || '';
+      const l = localStorage.getItem('userLastName') || '';
+      setFirstName(f);
+      setMiddleName(m);
+      setLastName(l);
+    }
+  }, []);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowDropdown(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   if (!mounted) {
-    // Optionally, return a skeleton or just null
-    return null;
+    return <Loader loading={isLoading} />;
   }
 
   const currentQuestionForQuiz = questions ? questions[currentQuestionIndex] : null;
@@ -277,17 +410,37 @@ export default function DynamicCoursePage() {
       timestamp: new Date().toISOString(),
       subjectAbbreviation: selectedSubject || ''
     };
-    // Immediately update state and persist to localStorage
+  
+    // Update global answers (for dashboard/history)
     setUserAnswers(prev => {
       const updated = [...prev, newAnswer];
-      // Save to localStorage immediately
       try {
-        localStorage.setItem(`${courseType}_userAnswers`, JSON.stringify(updated));
+        localStorage.setItem(`${course}_userAnswers`, JSON.stringify(updated));
       } catch (error) {
         console.error('Failed to save answer to localStorage:', error);
       }
       return updated;
     });
+  
+    // --- Add this for points and level progress ---
+    if (isCorrect) {
+      const transaction = PointCalculator.calculatePoints(
+        userPoints,
+        true,
+        true,
+        questionId,
+        selectedSubject || ''
+      );
+      if (transaction) {
+        setUserPoints(prev => {
+          const updated = PointCalculator.updateUserPoints(prev, transaction);
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('userPoints', JSON.stringify(updated));
+          }
+          return updated;
+        });
+      }
+    }
   };
 
   const handleNextQuestion = () => {
@@ -315,95 +468,241 @@ export default function DynamicCoursePage() {
   const handleSelectNewSubject = () => {
     setQuestions(null);
     setCurrentQuestionIndex(0);
+    if (isCPAorBSA) {
     setCurrentView('subjects');
     setSelectedSubject(null);
+    } else {
+      setCurrentView('mainDashboard');
+      setSelectedSubject(null);
+    }
   };
 
   const handleGoToSubjectsForQuiz = () => {
+    if (isCPAorBSA) {
     setCurrentView('subjects');
+    } else {
+      setCurrentView('mainDashboard');
+    }
+  };
+
+  const handleShowMaintenance = (msg?: string) => {
+    setMaintenanceMessage(msg || 'This feature is under construction.');
+    setShowMaintenance(true);
   };
 
   // Main dashboard UI
   const renderDashboard = () => (
     <div className={`min-h-[90vh] flex flex-col items-center px-2 py-6 pt-6 relative ${theme}`}
          style={{ background: theme === 'dark' ? '#181c24' : '#eaf4fb', color: theme === 'dark' ? '#eaf4fb' : '#181c24', transition: 'background 0.3s, color 0.3s' }}>
-      {/* Theme Switch and Profile Icon */}
+      {/* Top right: Theme/Profile */}
       <div className="absolute top-4 right-4 z-10 flex items-center gap-2">
         <Switch checked={theme === 'dark'} onChange={toggleTheme} />
-        <button onClick={() => setShowProfileModal(true)} className="rounded-full border-2 border-gray-300 w-10 h-10 flex items-center justify-center bg-white shadow hover:shadow-lg transition">
-          <span className="text-2xl">👤</span>
+        <div className="relative" ref={dropdownRef}>
+          <button
+            onClick={() => setShowDropdown((v) => !v)}
+            className="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-200 hover:border-blue-400 transition-all"
+          >
+            <Image
+              src="/Icons/profile.png"
+              alt="Profile"
+              width={40}
+              height={40}
+              className="w-10 h-10 rounded-full object-cover"
+            />
         </button>
+          {showDropdown && (
+            <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-200 py-3 z-50 flex flex-col items-stretch animate-fade-in">
+              <div className="flex flex-col items-center px-4 pb-3 border-b border-gray-100">
+                <Image
+                  src="/Icons/profile.png"
+                  alt="Profile"
+                  width={48}
+                  height={48}
+                  className="rounded-full mb-2"
+                />
+                <span className="font-bold text-gray-900 text-base truncate w-full text-center">{firstName} {middleName} {lastName}</span>
       </div>
-      {/* Logo */}
-      <div className="flex flex-col items-center mb-6 mt-2">
-        <Image
-          src="/logo/berq.png"
-          alt="Board Exam Review Questions Logo"
-          width={120}
-          height={100}
-          priority
-          className="mb-2"
-          style={{ width: 'auto', height: 'auto' }}
-        />
-      </div>
-      {/* User Name and Professional Title */}
-      <div className="flex flex-col items-center mb-4 w-full">
-        <div className="text-center font-extrabold text-3xl md:text-4xl mb-4 bg-gradient-to-r from-yellow-400 via-pink-500 to-blue-500 text-transparent bg-clip-text drop-shadow-lg tracking-wide select-none transition-all duration-300 w-full">
-          WELCOME
-        </div>
-        <div className="flex justify-center w-full">
-          {getFullName() ? (
-            <SpaceButton
-              label={<span className="block w-full text-center whitespace-nowrap overflow-hidden text-ellipsis max-w-xs">{`${getFullName()}${title ? ", " + title : ''}`}</span>}
-              disabled
-            />
-          ) : (
-            <SpaceButton
-              label={<span className="block w-full text-center whitespace-nowrap overflow-hidden text-ellipsis max-w-xs">EDIT PROFILE</span>}
-              onClick={() => { setShowProfileModal(true); }}
-            />
+              <button
+                className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+                onClick={() => {
+                  setShowDropdown(false);
+                  setShowProfileModal(true);
+                }}
+              >
+                Edit Profile
+              </button>
+              <button
+                className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+                onClick={() => {
+                  setShowDropdown(false);
+                  // Add logout logic here if needed
+                }}
+              >
+                Logout
+              </button>
+            </div>
           )}
         </div>
       </div>
-      {/* Main Buttons */}
+      {/* Logo at the top, centered */}
+      <div className="flex flex-col items-center mt-2 mb-2">
+        <Image
+          src={theme === 'dark' ? '/logo/berq-g.png' : '/logo/berq-b.png'}
+          alt="Board Exam Review Questions Logo"
+          width={300}
+          height={100}
+          style={{ width: "100%", height: "auto" }}
+          priority
+          className="mb-2"
+        />
+      </div>
+      <HeaderAd />
+      {/* Welcome and Edit Profile */}
+      <div className="flex flex-col items-center mb-4 w-full">
+        <div className="text-center font-extrabold text-4xl md:text-5xl mb-4 bg-gradient-to-r from-yellow-400 via-pink-500 to-blue-500 text-transparent bg-clip-text drop-shadow-lg tracking-wide select-none transition-all duration-300 w-full">
+          WELCOME
+        </div>
+        <div className="w-full max-w-md mx-auto mb-2 flex justify-center items-center">
+        {!hasEditedProfile ? (
+          <SpaceButton
+            label="Edit Profile"
+            onClick={() => setShowProfileModal(true)}
+          />
+        ) : (
+          <SpaceButton
+            label={(() => {
+              const name = [firstName, middleName, lastName].filter(Boolean).join(' ');
+              const { title } = getProfessionalTitleAndWelcome(course);
+              let displayName = '';
+              if (!title) displayName = name;
+              else if (title.endsWith('.')) displayName = `${title} ${name}`;
+              else displayName = `${name}${title ? ', ' + title : ''}`;
+              const length = displayName.length;
+              return (
+                <span
+                  style={{
+                    fontSize:
+                      length > 24 ? '1.1rem' : length > 16 ? '1.3rem' : '1.5rem',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap',
+                    display: 'block',
+                    maxWidth: '100%',
+                    textAlign: 'center',
+                  }}
+                  title={displayName}
+                >
+                  {displayName}
+                </span>
+              );
+            })()}
+            disabled
+          />
+        )}
+        </div>
+      </div>
+      {/* Main Action Buttons */}
+      <div className="flex flex-col items-center w-full max-w-md mx-auto gap-4 mb-6">
       <Button
         onClick={() => {
+            if (!isCPAorBSA || subjects.length === 0) {
+              handleShowMaintenance('Take Quiz is under construction for this course.');
+              return;
+            }
           setQuizSource('subjects');
           setShowQuizSubjectModal(true);
         }}
-        className="w-full max-w-md h-14 mb-4 rounded-xl bg-pink-200 text-pink-900 font-bold text-lg shadow-md hover:bg-pink-300 transition"
+          className="w-full h-14 rounded-xl bg-pink-200 text-pink-900 font-bold text-lg shadow-md hover:bg-pink-300 transition"
       >
         Take Quiz
       </Button>
       <Button
         onClick={() => {
+            if (!isCPAorBSA || subjects.length === 0) {
+              handleShowMaintenance('Subject Dashboard is under construction for this course.');
+              return;
+            }
           setQuizSource('dashboard');
           if (!selectedSubject) {
             setSelectedSubject(subjects[0].abbreviation);
           }
           setCurrentView('dashboard');
         }}
-        className="w-full max-w-md h-14 mb-4 rounded-xl border-2 border-blue-400 text-blue-800 font-semibold text-lg bg-white shadow hover:bg-blue-50 hover:border-blue-600 transition"
+          className="w-full h-14 rounded-xl border-2 border-blue-400 text-blue-800 font-semibold text-lg bg-white shadow hover:bg-blue-50 hover:border-blue-600 transition"
         variant="outline"
       >
         Subject Dashboard
       </Button>
       <Button
-        onClick={() => setCurrentView('overallDashboard')}
-        className="w-full max-w-md h-14 mb-4 rounded-xl border-2 border-blue-400 text-blue-800 font-semibold text-lg bg-white shadow hover:bg-blue-50 hover:border-blue-600 transition"
+          onClick={() => {
+            if (!isCPAorBSA || subjects.length === 0) {
+              handleShowMaintenance('Overall Dashboard is under construction for this course.');
+              return;
+            }
+            setCurrentView('overallDashboard');
+          }}
+          className="w-full h-14 rounded-xl border-2 border-blue-400 text-blue-800 font-semibold text-lg bg-white shadow hover:bg-blue-50 hover:border-blue-600 transition"
         variant="outline"
       >
         Overall Dashboard
       </Button>
-      {/* Footer container */}
-      <div className="w-full max-w-xs flex flex-col items-center mt-8 border-t border-gray-200 pt-4 gap-2">
-        <Button
+      </div>
+      {/* Menu Bar - Level, Points, Daily Check In */}
+        <div className="w-full max-w-xl mx-auto mb-8">
+        <div className="flex flex-col sm:flex-row items-center justify-between bg-gradient-to-r from-blue-50 to-green-50 shadow-lg rounded-2xl px-3 py-2 sm:px-6 sm:py-4 gap-3 sm:gap-6 border border-blue-100">
+          {/* Level and Progress */}
+          <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0 w-full">
+            <div className="flex flex-col items-start">
+              <span className="text-xs text-gray-500 font-medium">Lvl</span>
+              <span className="text-xl sm:text-2xl font-bold text-blue-900 leading-none">{level}</span>
+            </div>
+            <div className="flex-1 flex flex-col justify-center min-w-0">
+              <div className="relative w-full h-2 sm:h-3 bg-gray-200 rounded-full overflow-hidden">
+                <div
+                  className="absolute left-0 top-0 h-full bg-gradient-to-r from-green-400 to-blue-400 rounded-full transition-all duration-500 shadow-inner"
+                  style={{ width: `${progress * 100}%` }}
+                />
+              </div>
+              <span className="text-xs text-gray-400 mt-1">Progress to next level</span>
+            </div>
+          </div>
+
+          {/* Points */}
+          <div className="flex items-center gap-1 mx-0 sm:mx-6 mt-2 sm:mt-0">
+            <span className="text-yellow-500 text-xl animate-pulse">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="gold" strokeWidth="2" fill="yellow" /></svg>
+            </span>
+            <span className="font-bold text-gray-800 text-lg">{userPoints.totalPoints}</span>
+            <span className="text-xs text-gray-500 ml-1">points</span>
+          </div>
+
+          {/* Daily Check-In Button */}
+          <button
+            className="w-full sm:w-auto mt-2 sm:mt-0 px-5 py-2 rounded-xl border border-green-300 bg-white text-green-700 font-semibold shadow-sm hover:bg-green-50 hover:scale-105 transition-all duration-200 focus:ring-2 focus:ring-green-200 focus:outline-none"
+            onClick={() => {
+              if (canCheckIn) {
+                handleDailyCheckIn();
+              } else {
+                setCheckInModalOpen(true);
+              }
+            }}
+          >
+            Daily Check In
+          </button>
+        </div>
+      </div>
+      {/* Footer container at the bottom */}
+      <div className="w-full flex flex-col items-center mt-auto pt-8">
+        <div className="w-full max-w-md mx-auto mb-4">
+          <button
           onClick={() => setShowGcashModal(true)}
-          className="text-yellow-800 font-bold bg-yellow-100 border border-yellow-300 rounded-lg px-4 py-2 shadow hover:bg-yellow-200 hover:scale-105 transition-all duration-150 flex items-center gap-2 w-full max-w-xs justify-center mb-2"
+            className="bg-yellow-100 border border-yellow-300 rounded-xl shadow flex items-center justify-center px-4 py-3 mb-2 w-full"
         >
-          <span className="text-2xl">☕</span> Buy Me a Coffee
-        </Button>
-        <div className="flex flex-row items-center justify-center gap-x-8 w-full mt-2 whitespace-nowrap">
+            <span className="text-2xl mr-2 animate-bounce">☕</span>
+            <span className="font-bold text-yellow-900">Buy Me a Coffee</span>
+          </button>
+        </div>
+        <div className="flex flex-row items-center justify-center gap-x-8 w-full max-w-md mb-2 whitespace-nowrap">
           <Link href="/privacy" className="text-blue-700 hover:underline text-sm font-medium flex items-center gap-1">
             <span>🔒</span> Privacy Policy
           </Link>
@@ -418,37 +717,31 @@ export default function DynamicCoursePage() {
           All rights reserved Risoca © {new Date().getFullYear()}
         </div>
       </div>
+      <MaintenanceModal
+        open={showMaintenance}
+        onClose={() => setShowMaintenance(false)}
+        courseName={course}
+        message={maintenanceMessage}
+        onChangeCourse={() => {
+          setIsLoading(true);
+          setShowMaintenance(false);
+          setTimeout(() => {
+            window.location.href = '/';
+          }, 1500);
+        }}
+      />
     </div>
   );
 
   // UI rendering
   const renderContent = () => {
-    if (!isCPAorBSA) {
-      return (
-        <div className="min-h-[90vh] flex flex-col items-center justify-center px-2 py-6">
-          <div className="w-full max-w-lg bg-white/60 rounded-xl shadow-lg p-8 flex flex-col items-center">
-            <h2 className="text-3xl font-extrabold mb-6 text-blue-700 text-center drop-shadow-sm">
-              {getFullName() ? `${getFullName()}${title ? ", " + title : ''}` : 'Edit Profile'}
-            </h2>
-            <div className="text-lg text-center mb-6 text-blue-800">Sorry, quiz subjects and dashboards are only available for CPA/BSA at this time.</div>
-            <Button onClick={() => setShowProfileModal(true)} className="mb-4">Edit Profile</Button>
-            <Button asChild variant="secondary">
-              <Link href="/">Back to Home</Link>
-            </Button>
-          </div>
-        </div>
-      );
-    }
+    // Always render the dashboard UI
     switch (currentView) {
       case 'quiz':
         if (isLoading) {
           return (
-            <div className="flex flex-col items-center space-y-4">
-              <Skeleton className="h-12 w-3/4 mb-4" />
-              <Skeleton className="h-8 w-full mb-2" />
-              <Skeleton className="h-8 w-full mb-2" />
-              <Skeleton className="h-8 w-full mb-2" />
-              <Skeleton className="h-10 w-1/3 mt-4" />
+            <div className="flex flex-col items-center justify-center min-h-[60vh]">
+              <Loader loading={isLoading} />
             </div>
           );
         }
@@ -463,6 +756,8 @@ export default function DynamicCoursePage() {
               totalQuestions={questions.length}
               userAnswer={userAnswerForCurrentQuestion}
               quizSource={quizSource}
+              userPoints={userPoints}
+              onPointsUpdate={setUserPoints} 
             />
           );
         } else {
@@ -538,26 +833,24 @@ export default function DynamicCoursePage() {
             </div>
           </div>
         );
-      case 'dashboard':
-        if (isLoading) {
-          return (
-            <div className="flex flex-col items-center space-y-4">
-              <Skeleton className="h-10 w-[300px] mb-6" />
-              <Skeleton className="h-24 w-full max-w-md mb-4" />
-              <Skeleton className="h-24 w-full max-w-md mb-4" />
-              <Skeleton className="h-10 w-48" />
-            </div>
-          );
-        }
-        if (!questions || questions.length === 0 || !selectedSubject) {
-          return (
-            <div className="text-center p-10 bg-card rounded-lg shadow-lg">
-              <h2 className="text-2xl font-semibold mb-2 text-card-foreground">Dashboard Not Available</h2>
-              <p className="text-muted-foreground mb-4">Please select a subject with questions to view its dashboard.</p>
-              <Button onClick={() => setCurrentView('mainDashboard')} className="mr-2">Back to Home</Button>
-            </div>
-          );
-        }
+        case 'dashboard':
+          if (isLoading || !selectedSubject || questions === null) {
+            return (
+              <div className="flex flex-col items-center justify-center min-h-[60vh]">
+                <Loader loading={isLoading} />
+              </div>
+            );
+          }
+          if (questions.length === 0) {
+            // Only show this if we know there are no questions for the selected subject
+            return (
+              <div className="text-center p-10 bg-card rounded-lg shadow-lg">
+                <h2 className="text-2xl font-semibold mb-2 text-card-foreground">Dashboard Not Available</h2>
+                <p className="text-muted-foreground mb-4">Please select a subject with questions to view its dashboard.</p>
+                <Button onClick={() => setCurrentView('mainDashboard')} className="mr-2">Back to Home</Button>
+              </div>
+            );
+          }
         // In the dashboard case, filter userAnswers for the current subject
         return (
           <div className="flex flex-col items-center">
@@ -580,8 +873,7 @@ export default function DynamicCoursePage() {
                   const data = await res.json();
                   const subjectQuestions = parseJsonQuestions(JSON.stringify(data));
                   if (subjectQuestions.length > 0) {
-                    // Clear user answers for this subject before starting quiz
-                    // Shuffle questions before setting
+                    // DO NOT clear userAnswers here!
                     setQuestions(shuffleArray(subjectQuestions));
                     setCurrentQuestionIndex(0);
                     setQuizMode('quiz');
@@ -593,8 +885,6 @@ export default function DynamicCoursePage() {
                 } else {
                   toast({ title: "Error", description: `Failed to load questions for ${subjectAbbr}.`, variant: "destructive" });
                 }
-              } catch {
-                toast({ title: "Error", description: `Failed to load questions for ${subjectAbbr}.`, variant: "destructive" });
               } finally {
                 setIsLoading(false);
               }
@@ -611,7 +901,7 @@ export default function DynamicCoursePage() {
         // 1. From all localStorage subject files
         subjects.forEach(subject => {
           try {
-            const data = localStorage.getItem(`${courseType}_questions_${subject.abbreviation}`);
+            const data = localStorage.getItem(`${course}_questions_${subject.abbreviation}`);
             if (data) {
               const questions = JSON.parse(data);
               if (Array.isArray(questions)) {
@@ -802,11 +1092,11 @@ export default function DynamicCoursePage() {
     }
   };
 
-  // Helper to get full name (trim and collapse spaces)
-  const getFullName = () => {
-    if (!profile.firstName && !profile.lastName) return '';
-    return `${profile.firstName} ${profile.middleName} ${profile.lastName}`.replace(/  +/g, ' ').trim();
-  };
+  // For daily check-in modal: build claimed days array
+  const claimedDays = Array(7).fill(false);
+  for (let i = 0; i < Math.min(streak, 7); i++) {
+    claimedDays[i] = true;
+  }
 
   return (
     <ThemeProvider>
@@ -820,71 +1110,208 @@ export default function DynamicCoursePage() {
         {currentView !== 'mainDashboard' && renderContent()}
       </main>
       <Toaster />
-      {isLoading && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-50">
-          <svg xmlns="http://www.w3.org/2000/svg" height="200px" width="200px" viewBox="0 0 200 200" className="pencil">
-            <defs>
-              <clipPath id="pencil-eraser">
-                <rect height={30} width={30} ry={5} rx={5} />
-              </clipPath>
-            </defs>
-            <circle transform="rotate(-113,100,100)" strokeLinecap="round" strokeDashoffset="439.82" strokeDasharray="439.82 439.82" strokeWidth={2} stroke="currentColor" fill="none" r={70} className="pencil__stroke" />
-            <g transform="translate(100,100)" className="pencil__rotate">
-              <g fill="none">
-                <circle transform="rotate(-90)" strokeDashoffset={402} strokeDasharray="402.12 402.12" strokeWidth={30} stroke="hsl(223,90%,50%)" r={64} className="pencil__body1" />
-                <circle transform="rotate(-90)" strokeDashoffset={465} strokeDasharray="464.96 464.96" strokeWidth={10} stroke="hsl(223,90%,60%)" r={74} className="pencil__body2" />
-                <circle transform="rotate(-90)" strokeDashoffset={339} strokeDasharray="339.29 339.29" strokeWidth={10} stroke="hsl(223,90%,40%)" r={54} className="pencil__body3" />
-              </g>
-              <g transform="rotate(-90) translate(49,0)" className="pencil__eraser">
-                <g className="pencil__eraser-skew">
-                  <rect height={30} width={30} ry={5} rx={5} fill="hsl(223,90%,70%)" />
-                  <rect clipPath="url(#pencil-eraser)" height={30} width={5} fill="hsl(223,90%,60%)" />
-                  <rect height={20} width={30} fill="hsl(223,10%,90%)" />
-                  <rect height={20} width={15} fill="hsl(223,10%,70%)" />
-                  <rect height={20} width={5} fill="hsl(223,10%,80%)" />
-                  <rect height={2} width={30} y={6} fill="hsla(223,10%,10%,0.2)" />
-                  <rect height={2} width={30} y={13} fill="hsla(223,10%,10%,0.2)" />
-                </g>
-              </g>
-              <g transform="rotate(-90) translate(49,-30)" className="pencil__point">
-                <polygon points="15 0,30 30,0 30" fill="hsl(33,90%,70%)" />
-                <polygon points="15 0,6 30,0 30" fill="hsl(33,90%,50%)" />
-                <polygon points="15 0,20 10,10 10" fill="hsl(223,10%,10%)" />
-              </g>
-            </g>
+      {/* Daily Check-In Modal */}
+      <Dialog open={checkInModalOpen} onClose={() => setCheckInModalOpen(false)} className="fixed z-50 inset-0 flex items-center justify-center">
+        {/* Overlay */}
+        <div className="fixed inset-0 bg-black/60" inert />
+        {/* Modal Content */}
+        <div className="relative bg-[#181c24] rounded-2xl p-6 max-w-sm w-full flex flex-col items-center border-2 border-green-700 animate-fade-in shadow-xl">
+          <h2 className="text-2xl font-bold text-white mb-1 text-center">Daily Check In</h2>
+          <div className="text-gray-300 text-sm mb-6 text-center">You have consecutively checked in for <span className="font-bold text-green-400">{streak}</span> day(s).</div>
+          <div className="w-full flex flex-col items-center mb-8">
+            <div className="grid grid-cols-4 gap-3 mb-3 w-full justify-items-center">
+              {Array.from({ length: 4 }).map((_, i) => {
+                const isCurrent = i + 1 === checkInDay;
+                const isClaimed = claimedDays[i];
+                return (
+                  <div
+                    key={i}
+                    className={`relative flex flex-col items-center justify-center rounded-xl p-2 w-20 h-24 border border-gray-700 bg-[#23272f] transition-all duration-200 overflow-hidden`}
+                  >
+                    {/* Overlay for claimed days */}
+                    {isClaimed && (
+                      <>
+                        <span className="absolute inset-0 flex items-center justify-center z-20">
+                          <span className="bg-white rounded-full p-1 flex items-center justify-center shadow-lg">
+                            <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
+                          </span>
+                        </span>
+                      </>
+                    )}
+                    {/* Day label and icon, faded if claimed */}
+                    <span className={`mt-1 ${isCurrent ? 'text-white font-extrabold text-lg md:text-2xl' : 'text-white text-base font-bold'} ${isClaimed ? 'opacity-40' : ''}`}>
+                      Day {i + 1}
+                    </span>
+                    <span className={`mt-2 ${isClaimed ? 'opacity-40' : ''}`}>
+                      {/* Coin SVG */}
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="16" fill="#FFD700" />
+                        <circle cx="16" cy="16" r="13" fill="#F6C700" />
+                        <text x="16" y="21" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#B8860B">₵</text>
+                      </svg>
+                    </span>
         </div>
-      )}
-      {showProfileModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
-          <div className="bg-white rounded-3xl shadow-2xl p-6 max-w-sm w-full flex flex-col items-center relative animate-fade-in border-2 border-blue-200">
-            <button onClick={() => { setShowProfileModal(false); }} className="absolute top-4 right-4 text-gray-400 hover:text-blue-500 text-3xl font-bold transition-all">&times;</button>
-            <h2 className="text-2xl font-bold mb-4 text-blue-700">Edit Profile</h2>
-            <form className="flex flex-col gap-2 w-full" onSubmit={e => {
-              e.preventDefault();
-              const form = e.target as HTMLFormElement;
-              const firstName = (form.elements[0] as HTMLInputElement).value.trim();
-              const middleName = (form.elements[1] as HTMLInputElement).value.trim();
-              const lastName = (form.elements[2] as HTMLInputElement).value.trim();
-              const age = (form.elements[3] as HTMLInputElement).value.trim();
-              const birthdate = (form.elements[4] as HTMLInputElement).value.trim();
-              const address = (form.elements[5] as HTMLInputElement).value.trim();
-              setProfile({ firstName, middleName, lastName, age, birthdate, address });
-              if (typeof window !== 'undefined') {
-                localStorage.setItem('userProfile', JSON.stringify({ firstName, middleName, lastName, age, birthdate, address }));
-              }
-              setShowProfileModal(false);
-            }}>
-              <input required placeholder="First Name" className="w-full px-4 py-2 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-400 transition-all text-blue-900 placeholder:text-blue-400 bg-white shadow-sm text-sm" defaultValue={profile.firstName} />
-              <input required placeholder="Middle Name" className="w-full px-4 py-2 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-400 transition-all text-blue-900 placeholder:text-blue-400 bg-white shadow-sm text-sm" defaultValue={profile.middleName} />
-              <input required placeholder="Last Name" className="w-full px-4 py-2 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-400 transition-all text-blue-900 placeholder:text-blue-400 bg-white shadow-sm text-sm" defaultValue={profile.lastName} />
-              <input type="number" min={0} placeholder="Age (optional)" className="w-full px-4 py-2 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-400 transition-all text-blue-900 placeholder:text-blue-400 bg-white shadow-sm text-sm" defaultValue={profile.age} />
-              <input type="date" placeholder="Birthdate (optional)" className="w-full px-4 py-2 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-400 transition-all text-blue-900 placeholder:text-blue-400 bg-white shadow-sm text-sm" defaultValue={profile.birthdate} />
-              <input placeholder="Address (optional)" className="w-full px-4 py-2 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-400 transition-all text-blue-900 placeholder:text-blue-400 bg-white shadow-sm text-sm" defaultValue={profile.address} />
-              <button type="submit" className="w-full mt-2 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-pink-400 text-white font-bold text-base shadow-lg hover:from-pink-500 hover:to-blue-400 transition-all">Save Profile</button>
-            </form>
+                );
+              })}
+            </div>
+            <div className="grid grid-cols-4 gap-3 w-full justify-items-center">
+              {/* Day 5 */}
+              {(() => {
+                const i = 4;
+                const isCurrent = i + 1 === checkInDay;
+                const isClaimed = claimedDays[i];
+                return (
+                  <div
+                    key={i}
+                    className={`relative flex flex-col items-center justify-center rounded-xl p-2 w-20 h-24 border border-gray-700 bg-[#23272f] transition-all duration-200 overflow-hidden`}
+                  >
+                    {/* Overlay for claimed days */}
+                    {isClaimed && (
+                      <>
+                        <span className="absolute inset-0 flex items-center justify-center z-20">
+                          <span className="bg-white rounded-full p-1 flex items-center justify-center shadow-lg">
+                            <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                        </span>
+                      </>
+                    )}
+                    {/* Day label and icon, faded if claimed */}
+                    <span className={`mt-1 ${isCurrent ? 'text-white font-extrabold text-lg md:text-2xl' : 'text-white text-base font-bold'} ${isClaimed ? 'opacity-40' : ''}`}>
+                      Day {i + 1}
+                    </span>
+                    <span className={`mt-2 ${isClaimed ? 'opacity-40' : ''}`}>
+                      {/* Coin SVG */}
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="16" fill="#FFD700" />
+                        <circle cx="16" cy="16" r="13" fill="#F6C700" />
+                        <text x="16" y="21" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#B8860B">₵</text>
+                      </svg>
+                    </span>
+          </div>
+                );
+              })()}
+              {/* Day 6 */}
+              {(() => {
+                const i = 5;
+                const isCurrent = i + 1 === checkInDay;
+                const isClaimed = claimedDays[i];
+                return (
+                  <div
+                    key={i}
+                    className={`relative flex flex-col items-center justify-center rounded-xl p-2 w-20 h-24 border border-gray-700 bg-[#23272f] transition-all duration-200 overflow-hidden`}
+                  >
+                    {/* Overlay for claimed days */}
+                    {isClaimed && (
+                      <>
+                        <span className="absolute inset-0 flex items-center justify-center z-20">
+                          <span className="bg-white rounded-full p-1 flex items-center justify-center shadow-lg">
+                            <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                        </span>
+                      </>
+                    )}
+                    {/* Day label and icon, faded if claimed */}
+                    <span className={`mt-1 ${isCurrent ? 'text-white font-extrabold text-lg md:text-2xl' : 'text-white text-base font-bold'} ${isClaimed ? 'opacity-40' : ''}`}>
+                      Day {i + 1}
+                    </span>
+                    <span className={`mt-2 ${isClaimed ? 'opacity-40' : ''}`}>
+                      {/* Coin SVG */}
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="16" fill="#FFD700" />
+                        <circle cx="16" cy="16" r="13" fill="#F6C700" />
+                        <text x="16" y="21" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#B8860B">₵</text>
+                      </svg>
+                    </span>
+        </div>
+                );
+              })()}
+              {/* Day 7 */}
+              {(() => {
+                const i = 6;
+                const isCurrent = i + 1 === checkInDay;
+                const isClaimed = claimedDays[i];
+                return (
+                  <div
+                    key={i}
+                    className={`relative flex flex-col items-center justify-center rounded-xl p-2 h-24 col-span-2 w-full border border-gray-700 bg-[#23272f] transition-all duration-200 overflow-hidden`}
+                  >
+                    {/* Overlay for claimed days */}
+                    {isClaimed && (
+                      <>
+                        <span className="absolute inset-0 flex items-center justify-center z-20">
+                          <span className="bg-white rounded-full p-1 flex items-center justify-center shadow-lg">
+                            <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                        </span>
+                      </>
+                    )}
+                    {/* Day label and icon, faded if claimed */}
+                    <span className={`mt-1 ${isCurrent ? 'text-white font-extrabold text-lg md:text-2xl' : 'text-white text-base font-bold'} ${isClaimed ? 'opacity-40' : ''}`}>
+                      Day {i + 1}
+                    </span>
+                    <span className={`mt-2 flex justify-center items-center w-full ${isClaimed ? 'opacity-40' : ''}`}>
+                      {/* Gift SVG */}
+                      <svg width="70" height="70" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-auto">
+                        <rect x="6" y="14" width="24" height="16" rx="3" fill="#FFD700" />
+                        <rect x="10" y="18" width="16" height="8" rx="2" fill="#FFB300" />
+                        <rect x="16" y="14" width="4" height="16" fill="#FF5252" />
+                        <rect x="6" y="14" width="24" height="4" fill="#FF5252" />
+                        <rect x="12" y="6" width="12" height="8" rx="4" fill="#FFD700" />
+                        <rect x="16" y="6" width="4" height="8" fill="#FF5252" />
+                      </svg>
+                    </span>
+                  </div>
+                );
+              })()}
+            </div>
+          </div>
+          <div className="text-lg font-bold text-green-400 mb-1 text-center">Day {checkInDay}</div>
+          <div className="flex flex-col items-center justify-center mb-6 min-h-[48px]">
+            {showCheckInReward ? (
+              <div className="flex items-center gap-2 text-amber-400 text-2xl font-bold">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7 text-amber-400">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="#FFD700" />
+                </svg>
+                +{checkInReward} points
+              </div>
+            ) : (
+              <>
+                <p className="text-lg font-semibold text-green-400">Already claimed!</p>
+                <p className="text-base text-gray-200">Come back tomorrow.</p>
+              </>
+            )}
+          </div>
+          <div className="w-full flex justify-center mt-2">
+            <Button
+              className="w-full bg-green-500 text-white font-bold text-lg py-2 rounded-xl hover:bg-green-600 transition-all"
+              onClick={() => { setCheckInModalOpen(false); setShowCheckInReward(false); }}
+            >
+              Close
+            </Button>
           </div>
         </div>
+      </Dialog>
+      {showProfileModal && (
+        <ProfileModal
+          isOpen={showProfileModal}
+          onClose={() => setShowProfileModal(false)}
+          courseType={course}
+          middleName={middleName}
+          setMiddleName={setMiddleName}
+          firstName={firstName}
+          setFirstName={setFirstName}
+          lastName={lastName}
+          setLastName={setLastName}
+          setHasEditedProfile={setHasEditedProfile}
+        />
       )}
       {showGcashModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">

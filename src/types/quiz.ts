@@ -11,6 +11,9 @@ export interface Question {
   explanation?: string; // Optional explanation field
   // Add the new optional items field
   items?: string[];
+  subject?: {
+    abbr: string;
+  };
 }
 
 export interface UserAnswer {
