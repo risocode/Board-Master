@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { getProfessionalTitleAndWelcome } from '@/data/professionalTitles';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useUser, useClerk } from '@clerk/nextjs';
 import Image from 'next/image';
 
 interface ProfileModalProps {
@@ -15,6 +14,7 @@ interface ProfileModalProps {
   setFirstName: (val: string) => void;
   lastName: string;
   setLastName: (val: string) => void;
+  setHasEditedProfile?: (val: boolean) => void;
 }
 
 // Helper to capitalize first letter and lowercase the rest
@@ -32,25 +32,19 @@ const ProfileModal: React.FC<ProfileModalProps> = ({
   setFirstName,
   lastName,
   setLastName,
+  setHasEditedProfile,
 }) => {
-  const { user } = useUser();
-  const { openUserProfile } = useClerk();
   const [isEditing, setIsEditing] = useState(false);
   const [profileImage, setProfileImage] = useState<string | null>(null);
 
-  // Load Clerk profile image if available
   useEffect(() => {
-    if (user && user.imageUrl) {
-      setProfileImage(user.imageUrl);
-    } else {
-      setProfileImage(null);
-    }
-  }, [user]);
+    setProfileImage(null);
+  }, []);
 
   if (!isOpen) return null;
 
   const { title } = getProfessionalTitleAndWelcome(courseType);
-  
+
   const formatFullName = () => {
     const parts = [firstName, middleName, lastName].map(formatNamePart).filter(Boolean);
     if (!parts.length) return '';
@@ -62,10 +56,6 @@ const ProfileModal: React.FC<ProfileModalProps> = ({
     return parts.join(' ');
   };
 
-  // Helper to get display name
-  const displayName = user?.fullName || [firstName, middleName, lastName].filter(Boolean).join(' ');
-  const displayEmail = user?.primaryEmailAddress?.emailAddress || '';
-
   const handleSave = async () => {
     try {
       const formattedFirst = formatNamePart(firstName);
@@ -75,11 +65,13 @@ const ProfileModal: React.FC<ProfileModalProps> = ({
         localStorage.setItem('userFirstName', formattedFirst);
         localStorage.setItem('userMiddleName', formattedMiddle);
         localStorage.setItem('userLastName', formattedLast);
+        localStorage.setItem('hasEditedProfile', '1');
       }
       setFirstName(formattedFirst);
       setMiddleName(formattedMiddle);
       setLastName(formattedLast);
       setIsEditing(false);
+      if (setHasEditedProfile) setHasEditedProfile(true);
     } catch (error) {
       console.error('Error saving profile:', error);
     }
@@ -100,16 +92,11 @@ const ProfileModal: React.FC<ProfileModalProps> = ({
           {profileImage ? (
             <Image src={profileImage} alt="Profile" width={80} height={80} className="w-20 h-20 rounded-full border-2 border-blue-200 mb-2 object-cover" />
           ) : (
-            <div className="w-20 h-20 rounded-full border-2 border-blue-200 mb-2 bg-gray-200 flex items-center justify-center text-3xl text-gray-400">
-              <span>👤</span>
-            </div>
+            <Image src="/Icons/profile.png" alt="Default Profile" width={80} height={80} className="w-20 h-20 rounded-full border-2 border-blue-200 mb-2 object-cover" />
           )}
           {/* Name directly below the image */}
           {!isEditing && (
-            <>
-              <div className="font-bold text-xl text-blue-900 text-center">{displayName}</div>
-              {displayEmail && <div className="text-sm text-gray-600 text-center">{displayEmail}</div>}
-            </>
+            <div className="font-bold text-xl text-blue-900 text-center">{formatFullName()}</div>
           )}
         </div>
         {isEditing ? (
@@ -151,17 +138,9 @@ const ProfileModal: React.FC<ProfileModalProps> = ({
             </div>
           </div>
         ) : (
-          <>
-            <Button onClick={() => setIsEditing(true)} className="w-full mb-2 bg-pink-200 text-pink-900 font-bold">
-              Edit Name
-            </Button>
-            <Button
-              onClick={() => openUserProfile()}
-              className="w-full py-2 rounded-lg bg-gradient-to-r from-blue-500 to-pink-400 text-white font-bold text-base shadow-lg hover:from-pink-500 hover:to-blue-400 transition-all text-center"
-            >
-              Manage Profile
-            </Button>
-          </>
+          <Button onClick={() => setIsEditing(true)} className="w-full mb-2 bg-pink-200 text-pink-900 font-bold">
+            Edit Profile
+          </Button>
         )}
       </div>
     </div>

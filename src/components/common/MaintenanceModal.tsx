@@ -1,19 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
+import SpaceButton from './SpaceButton';
 
 interface MaintenanceModalProps {
   open: boolean;
   onClose: () => void;
   courseName?: string;
+  message?: string;
+  onChangeCourse?: () => void;
 }
 
-const MaintenanceModal: React.FC<MaintenanceModalProps> = ({ open, onClose, courseName }) => {
+const MaintenanceModal: React.FC<MaintenanceModalProps> = ({ open, onClose, courseName, onChangeCourse }) => {
   if (!open) return null;
   return (
     <ModalOverlay onClick={onClose}>
       <ModalContent onClick={e => e.stopPropagation()}>
-        <Card courseName={courseName} />
+        <Card courseName={courseName} onChangeCourse={onChangeCourse} />
         <CloseButton onClick={onClose}>&times;</CloseButton>
       </ModalContent>
     </ModalOverlay>
@@ -50,10 +53,28 @@ const CloseButton = styled.button`
   }
 `;
 
-const Card: React.FC<{ courseName?: string }> = ({ courseName }) => {
+const Card: React.FC<{ courseName?: string; onChangeCourse?: () => void }> = ({ courseName, onChangeCourse }) => {
   return (
     <StyledWrapper>
       <div className="card">
+        <div className="stars-bg">
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+
+        </div>
         <Image
           src="https://uiverse.io/astronaut.png"
           alt="Astronaut"
@@ -62,8 +83,15 @@ const Card: React.FC<{ courseName?: string }> = ({ courseName }) => {
           className="image"
           priority
         />
-        {courseName && <div className="course-name">{courseName} <br /> <span className="is-label">Is Currently</span></div>}
+        {courseName && (
+          <div className="course-name">{courseName} <br /> <span className="is-label">Is Currently</span></div>
+        )}
         <div className="heading">Under Development</div>
+        {onChangeCourse && (
+          <div style={{ marginTop: '0em' }}>
+            <SpaceButton label="Change Course" onClick={onChangeCourse} />
+          </div>
+        )}
       </div>
     </StyledWrapper>
   );
@@ -193,6 +221,41 @@ const StyledWrapper = styled.div`
     100% {
       transform: translateX(0em) translateY(0em);
     }
+  }
+  .stars-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s infinite alternate;
+  }
+  .star:nth-child(1) { top: 20px; left: 40px; animation-delay: 0s; }
+  .star:nth-child(2) { top: 80px; left: 120px; animation-delay: 0.5s; }
+  .star:nth-child(3) { top: 160px; left: 200px; animation-delay: 1s; }
+  .star:nth-child(4) { top: 60px; left: 180px; animation-delay: 1.5s; }
+  .star:nth-child(5) { top: 200px; left: 60px; animation-delay: 2s; }
+  .star:nth-child(6) { top: 30px; left: 100px; animation-delay: 0.3s; }
+  .star:nth-child(7) { top: 120px; left: 30px; animation-delay: 1.2s; }
+  .star:nth-child(8) { top: 180px; left: 150px; animation-delay: 0.8s; }
+  .star:nth-child(9) { top: 100px; left: 200px; animation-delay: 1.7s; }
+  .star:nth-child(10) { top: 50px; left: 220px; animation-delay: 0.6s; }
+  .star:nth-child(11) { top: 170px; left: 90px; animation-delay: 1.1s; }
+  .star:nth-child(12) { top: 140px; left: 170px; animation-delay: 0.9s; }
+  .star:nth-child(13) { top: 40px; left: 180px; animation-delay: 1.3s; }
+  .star:nth-child(14) { top: 190px; left: 120px; animation-delay: 0.7s; }
+  .star:nth-child(15) { top: 70px; left: 60px; animation-delay: 1.4s; }
+  @keyframes twinkle {
+    0% { opacity: 0.8; }
+    100% { opacity: 0.2; }
   }
 `;
 

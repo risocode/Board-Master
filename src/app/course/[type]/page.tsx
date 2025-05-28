@@ -21,7 +21,10 @@ import { motion } from 'framer-motion';
 import { PointCalculator } from '@/lib/pointCalculator';
 import { Dialog } from '@headlessui/react';
 import ProfileModal from '@/components/ProfileModal';
-import { useUser } from "@clerk/nextjs";
+import SpaceButton from '@/components/common/SpaceButton';
+import { getProfessionalTitleAndWelcome } from '@/data/professionalTitles';
+import MaintenanceModal from '@/components/common/MaintenanceModal';
+
 
 const subjects = [
   { abbreviation: 'FAR', fullName: 'Financial Accounting and Reporting' },
@@ -66,9 +69,7 @@ export default function DynamicCoursePage() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [quizMode, setQuizMode] = useState<'quiz' | 'review'>('quiz');
   const [isLoading, setIsLoading] = useState(false);
-  const [currentView, setCurrentView] = useState<'mainDashboard' | 'subjects' | 'quiz' | 'dashboard' | 'review' | 'overallDashboard'>(
-    courseType === 'CPA' || courseType === 'BSA' ? 'mainDashboard' : 'subjects'
-  );
+  const [currentView, setCurrentView] = useState<'mainDashboard' | 'subjects' | 'quiz' | 'dashboard' | 'review' | 'overallDashboard'>('mainDashboard');
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
   const [showQuizSubjectModal, setShowQuizSubjectModal] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
@@ -122,6 +123,14 @@ export default function DynamicCoursePage() {
     }
     return '';
   });
+  const [hasEditedProfile, setHasEditedProfile] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('hasEditedProfile') === '1';
+    }
+    return false;
+  });
+  const [showMaintenance, setShowMaintenance] = useState(false);
+  const [maintenanceMessage, setMaintenanceMessage] = useState<string | undefined>(undefined);
 
   // Add a helper to check if the course is CPA/BSA
   const isCPAorBSA = courseType === 'CPA' || courseType === 'BSA';
@@ -247,7 +256,7 @@ export default function DynamicCoursePage() {
       setQuizMode(savedQuizMode as 'quiz' | 'review');
       if (savedSelectedSubject) setSelectedSubject(savedSelectedSubject);
 
-      // Only restore currentView if it makes sense, otherwise default to mainDashboard/subjects
+      // Only restore currentView if it makes sense, otherwise default to mainDashboard
       if (
         savedCurrentView &&
         (
@@ -257,13 +266,11 @@ export default function DynamicCoursePage() {
         )
       ) {
         setCurrentView(savedCurrentView as typeof currentView);
-      } else if (courseType === 'CPA' || courseType === 'BSA') {
-        setCurrentView('mainDashboard');
       } else {
-        setCurrentView('subjects');
+        setCurrentView('mainDashboard');
       }
     } catch {
-      setCurrentView(courseType === 'CPA' || courseType === 'BSA' ? 'mainDashboard' : 'subjects');
+      setCurrentView('mainDashboard');
       setQuizMode('quiz');
     }
   }, [courseType]);
@@ -371,13 +378,6 @@ export default function DynamicCoursePage() {
     }
   }, []);
 
-  const { isSignedIn } = useUser();
-  useEffect(() => {
-    if (!isSignedIn) {
-      window.location.href = "/";
-    }
-  }, [isSignedIn]);
-
   if (!mounted) {
     // Optionally, return a skeleton or just null
     return null;
@@ -453,12 +453,26 @@ export default function DynamicCoursePage() {
   const handleSelectNewSubject = () => {
     setQuestions(null);
     setCurrentQuestionIndex(0);
+    if (isCPAorBSA) {
     setCurrentView('subjects');
     setSelectedSubject(null);
+    } else {
+      setCurrentView('mainDashboard');
+      setSelectedSubject(null);
+    }
   };
 
   const handleGoToSubjectsForQuiz = () => {
+    if (isCPAorBSA) {
     setCurrentView('subjects');
+    } else {
+      setCurrentView('mainDashboard');
+    }
+  };
+
+  const handleShowMaintenance = (msg?: string) => {
+    setMaintenanceMessage(msg || 'This feature is under construction.');
+    setShowMaintenance(true);
   };
 
   // Main dashboard UI
@@ -472,6 +486,13 @@ export default function DynamicCoursePage() {
           onClick={() => setShowProfileModal(true)}
           className="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-200 hover:border-blue-400 transition-all"
         >
+         <Image
+          src='/Icons/profile.png'
+          alt="Profile"
+          width={40}
+          height={40}
+          className="w-10 h-10 rounded-full object-cover"
+        />
         </button>
       </div>
       {/* Logo at the top, centered */}
@@ -480,7 +501,8 @@ export default function DynamicCoursePage() {
           src={theme === 'dark' ? '/logo/berq-g.png' : '/logo/berq-b.png'}
           alt="Board Exam Review Questions Logo"
           width={300}
-          height={120}
+          height={100}
+          style={{ width: "100%", height: "auto" }}
           priority
           className="mb-2"
         />
@@ -490,13 +512,39 @@ export default function DynamicCoursePage() {
         <div className="text-center font-extrabold text-4xl md:text-5xl mb-4 bg-gradient-to-r from-yellow-400 via-pink-500 to-blue-500 text-transparent bg-clip-text drop-shadow-lg tracking-wide select-none transition-all duration-300 w-full">
           WELCOME
         </div>
-        <div className="flex justify-center w-full mb-2">
+        {!hasEditedProfile ? (
+            <SpaceButton
+            label="Edit Profile"
+            onClick={() => {
+              setShowProfileModal(true);
+            }}
+            />
+          ) : (
+            <SpaceButton
+            label={(() => {
+              const name = [firstName, middleName, lastName].filter(Boolean).join(' ');
+              const { title } = getProfessionalTitleAndWelcome(courseType);
+              if (!title) return name;
+              // If title ends with a period, use as prefix (e.g., 'Atty. ')
+              if (title.endsWith('.')) {
+                return `${title} ${name}`;
+              } else {
+                return `${name}, ${title}`;
+              }
+            })()}
+            disabled
+          />
+        )}
+        <div className="flex justify-center w-full mb-2"></div>
         </div>
-      </div>
       {/* Main Action Buttons */}
       <div className="flex flex-col items-center w-full max-w-md mx-auto gap-4 mb-6">
       <Button
         onClick={() => {
+            if (!isCPAorBSA || subjects.length === 0) {
+              handleShowMaintenance('Take Quiz is under construction for this course.');
+              return;
+            }
           setQuizSource('subjects');
           setShowQuizSubjectModal(true);
         }}
@@ -506,6 +554,10 @@ export default function DynamicCoursePage() {
       </Button>
       <Button
         onClick={() => {
+            if (!isCPAorBSA || subjects.length === 0) {
+              handleShowMaintenance('Subject Dashboard is under construction for this course.');
+              return;
+            }
           setQuizSource('dashboard');
           if (!selectedSubject) {
             setSelectedSubject(subjects[0].abbreviation);
@@ -518,7 +570,13 @@ export default function DynamicCoursePage() {
         Subject Dashboard
       </Button>
       <Button
-        onClick={() => setCurrentView('overallDashboard')}
+          onClick={() => {
+            if (!isCPAorBSA || subjects.length === 0) {
+              handleShowMaintenance('Overall Dashboard is under construction for this course.');
+              return;
+            }
+            setCurrentView('overallDashboard');
+          }}
           className="w-full h-14 rounded-xl border-2 border-blue-400 text-blue-800 font-semibold text-lg bg-white shadow hover:bg-blue-50 hover:border-blue-600 transition"
         variant="outline"
       >
@@ -595,26 +653,22 @@ export default function DynamicCoursePage() {
           All rights reserved Risoca © {new Date().getFullYear()}
         </div>
       </div>
+      <MaintenanceModal
+        open={showMaintenance}
+        onClose={() => setShowMaintenance(false)}
+        courseName={courseType}
+        message={maintenanceMessage}
+        onChangeCourse={() => {
+          setShowMaintenance(false);
+          window.location.href = '/';
+        }}
+      />
     </div>
   );
 
   // UI rendering
   const renderContent = () => {
-    if (!isCPAorBSA) {
-      return (
-        <div className="min-h-[90vh] flex flex-col items-center justify-center px-2 py-6">
-          <div className="w-full max-w-lg bg-white/60 rounded-xl shadow-lg p-8 flex flex-col items-center">
-            <h2 className="text-3xl font-extrabold mb-6 text-blue-700 text-center drop-shadow-sm">
-            </h2>
-            <div className="text-lg text-center mb-6 text-blue-800">Sorry, quiz subjects and dashboards are only available for CPA/BSA at this time.</div>
-            <Button onClick={() => setShowProfileModal(true)} className="mb-4">Edit Profile</Button>
-            <Button asChild variant="secondary">
-              <Link href="/">Back to Home</Link>
-            </Button>
-          </div>
-        </div>
-      );
-    }
+    // Always render the dashboard UI
     switch (currentView) {
       case 'quiz':
         if (isLoading) {
@@ -1197,6 +1251,7 @@ export default function DynamicCoursePage() {
           setFirstName={setFirstName}
           lastName={lastName}
           setLastName={setLastName}
+          setHasEditedProfile={setHasEditedProfile}
         />
       )}
       {showGcashModal && (

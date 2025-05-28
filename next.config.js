@@ -71,12 +71,12 @@ const nextConfig = withPWA({
             key: 'Content-Security-Policy',
             value: `
               default-src 'self';
-              script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.clerk.accounts.dev https://*.clerk.com https://clerk.boardmaster.site https://pagead2.googlesyndication.com https://*.google.com https://*.googleapis.com https://*.gstatic.com;
-              style-src 'self' 'unsafe-inline' https://*.clerk.accounts.dev https://*.clerk.com https://*.googleapis.com;
-              img-src 'self' blob: data: https://*.clerk.accounts.dev https://*.clerk.com https://pagead2.googlesyndication.com https://*.google.com https://*.googleapis.com https://*.gstatic.com;
-              font-src 'self' data: https://*.googleapis.com https://*.gstatic.com;
-              connect-src 'self' https://*.clerk.accounts.dev https://*.clerk.com https://clerk.boardmaster.site wss://*.clerk.accounts.dev https://*.google.com https://*.googleapis.com https://*.gstatic.com https://*.doubleclick.net https://*.googlesyndication.com https://ep1.adtrafficquality.google;
-              frame-src 'self' https://*.clerk.accounts.dev https://*.clerk.com https://pagead2.googlesyndication.com https://*.google.com https://*.doubleclick.net https://*.googlesyndication.com;
+              script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://*.google.com https://*.googleapis.com https://*.gstatic.com https://ep2.adtrafficquality.google https://va.vercel-scripts.com;
+              style-src 'self' 'unsafe-inline';
+              img-src 'self' blob: data: https://ep1.adtrafficquality.google https://pagead2.googlesyndication.com https://*.google.com https://*.googleapis.com https://*.gstatic.com;
+              font-src 'self' data: https://ep1.adtrafficquality.google https://*.googleapis.com https://*.gstatic.com;
+              connect-src 'self' https://*.boardmaster.site wss://*.boardmaster.site https://*.google.com https://*.googleapis.com https://*.gstatic.com https://*.doubleclick.net https://*.googlesyndication.com https://ep1.adtrafficquality.google;
+              frame-src 'self' https://ep2.adtrafficquality.google https://pagead2.googlesyndication.com https://*.google.com https://*.doubleclick.net https://*.googlesyndication.com;
               worker-src 'self' blob:;
               object-src 'none';
               base-uri 'self';

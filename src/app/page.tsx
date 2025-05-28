@@ -121,21 +121,35 @@ function HomePage() {
     const selectedCourse = selectedField.courses[selectedCourseIdx];
     const courseType = selectedCourse.abbr.split('/')[0];
     const redirectUrl = `/course/${courseType}`;
-    console.log('Proceeding to sign-in with:', { courseType, redirectUrl });
-    router.push(`/sign-in?course=${courseType}&redirect_url=${encodeURIComponent(redirectUrl)}`);
+    router.push(redirectUrl);
   };
 
   return (
     <div className="min-h-screen w-full bg-[#eaf4fb] text-[#181c24] flex flex-col items-center justify-center">
-      <MaintenanceModal open={showMaintenance} onClose={() => setShowMaintenance(false)} courseName={selectedCourseName} />
+      <MaintenanceModal
+        open={showMaintenance}
+        onClose={() => setShowMaintenance(false)}
+        courseName={selectedCourseName}
+        message={
+          selectedCourseName
+            ? `${selectedCourseName} is under construction.`
+            : 'This course is under construction.'
+        }
+        onChangeCourse={() => {
+          setShowMaintenance(false);
+          setSelectedFieldIdx(null);
+          setSelectedCourseIdx(null);
+        }}
+      />
       <div className="flex flex-col items-center mb-6 mt-2">
         <Image
           src={theme === 'dark' ? '/logo/berq-g.png' : '/logo/berq-b.png'}
           alt="Board Exam Review Questions Logo"
           width={340}
-          height={120}
+          height={100}
           priority
           className="mb-2"
+          style={{ width: "100%", height: "auto" }}
         />
       </div>
       <div className="w-full max-w-xs mb-3">

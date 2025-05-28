@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { clerkMiddleware } from "@clerk/nextjs/server";
 
 // Simple in-memory store for rate limiting
 const ipRequestCounts = new Map<string, { count: number; timestamp: number }>();
@@ -49,14 +48,11 @@ function customSecurityMiddleware(request: NextRequest) {
   return response;
 }
 
-export default clerkMiddleware((auth, request) => {
-  // After Clerk runs, run your custom security logic
-  return customSecurityMiddleware(request);
-});
+export default customSecurityMiddleware;
 
 export const config = {
   matcher: [
-    // Skip Next.js internals, static files, and Clerk auth routes
+    // Skip Next.js internals, static files, and auth routes
     "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)|sign-in|sign-up).*)",
     // Always run for API routes
     "/(api|trpc)(.*)",
